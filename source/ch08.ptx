@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="ch-simple-linear-regression" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Introduction to linear regression</title>
+
+  <introduction>
+    <p>
+      This chapter introduces simple linear regression for modeling relationships between
+      two numerical variables.
+    </p>
+    <p>
+      <alert>Content to be converted from ch_regr_simple_linear/TeX/</alert>
+    </p>
+  </introduction>
+
+  <section xml:id="sec-line-best-fit">
+    <title>Line fitting and residuals</title>
+    <p>Content to be converted from LaTeX source.</p>
+  </section>
+
+</chapter>

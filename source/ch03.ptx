@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="ch-probability" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Probability</title>
+
+  <introduction>
+    <p>
+      This chapter introduces fundamental concepts of probability theory.
+    </p>
+    <p>
+      <alert>Content to be converted from ch_probability/TeX/</alert>
+    </p>
+  </introduction>
+
+  <section xml:id="sec-probability-intro">
+    <title>Introduction to probability</title>
+    <p>Content to be converted from LaTeX source.</p>
+  </section>
+
+</chapter>

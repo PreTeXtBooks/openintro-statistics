@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="ch-inference-props" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Inference for categorical data</title>
+
+  <introduction>
+    <p>
+      This chapter covers inference methods for proportions and categorical data.
+    </p>
+    <p>
+      <alert>Content to be converted from ch_inference_for_props/TeX/</alert>
+    </p>
+  </introduction>
+
+  <section xml:id="sec-one-prop">
+    <title>Inference for a single proportion</title>
+    <p>Content to be converted from LaTeX source.</p>
+  </section>
+
+</chapter>

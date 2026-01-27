@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="ch-multiple-logistic-regression" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Multiple and logistic regression</title>
+
+  <introduction>
+    <p>
+      This chapter extends regression to multiple predictors and introduces logistic
+      regression for categorical outcomes.
+    </p>
+    <p>
+      <alert>Content to be converted from ch_regr_mult_and_log/TeX/</alert>
+    </p>
+  </introduction>
+
+  <section xml:id="sec-multiple-regression">
+    <title>Multiple regression</title>
+    <p>Content to be converted from LaTeX source.</p>
+  </section>
+
+  <section xml:id="sec-logistic-regression">
+    <title>Logistic regression</title>
+    <p>Content to be converted from LaTeX source.</p>
+  </section>
+
+</chapter>

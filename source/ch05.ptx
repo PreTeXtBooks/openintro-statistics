@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="ch-foundations-inference" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Foundations for inference</title>
+
+  <introduction>
+    <p>
+      This chapter introduces the foundational concepts of statistical inference including
+      confidence intervals and hypothesis testing.
+    </p>
+    <p>
+      <alert>Content to be converted from ch_foundations_for_inf/TeX/</alert>
+    </p>
+  </introduction>
+
+  <section xml:id="sec-inference-intro">
+    <title>Introduction to statistical inference</title>
+    <p>Content to be converted from LaTeX source.</p>
+  </section>
+
+</chapter>

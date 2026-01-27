@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="ch-inference-means" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Inference for numerical data</title>
+
+  <introduction>
+    <p>
+      This chapter covers inference methods for means and numerical data.
+    </p>
+    <p>
+      <alert>Content to be converted from ch_inference_for_means/TeX/</alert>
+    </p>
+  </introduction>
+
+  <section xml:id="sec-one-mean">
+    <title>Inference for a single mean</title>
+    <p>Content to be converted from LaTeX source.</p>
+  </section>
+
+</chapter>

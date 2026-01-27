@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="ch-distributions" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Distributions of random variables</title>
+
+  <introduction>
+    <p>
+      This chapter covers important probability distributions including normal, binomial,
+      geometric, and Poisson distributions.
+    </p>
+    <p>
+      <alert>To be converted from:</alert>
+      <ul>
+        <li><c>ch_distributions/TeX/normal_distribution.tex</c></li>
+        <li><c>ch_distributions/TeX/binomial_distribution.tex</c></li>
+        <li><c>ch_distributions/TeX/geometric_distribution.tex</c></li>
+        <li><c>ch_distributions/TeX/negative_binomial_distribution.tex</c></li>
+        <li><c>ch_distributions/TeX/poisson_distribution.tex</c></li>
+        <li><c>ch_distributions/TeX/review_exercises.tex</c></li>
+      </ul>
+    </p>
+  </introduction>
+
+  <section xml:id="sec-normal-dist">
+    <title>Normal distribution</title>
+    <p>Content to be converted from LaTeX source.</p>
+  </section>
+
+  <section xml:id="sec-binomial-dist">
+    <title>Binomial distribution</title>
+    <p>Content to be converted from LaTeX source.</p>
+  </section>
+
+</chapter>

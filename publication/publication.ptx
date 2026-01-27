@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<publication>
+  <!-- HTML-Specific Options -->
+  <html>
+    <calculator model="scientific"/>
+    <index-page ref="index"/>
+    <video privacy="yes"/>
+  </html>
+</publication>
