@@ -1064,53 +1064,451 @@
   <section xml:id="sec-geometric-distribution">
     <title>Geometric distribution</title>
 
+    <introduction>
+      <p>
+        How long should we expect to flip a coin until it turns up heads? Or how many 
+        times should we expect to roll a die until we get a 1? These questions can be 
+        answered using the geometric distribution. We first formalize each trial<mdash />such 
+        as a single coin flip or die toss<mdash />using the Bernoulli distribution, and then 
+        we combine these with our tools from probability (Chapter 3) to construct the 
+        geometric distribution.
+      </p>
+    </introduction>
+
     <subsection xml:id="subsec-bernoulli-distribution">
       <title>Bernoulli distribution</title>
-      <p>To be converted from LaTeX source.</p>
 
-      <example xml:id="ex-bernoulli-coin">
-        <title>Bernoulli random variable for a coin flip</title>
-        <statement>
-          <p>
-            Consider a single coin flip. Define a random variable X that takes 
-            value 1 if the coin lands heads and 0 if it lands tails. Is X a 
-            Bernoulli random variable?
-          </p>
-        </statement>
-        <solution>
-          <p>To be converted from LaTeX source.</p>
-        </solution>
-      </example>
+      <p>
+        Many health insurance plans in the United States have a deductible, where the 
+        insured individual is responsible for costs up to the deductible, and then the 
+        costs above the deductible are shared between the individual and insurance company 
+        for the remainder of the year.
+      </p>
+
+      <p>
+        Suppose a health insurance company found that 70% of the people they insure stay 
+        below their deductible in any given year. Each of these people can be thought of 
+        as a <term>trial</term>. We label a person a <term>success</term> if her healthcare 
+        costs do not exceed the deductible. We label a person a <term>failure</term> if she 
+        does exceed her deductible in the year. Because 70% of the individuals will not hit 
+        their deductible, we denote the <term>probability of a success</term> as 
+        <m>p = 0.7</m>. The probability of a failure is sometimes denoted with 
+        <m>q = 1 - p</m>, which would be 0.3 for the insurance example.
+      </p>
+
+      <p>
+        When an individual trial only has two possible outcomes, often labeled as 
+        <q>success</q> or <q>failure</q>, it is called a <term>Bernoulli random variable</term>. 
+        We chose to label a person who does not hit her deductible as a <q>success</q> and 
+        all others as <q>failures</q>. However, we could just as easily have reversed these 
+        labels. The mathematical framework we will build does not depend on which outcome is 
+        labeled a success and which a failure, as long as we are consistent.
+      </p>
+
+      <p>
+        Bernoulli random variables are often denoted as 1 for a success and 0 for a failure. 
+        In addition to being convenient in entering data, it is also mathematically handy. 
+        Suppose we observe ten trials:
+      </p>
+
+      <p>
+        1 1 1 0 1 0 0 1 1 0
+      </p>
+
+      <p>
+        Then the <term>sample proportion</term>, <m>\hat{p}</m>, is the sample mean of 
+        these observations:
+        <me>
+          \hat{p} = \frac{\text{number of successes}}{\text{number of trials}} = 
+          \frac{1+1+1+0+1+0+0+1+1+0}{10} = 0.6
+        </me>
+        This mathematical inquiry of Bernoulli random variables can be extended even further. 
+        Because 0 and 1 are numerical outcomes, we can define the mean and standard deviation 
+        of a Bernoulli random variable. (See Exercises <xref ref="ex-bernoulli-mean-derivation"/> 
+        and <xref ref="ex-bernoulli-sd-derivation"/>.)
+      </p>
+
+      <blockquote>
+        <p>
+          <term>Bernoulli random variable</term>
+        </p>
+        <p>
+          If <m>X</m> is a random variable that takes value 1 with probability of success 
+          <m>p</m> and 0 with probability <m>1-p</m>, then <m>X</m> is a Bernoulli random 
+          variable with mean and standard deviation
+          <md>
+            <mrow>\mu \amp = p \amp \sigma \amp = \sqrt{p(1-p)}</mrow>
+          </md>
+        </p>
+      </blockquote>
+
+      <p>
+        In general, it is useful to think about a Bernoulli random variable as a random 
+        process with only two outcomes: a success or failure. Then we build our mathematical 
+        framework using the numerical labels 1 and 0 for successes and failures, respectively.
+      </p>
     </subsection>
 
     <subsection xml:id="subsec-geometric-distribution-def">
       <title>Geometric distribution</title>
-      <p>To be converted from LaTeX source.</p>
 
-      <example xml:id="ex-geometric-eye-color">
-        <title>Geometric distribution for eye color</title>
+      <p>
+        The <term>geometric distribution</term> is used to describe how many trials it takes 
+        to observe a success. Let's first look at an example.
+      </p>
+
+      <example xml:id="ex-wait-for-deductible">
+        <title>Finding first success in insurance claims</title>
         <statement>
           <p>
-            Suppose we observe individuals one at a time until we find someone 
-            with blue eyes. Let X represent the number of people observed. What 
-            is the probability distribution of X?
+            Suppose we are working at the insurance company and need to find a case where 
+            the person did not exceed her (or his) deductible as a case study. If the 
+            probability a person will not exceed her deductible is 0.7 and we are drawing 
+            people at random, what are the chances that the first person will not have 
+            exceeded her deductible, i.e. be a success? The second person? The third? What 
+            about we pull <m>n - 1</m> cases before we find the first success, i.e. the 
+            first success is the <m>n^{th}</m> person? (If the first success is the fifth 
+            person, then we say <m>n=5</m>.)
           </p>
         </statement>
         <solution>
-          <p>To be converted from LaTeX source.</p>
+          <p>
+            The probability of stopping after the first person is just the chance the first 
+            person will not hit her (or his) deductible: 0.7. The probability the second 
+            person is the first to not hit her deductible is
+            <md>
+              <mrow>\amp P(\text{second person is the first to not hit deductible})</mrow>
+              <mrow>\amp \quad = P(\text{the first will, the second won't})</mrow>
+              <mrow>\amp \quad = (0.3)(0.7) = 0.21</mrow>
+            </md>
+            Likewise, the probability it will be the third case is 
+            <m>(0.3)(0.3)(0.7) = 0.063</m>.
+          </p>
+          <p>
+            If the first success is on the <m>n^{th}</m> person, then there are <m>n-1</m> 
+            failures and finally 1 success, which corresponds to the probability 
+            <m>(0.3)^{n-1}(0.7)</m>. This is the same as <m>(1-0.7)^{n-1}(0.7)</m>.
+          </p>
         </solution>
       </example>
 
-      <figure xml:id="fig-geometric-dist-35">
-        <caption>Geometric distribution with p = 0.35</caption>
-        <image source="ch_distributions/figures/geometricDist35"/>
-      </figure>
+      <p>
+        <xref ref="ex-wait-for-deductible"/> illustrates what the <term>geometric distribution</term> 
+        is, which describes the waiting time until a success for <term>independent and 
+        identically distributed (iid)</term> Bernoulli random variables. In this case, the 
+        <em>independence</em> aspect just means the individuals in the example don't affect 
+        each other, and <em>identical</em> means they each have the same probability of success.
+      </p>
+
+      <p>
+        The geometric distribution from <xref ref="ex-wait-for-deductible"/> is shown in 
+        <xref ref="fig-geometric-dist-70"/>. In general, the probabilities for a geometric 
+        distribution decrease <term>exponentially</term> fast.
+      </p>
 
       <figure xml:id="fig-geometric-dist-70">
-        <caption>Geometric distribution with p = 0.70</caption>
+        <caption>
+          The geometric distribution when the probability of success is <m>p = 0.7</m>
+        </caption>
         <image source="ch_distributions/figures/geometricDist70"/>
       </figure>
+
+      <p>
+        While this text will not derive the formulas for the mean (expected) number of trials 
+        needed to find the first success or the standard deviation or variance of this 
+        distribution, we present general formulas for each.
+      </p>
+
+      <blockquote>
+        <p>
+          <term>Geometric Distribution</term>
+        </p>
+        <p>
+          If the probability of a success in one trial is <m>p</m> and the probability of a 
+          failure is <m>1-p</m>, then the probability of finding the first success in the 
+          <m>n^{th}</m> trial is given by
+          <me>
+            (1-p)^{n-1}p
+          </me>
+          The mean (i.e. expected value), variance, and standard deviation of this wait time 
+          are given by
+          <md>
+            <mrow>\mu \amp = \frac{1}{p} \amp \sigma^2 \amp = \frac{1-p}{p^2} \amp 
+            \sigma \amp = \sqrt{\frac{1-p}{p^2}}</mrow>
+          </md>
+        </p>
+      </blockquote>
+
+      <p>
+        It is no accident that we use the symbol <m>\mu</m> for both the mean and expected 
+        value. The mean and the expected value are one and the same.
+      </p>
+
+      <p>
+        It takes, on average, <m>1/p</m> trials to get a success under the geometric 
+        distribution. This mathematical result is consistent with what we would expect 
+        intuitively. If the probability of a success is high (e.g. 0.8), then we don't 
+        usually wait very long for a success: <m>1/0.8 = 1.25</m> trials on average. If 
+        the probability of a success is low (e.g. 0.1), then we would expect to view many 
+        trials before we see a success: <m>1/0.1 = 10</m> trials.
+      </p>
+
+      <exercise>
+        <statement>
+          <p>
+            The probability that a particular case would not exceed their deductible is 
+            said to be 0.7. If we were to examine cases until we found one where the person 
+            did not hit her deductible, how many cases should we expect to check?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We would expect to see about <m>1 / 0.7 \approx 1.43</m> individuals to find 
+            the first success.
+          </p>
+        </solution>
+      </exercise>
+
+      <example xml:id="ex-insure-first-success-in-lt4">
+        <title>Finding probability of success within first 3 cases</title>
+        <statement>
+          <p>
+            What is the chance that we would find the first success within the first 3 cases?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            This is the chance it is the first (<m>n=1</m>), second (<m>n=2</m>), or third 
+            (<m>n=3</m>) case is the first success, which are three disjoint outcomes. Because 
+            the individuals in the sample are randomly sampled from a large population, they 
+            are independent. We compute the probability of each case and add the separate results:
+            <md>
+              <mrow>\amp P(n=1, 2, \text{ or }3)</mrow>
+              <mrow>\amp \quad = P(n=1)+P(n=2)+P(n=3)</mrow>
+              <mrow>\amp \quad = (0.3)^{1-1}(0.7) + (0.3)^{2-1}(0.7) + (0.3)^{3-1}(0.7)</mrow>
+              <mrow>\amp \quad = 0.973</mrow>
+            </md>
+            There is a probability of 0.973 that we would find a successful case within 3 cases.
+          </p>
+        </solution>
+      </example>
+
+      <exercise>
+        <statement>
+          <p>
+            Determine a more clever way to solve <xref ref="ex-insure-first-success-in-lt4"/>. 
+            Show that you get the same result.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            First find the probability of the complement: <m>P(\text{no success in first 3 trials}) 
+            = 0.3^3 = 0.027</m>. Next, compute one minus this probability: 
+            <m>1 - P(\text{no success in 3 trials}) = 1 - 0.027 = 0.973</m>.
+          </p>
+        </solution>
+      </exercise>
+
+      <example xml:id="ex-car-insure-08-draw-one">
+        <title>Expected draws for car insurance</title>
+        <statement>
+          <p>
+            Suppose a car insurer has determined that 88% of its drivers will not exceed their 
+            deductible in a given year. If someone at the company were to randomly draw driver 
+            files until they found one that had not exceeded their deductible, what is the 
+            expected number of drivers the insurance employee must check? What is the standard 
+            deviation of the number of driver files that must be drawn?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            In this example, a success is again when someone will not exceed the insurance 
+            deductible, which has probability <m>p = 0.88</m>. The expected number of people 
+            to be checked is <m>1 / p = 1 / 0.88 = 1.14</m> and the standard deviation is 
+            <m>\sqrt{(1-p)/p^2} = 0.39</m>.
+          </p>
+        </solution>
+      </example>
+
+      <exercise>
+        <statement>
+          <p>
+            Using the results from <xref ref="ex-car-insure-08-draw-one"/>, <m>\mu = 1.14</m> 
+            and <m>\sigma = 0.39</m>, would it be appropriate to use the normal model to find 
+            what proportion of experiments would end in 3 or fewer trials?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            No. The geometric distribution is always right skewed and can never be 
+            well-approximated by the normal model.
+          </p>
+        </solution>
+      </exercise>
+
+      <p>
+        The independence assumption is crucial to the geometric distribution's accurate 
+        description of a scenario. Mathematically, we can see that to construct the probability 
+        of the success on the <m>n^{th}</m> trial, we had to use the Multiplication Rule for 
+        Independent Processes. It is no simple task to generalize the geometric model for 
+        dependent trials.
+      </p>
     </subsection>
+
+    <exercises>
+      <title>Exercises</title>
+
+      <exercise xml:id="ex-is-it-bernoulli">
+        <title>Is it Bernoulli</title>
+        <statement>
+          <p>
+            Determine if each trial can be considered an independent Bernoulli trial for the 
+            following situations.
+          </p>
+          <p>
+            <ol marker="a.">
+              <li><p>Cards dealt in a hand of poker.</p></li>
+              <li><p>Outcome of each roll of a die.</p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-with-without-replacement">
+        <title>With and without replacement</title>
+        <statement>
+          <p>
+            In the following situations assume that half of the specified population is male 
+            and the other half is female.
+          </p>
+          <p>
+            <ol marker="a.">
+              <li>
+                <p>
+                  Suppose you're sampling from a room with 10 people. What is the probability 
+                  of sampling two females in a row when sampling with replacement? What is the 
+                  probability when sampling without replacement?
+                </p>
+              </li>
+              <li>
+                <p>
+                  Now suppose you're sampling from a stadium with 10,000 people. What is the 
+                  probability of sampling two females in a row when sampling with replacement? 
+                  What is the probability when sampling without replacement?
+                </p>
+              </li>
+              <li>
+                <p>
+                  We often treat individuals who are sampled from a large population as 
+                  independent. Using your findings from parts (a) and (b), explain whether or 
+                  not this assumption is reasonable.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-eye-color-geometric">
+        <title>Eye color, Part I</title>
+        <statement>
+          <p>
+            A husband and wife both have brown eyes but carry genes that make it possible for 
+            their children to have brown eyes (probability 0.75), blue eyes (0.125), or green 
+            eyes (0.125).
+          </p>
+          <p>
+            <ol marker="a.">
+              <li>
+                <p>
+                  What is the probability the first blue-eyed child they have is their third 
+                  child? Assume that the eye colors of the children are independent of each other.
+                </p>
+              </li>
+              <li>
+                <p>
+                  On average, how many children would such a pair of parents have before having 
+                  a blue-eyed child? What is the standard deviation of the number of children 
+                  they would expect to have until the first blue-eyed child?
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-defective-rate">
+        <title>Defective rate</title>
+        <statement>
+          <p>
+            A machine that produces a special type of transistor (a component of computers) 
+            has a 2% defective rate. The production is considered a random process where each 
+            transistor is independent of the others.
+          </p>
+          <p>
+            <ol marker="a.">
+              <li>
+                <p>
+                  What is the probability that the <m>10^{th}</m> transistor produced is the 
+                  first with a defect?
+                </p>
+              </li>
+              <li>
+                <p>
+                  What is the probability that the machine produces no defective transistors 
+                  in a batch of 100?
+                </p>
+              </li>
+              <li>
+                <p>
+                  On average, how many transistors would you expect to be produced before the 
+                  first with a defect? What is the standard deviation?
+                </p>
+              </li>
+              <li>
+                <p>
+                  Another machine that also produces transistors has a 5% defective rate where 
+                  each transistor is produced independent of the others. On average how many 
+                  transistors would you expect to be produced with this machine before the 
+                  first with a defect? What is the standard deviation?
+                </p>
+              </li>
+              <li>
+                <p>
+                  Based on your answers to parts (c) and (d), how does increasing the 
+                  probability of an event affect the mean and standard deviation of the wait 
+                  time until success?
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-bernoulli-mean-derivation">
+        <title>Bernoulli, the mean</title>
+        <statement>
+          <p>
+            Use the probability rules from Section 3.4 to derive the mean of a Bernoulli 
+            random variable, i.e. a random variable <m>X</m> that takes value 1 with 
+            probability <m>p</m> and value 0 with probability <m>1 - p</m>. That is, 
+            compute the expected value of a generic Bernoulli random variable.
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-bernoulli-sd-derivation">
+        <title>Bernoulli, the standard deviation</title>
+        <statement>
+          <p>
+            Use the probability rules from Section 3.4 to derive the standard deviation of a 
+            Bernoulli random variable, i.e. a random variable <m>X</m> that takes value 1 
+            with probability <m>p</m> and value 0 with probability <m>1 - p</m>. That is, 
+            compute the square root of the variance of a generic Bernoulli random variable.
+          </p>
+        </statement>
+      </exercise>
+    </exercises>
   </section>
 
   <!-- Section 4.3: Binomial distribution -->
