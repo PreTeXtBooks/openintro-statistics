@@ -3,8 +3,8 @@
 <publication>
   <!-- HTML-Specific Options -->
   <html>
-    <calculator model="scientific"/>
-    <index-page ref="index"/>
+    <calculator model="geogebra-graphing"/>
+    <index-page ref="frontmatter"/>
     <video privacy="yes"/>
   </html>
 </publication>

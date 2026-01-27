@@ -473,8 +473,8 @@
         Each row in the table represents a single loan. The formal name for a row is a 
         <term>case</term> or <term>observational unit</term>. The columns represent 
         characteristics, called <term>variables</term>, for each of the loans. For example, 
-        the first row represents a loan of <dollar/>22,000 with an interest rate of 10.90%, 
-        where the borrower is based in New Jersey (NJ) and has an income of <dollar/>59,000.
+        the first row represents a loan of $22,000 with an interest rate of 10.90%, 
+        where the borrower is based in New Jersey (NJ) and has an income of $59,000.
       </p>
 
       <table xml:id="table-loan50-df">

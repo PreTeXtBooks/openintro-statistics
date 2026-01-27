@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Data basics</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="OpenIntro Statistics">
+<meta property="book:author" content="David Diez">
+<meta property="book:author" content="Mine Çetinkaya-Rundel">
+<meta property="book:author" content="Christopher D Barr">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      $(document).trigger("runestone:mathjax-ready");
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body id="openintro-statistics" class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://www.openintro.org/" target="_blank"><img src="images/openintro-logo.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="openintro-statistics.html"><span class="title">OpenIntro Statistics:</span> <span class="subtitle">Fourth Edition</span></a></h1>
+<p class="byline">David Diez, Mine Çetinkaya-Rundel, Christopher D Barr</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-stents-strokes.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch-intro-to-data.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-sampling-principles.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-stents-strokes.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch-intro-to-data.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-sampling-principles.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement" class="internal">Acknowledgements</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-intro-to-data.html" data-scroll="ch-intro-to-data" class="internal"><span class="codenumber">1</span> <span class="title">Introduction to data</span></a><ul>
+<li><a href="sec-stents-strokes.html" data-scroll="sec-stents-strokes" class="internal">Case study: using stents to prevent strokes</a></li>
+<li><a href="sec-data-basics.html" data-scroll="sec-data-basics" class="active">Data basics</a></li>
+<li><a href="sec-sampling-principles.html" data-scroll="sec-sampling-principles" class="internal">Sampling principles and strategies</a></li>
+<li><a href="sec-experiments.html" data-scroll="sec-experiments" class="internal">Experiments</a></li>
+<li><a href="sec-review-exercises.html" data-scroll="sec-review-exercises" class="internal">Review exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-summarizing-data.html" data-scroll="ch-summarizing-data" class="internal"><span class="codenumber">2</span> <span class="title">Summarizing data</span></a><ul>
+<li><a href="sec-malaria-vaccine.html" data-scroll="sec-malaria-vaccine" class="internal">Case study: Malaria vaccine</a></li>
+<li><a href="sec-categorical-data.html" data-scroll="sec-categorical-data" class="internal">Considering categorical data</a></li>
+<li><a href="sec-numerical-data.html" data-scroll="sec-numerical-data" class="internal">Examining numerical data</a></li>
+<li><a href="sec-ch02-review.html" data-scroll="sec-ch02-review" class="internal">Review exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-probability.html" data-scroll="ch-probability" class="internal"><span class="codenumber">3</span> <span class="title">Probability</span></a><ul><li><a href="sec-probability-intro.html" data-scroll="sec-probability-intro" class="internal">Introduction to probability</a></li></ul>
+</li>
+<li class="link">
+<a href="ch-distributions.html" data-scroll="ch-distributions" class="internal"><span class="codenumber">4</span> <span class="title">Distributions of random variables</span></a><ul>
+<li><a href="sec-normal-dist.html" data-scroll="sec-normal-dist" class="internal">Normal distribution</a></li>
+<li><a href="sec-binomial-dist.html" data-scroll="sec-binomial-dist" class="internal">Binomial distribution</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-foundations-inference.html" data-scroll="ch-foundations-inference" class="internal"><span class="codenumber">5</span> <span class="title">Foundations for inference</span></a><ul><li><a href="sec-inference-intro.html" data-scroll="sec-inference-intro" class="internal">Introduction to statistical inference</a></li></ul>
+</li>
+<li class="link">
+<a href="ch-inference-props.html" data-scroll="ch-inference-props" class="internal"><span class="codenumber">6</span> <span class="title">Inference for categorical data</span></a><ul><li><a href="sec-one-prop.html" data-scroll="sec-one-prop" class="internal">Inference for a single proportion</a></li></ul>
+</li>
+<li class="link">
+<a href="ch-inference-means.html" data-scroll="ch-inference-means" class="internal"><span class="codenumber">7</span> <span class="title">Inference for numerical data</span></a><ul><li><a href="sec-one-mean.html" data-scroll="sec-one-mean" class="internal">Inference for a single mean</a></li></ul>
+</li>
+<li class="link">
+<a href="ch-simple-linear-regression.html" data-scroll="ch-simple-linear-regression" class="internal"><span class="codenumber">8</span> <span class="title">Introduction to linear regression</span></a><ul><li><a href="sec-line-best-fit.html" data-scroll="sec-line-best-fit" class="internal">Line fitting and residuals</a></li></ul>
+</li>
+<li class="link">
+<a href="ch-multiple-logistic-regression.html" data-scroll="ch-multiple-logistic-regression" class="internal"><span class="codenumber">9</span> <span class="title">Multiple and logistic regression</span></a><ul>
+<li><a href="sec-multiple-regression.html" data-scroll="sec-multiple-regression" class="internal">Multiple regression</a></li>
+<li><a href="sec-logistic-regression.html" data-scroll="sec-logistic-regression" class="internal">Logistic regression</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-data-sets.html" data-scroll="appendix-data-sets" class="internal"><span class="codenumber">A</span> <span class="title">Data Sets</span></a></li>
+<li class="link"><a href="appendix-tables.html" data-scroll="appendix-tables" class="internal"><span class="codenumber">B</span> <span class="title">Statistical Tables</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">C</span> <span class="title">Selected Solutions</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-data-basics"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.2</span> <span class="title">Data basics</span>
+</h2>
+<section class="introduction" id="introduction-3"><p id="p-37">Effective organization and description of data is a first step in most analyses. This section introduces the <em class="emphasis">data matrix</em> for organizing data as well as some terminology about different forms of data that will be used throughout this book.</p></section><section class="subsection" id="subsec-observations-variables"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.2.1</span> <span class="title">Observations, variables, and data matrices</span>
+</h3>
+<p id="p-38"><a href="" class="xref" data-knowl="./knowl/table-loan50-df.html" title="Table 1.2.1: Four rows from the loan50 data matrix">Table 1.2.1</a> displays rows 1, 2, 3, and 50 of a data set for 50 randomly sampled loans offered through Lending Club, which is a peer-to-peer lending company. These observations will be referred to as the <code class="code-inline tex2jax_ignore">loan50</code> data set.</p>
+<p id="p-39">Each row in the table represents a single loan. The formal name for a row is a <dfn class="terminology">case</dfn> or <dfn class="terminology">observational unit</dfn>. The columns represent characteristics, called <dfn class="terminology">variables</dfn>, for each of the loans. For example, the first row represents a loan of $22,000 with an interest rate of 10.90%, where the borrower is based in New Jersey (NJ) and has an income of $59,000.</p>
+<figure class="table table-like" id="table-loan50-df"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.2.1<span class="period">.</span></span><span class="space"> </span>Four rows from the <code class="code-inline tex2jax_ignore">loan50</code> data matrix</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b2 r0 l0 t0 lines"></th>
+<th scope="col" class="l m b2 r0 l0 t0 lines">loan_amount</th>
+<th scope="col" class="l m b2 r0 l0 t0 lines">interest_rate</th>
+<th scope="col" class="l m b2 r0 l0 t0 lines">term</th>
+<th scope="col" class="l m b2 r0 l0 t0 lines">grade</th>
+<th scope="col" class="l m b2 r0 l0 t0 lines">state</th>
+<th scope="col" class="l m b2 r0 l0 t0 lines">total_income</th>
+<th scope="col" class="l m b2 r0 l0 t0 lines">homeownership</th>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">22000</td>
+<td class="l m b0 r0 l0 t0 lines">10.90</td>
+<td class="l m b0 r0 l0 t0 lines">60.00</td>
+<td class="l m b0 r0 l0 t0 lines">B</td>
+<td class="l m b0 r0 l0 t0 lines">NJ</td>
+<td class="l m b0 r0 l0 t0 lines">59000.00</td>
+<td class="l m b0 r0 l0 t0 lines">rent</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">6000</td>
+<td class="l m b0 r0 l0 t0 lines">9.92</td>
+<td class="l m b0 r0 l0 t0 lines">36.00</td>
+<td class="l m b0 r0 l0 t0 lines">B</td>
+<td class="l m b0 r0 l0 t0 lines">CA</td>
+<td class="l m b0 r0 l0 t0 lines">60000.00</td>
+<td class="l m b0 r0 l0 t0 lines">rent</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">25000</td>
+<td class="l m b0 r0 l0 t0 lines">26.30</td>
+<td class="l m b0 r0 l0 t0 lines">36.00</td>
+<td class="l m b0 r0 l0 t0 lines">E</td>
+<td class="l m b0 r0 l0 t0 lines">SC</td>
+<td class="l m b0 r0 l0 t0 lines">75000.00</td>
+<td class="l m b0 r0 l0 t0 lines">mortgage</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\vdots\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\vdots\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\vdots\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\vdots\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\vdots\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\vdots\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\vdots\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\vdots\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">50</td>
+<td class="l m b0 r0 l0 t0 lines">15000</td>
+<td class="l m b0 r0 l0 t0 lines">6.08</td>
+<td class="l m b0 r0 l0 t0 lines">36.00</td>
+<td class="l m b0 r0 l0 t0 lines">A</td>
+<td class="l m b0 r0 l0 t0 lines">TX</td>
+<td class="l m b0 r0 l0 t0 lines">77500.00</td>
+<td class="l m b0 r0 l0 t0 lines">mortgage</td>
+</tr>
+</table></div></figure><article class="exercise exercise-like" id="guided-practice-loan50-first"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-guided-practice-loan50-first"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Reading data from a data matrix.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-guided-practice-loan50-first"><article class="exercise exercise-like"><p id="p-40">What is the grade of the first loan in <a href="" class="xref" data-knowl="./knowl/table-loan50-df.html" title="Table 1.2.1: Four rows from the loan50 data matrix">Table 1.2.1</a>? And what is the home ownership status of the borrower for that first loan?</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like"><p id="p-41">The loan's grade is B, and the borrower rents their residence.</p></div></div>
+</div></article></div>
+<p id="p-42">In practice, it is especially important to ask clarifying questions to ensure important aspects of the data are understood. For instance, it is always important to be sure we know what each variable means and the units of measurement. Descriptions of the <code class="code-inline tex2jax_ignore">loan50</code> variables are given in <a href="" class="xref" data-knowl="./knowl/table-loan50-variables.html" title="Table 1.2.3: Variables and their descriptions for the loan50 data set">Table 1.2.3</a>.</p>
+<figure class="table table-like" id="table-loan50-variables"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.2.3<span class="period">.</span></span><span class="space"> </span>Variables and their descriptions for the <code class="code-inline tex2jax_ignore">loan50</code> data set</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b2 r0 l0 t0 lines">variable</th>
+<th scope="col" class="l m b2 r0 l0 t0 lines">description</th>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">loan_amount</code></td>
+<td class="l m b0 r0 l0 t0 lines">Amount of the loan received, in US dollars.</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">interest_rate</code></td>
+<td class="l m b0 r0 l0 t0 lines">Interest rate on the loan, in an annual percentage.</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">term</code></td>
+<td class="l m b0 r0 l0 t0 lines">The length of the loan, which is always set as a whole number of months.</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">grade</code></td>
+<td class="l m b0 r0 l0 t0 lines">Loan grade, which takes values A through G and represents the quality of the loan and its likelihood of being repaid.</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">state</code></td>
+<td class="l m b0 r0 l0 t0 lines">US state where the borrower resides.</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">total_income</code></td>
+<td class="l m b0 r0 l0 t0 lines">Borrower's total income, including any second income, in US dollars.</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">homeownership</code></td>
+<td class="l m b0 r0 l0 t0 lines">Indicates whether the person owns, owns but has a mortgage, or rents.</td>
+</tr>
+</table></div></figure><p id="p-43">The data in <a href="" class="xref" data-knowl="./knowl/table-loan50-df.html" title="Table 1.2.1: Four rows from the loan50 data matrix">Table 1.2.1</a> represent a <dfn class="terminology">data matrix</dfn>, which is a convenient and common way to organize data, especially if collecting data in a spreadsheet. Each row of a data matrix corresponds to a unique case (observational unit), and each column corresponds to a variable.</p>
+<p id="p-44">When recording data, use a data matrix unless you have a very good reason to use a different structure. This structure allows new cases to be added as rows or new variables as new columns.</p>
+<article class="exercise exercise-like" id="guided-practice-gradebook"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-guided-practice-gradebook"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Organizing a gradebook.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-guided-practice-gradebook"><article class="exercise exercise-like"><p id="p-45">The grades for assignments, quizzes, and exams in a course are often recorded in a gradebook that takes the form of a data matrix. How might you organize grade data using a data matrix?</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-3" id="solution-3"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-3"><div class="solution solution-like"><p id="p-46">There are multiple strategies that can be followed. One common strategy is to have each student represented by a row, and then add a column for each assignment, quiz, or exam. Under this setup, it is easy to review a single line to understand a student's grade history. There should also be columns to include student information, such as one column to list student names.</p></div></div>
+</div></article></div>
+<p id="p-47"> We consider data for 3,142 counties in the United States. The data includes each county's name, the state where it resides, its population in 2017, how its population changed from 2010 to 2017, poverty rate, and six additional characteristics.</p>
+<article class="exercise exercise-like" id="guided-practice-county-data-matrix"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-guided-practice-county-data-matrix"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Organizing county data.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-guided-practice-county-data-matrix"><article class="exercise exercise-like"><p id="p-48">How might the county data described above be organized in a data matrix?</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-4" id="solution-4"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-4"><div class="solution solution-like"><p id="p-49">Each county may be viewed as a case, and there are eleven pieces of information recorded for each case. A table with 3,142 rows and 11 columns could hold these data, where each row represents a county and each column represents a particular piece of information.</p></div></div>
+</div></article></div></section><section class="subsection" id="subsec-types-of-variables"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.2.2</span> <span class="title">Types of variables</span>
+</h3>
+<p id="p-50">Examine the <code class="code-inline tex2jax_ignore">unemp_rate</code>, <code class="code-inline tex2jax_ignore">pop</code>, <code class="code-inline tex2jax_ignore">state</code>, and <code class="code-inline tex2jax_ignore">median_edu</code> variables in the <code class="code-inline tex2jax_ignore">county</code> data set. Each of these variables is inherently different from the other three, yet some share certain characteristics.</p>
+<p id="p-51">First consider <code class="code-inline tex2jax_ignore">unemp_rate</code>, which is said to be a <dfn class="terminology">numerical</dfn> variable since it can take a wide range of numerical values, and it is sensible to add, subtract, or take averages with those values. On the other hand, we would not classify a variable reporting telephone area codes as numerical since the average, sum, and difference of area codes doesn't have any clear meaning.</p>
+<p id="p-52">The <code class="code-inline tex2jax_ignore">pop</code> variable is also numerical, although it seems to be a little different than <code class="code-inline tex2jax_ignore">unemp_rate</code>. This variable of the population count can only take whole non-negative numbers (0, 1, 2, …). For this reason, the population variable is said to be <dfn class="terminology">discrete</dfn> since it can only take numerical values with jumps. On the other hand, the unemployment rate variable is said to be <dfn class="terminology">continuous</dfn>.</p>
+<p id="p-53">The variable <code class="code-inline tex2jax_ignore">state</code> can take up to 51 values after accounting for Washington, DC: AL, AK, …, and WY. Because the responses themselves are categories, <code class="code-inline tex2jax_ignore">state</code> is called a <dfn class="terminology">categorical</dfn> variable, and the possible values are called the variable's <dfn class="terminology">levels</dfn>.</p>
+<p id="p-54">Finally, consider the <code class="code-inline tex2jax_ignore">median_edu</code> variable, which describes the median education level of county residents and takes values <code class="code-inline tex2jax_ignore">below_hs</code>, <code class="code-inline tex2jax_ignore">hs_diploma</code>, <code class="code-inline tex2jax_ignore">some_college</code>, or <code class="code-inline tex2jax_ignore">bachelors</code> in each county. This variable seems to be a hybrid: it is a categorical variable but the levels have a natural ordering. A variable with these properties is called an <dfn class="terminology">ordinal</dfn> variable, while a regular categorical variable without this type of special ordering is called a <dfn class="terminology">nominal</dfn> variable. To simplify analyses, any ordinal variable in this book will be treated as a nominal (unordered) categorical variable.</p>
+<figure class="figure figure-like" id="fig-variable-types"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="ch_intro_to_data/figures/variables.png" class="contained" alt='A tree diagram showing "all variables" at the top, branching into "numeric" and "categorical". The "numeric" branch splits into "continuous" and "discrete", while the "categorical" branch splits into "nominal (unordered categorical)" and "ordinal (ordered categorical)".'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.2.6<span class="period">.</span></span><span class="space"> </span>Breakdown of variables into their respective types</figcaption></figure><article class="example example-like" id="example-classify-variables"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-classify-variables"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Classifying variables by type.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-classify-variables"><article class="example example-like"><p id="p-55">Data were collected about students in a statistics course. Three variables were recorded for each student: number of siblings, student height, and whether the student had previously taken a statistics course. Classify each of the variables as continuous numerical, discrete numerical, or categorical.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-5" id="solution-5"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-5"><div class="solution solution-like"><p id="p-56">The number of siblings and student height represent numerical variables. Because the number of siblings is a count, it is discrete. Height varies continuously, so it is a continuous numerical variable. The last variable classifies students into two categories—those who have and those who have not taken a statistics course—which makes this variable categorical.</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="guided-practice-migraine-variables"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-guided-practice-migraine-variables"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Classifying experiment variables.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-guided-practice-migraine-variables"><article class="exercise exercise-like"><p id="p-57">An experiment is evaluating the effectiveness of a new drug in treating migraines. A <code class="code-inline tex2jax_ignore">group</code> variable is used to indicate the experiment group for each patient: treatment or control. The <code class="code-inline tex2jax_ignore">num_migraines</code> variable represents the number of migraines the patient experienced during a 3-month period. Classify each variable as either numerical or categorical.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-6" id="solution-6"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-6"><div class="solution solution-like"><p id="p-58">The <code class="code-inline tex2jax_ignore">group</code> variable can take just one of two group names, making it categorical. The <code class="code-inline tex2jax_ignore">num_migraines</code> variable describes a count of the number of migraines, which is an outcome where basic arithmetic is sensible, which means this is numerical outcome; more specifically, since it represents a count, <code class="code-inline tex2jax_ignore">num_migraines</code> is a discrete numerical variable.</p></div></div>
+</div></article></div></section><section class="subsection" id="subsec-relationships-between-variables"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.2.3</span> <span class="title">Relationships between variables</span>
+</h3>
+<p id="p-59">Many analyses are motivated by a researcher looking for a relationship between two or more variables. A social scientist may like to answer some of the following questions:</p>
+<ol id="p-60" class="decimal">
+<li id="li-13"><p id="p-61">If homeownership is lower than the national average in one county, will the percent of multi-unit structures in that county tend to be above or below the national average?</p></li>
+<li id="li-14"><p id="p-62">Does a higher than average increase in county population tend to correspond to counties with higher or lower median household incomes?</p></li>
+<li id="li-15"><p id="p-63">How useful a predictor is median education level for the median household income for US counties?</p></li>
+</ol>
+<p id="p-64">To answer these questions, data must be collected, such as the <code class="code-inline tex2jax_ignore">county</code> data set. Examining summary statistics could provide insights for each of the three questions about counties. Additionally, graphs can be used to visually explore data.</p>
+<p id="p-65"><dfn class="terminology">Scatterplots</dfn> are one type of graph used to study the relationship between two numerical variables. A scatterplot comparing the variables <code class="code-inline tex2jax_ignore">homeownership</code> and <code class="code-inline tex2jax_ignore">multi_unit</code> (the percent of units in multi-unit structures such as apartments and condos) shows that counties with a higher rate of multi-units tend to have lower homeownership rates. We might brainstorm as to why this relationship exists and investigate each idea to determine which are the most reasonable explanations.</p>
+<p id="p-66">The multi-unit and homeownership rates are said to be associated because the plot shows a discernible pattern. When two variables show some connection with one another, they are called <dfn class="terminology">associated</dfn> variables. Associated variables can also be called <dfn class="terminology">dependent</dfn> variables and vice-versa.</p></section><section class="exercises" id="exercises-2"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">1.2.4</span> <span class="title">Exercises</span>
+</h3>
+<section class="introduction" id="introduction-4"><p id="p-67">Additional exercises for this section would be included here, converted from the <code class="code-inline tex2jax_ignore">data_basics.tex</code> file in the original LaTeX source.</p></section></section></section></div></main>
+</div>
+</body>
+</html>
