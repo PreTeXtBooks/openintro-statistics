@@ -4105,6 +4105,240 @@ var ptx_lunr_docs = [
   "body": " Chapter 5 Review Exercises  Additional exercises for practicing the concepts covered in this chapter are available in the accompanying exercise materials. These exercises cover parameter identification, point estimates, confidence intervals, and hypothesis testing for proportions.  "
 },
 {
+  "id": "sec-one-sample-t",
+  "level": "1",
+  "url": "sec-one-sample-t.html",
+  "type": "Section",
+  "number": "6.1",
+  "title": "One-Sample Means with the <span class=\"process-math\">\\(t\\)<\/span>-Distribution",
+  "body": " One-Sample Means with the -Distribution   Similar to how we can model the behavior of the sample proportion using a normal distribution, the sample mean can also be modeled using a normal distribution when certain conditions are met. However, we'll soon learn that a new distribution, called the t-distribution , tends to be more useful when working with the sample mean. We'll first learn about this new distribution, then we'll use it to construct confidence intervals and conduct hypothesis tests for the mean.    The Sampling Distribution of  The sample mean tends to follow a normal distribution centered at the population mean when certain conditions are met. Additionally, we can compute a standard error for the sample mean using the population standard deviation and the sample size .   Central Limit Theorem for the Sample Mean   When we collect a sufficiently large sample of independent observations from a population with mean and standard deviation , the sampling distribution of will be nearly normal with:     Before diving into confidence intervals and hypothesis tests using , we first need to cover two topics:   When we modeled using the normal distribution, certain conditions had to be satisfied. The conditions for working with are a little more complex.  The standard error is dependent on the population standard deviation . However, we rarely know , and instead we must estimate it. Because this estimation is itself imperfect, we use a new distribution called the t-distribution to account for this additional uncertainty.     Evaluating Conditions for Modeling  Two conditions are required to apply the Central Limit Theorem for a sample mean :   Independence: The sample observations must be independent. This is typically satisfied if the data come from a simple random sample and the sample size is less than 10% of the population.  Normality: The population distribution should be normal or the sample size should be large ( is a common guideline). For smaller samples, we can check normality using a normal probability plot or histogram.    When examining a sample, the normality condition is satisfied if:   The sample shows no clear outliers and little skewness, OR  The sample size is at least 30 and there are no particularly extreme outliers.      Introducing the -Distribution  When we don't know the population standard deviation (which is nearly always the case), we must estimate it using the sample standard deviation . This introduces additional uncertainty, especially for small samples. The t-distribution accounts for this extra variability.    The t-distribution is a bell-shaped distribution centered at zero, similar to the standard normal distribution, but with thicker tails. The exact form of the t-distribution depends on the degrees of freedom (df) . For inference with a single sample mean, .    Key properties of the t-distribution:   It is symmetric and bell-shaped, centered at 0.  It has thicker tails than the normal distribution, meaning more probability in the extremes.  As the degrees of freedom increase, the t-distribution approaches the normal distribution.  For , the t-distribution is nearly indistinguishable from the normal distribution.     When the population standard deviation is unknown and estimated by the sample standard deviation , the standard error of the mean is:       One-Sample -Confidence Intervals  A confidence interval for a population mean based on a sample of size with sample mean and sample standard deviation is given by:   Here, is the critical value from the t-distribution with degrees of freedom that corresponds to the desired confidence level.   One-Sample -Confidence Interval   Prepare  Identify the sample mean , sample standard deviation , and sample size . Determine the desired confidence level.    Check  Verify that observations are independent and that the sample size is appropriate for the distribution of the data (check for extreme outliers or strong skewness).    Calculate  Compute and . Find the appropriate value and construct the confidence interval .    Conclude  Interpret the confidence interval in the context of the problem.      One-Sample -Test  To test a hypothesis about a population mean , we use the one-sample t-test . The test statistic is:   where is the null value (the value of under the null hypothesis). This test statistic follows a t-distribution with when the null hypothesis is true and conditions are met.   One-Sample -Test   Prepare  State the hypotheses, identify , , , and the significance level .    Check  Verify independence and normality conditions.    Calculate  Compute the t-statistic and find the p-value using the t-distribution with .    Conclude  Make a decision by comparing the p-value to and interpret in context.     "
+},
+{
+  "id": "p-1179",
+  "level": "2",
+  "url": "sec-one-sample-t.html#p-1179",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "t-distribution "
+},
+{
+  "id": "thm-clt-mean",
+  "level": "2",
+  "url": "sec-one-sample-t.html#thm-clt-mean",
+  "type": "Theorem",
+  "number": "6.1.1",
+  "title": "Central Limit Theorem for the Sample Mean.",
+  "body": " Central Limit Theorem for the Sample Mean   When we collect a sufficiently large sample of independent observations from a population with mean and standard deviation , the sampling distribution of will be nearly normal with:    "
+},
+{
+  "id": "p-1185",
+  "level": "2",
+  "url": "sec-one-sample-t.html#p-1185",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "t-distribution "
+},
+{
+  "id": "def-t-distribution",
+  "level": "2",
+  "url": "sec-one-sample-t.html#def-t-distribution",
+  "type": "Definition",
+  "number": "6.1.2",
+  "title": "",
+  "body": "  The t-distribution is a bell-shaped distribution centered at zero, similar to the standard normal distribution, but with thicker tails. The exact form of the t-distribution depends on the degrees of freedom (df) . For inference with a single sample mean, .   "
+},
+{
+  "id": "def-standard-error-mean",
+  "level": "2",
+  "url": "sec-one-sample-t.html#def-standard-error-mean",
+  "type": "Definition",
+  "number": "6.1.3",
+  "title": "",
+  "body": "  When the population standard deviation is unknown and estimated by the sample standard deviation , the standard error of the mean is:    "
+},
+{
+  "id": "p-1195",
+  "level": "2",
+  "url": "sec-one-sample-t.html#p-1195",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "one-sample t-test "
+},
+{
+  "id": "sec-paired-data",
+  "level": "1",
+  "url": "sec-paired-data.html",
+  "type": "Section",
+  "number": "6.2",
+  "title": "Paired Data",
+  "body": " Paired Data   Sometimes data naturally come in pairs. For example, we might measure blood pressure before and after treatment for the same patients, or we might compare test scores for students who took both a pretest and a posttest. When data are paired, we analyze the differences within each pair rather than treating the two groups as independent.    Paired Observations and Samples     Paired data represent two sets of observations that are collected on the same units or on units that are meaningfully connected. In a paired analysis, we are interested in the difference for each pair of observations.    Examples of paired data:   Blood pressure measurements before and after medication for the same patients  Pre-test and post-test scores for the same students  Measurements on twins or siblings  Prices of textbooks at two different stores for the same titles    The key to identifying paired data: Can we meaningfully connect one observation in the first dataset to exactly one observation in the second dataset?     Inference for Paired Data  To analyze paired data, we:   Calculate the difference for each pair:  Treat these differences as a single sample  Apply one-sample t-procedures to the differences   Let represent the mean of the differences and represent the standard deviation of the differences. Then:   Confidence interval for :   Test statistic:  (when testing )   The conditions for paired t-procedures are the same as for one-sample t-procedures, applied to the differences:   Independence: The pairs must be independent of each other.  Normality: The differences should come from a nearly normal distribution, or the sample size should be large enough.    "
+},
+{
+  "id": "def-paired-data",
+  "level": "2",
+  "url": "sec-paired-data.html#def-paired-data",
+  "type": "Definition",
+  "number": "6.2.1",
+  "title": "",
+  "body": "   Paired data represent two sets of observations that are collected on the same units or on units that are meaningfully connected. In a paired analysis, we are interested in the difference for each pair of observations.   "
+},
+{
+  "id": "sec-difference-two-means",
+  "level": "1",
+  "url": "sec-difference-two-means.html",
+  "type": "Section",
+  "number": "6.3",
+  "title": "Difference of Two Means",
+  "body": " Difference of Two Means   We now consider a different scenario: comparing means from two independent groups. For example, we might compare average exam scores between students who attended review sessions and those who didn't, or compare average recovery times between patients receiving two different treatments.    Comparing Two Independent Means  When comparing two independent groups, we examine the difference in sample means: . This quantity estimates the difference in population means: .    For inference on the difference of two means, the following conditions should be met:   Independence: Within each group, observations must be independent. The two groups must also be independent of each other.  Normality: The data in each group should come from a nearly normal distribution, or each sample size should be sufficiently large.       Two-Sample -Procedures  The standard error for the difference of two independent sample means is:   The degrees of freedom calculation for the two-sample t-test is complex. Most software uses the Welch-Satterthwaite approximation. A conservative approach is to use .   Confidence interval for :     Test statistic for :     Two-Sample -Procedures   Prepare  Identify summary statistics for both groups and determine the parameter of interest.    Check  Verify independence within and between groups, and check the normality condition for each group.    Calculate  Compute the standard error and degrees of freedom. Calculate the confidence interval or test statistic as appropriate.    Conclude  Interpret the results in context.      Pooled Standard Deviation (Optional)  When we have strong reason to believe that the two populations have equal variances, we can use a pooled standard deviation to get a more precise estimate. The pooled standard deviation is:   The standard error becomes and the degrees of freedom is . However, this approach should only be used when the equal variance assumption is reasonable.   "
+},
+{
+  "id": "def-two-sample-conditions",
+  "level": "2",
+  "url": "sec-difference-two-means.html#def-two-sample-conditions",
+  "type": "Definition",
+  "number": "6.3.1",
+  "title": "",
+  "body": "  For inference on the difference of two means, the following conditions should be met:   Independence: Within each group, observations must be independent. The two groups must also be independent of each other.  Normality: The data in each group should come from a nearly normal distribution, or each sample size should be sufficiently large.    "
+},
+{
+  "id": "p-1219",
+  "level": "2",
+  "url": "sec-difference-two-means.html#p-1219",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "pooled standard deviation "
+},
+{
+  "id": "sec-power-calculations",
+  "level": "1",
+  "url": "sec-power-calculations.html",
+  "type": "Section",
+  "number": "6.4",
+  "title": "Power Calculations for a Difference of Means",
+  "body": " Power Calculations for a Difference of Means   When planning a study, researchers often want to know: How large should my sample be to detect a meaningful effect? This question relates to the concept of statistical power .    Understanding Statistical Power    The power of a hypothesis test is the probability that the test correctly rejects a false null hypothesis. In other words, it's the probability of detecting an effect when one truly exists.     Power depends on several factors:   The significance level  (lower means lower power)  The effect size (larger effects are easier to detect)  The sample size (larger samples provide more power)  The variability in the data (less variability means more power)   Researchers typically aim for a power of 0.80 or higher, meaning an 80% chance of detecting a true effect.    Sample Size Determination  Power calculations can be used to determine the necessary sample size for a study. The process involves specifying:   The desired significance level  The desired power (typically 0.80)  The minimum effect size you want to detect  An estimate of the population standard deviation   With these inputs, statistical software or formulas can calculate the required sample size for each group. Adequate planning using power calculations helps ensure studies are neither underpowered (unable to detect real effects) nor wastefully large.   "
+},
+{
+  "id": "p-1221",
+  "level": "2",
+  "url": "sec-power-calculations.html#p-1221",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "statistical power "
+},
+{
+  "id": "def-power",
+  "level": "2",
+  "url": "sec-power-calculations.html#def-power",
+  "type": "Definition",
+  "number": "6.4.1",
+  "title": "",
+  "body": "  The power of a hypothesis test is the probability that the test correctly rejects a false null hypothesis. In other words, it's the probability of detecting an effect when one truly exists.    "
+},
+{
+  "id": "sec-anova",
+  "level": "1",
+  "url": "sec-anova.html",
+  "type": "Section",
+  "number": "6.5",
+  "title": "Comparing Many Means with ANOVA",
+  "body": " Comparing Many Means with ANOVA   Sometimes we want to compare means across more than two groups. For example, we might want to compare average test scores across four different teaching methods, or compare recovery times across three different treatments. When comparing multiple groups, we use Analysis of Variance (ANOVA) .    ANOVA Hypotheses and Conditions  Consider comparing groups with means . The hypotheses for ANOVA are:   : The mean outcome is the same across all groups.  : At least one mean is different from the others.      Conditions for ANOVA:    Independence: Observations must be independent within and across groups.  Normality: The data within each group should be approximately normal.  Equal variance: The variability should be roughly constant across groups.       The -Statistic  ANOVA uses the F-statistic to compare group means. The F-statistic is a ratio of two measures of variability:   where MSG is the mean square between groups and MSE is the mean square error (within groups).   If the null hypothesis is true (all means equal), we expect .  If at least one mean is different, we expect .  Large values of provide evidence against .     The F-distribution is a right-skewed distribution (starting at 0) used for ANOVA. It has two degrees of freedom parameters:   (degrees of freedom for groups, where is the number of groups)  (degrees of freedom for error, where is the total sample size)       The ANOVA Table  ANOVA results are typically summarized in an ANOVA table :   ANOVA Table Structure:     Source  Sum of Squares  df  Mean Square  F  p-value    Groups  SSG        Error  SSE        Total  SST          Multiple Comparisons and What ANOVA Doesn't Tell Us  When ANOVA gives a significant result, it tells us that at least one mean is different, but it doesn't tell us which means differ. To determine which specific groups differ, we need to conduct multiple comparisons or post-hoc tests .    Multiple Testing Problem: When conducting many pairwise comparisons, the chance of making at least one Type 1 error increases. Methods like the Bonferroni correction or Tukey's HSD help control this error rate.   A simple approach is the Bonferroni correction : If conducting tests, use as the significance level for each individual test to maintain an overall significance level of approximately .   "
+},
+{
+  "id": "p-1227",
+  "level": "2",
+  "url": "sec-anova.html#p-1227",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Analysis of Variance (ANOVA) "
+},
+{
+  "id": "def-anova-conditions",
+  "level": "2",
+  "url": "sec-anova.html#def-anova-conditions",
+  "type": "Definition",
+  "number": "6.5.1",
+  "title": "",
+  "body": "   Conditions for ANOVA:    Independence: Observations must be independent within and across groups.  Normality: The data within each group should be approximately normal.  Equal variance: The variability should be roughly constant across groups.    "
+},
+{
+  "id": "p-1230",
+  "level": "2",
+  "url": "sec-anova.html#p-1230",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "F-statistic "
+},
+{
+  "id": "p-1231",
+  "level": "2",
+  "url": "sec-anova.html#p-1231",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "mean square between groups mean square error "
+},
+{
+  "id": "def-f-distribution",
+  "level": "2",
+  "url": "sec-anova.html#def-f-distribution",
+  "type": "Definition",
+  "number": "6.5.2",
+  "title": "",
+  "body": "  The F-distribution is a right-skewed distribution (starting at 0) used for ANOVA. It has two degrees of freedom parameters:   (degrees of freedom for groups, where is the number of groups)  (degrees of freedom for error, where is the total sample size)    "
+},
+{
+  "id": "p-1233",
+  "level": "2",
+  "url": "sec-anova.html#p-1233",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "ANOVA table "
+},
+{
+  "id": "p-1235",
+  "level": "2",
+  "url": "sec-anova.html#p-1235",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "multiple comparisons post-hoc tests "
+},
+{
+  "id": "p-1236",
+  "level": "2",
+  "url": "sec-anova.html#p-1236",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Bonferroni correction Tukey's HSD "
+},
+{
+  "id": "p-1237",
+  "level": "2",
+  "url": "sec-anova.html#p-1237",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Bonferroni correction "
+},
+{
+  "id": "sec-ch06-review",
+  "level": "1",
+  "url": "sec-ch06-review.html",
+  "type": "Section",
+  "number": "6.6",
+  "title": "Chapter 6 Review Exercises",
+  "body": " Chapter 6 Review Exercises  This chapter introduced inference for numerical data using the t-distribution. Key concepts include:   The t-distribution and its properties  One-sample t-confidence intervals and hypothesis tests  Paired data analysis using differences  Two-sample t-procedures for comparing independent groups  Statistical power and sample size determination  ANOVA for comparing three or more means   Additional exercises for practicing these concepts are available in the accompanying exercise materials.  "
+},
+{
   "id": "appendix-data-sets",
   "level": "1",
   "url": "appendix-data-sets.html",
