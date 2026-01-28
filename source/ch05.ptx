@@ -19,6 +19,7 @@
     </p>
   </introduction>
   
+  <!-- Section 5.1: Point estimates and sampling variability -->
   <section xml:id="sec-point-estimates">
     <title>Point Estimates and Sampling Variability</title>
     
@@ -184,6 +185,7 @@
     </subsection>
   </section>
   
+  <!-- Section 5.2: Confidence intervals for a proportion -->
   <section xml:id="sec-confidence-intervals">
     <title>Confidence Intervals for a Proportion</title>
     
@@ -347,6 +349,7 @@
     </subsection>
   </section>
   
+  <!-- Section 5.3: Hypothesis testing for a proportion -->
   <section xml:id="sec-hypothesis-testing">
     <title>Hypothesis Testing for a Proportion</title>
     
@@ -541,6 +544,7 @@
     </subsection>
   </section>
   
+  <!-- Section 5.4: Chapter 5 review exercises -->
   <section xml:id="sec-ch05-review">
     <title>Chapter 5 Review Exercises</title>
     
