@@ -69,30 +69,115 @@
     </subsection>
     
     <subsection xml:id="subsec-conditions-for-xbar">
-      <title>Evaluating Conditions for Modeling <m>\bar{x}</m></title>
+      <title>Evaluating the Two Conditions Required for Modeling <m>\bar{x}</m></title>
       
       <p>
         Two conditions are required to apply the Central Limit Theorem for a sample mean <m>\bar{x}</m>:
       </p>
       
-      <ol>
-        <li><alert>Independence:</alert> The sample observations must be independent. This is
-            typically satisfied if the data come from a simple random sample and the sample size
-            is less than 10% of the population.</li>
-        <li><alert>Normality:</alert> The population distribution should be normal or the sample
-            size should be large (<m>n \geq 30</m> is a common guideline). For smaller samples,
-            we can check normality using a normal probability plot or histogram.</li>
-      </ol>
+      <dl>
+        <li>
+          <title>Independence</title>
+          <p>
+            The sample observations must be independent. The most common way to satisfy this
+            condition is when the sample is a simple random sample from the population. If the
+            data come from a random process, analogous to rolling a die, this would also satisfy
+            the independence condition.
+          </p>
+        </li>
+        <li>
+          <title>Normality</title>
+          <p>
+            When a sample is small, we also require that the sample observations come from a
+            normally distributed population. We can relax this condition more and more for larger
+            and larger sample sizes. This condition is obviously vague, making it difficult to
+            evaluate, so next we introduce a couple rules of thumb to make checking this
+            condition easier.
+          </p>
+        </li>
+      </dl>
       
-      <important>
+      <assemblage>
+        <title>Rules of Thumb: How to Perform the Normality Check</title>
         <p>
-          When examining a sample, the normality condition is satisfied if:
+          There is no perfect way to check the normality condition, so instead we use two rules of thumb:
         </p>
-        <ul>
-          <li>The sample shows no clear outliers and little skewness, OR</li>
-          <li>The sample size is at least 30 and there are no particularly extreme outliers.</li>
-        </ul>
-      </important>
+        <dl>
+          <li>
+            <title><m>n &lt; 30</m></title>
+            <p>
+              If the sample size <m>n</m> is less than 30 and there are no clear outliers in the
+              data, then we typically assume the data come from a nearly normal distribution to
+              satisfy the condition.
+            </p>
+          </li>
+          <li>
+            <title><m>n \geq 30</m></title>
+            <p>
+              If the sample size <m>n</m> is at least 30 and there are no <em>particularly extreme</em>
+              outliers, then we typically assume the sampling distribution of <m>\bar{x}</m> is
+              nearly normal, even if the underlying distribution of individual observations is not.
+            </p>
+          </li>
+        </dl>
+      </assemblage>
+      
+      <p>
+        In this first course in statistics, you aren't expected to develop perfect judgement on
+        the normality condition. However, you are expected to be able to handle clear cut cases
+        based on the rules of thumb.
+      </p>
+      
+      <example xml:id="ex-checking-conditions-samples">
+        <statement>
+          <p>
+            Consider the following two plots that come from simple random samples from different
+            populations. Their sample sizes are <m>n_1 = 15</m> and <m>n_2 = 50</m>.
+          </p>
+          <p>
+            [Sample 1: Histogram with values from 0 to 7, frequencies: 2, 1, 4, 3, 2, 0, 3]
+          </p>
+          <p>
+            [Sample 2: Histogram with values from 0 to 22, most data near zero with half the
+            observations in the bin from 0 to 1, and one observation around 21-22]
+          </p>
+          <p>
+            Are the independence and normality conditions met in each case?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Each sample is from a simple random sample of its respective population, so the
+            independence condition is satisfied. Let's next check the normality condition for
+            each using the rule of thumb.
+          </p>
+          <p>
+            The first sample has fewer than 30 observations, so we are watching for any clear
+            outliers. None are present; while there is a small gap in the histogram between 5
+            and 6, this gap is small and 20% of the observations in this small sample are
+            represented in that far right bar of the histogram, so we can hardly call these
+            clear outliers. With no clear outliers, the normality condition is reasonably met.
+          </p>
+          <p>
+            The second sample has a sample size greater than 30 and includes an outlier that
+            appears to be roughly 5 times further from the center of the distribution than the
+            next furthest observation. This is an example of a particularly extreme outlier, so
+            the normality condition would not be satisfied.
+          </p>
+        </solution>
+      </example>
+      
+      <p>
+        In practice, it's typical to also do a mental check to evaluate whether we have reason
+        to believe the underlying population would have moderate skew (if <m>n &lt; 30</m>) or
+        have particularly extreme outliers (<m>n \geq 30</m>) beyond what we observe in the data.
+        For example, consider the number of followers for each individual account on Twitter,
+        and then imagine this distribution. The large majority of accounts have built up a couple
+        thousand followers or fewer, while a relatively tiny fraction have amassed tens of
+        millions of followers, meaning the distribution is extremely skewed. When we know the
+        data come from such an extremely skewed distribution, it takes some effort to understand
+        what sample size is large enough for the normality condition to be satisfied.
+      </p>
     </subsection>
     
     <subsection xml:id="subsec-introducing-t-dist">
