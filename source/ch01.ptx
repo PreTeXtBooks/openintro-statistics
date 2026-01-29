@@ -1453,7 +1453,7 @@
       </ol>
       
       <p>
-        Each research question refers to a target <term>population</term>. In the first question, the target population is all swordfish in the Atlantic ocean, and each fish represents a case. Often times, it is too expensive to collect data for every case in a population. Instead, a sample is taken. A <term>sample</term> represents a subset of the cases and is often a small fraction of the population. For instance, 60 swordfish (or some other number) in the population might be selected, and this sample data may be used to provide an estimate of the population average and answer the research question.
+        Each research question refers to a target <term>population</term>. In the first question, the target population is all swordfish in the Atlantic Ocean, and each fish represents a case. Often times, it is too expensive to collect data for every case in a population. Instead, a sample is taken. A <term>sample</term> represents a subset of the cases and is often a small fraction of the population. For instance, 60 swordfish (or some other number) in the population might be selected, and this sample data may be used to provide an estimate of the population average and answer the research question.
       </p>
 
       <exercise xml:id="gp-population-identification" divisional="hint">
@@ -1465,7 +1465,7 @@
         </statement>
         <solution>
           <p>
-            (2) The first question is only relevant to students who complete their degree; the average cannot be computed using a student who never finished her degree. Thus, only Duke undergrads who graduated in the last five years represent cases in the population under consideration. Each such student is an individual case. (3) A person with severe heart disease represents a case. The population includes all people with severe heart disease.
+            (2) This question is only relevant to students who complete their degree; the average cannot be computed using a student who never finished her degree. Thus, only Duke undergrads who graduated in the last five years represent cases in the population under consideration. Each such student is an individual case. (3) A person with severe heart disease represents a case. The population includes all people with severe heart disease.
           </p>
         </solution>
       </exercise>
@@ -1558,7 +1558,7 @@
       </figure>
 
       <p>
-        If someone was permitted to pick and choose exactly which graduates were included in the sample, it is entirely possible that the sample could be skewed to that person's interests, which may be entirely unintentional. This introduces <term>bias</term> into a sample. Sampling randomly helps resolve this problem. The most basic random sample is called a <term>simple random sample</term>, and which is equivalent to using a raffle to select cases. This means that each case in the population has an equal chance of being included and there is no implied connection between the cases in the sample.
+        If someone was permitted to pick and choose exactly which graduates were included in the sample, it is entirely possible that the sample could be skewed to that person's interests, which may be entirely unintentional. This introduces <term>bias</term> into a sample. Sampling randomly helps resolve this problem. The most basic random sample is called a <term>simple random sample</term>, which is equivalent to using a raffle to select cases. This means that each case in the population has an equal chance of being included and there is no implied connection between the cases in the sample.
       </p>
 
       <p>
@@ -1567,7 +1567,7 @@
 
       <figure xml:id="fig-survey-sample">
         <caption>
-          Due to the possibility of non-response, surveys studies may only reach a certain group within the population. It is difficult, and often times impossible, to completely fix this problem.
+          Due to the possibility of non-response, survey studies may only reach a certain group within the population. It is difficult, and often times impossible, to completely fix this problem.
         </caption>
         <image source="ch_intro_to_data/figures/popToSample/surveySample.pdf" width="55%">
           <description>Graphic showing a population of interest with a smaller circle representing the population actually sampled, from which a sample is drawn.</description>
@@ -1696,7 +1696,7 @@
 
       <figure xml:id="fig-cluster-multistage">
         <caption>
-          Examples of cluster and multistage sampling. In the top panel, cluster sampling was used: data were binned into nine clusters, three of these clusters were sampled, and all observations within these three cluster were included in the sample. In the bottom panel, multistage sampling was used, which differs from cluster sampling only in that we randomly select a subset of each cluster to be included in the sample rather than measuring every case in each sampled cluster.
+          Examples of cluster and multistage sampling. In the top panel, cluster sampling was used: data were binned into nine clusters, three of these clusters were sampled, and all observations within these three clusters were included in the sample. In the bottom panel, multistage sampling was used, which differs from cluster sampling only in that we randomly select a subset of each cluster to be included in the sample rather than measuring every case in each sampled cluster.
         </caption>
         <image source="ch_intro_to_data/figures/samplingMethodsFigure/cluster_multistage.pdf" width="80%">
           <description>Two figures showing cluster sampling (top) with all observations from selected clusters, and multistage sampling (bottom) with random samples from within selected clusters.</description>
@@ -1720,8 +1720,7 @@
       </example>
     </subsection>
 
-
-        <exercises>
+    <exercises>
       <title>Exercises</title>
 
       <exercise xml:id="scope_airpoll">
