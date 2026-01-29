@@ -570,7 +570,7 @@
         </statement>
         <solution>
           <p>
-            If we examined the data carefully, we would see that some predictors are correlated. For instance, when we estimated the connection of the outcome <c>interest_rate</c> and predictor <c>bankruptcy</c> using simple linear regression, we were unable to control for other variables like whether the borrower had her income verified, the borrower's debt-to-income ratio, and other variables. That original model was constructed in a vacuum and did not consider the full context. When we include all of the variables, underlying and unintentional bias that was missed by these other variables is reduced or eliminated. Of course, bias can still exist from other confounding variables.
+            If we examined the data carefully, we would see that some predictors are correlated. For instance, when we estimated the connection of the outcome <c>interest_rate</c> and predictor <c>bankruptcy</c> using simple linear regression, we were unable to control for other variables like whether the borrower had their income verified, the borrower's debt-to-income ratio, and other variables. That original model was constructed in a vacuum and did not consider the full context. When we include all of the variables, underlying and unintentional bias that was missed by these other variables is reduced or eliminated. Of course, bias can still exist from other confounding variables.
           </p>
         </solution>
       </example>
@@ -587,7 +587,7 @@
         </statement>
         <solution>
           <p>
-            Many of the variables do take a value 0 for at least one data point, and for those variables, it is reasonable. However, one variable never takes a value of zero: <c>term</c>, which describes the length of the loan, in months. If <c>term</c> is set to zero, then the loan must be paid back immediately; the borrower must give the money back as soon as she receives it, which means it is not a real loan. Ultimately, the interpretation of the intercept in this setting is not insightful.
+            Many of the variables do take a value 0 for at least one data point, and for those variables, it is reasonable. However, one variable never takes a value of zero: <c>term</c>, which describes the length of the loan, in months. If <c>term</c> is set to zero, then the loan must be paid back immediately; the borrower must give the money back as soon as they receive it, which means it is not a real loan. Ultimately, the interpretation of the intercept in this setting is not insightful.
           </p>
         </solution>
       </exercise>
@@ -607,7 +607,7 @@
       <exercise xml:id="exer-compute-unadj-r2">
         <statement>
           <p>
-            The variance of the residuals for the model given in <xref ref="ex-loans-full-model-eq-w-coef"/> is 18.53, and the variance of the total price in all the auctions is 25.01. Calculate <m>R^2</m> for this model.
+            The variance of the residuals for the model given in <xref ref="ex-loans-full-model-eq-w-coef"/> is 18.53, and the variance of the total interest rate in all the loans is 25.01. Calculate <m>R^2</m> for this model.
           </p>
         </statement>
         <solution>
@@ -633,13 +633,13 @@
       </assemblage>
       
       <p>
-        Because <m>k</m> is never negative, the adjusted <m>R^2</m> will be smaller<mdash/>often times just a little smaller<mdash/>than the unadjusted <m>R^2</m>. The reasoning behind the adjusted <m>R^2</m> lies in the <term>degrees of freedom</term> associated with each variance, which is equal to <m>n - k - 1</m> for the multiple regression context. If we were to make predictions for <em>new data</em> using our current model, we would find that the unadjusted <m>R^2</m> would tend to be slightly overly optimistic, while the adjusted <m>R^2</m> formula helps correct this bias.
+        Because <m>k</m> is never negative, the adjusted <m>R^2</m> will be smaller<mdash/>oftentimes just a little smaller<mdash/>than the unadjusted <m>R^2</m>. The reasoning behind the adjusted <m>R^2</m> lies in the <term>degrees of freedom</term> associated with each variance, which is equal to <m>n - k - 1</m> for the multiple regression context. If we were to make predictions for <em>new data</em> using our current model, we would find that the unadjusted <m>R^2</m> would tend to be slightly overly optimistic, while the adjusted <m>R^2</m> formula helps correct this bias.
       </p>
       
       <exercise xml:id="exer-compute-adj-r2">
         <statement>
           <p>
-            There were <m>n=10000</m> auctions in the <c>loans</c> data set and <m>k=9</m> predictor variables in the model. Use <m>n</m>, <m>k</m>, and the variances from <xref ref="exer-compute-unadj-r2"/> to calculate <m>R_{adj}^2</m> for the interest rate model.
+            There were <m>n=10000</m> loans in the <c>loans</c> data set and <m>k=9</m> predictor variables in the model. Use <m>n</m>, <m>k</m>, and the variances from <xref ref="exer-compute-unadj-r2"/> to calculate <m>R_{adj}^2</m> for the interest rate model.
           </p>
         </statement>
         <solution>
@@ -663,7 +663,7 @@
       </exercise>
       
       <p>
-        Adjusted <m>R^2</m> could have been used in Chapter 7. However, when there is only <m>k = 1</m> predictors, adjusted <m>R^2</m> is very close to regular <m>R^2</m>, so this nuance isn't typically important when the model has only one predictor.
+        Adjusted <m>R^2</m> could have been used in Chapter 7. However, when there is only <m>k = 1</m> predictor, adjusted <m>R^2</m> is very close to regular <m>R^2</m>, so this nuance isn't typically important when the model has only one predictor.
       </p>
     </subsection>
   </section>
