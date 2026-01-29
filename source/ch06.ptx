@@ -323,114 +323,496 @@
   </section>
   
   <!-- Section 7.2: Difference of two proportions -->
-  <section xml:id="sec-difference-two-proportions">
-    <title>Difference of Two Proportions</title>
+  <section xml:id="differenceOfTwoProportions">
+    <title>Difference of two proportions</title>
     
     <introduction>
       <p>
-        We now consider a different scenario: comparing proportions from two independent groups.
-        For example, we might compare the proportion of patients who recover in a treatment group
-        versus a control group, or compare the proportion of voters supporting a candidate across
-        two different regions.
+        We would like to extend the methods from Section<nbsp/><xref ref="singleProportion"/> to apply confidence intervals and hypothesis tests to differences in population proportions: <m>p_1 - p_2</m>. In our investigations, we'll identify a reasonable point estimate of <m>p_1 - p_2</m> based on the sample, and you may have already guessed its form: <m>\hat{p}_1 - \hat{p}_2</m>. Next, we'll apply the same processes we used in the single-proportion context: we verify that the point estimate can be modeled using a normal distribution, we compute the estimate's standard error, and we apply our inferential framework.
       </p>
     </introduction>
     
-    <subsection xml:id="subsec-sampling-dist-diff-props">
-      <title>Sampling Distribution of a Difference of Proportions</title>
+    <subsection xml:id="subsec-sampling-dist-diff-two-props">
+      <title>Sampling distribution of the difference of two proportions</title>
       
       <p>
-        When we have two independent samples, we're often interested in the difference between
-        sample proportions: <m>\hat{p}_1 - \hat{p}_2</m>. This difference estimates the difference
-        in population proportions: <m>p_1 - p_2</m>.
+        Like with <m>\hat{p}</m>, the difference of two sample proportions <m>\hat{p}_1 - \hat{p}_2</m> can be modeled using a normal distribution when certain conditions are met. First, we require a broader independence condition, and secondly, the success-failure condition must be met by both groups.
       </p>
       
-      <theorem xml:id="thm-diff-proportions">
-        <title>Sampling Distribution of <m>\hat{p}_1 - \hat{p}_2</m></title>
-        <statement>
-          <p>
-            When the following conditions are satisfied, the sampling distribution of
-            <m>\hat{p}_1 - \hat{p}_2</m> is nearly normal with:
-          </p>
-          <md>
-            \text{Mean} = p_1 - p_2 \qquad SE = \sqrt{\frac{p_1(1-p_1)}{n_1} + \frac{p_2(1-p_2)}{n_2}}
-          </md>
-          <p>
-            <alert>Conditions:</alert>
-          </p>
-          <ol>
-            <li><alert>Independence:</alert> The data in each group must be independent, and the
-                two groups must be independent of each other.</li>
-            <li><alert>Success-failure condition:</alert> The success-failure condition must hold
-                for each sample: <m>n_1p_1 \geq 10</m>, <m>n_1(1-p_1) \geq 10</m>,
-                <m>n_2p_2 \geq 10</m>, and <m>n_2(1-p_2) \geq 10</m>.</li>
-          </ol>
-        </statement>
-      </theorem>
-    </subsection>
-    
-    <subsection xml:id="subsec-ci-diff-proportions">
-      <title>Confidence Interval for <m>p_1 - p_2</m></title>
-      
-      <p>
-        A confidence interval for the difference <m>p_1 - p_2</m> is:
-      </p>
-      
-      <md>
-        (\hat{p}_1 - \hat{p}_2) \pm z^* \times SE
-      </md>
-      
-      <p>
-        where the standard error is:
-      </p>
-      
-      <md>
-        SE = \sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1} + \frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}
-      </md>
-      
-      <p>
-        Note that we use the sample proportions <m>\hat{p}_1</m> and <m>\hat{p}_2</m> in the
-        standard error formula.
-      </p>
-    </subsection>
-    
-    <subsection xml:id="subsec-ht-diff-proportions">
-      <title>Hypothesis Test for <m>H_0: p_1 = p_2</m></title>
-      
-      <p>
-        When testing <m>H_0: p_1 = p_2</m> (or equivalently, <m>H_0: p_1 - p_2 = 0</m>), we use a
-        <term>pooled proportion</term> to compute the standard error.
-      </p>
-      
-      <definition xml:id="def-pooled-proportion">
-        <statement>
-          <p>
-            The <term>pooled proportion</term> is used when testing the null hypothesis that two
-            proportions are equal:
-          </p>
-          <md>
-            \hat{p}_{pool} = \frac{\text{total number of successes}}{\text{total number of observations}} = \frac{x_1 + x_2}{n_1 + n_2}
-          </md>
-          <p>
-            where <m>x_1</m> and <m>x_2</m> are the number of successes in each sample.
-          </p>
-        </statement>
-      </definition>
-      
-      <p>
-        The test statistic is:
-      </p>
-      
-      <md>
-        Z = \frac{(\hat{p}_1 - \hat{p}_2) - 0}{\sqrt{\hat{p}_{pool}(1-\hat{p}_{pool})\left(\frac{1}{n_1} + \frac{1}{n_2}\right)}}
-      </md>
-      
-      <important>
+      <assemblage xml:id="assem-sampling-dist-p1-p2">
+        <title>Conditions for the sampling distribution of <m>\hat{p}_1 - \hat{p}_2</m> to be normal</title>
         <p>
-          <alert>Remember:</alert> Use the pooled proportion in the standard error for hypothesis
-          tests, but use the individual sample proportions for confidence intervals.
+          The difference <m>\hat{p}_1 - \hat{p}_2</m> can be modeled using a normal distribution when
         </p>
-      </important>
+        <ul>
+          <li>
+            <em>Independence, extended.</em> The data are independent within and between the two groups. Generally this is satisfied if the data come from two independent random samples or if the data come from a randomized experiment.
+          </li>
+          <li>
+            <em>Success-failure condition.</em> The success-failure condition holds for both groups, where we check successes and failures in each group separately.
+          </li>
+        </ul>
+        <p>
+          When these conditions are satisfied, the standard error of <m>\hat{p}_1 - \hat{p}_2</m> is
+        </p>
+        <me>
+          SE = \sqrt{\frac{p_1(1-p_1)}{n_1} + \frac{p_2(1-p_2)}{n_2}}
+        </me>
+        <p>
+          where <m>p_1</m> and <m>p_2</m> represent the population proportions, and <m>n_1</m> and <m>n_2</m> represent the sample sizes.
+        </p>
+      </assemblage>
     </subsection>
+    
+    <subsection xml:id="confIntForPropDiffSection">
+      <title>Confidence intervals for <m>p_1 - p_2</m></title>
+      
+      <p>
+        We can apply the generic confidence interval formula for a difference of two proportions, where we use <m>\hat{p}_1 - \hat{p}_2</m> as the point estimate and substitute the <m>SE</m> formula:
+      </p>
+      <md>
+        <mrow>\text{point estimate} \pm z^{\star} \times SE \amp \to \hat{p}_1 - \hat{p}_2 \pm z^{\star} \times \sqrt{\frac{p_1(1-p_1)}{n_1} + \frac{p_2(1-p_2)}{n_2}}</mrow>
+      </md>
+      <p>
+        We can also follow the same Prepare, Check, Calculate, Conclude steps for computing a confidence interval or completing a hypothesis test. The details change a little, but the general approach remain the same. Think about these steps when you apply statistical methods.
+      </p>
+      
+      <example xml:id="ex-cpr-check-conditions">
+        <statement>
+          <p>
+            We consider an experiment for patients who underwent cardiopulmonary resuscitation (CPR) for a heart attack and were subsequently admitted to a hospital. These patients were randomly divided into a treatment group where they received a blood thinner or the control group where they did not receive a blood thinner. The outcome variable of interest was whether the patients survived for at least 24 hours. The results are shown in <xref ref="resultsForCPRStudyInSmallSampleSection"/>. Check whether we can model the difference in sample proportions using the normal distribution.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We first check for independence: since this is a randomized experiment, this condition is satisfied.
+          </p>
+          <p>
+            Next, we check the success-failure condition for each group. We have at least 10 successes and 10 failures in each experiment arm (11, 14, 39, 26), so this condition is also satisfied.
+          </p>
+          <p>
+            With both conditions satisfied, the difference in sample proportions can be reasonably modeled using a normal distribution for these data.
+          </p>
+        </solution>
+      </example>
+      
+      <table xml:id="resultsForCPRStudyInSmallSampleSection">
+        <title>Results for the CPR study. Patients in the treatment group were given a blood thinner, and patients in the control group were not.</title>
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell>Survived</cell>
+            <cell>Died</cell>
+            <cell>Total</cell>
+          </row>
+          <row>
+            <cell>Control</cell>
+            <cell>11</cell>
+            <cell>39</cell>
+            <cell>50</cell>
+          </row>
+          <row>
+            <cell>Treatment</cell>
+            <cell>14</cell>
+            <cell>26</cell>
+            <cell>40</cell>
+          </row>
+          <row bottom="minor">
+            <cell>Total</cell>
+            <cell>25</cell>
+            <cell>65</cell>
+            <cell>90</cell>
+          </row>
+        </tabular>
+      </table>
+      
+      <example xml:id="ex-cpr-ci">
+        <statement>
+          <p>
+            Create and interpret a 90% confidence interval of the difference for the survival rates in the CPR study.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We'll use <m>p_t</m> for the survival rate in the treatment group and <m>p_c</m> for the control group:
+          </p>
+          <md>
+            <mrow>\hat{p}_{t} - \hat{p}_{c} = \frac{14}{40} - \frac{11}{50} = 0.35 - 0.22 = 0.13</mrow>
+          </md>
+          <p>
+            We use the standard error formula provided on page<nbsp/><xref ref="assem-sampling-dist-p1-p2"/>. As with the one-sample proportion case, we use the sample estimates of each proportion in the formula in the confidence interval context:
+          </p>
+          <md>
+            <mrow>SE \approx \sqrt{\frac{0.35 (1 - 0.35)}{40} + \frac{0.22 (1 - 0.22)}{50}} = 0.095</mrow>
+          </md>
+          <p>
+            For a 90% confidence interval, we use <m>z^{\star} = 1.6449</m>:
+          </p>
+          <md>
+            <mrow>\text{point estimate} \pm z^{\star} \times SE \amp \to 0.13 \pm 1.6449 \times  0.095</mrow>
+            <mrow>\amp \to (-0.026, 0.286)</mrow>
+          </md>
+          <p>
+            We are 90% confident that blood thinners have a difference of -2.6% to +28.6% percentage point impact on survival rate for patients who are like those in the study. Because 0% is contained in the interval, we do not have enough information to say whether blood thinners help or harm heart attack patients who have been admitted after they have undergone CPR.
+          </p>
+        </solution>
+      </example>
+      
+      <exercise xml:id="ex-fish-oil-ci">
+        <statement>
+          <p>
+            A 5-year experiment was conducted to evaluate the effectiveness of fish oils on reducing cardiovascular events, where each subject was randomized into one of two treatment groups. We'll consider heart attack outcomes in these patients:
+          </p>
+          <table>
+            <tabular>
+              <row bottom="minor">
+                <cell></cell>
+                <cell>heart attack</cell>
+                <cell>no event</cell>
+                <cell>Total</cell>
+              </row>
+              <row>
+                <cell>fish oil</cell>
+                <cell>145</cell>
+                <cell>12788</cell>
+                <cell>12933</cell>
+              </row>
+              <row>
+                <cell>placebo</cell>
+                <cell>200</cell>
+                <cell>12738</cell>
+                <cell>12938</cell>
+              </row>
+            </tabular>
+          </table>
+          <p>
+            Create a 95% confidence interval for the effect of fish oils on heart attacks for patients who are well-represented by those in the study. Also interpret the interval in the context of the study.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Because the patients were randomized, the subjects are independent, both within and between the two groups. The success-failure condition is also met for both groups as all counts are at least 10. This satisfies the conditions necessary to model the difference in proportions using a normal distribution.
+          </p>
+          <p>
+            Compute the sample proportions (<m>\hat{p}_{\text{fish oil}} = 0.0112</m>, <m>\hat{p}_{\text{placebo}} = 0.0155</m>), point estimate of the difference (<m>0.0112 - 0.0155 = -0.0043</m>), and standard error (<m>SE = \sqrt{\frac{0.0112 \times 0.9888}{12933} + \frac{0.0155 \times 0.9845}{12938}} = 0.00145</m>). Next, plug the values into the general formula for a confidence interval, where we'll use a 95% confidence level with <m>z^{\star} = 1.96</m>:
+          </p>
+          <md>
+            <mrow>-0.0043 \pm 1.96 \times 0.00145 \to (-0.0071, -0.0015)</mrow>
+          </md>
+          <p>
+            We are 95% confident that fish oils decreases heart attacks by 0.15 to 0.71 percentage points (off of a baseline of about 1.55%) over a 5-year period for subjects who are similar to those in the study. Because the interval is entirely below 0, the data provide strong evidence that fish oil supplements reduce heart attacks in patients like those in the study.
+          </p>
+        </solution>
+      </exercise>
+    </subsection>
+    
+    <subsection xml:id="htForPropDiffSection">
+      <title>Hypothesis tests for the difference of two proportions</title>
+      
+      <p>
+        A mammogram is an X-ray procedure used to check for breast cancer. Whether mammograms should be used is part of a controversial discussion, and it's the topic of our next example where we learn about 2-proportion hypothesis tests when <m>H_0</m> is <m>p_1 - p_2 = 0</m> (or equivalently, <m>p_1 = p_2</m>).
+      </p>
+      
+      <p>
+        A 30-year study was conducted with nearly 90,000 female participants. During a 5-year screening period, each woman was randomized to one of two groups: in the first group, women received regular mammograms to screen for breast cancer, and in the second group, women received regular non-mammogram breast cancer exams. No intervention was made during the following 25 years of the study, and we'll consider death resulting from breast cancer over the full 30-year period. Results from the study are summarized in <xref ref="mammogramStudySummaryTable"/>.
+      </p>
+      
+      <p>
+        If mammograms are much more effective than non-mammogram breast cancer exams, then we would expect to see additional deaths from breast cancer in the control group. On the other hand, if mammograms are not as effective as regular breast cancer exams, we would expect to see an increase in breast cancer deaths in the mammogram group.
+      </p>
+      
+      <table xml:id="mammogramStudySummaryTable">
+        <title>Summary results for breast cancer study.</title>
+        <tabular>
+          <row>
+            <cell></cell>
+            <cell></cell>
+            <cell colspan="2" halign="center">Death from breast cancer?</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell>Yes</cell>
+            <cell>No</cell>
+          </row>
+          <row>
+            <cell>Mammogram</cell>
+            <cell></cell>
+            <cell>500</cell>
+            <cell>44,425</cell>
+          </row>
+          <row>
+            <cell>Control</cell>
+            <cell></cell>
+            <cell>505</cell>
+            <cell>44,405</cell>
+          </row>
+        </tabular>
+      </table>
+      
+      <exercise xml:id="ex-mammogram-experiment">
+        <statement>
+          <p>
+            Is this study an experiment or an observational study?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            This is an experiment. Patients were randomized to receive mammograms or a standard breast cancer exam. We will be able to make causal conclusions based on this study.
+          </p>
+        </solution>
+      </exercise>
+      
+      <exercise xml:id="htFormammogramStudySummaryTable">
+        <statement>
+          <p>
+            Set up hypotheses to test whether there was a difference in breast cancer deaths in the mammogram and control groups.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>H_0</m>: the breast cancer death rate for patients screened using mammograms is the same as the breast cancer death rate for patients in the control, <m>p_{mgm} - p_{ctrl} = 0</m>.
+          </p>
+          <p>
+            <m>H_A</m>: the breast cancer death rate for patients screened using mammograms is different than the breast cancer death rate for patients in the control, <m>p_{mgm} - p_{ctrl} \neq 0</m>.
+          </p>
+        </solution>
+      </exercise>
+      
+      <p>
+        In Example<nbsp/><xref ref="condFormammogramStudySummaryTableNormalInference"/>, we will check the conditions for using a normal distribution to analyze the results of the study. The details are very similar to that of confidence intervals. However, when the null hypothesis is that <m>p_1 - p_2 = 0</m>, we use a special proportion called the <term>pooled proportion</term> to check the success-failure condition:
+      </p>
+      <md>
+        <mrow>\hat{p}_{\textit{pooled}} \amp = \frac{\text{\# of patients who died from breast cancer in the entire study}}{\text{\# of patients in the entire study}}</mrow>
+        <mrow>\amp = \frac{500 + 505}{500 + \text{44,425} + 505 + \text{44,405}}</mrow>
+        <mrow>\amp = 0.0112</mrow>
+      </md>
+      <p>
+        This proportion is an estimate of the breast cancer death rate across the entire study, and it's our best estimate of the proportions <m>p_{mgm}</m> and <m>p_{ctrl}</m> <em>if the null hypothesis is true that <m>p_{mgm} = p_{ctrl}</m></em>. We will also use this pooled proportion when computing the standard error.
+      </p>
+      
+      <example xml:id="condFormammogramStudySummaryTableNormalInference">
+        <statement>
+          <p>
+            Is it reasonable to model the difference in proportions using a normal distribution in this study?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Because the patients are randomized, they can be treated as independent, both within and between groups. We also must check the success-failure condition for each group. Under the null hypothesis, the proportions <m>p_{mgm}</m> and <m>p_{ctrl}</m> are equal, so we check the success-failure condition with our best estimate of these values under <m>H_0</m>, the pooled proportion from the two samples, <m>\hat{p}_{\textit{pooled}} = 0.0112</m>:
+          </p>
+          <md>
+            <mrow>\hat{p}_{\textit{pooled}} \times n_{mgm} \amp = 0.0112 \times \text{44,925} = 503</mrow>
+            <mrow>(1 - \hat{p}_{\textit{pooled}}) \times n_{mgm} \amp = 0.9888 \times \text{44,925} = \text{44,422}</mrow>
+            <mrow>\hat{p}_{\textit{pooled}} \times n_{ctrl} \amp = 0.0112 \times \text{44,910} = 503</mrow>
+            <mrow>(1 - \hat{p}_{\textit{pooled}}) \times n_{ctrl} \amp = 0.9888 \times \text{44,910} = \text{44,407}</mrow>
+          </md>
+          <p>
+            The success-failure condition is satisfied since all values are at least 10. With both conditions satisfied, we can safely model the difference in proportions using a normal distribution.
+          </p>
+        </solution>
+      </example>
+      
+      <assemblage xml:id="assem-pooled-proportion">
+        <title>Use the pooled proportion when <m>H_0</m> is <m>p_1 - p_2 = 0</m></title>
+        <p>
+          When the null hypothesis is that the proportions are equal, use the pooled proportion (<m>\hat{p}_{\textit{pooled}}</m>) to verify the success-failure condition and estimate the standard error:
+        </p>
+        <me>
+          \hat{p}_{\textit{pooled}} = \frac{\text{number of ``successes''}}{\text{number of cases}} = \frac{\hat{p}_1 n_1 + \hat{p}_2 n_2}{n_1 + n_2}
+        </me>
+        <p>
+          Here <m>\hat{p}_1 n_1</m> represents the number of successes in sample 1 since
+        </p>
+        <me>
+          \hat{p}_1 = \frac{\text{number of successes in sample 1}}{n_1}
+        </me>
+        <p>
+          Similarly, <m>\hat{p}_2 n_2</m> represents the number of successes in sample 2.
+        </p>
+      </assemblage>
+      
+      <p>
+        In Example<nbsp/><xref ref="condFormammogramStudySummaryTableNormalInference"/>, the pooled proportion was used to check the success-failure condition.<fn>For an example of a two-proportion hypothesis test that does not require the success-failure condition to be met, see Section<nbsp/><xref ref="caseStudyMalariaVaccine"/>.</fn> In the next example, we see the second place where the pooled proportion comes into play: the standard error calculation.
+      </p>
+      
+      <example xml:id="ex-mammogram-se">
+        <statement>
+          <p>
+            Compute the point estimate of the difference in breast cancer death rates in the two groups, and use the pooled proportion <m>\hat{p}_{\textit{pooled}} = 0.0112</m> to calculate the standard error.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The point estimate of the difference in breast cancer death rates is
+          </p>
+          <md>
+            <mrow>\hat{p}_{mgm} - \hat{p}_{ctrl} \amp = \frac{500}{500 + 44,425} - \frac{505}{505 + 44,405}</mrow>
+            <mrow>\amp = 0.01113 - 0.01125</mrow>
+            <mrow>\amp = -0.00012</mrow>
+          </md>
+          <p>
+            The breast cancer death rate in the mammogram group was 0.012% less than in the control group. Next, the standard error is calculated <em>using the pooled proportion</em>, <m>\hat{p}_{\textit{pooled}}</m>:
+          </p>
+          <md>
+            <mrow>SE = \sqrt{\frac{\hat{p}_{\textit{pooled}}(1-\hat{p}_{\textit{pooled}})}{n_{mgm}} + \frac{\hat{p}_{\textit{pooled}}(1-\hat{p}_{\textit{pooled}})}{n_{ctrl}}} = 0.00070</mrow>
+          </md>
+        </solution>
+      </example>
+      
+      <example xml:id="ex-mammogram-ht">
+        <statement>
+          <p>
+            Using the point estimate <m>\hat{p}_{mgm} - \hat{p}_{ctrl} = -0.00012</m> and standard error <m>SE = 0.00070</m>, calculate a p-value for the hypothesis test and write a conclusion.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Just like in past tests, we first compute a test statistic and draw a picture:
+          </p>
+          <md>
+            <mrow>Z = \frac{\text{point estimate} - \text{null value}}{SE} = \frac{-0.00012 - 0}{0.00070} = -0.17</mrow>
+          </md>
+          <figure xml:id="mammogramPValue">
+            <caption>A normal distribution is shown centered at 0 with a standard deviation of 0.0007. The lower tail is shaded below -0.00012 and the upper tail is shaded above 0.00012. Visually, it looks like very roughly 90% of the area under the normal distribution is shaded.</caption>
+            <image source="ch_inference_for_props/mammograms/mammogramPValue.pdf" width="45%"/>
+          </figure>
+          <p>
+            The lower tail area is 0.4325, which we double to get the p-value: 0.8650. Because this p-value is larger than 0.05, we do not reject the null hypothesis. That is, the difference in breast cancer death rates is reasonably explained by chance, and we do not observe benefits or harm from mammograms relative to a regular breast exam.
+          </p>
+        </solution>
+      </example>
+      
+      <p>
+        Can we conclude that mammograms have no benefits or harm? Here are a few considerations to keep in mind when reviewing the mammogram study as well as any other medical study:
+      </p>
+      <ul>
+        <li>
+          We do not reject the null hypothesis, which means we don't have sufficient evidence to conclude that mammograms reduce or increase breast cancer deaths.
+        </li>
+        <li>
+          If mammograms are helpful or harmful, the data suggest the effect isn't very large.
+        </li>
+        <li>
+          Are mammograms more or less expensive than a non-mammogram breast exam? If one option is much more expensive than the other and doesn't offer clear benefits, then we should lean towards the less expensive option.
+        </li>
+        <li>
+          The study's authors also found that mammograms led to overdiagnosis of breast cancer, which means some breast cancers were found (or thought to be found) but that these cancers would not cause symptoms during patients' lifetimes. That is, something else would kill the patient before breast cancer symptoms appeared. This means some patients may have been treated for breast cancer unnecessarily, and this treatment is another cost to consider. It is also important to recognize that overdiagnosis can cause unnecessary physical or emotional harm to patients.
+        </li>
+      </ul>
+      <p>
+        These considerations highlight the complexity around medical care and treatment recommendations. Experts and medical boards who study medical treatments use considerations like those above to provide their best recommendation based on the current evidence.
+      </p>
+    </subsection>
+    
+    <subsection xml:id="subsec-more-2prop-ht">
+      <title>More on 2-proportion hypothesis tests (special topic)</title>
+      
+      <p>
+        When we conduct a 2-proportion hypothesis test, usually <m>H_0</m> is <m>p_1 - p_2 = 0</m>. However, there are rare situations where we want to check for some difference in <m>p_1</m> and <m>p_2</m> that is some value other than 0. For example, maybe we care about checking a null hypothesis where <m>p_1 - p_2 = 0.1</m>. In contexts like these, we generally use <m>\hat{p}_1</m> and <m>\hat{p}_2</m> to check the success-failure condition and construct the standard error.
+      </p>
+      
+      <exercise xml:id="carWheelBladeManufacturer">
+        <statement>
+          <p>
+            A quadcopter company is considering a new manufacturer for rotor blades. The new manufacturer would be more expensive, but they claim their higher-quality blades are more reliable, with 3% more blades passing inspection than their competitor. Set up appropriate hypotheses for the test.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>H_0</m>: The higher-quality blades will pass inspection 3% more frequently than the standard-quality blades. <m>p_{highQ} - p_{standard} = 0.03</m>.
+          </p>
+          <p>
+            <m>H_A</m>: The higher-quality blades will pass inspection some amount different than 3% more often than the standard-quality blades. <m>p_{highQ} - p_{standard} \neq 0.03</m>.
+          </p>
+        </solution>
+      </exercise>
+      
+      <figure xml:id="quadcopter_david_j">
+        <caption>A Phantom quadcopter. Photo by David J (http://flic.kr/p/oiWLNu). CC-BY 2.0 license. This photo has been cropped and a border has been added.</caption>
+        <image source="ch_inference_for_props/quadcopter/quadcopter_david_j.jpg" width="60%"/>
+      </figure>
+      
+      <example xml:id="qualityCtrlEngHypothesisEval">
+        <statement>
+          <p>
+            The quality control engineer from Guided Practice<nbsp/><xref ref="carWheelBladeManufacturer"/> collects a sample of blades, examining 1000 blades from each company, and she finds that 899 blades pass inspection from the current supplier and 958 pass inspection from the prospective supplier. Using these data, evaluate the hypotheses from Guided Practice<nbsp/><xref ref="carWheelBladeManufacturer"/> with a significance level of 5%.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            First, we check the conditions. The sample is not necessarily random, so to proceed we must assume the blades are all independent; for this sample we will suppose this assumption is reasonable, but the engineer would be more knowledgeable as to whether this assumption is appropriate. The success-failure condition also holds for each sample. Thus, the difference in sample proportions, <m>0.958 - 0.899 = 0.059</m>, can be said to come from a nearly normal distribution.
+          </p>
+          <p>
+            The standard error is computed using the two sample proportions since we do not use a pooled proportion for this context:
+          </p>
+          <md>
+            <mrow>SE = \sqrt{\frac{0.958(1-0.958)}{1000} + \frac{0.899(1-0.899)}{1000}} = 0.0114</mrow>
+          </md>
+          <p>
+            In this hypothesis test, because the null is that <m>p_1 - p_2 = 0.03</m>, the sample proportions were used for the standard error calculation rather than a pooled proportion.
+          </p>
+          <p>
+            Next, we compute the test statistic and use it to find the p-value, which is depicted in <xref ref="bladesTwoSampleHTPValueQC"/>.
+          </p>
+          <md>
+            <mrow>Z = \frac{\text{point estimate} - \text{null value}}{SE} = \frac{0.059 - 0.03}{0.0114} = 2.54</mrow>
+          </md>
+          <p>
+            Using a standard normal distribution for this test statistic, we identify the right tail area as 0.006, and we double it to get the p-value: 0.012. We reject the null hypothesis because 0.012 is less than 0.05. Since we observed a larger-than-3% increase in blades that pass inspection, we have statistically significant evidence that the higher-quality blades pass inspection <em>more than</em> 3% as often as the currently used blades, exceeding the company's claims.
+          </p>
+        </solution>
+      </example>
+      
+      <figure xml:id="bladesTwoSampleHTPValueQC">
+        <caption>Distribution of the test statistic if the null hypothesis was true. The p-value is represented by the shaded areas.</caption>
+        <image source="ch_inference_for_props/bladesTwoSampleHTPValueQC.pdf" width="45%"/>
+      </figure>
+    </subsection>
+    
+    <subsection xml:id="subsec-se-formula-special">
+      <title>Examining the standard error formula (special topic)</title>
+      
+      <p>
+        This subsection covers more theoretical topics that offer deeper insights into the origins of the standard error formula for the difference of two proportions. Ultimately, all of the standard error formulas we encounter in this chapter and in Chapter<nbsp/><xref ref="ch_inference_for_means"/> can be derived from the probability principles of Section<nbsp/><xref ref="randomVariablesSection"/>.
+      </p>
+      
+      <p>
+        The formula for the standard error of the difference in two proportions can be deconstructed into the formulas for the standard errors of the individual sample proportions. Recall that the standard error of the individual sample proportions <m>\hat{p}_1</m> and <m>\hat{p}_2</m> are
+      </p>
+      <md>
+        <mrow>SE_{\hat{p}_1} = \sqrt{\frac{{p}_1 (1 - {p}_1)}{n_1}} \qquad SE_{\hat{p}_2} = \sqrt{\frac{{p}_2 (1 - {p}_2)}{n_2}}</mrow>
+      </md>
+      <p>
+        The standard error of the difference of two sample proportions can be deconstructed from the standard errors of the separate sample proportions:
+      </p>
+      <md>
+        <mrow>SE_{\hat{p}_{1} - \hat{p}_{2}} = \sqrt{SE_{\hat{p}_1}^2 + SE_{\hat{p}_2}^2} = \sqrt{\frac{{p}_1 (1 - {p}_1)}{n_1} + \frac{{p}_2 (1 - {p}_2)}{n_2}}</mrow>
+      </md>
+      <p>
+        This special relationship follows from probability theory.
+      </p>
+      
+      <exercise xml:id="derivingSEForDiffOfTwoMeansExercise">
+        <statement>
+          <p>
+            Prerequisite: Section<nbsp/><xref ref="randomVariablesSection"/>. We can rewrite the equation above in a different way:
+          </p>
+          <me>
+            SE_{\hat{p}_{1} - \hat{p}_{2}}^2 = SE_{\hat{p}_1}^2 + SE_{\hat{p}_2}^2
+          </me>
+          <p>
+            Explain where this formula comes from using the formula for the variability of the sum of two random variables.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The standard error squared represents the variance of the estimate. If <m>X</m> and <m>Y</m> are two random variables with variances <m>\sigma_x^2</m> and <m>\sigma_y^2</m>, then the variance of <m>X - Y</m> is <m>\sigma_x^2 + \sigma_y^2</m>. Likewise, the variance corresponding to <m>\hat{p}_1 - \hat{p}_2</m> is <m>\sigma_{\hat{p}_1}^2 + \sigma_{\hat{p}_2}^2</m>. Because <m>\sigma_{\hat{p}_1}^2</m> and <m>\sigma_{\hat{p}_2}^2</m> are just another way of writing <m>SE_{\hat{p}_1}^2</m> and  <m>SE_{\hat{p}_2}^2</m>, the variance associated with <m>\hat{p}_1 - \hat{p}_2</m> may be written as <m>SE_{\hat{p}_1}^2 + SE_{\hat{p}_2}^2</m>.
+          </p>
+        </solution>
+      </exercise>
+    </subsection>
+    
   </section>
   
   <!-- Section 7.3: Testing for goodness of fit using chi-square -->
