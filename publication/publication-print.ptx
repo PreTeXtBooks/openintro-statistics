@@ -8,11 +8,5 @@
   <assets>
     <directory>../source/images</directory>
   </assets>
-  <!-- HTML-Specific Options -->
-  <html>
-    <calculator model="geogebra-graphing"/>
-    <index-page ref="frontmatter"/>
-    <video privacy="yes"/>
-    <favicon source="favicon.svg"/>
-  </html>
+  <!-- Print-specific options (for PDF) -->
 </publication>
