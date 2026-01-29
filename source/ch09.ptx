@@ -4,9 +4,6 @@
   
   <introduction>
     <p>
-      Testing 123. Hello World.
-</p>
-<p>
       The principles of simple linear regression lay the foundation for more sophisticated
       regression models used in a wide range of challenging settings. In this chapter, we
       explore multiple regression, which introduces the possibility of more than one predictor
@@ -413,4 +410,5 @@
     </subsection>
   </section>
 </chapter>
+
 
