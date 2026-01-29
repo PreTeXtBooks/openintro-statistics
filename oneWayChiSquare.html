@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Testing for goodness of fit using chi-square</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="OpenIntro Statistics">
+<meta property="book:author" content="David Diez">
+<meta property="book:author" content="Mine Çetinkaya-Rundel">
+<meta property="book:author" content="Christopher D Barr">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.11';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.fc0e080e84d54281.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.e2abc79debce15fd.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.6ec5960970d8b364.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="openintro-statistics" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href="https://www.openintro.org/"><img src="external/images/openintro-logo.svg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="openintro-statistics.html"><span class="title">OpenIntro Statistics</span> <span class="subtitle">Fourth Edition</span></a></h1>
+<p class="byline">David Diez, Mine Çetinkaya-Rundel, Christopher D Barr</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="calculator-toggle" class="calculator-toggle button" title="Show calculator" aria-expanded="false" aria-controls="calculator-container"><span class="icon material-symbols-outlined" aria-hidden="true">&#xea5f;</span><span class="name">Calc</span></button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="differenceOfTwoProportions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-inference-for-props.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-chi-square-independence.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">Preface</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="acknowledgement.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-intro-to-data.html" class="internal"><span class="codenumber">1</span> <span class="title">Introduction to data</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-stents-strokes.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Case study: using stents to prevent strokes</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-stents-strokes.html#sec-stents-strokes-14" class="internal"><span class="codenumber">1.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-data-basics.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Data basics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-basics.html#subsec-observations-variables" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Observations, variables, and data matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-basics.html#subsec-types-of-variables" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Types of variables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-basics.html#subsec-relationships-between-variables" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Relationships between variables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-basics.html#subsec-explanatory-response-variables" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Explanatory and response variables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-basics.html#subsec-observational-studies-experiments" class="internal"><span class="codenumber">1.2.5</span> <span class="title">Introducing observational studies and experiments</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-data-basics.html#sec-data-basics-8" class="internal"><span class="codenumber">1.2.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-sampling-principles.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Sampling principles and strategies</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sampling-principles.html#subsec-populations-samples" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Populations and samples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sampling-principles.html#subsec-anecdotal-evidence" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Anecdotal evidence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sampling-principles.html#subsec-sampling-population" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Sampling from a population</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sampling-principles.html#subsec-observational-studies" class="internal"><span class="codenumber">1.3.4</span> <span class="title">Observational studies</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sampling-principles.html#subsec-four-sampling-methods" class="internal"><span class="codenumber">1.3.5</span> <span class="title">Four sampling methods</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-sampling-principles.html#sec-sampling-principles-8" class="internal"><span class="codenumber">1.3.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-experiments.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Experiments</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-experiments.html#subsec-experimental-design" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Principles of experimental design</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-experiments.html#subsec-reducing-bias" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Reducing bias in human experiments</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-experiments.html#sec-experiments-5" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-review-exercises.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Review exercises</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-review-exercises.html#sec-review-exercises-2" class="internal"><span class="codenumber">1.5</span> <span class="title">Review exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-summarizing-data.html" class="internal"><span class="codenumber">2</span> <span class="title">Summarizing data</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-numerical-data.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Examining numerical data</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-numerical-data.html#subsec-scatterplots" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Scatterplots for paired data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-numerical-data.html#subsec-dot-plots-mean" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Dot plots and the mean</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-numerical-data.html#subsec-histograms-shape" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Histograms and shape</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-numerical-data.html#subsec-variance-sd" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Variance and standard deviation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-numerical-data.html#subsec-boxplots-quartiles" class="internal"><span class="codenumber">2.1.5</span> <span class="title">Box plots, quartiles, and the median</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-numerical-data.html#subsec-robust-stats" class="internal"><span class="codenumber">2.1.6</span> <span class="title">Robust statistics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-numerical-data.html#subsec-transforming-data" class="internal"><span class="codenumber">2.1.7</span> <span class="title">Transforming data (special topic)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-numerical-data.html#subsec-mapping-data" class="internal"><span class="codenumber">2.1.8</span> <span class="title">Mapping data (special topic)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-categorical-data.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Considering categorical data</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categorical-data.html#subsec-contingency-tables" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Contingency tables and bar plots</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categorical-data.html#subsec-row-column-proportions" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Row and column proportions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categorical-data.html#subsec-bar-plot-two-vars" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Using a bar plot with two variables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categorical-data.html#subsec-mosaic-plots" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Mosaic plots</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categorical-data.html#subsec-pie-charts" class="internal"><span class="codenumber">2.2.5</span> <span class="title">The only pie chart you will see in this book</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categorical-data.html#subsec-comparing-across-groups" class="internal"><span class="codenumber">2.2.6</span> <span class="title">Comparing numerical data across groups</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-malaria-vaccine.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Case study: malaria vaccine</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-malaria-vaccine.html#subsec-variability-within-data" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Variability within data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-malaria-vaccine.html#subsec-simulating-the-study" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Simulating the study</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-malaria-vaccine.html#subsec-checking-independence" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Checking for independence</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-malaria-vaccine.html#exercises-malaria-case" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-probability.html" class="internal"><span class="codenumber">3</span> <span class="title">Probability</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-defining-probability.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Defining probability</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-defining-probability.html#subsec-introductory-examples" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Introductory examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-defining-probability.html#subsec-probability-definition" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-defining-probability.html#subsec-disjoint-outcomes" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Disjoint or mutually exclusive outcomes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-defining-probability.html#subsec-probabilities-not-disjoint" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Probabilities when events are not disjoint</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-defining-probability.html#subsec-probability-distributions" class="internal"><span class="codenumber">3.1.5</span> <span class="title">Probability distributions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-defining-probability.html#subsec-complement" class="internal"><span class="codenumber">3.1.6</span> <span class="title">Complement of an event</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-defining-probability.html#subsec-independence" class="internal"><span class="codenumber">3.1.7</span> <span class="title">Independence</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-conditional-probability.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Conditional probability</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-conditional-probability.html#subsec-exploring-contingency-table" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Exploring probabilities with a contingency table</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-conditional-probability.html#subsec-marginal-joint-probabilities" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Marginal and joint probabilities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-conditional-probability.html#subsec-defining-conditional-probability" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Defining conditional probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-conditional-probability.html#subsec-smallpox-boston" class="internal"><span class="codenumber">3.2.4</span> <span class="title">Smallpox in Boston, 1721</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-conditional-probability.html#subsec-general-multiplication-rule" class="internal"><span class="codenumber">3.2.5</span> <span class="title">General multiplication rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-conditional-probability.html#subsec-independence-conditional" class="internal"><span class="codenumber">3.2.6</span> <span class="title">Independence considerations in conditional probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-conditional-probability.html#subsec-tree-diagrams" class="internal"><span class="codenumber">3.2.7</span> <span class="title">Tree diagrams</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-conditional-probability.html#subsec-bayes-theorem" class="internal"><span class="codenumber">3.2.8</span> <span class="title">Bayes’ Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-sampling-small-population.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Sampling from a small population</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-random-variables.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Random variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-random-variables.html#subsec-expectation" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Expectation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-random-variables.html#subsec-variability-random-variables" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Variability in random variables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-random-variables.html#subsec-linear-combinations" class="internal"><span class="codenumber">3.4.3</span> <span class="title">Linear combinations of random variables</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-continuous-distributions.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Continuous distributions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-continuous-distributions.html#subsec-histograms-to-continuous" class="internal"><span class="codenumber">3.5.1</span> <span class="title">From histograms to continuous distributions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-continuous-distributions.html#subsec-probabilities-continuous" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Probabilities from continuous distributions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-distributions.html" class="internal"><span class="codenumber">4</span> <span class="title">Distributions of random variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-normal-distribution.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Normal distribution</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-normal-distribution.html#subsec-normal-distribution-model" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Normal distribution model</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-normal-distribution.html#subsec-standardizing-z-scores" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Standardizing with Z-scores</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-normal-distribution.html#subsec-finding-tail-areas" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Finding tail areas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-normal-distribution.html#subsec-normal-probability-examples" class="internal"><span class="codenumber">4.1.4</span> <span class="title">Normal probability examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-normal-distribution.html#subsec-68-95-997-rule" class="internal"><span class="codenumber">4.1.5</span> <span class="title">68-95-99.7 rule</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-normal-distribution.html#sec-normal-distribution-8" class="internal"><span class="codenumber">4.1.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-geometric-distribution.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Geometric distribution</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-geometric-distribution.html#subsec-bernoulli-distribution" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Bernoulli distribution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-geometric-distribution.html#subsec-geometric-distribution-def" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Geometric distribution</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-geometric-distribution.html#sec-geometric-distribution-5" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-binomial-distribution.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Binomial distribution</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-binomial-distribution.html#subsec-binomial-distribution-def" class="internal"><span class="codenumber">4.3.1</span> <span class="title">The binomial distribution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-binomial-distribution.html#subsec-normal-approx-binomial" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Normal approximation to the binomial distribution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-binomial-distribution.html#subsec-normal-approx-breaks-down" class="internal"><span class="codenumber">4.3.3</span> <span class="title">The normal approximation breaks down on small intervals</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-binomial-distribution.html#sec-binomial-distribution-6" class="internal"><span class="codenumber">4.3.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-negative-binomial.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Negative binomial distribution</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-negative-binomial.html#exercises-negative-binomial" class="internal"><span class="codenumber">4.4</span> <span class="title">Section 4.4 Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-poisson-distribution.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Poisson distribution</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-poisson-distribution.html#exercises-poisson" class="internal"><span class="codenumber">4.5</span> <span class="title">Section 4.5 Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-ch04-review.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Chapter review</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-ch04-review.html#sec-ch04-review-2" class="internal"><span class="codenumber">4.6</span> <span class="title">Chapter review</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-foundations-for-inference.html" class="internal"><span class="codenumber">5</span> <span class="title">Foundations for Inference</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-point-estimates.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Point Estimates and Sampling Variability</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-point-estimates.html#subsec-point-estimates-error" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Point Estimates and Error</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-point-estimates.html#subsec-variability-point-estimate" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Understanding the Variability of a Point Estimate</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-point-estimates.html#subsec-central-limit-theorem" class="internal"><span class="codenumber">5.1.3</span> <span class="title">Central Limit Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-point-estimates.html#subsec-clt-real-world" class="internal"><span class="codenumber">5.1.4</span> <span class="title">Applying the Central Limit Theorem to a real-world setting</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-point-estimates.html#subsec-more-details-clt" class="internal"><span class="codenumber">5.1.5</span> <span class="title">More details regarding the Central Limit Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-point-estimates.html#subsec-extending-framework" class="internal"><span class="codenumber">5.1.6</span> <span class="title">Extending the framework for other statistics</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-point-estimates.html#sec-point-estimates-9" class="internal"><span class="codenumber">5.1.7</span> <span class="title">Section 5.1 Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-confidence-intervals.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Confidence Intervals for a Proportion</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-confidence-intervals.html#subsec-capturing-parameter" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Capturing the Population Parameter</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-confidence-intervals.html#subsec-95-ci" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Constructing a 95% Confidence Interval</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-confidence-intervals.html#subsec-changing-confidence" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Changing the Confidence Level</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-confidence-intervals.html#subsec-ci-procedure" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Confidence Interval Procedure for a Single Proportion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-confidence-intervals.html#subsec-more-case-studies" class="internal"><span class="codenumber">5.2.5</span> <span class="title">More Case Studies</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-confidence-intervals.html#subsec-interpreting-ci" class="internal"><span class="codenumber">5.2.6</span> <span class="title">Interpreting Confidence Intervals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-confidence-intervals.html#subsec-interpreting-cis" class="internal"><span class="codenumber">5.2.7</span> <span class="title">Interpreting Confidence Intervals</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-confidence-intervals.html#sec-confidence-intervals-10" class="internal"><span class="codenumber">5.2.8</span> <span class="title">Section 5.2 Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-hypothesis-testing.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Hypothesis Testing for a Proportion</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hypothesis-testing.html#subsec-ht-framework" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Hypothesis Testing Framework</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hypothesis-testing.html#subsec-ht-confidence-intervals" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Testing Hypotheses Using Confidence Intervals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hypothesis-testing.html#subsec-decision-errors" class="internal"><span class="codenumber">5.3.3</span> <span class="title">Decision Errors in Hypothesis Testing</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hypothesis-testing.html#subsec-p-values" class="internal"><span class="codenumber">5.3.4</span> <span class="title">Formal Testing Using P-values</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hypothesis-testing.html#subsec-significance-level" class="internal"><span class="codenumber">5.3.5</span> <span class="title">Choosing a Significance Level</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hypothesis-testing.html#subsec-one-sided-tests" class="internal"><span class="codenumber">5.3.6</span> <span class="title">One-Sided Hypothesis Tests (Special Topic)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hypothesis-testing.html#subsec-statistical-vs-practical" class="internal"><span class="codenumber">5.3.7</span> <span class="title">Statistical Significance versus Practical Significance</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-hypothesis-testing.html#sec-hypothesis-testing-10" class="internal"><span class="codenumber">5.3.8</span> <span class="title">Section 5.3 Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-ch05-review.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Chapter 5 Review Exercises</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-ch05-review.html#sec-ch05-review-5" class="internal"><span class="codenumber">5.4</span> <span class="title">Review Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-inference-for-props.html" class="internal"><span class="codenumber">6</span> <span class="title">Inference for Categorical Data</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="singleProportion.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Inference for a single proportion</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="singleProportion.html#subsec-sample-prop-normal" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Identifying when the sample proportion is nearly normal</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="singleProportion.html#confIntForPropSection" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Confidence intervals for a proportion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="singleProportion.html#htForPropSection" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Hypothesis testing for a proportion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="singleProportion.html#subsec-conditions-not-met" class="internal"><span class="codenumber">6.1.4</span> <span class="title">When one or more conditions aren’t met</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="singleProportion.html#subsec-choosing-sample-size" class="internal"><span class="codenumber">6.1.5</span> <span class="title">Choosing a sample size when estimating a proportion</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="differenceOfTwoProportions.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Difference of two proportions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="differenceOfTwoProportions.html#subsec-sampling-dist-diff-two-props" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Sampling distribution of the difference of two proportions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="differenceOfTwoProportions.html#confIntForPropDiffSection" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Confidence intervals for <span class="process-math">\(p_1 - p_2\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="differenceOfTwoProportions.html#htForPropDiffSection" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Hypothesis tests for the difference of two proportions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="differenceOfTwoProportions.html#subsec-more-2prop-ht" class="internal"><span class="codenumber">6.2.4</span> <span class="title">More on 2-proportion hypothesis tests (special topic)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="differenceOfTwoProportions.html#subsec-se-formula-special" class="internal"><span class="codenumber">6.2.5</span> <span class="title">Examining the standard error formula (special topic)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="oneWayChiSquare.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Testing for goodness of fit using chi-square</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="oneWayChiSquare.html#subsec-test-statistic-one-way" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Creating a test statistic for one-way tables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="oneWayChiSquare.html#chiSquareTestStatistic" class="internal"><span class="codenumber">6.3.2</span> <span class="title">The chi-square test statistic</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="oneWayChiSquare.html#subsec-chi-square-dist-areas" class="internal"><span class="codenumber">6.3.3</span> <span class="title">The chi-square distribution and finding areas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="oneWayChiSquare.html#pValueForAChiSquareTest" class="internal"><span class="codenumber">6.3.4</span> <span class="title">Finding a p-value for a chi-square distribution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="oneWayChiSquare.html#subsec-goodness-of-fit-distribution" class="internal"><span class="codenumber">6.3.5</span> <span class="title">Evaluating goodness of fit for a distribution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-chi-square-independence.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Testing for Independence in Two-Way Tables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-chi-square-independence.html#subsec-two-way-tables" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Two-Way Tables and Expected Counts</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-chi-square-independence.html#subsec-chi-square-test-independence" class="internal"><span class="codenumber">6.4.2</span> <span class="title">The Chi-Square Test for Independence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-chi-square-independence.html#subsec-chi-square-limitations" class="internal"><span class="codenumber">6.4.3</span> <span class="title">Limitations of Chi-Square Tests</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch07-review.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Chapter 7 Review Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-inference-for-means.html" class="internal"><span class="codenumber">7</span> <span class="title">Inference for Numerical Data</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-one-sample-t.html" class="internal"><span class="codenumber">7.1</span> <span class="title">One-Sample Means with the <span class="process-math">\(t\)</span>-Distribution</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-one-sample-t.html#subsec-sampling-dist-xbar" class="internal"><span class="codenumber">7.1.1</span> <span class="title">The Sampling Distribution of <span class="process-math">\(\bar{x}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-one-sample-t.html#subsec-conditions-for-xbar" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Evaluating Conditions for Modeling <span class="process-math">\(\bar{x}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-one-sample-t.html#subsec-introducing-t-dist" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Introducing the <span class="process-math">\(t\)</span>-Distribution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-one-sample-t.html#subsec-one-sample-t-ci" class="internal"><span class="codenumber">7.1.4</span> <span class="title">One-Sample <span class="process-math">\(t\)</span>-Confidence Intervals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-one-sample-t.html#subsec-one-sample-t-test" class="internal"><span class="codenumber">7.1.5</span> <span class="title">One-Sample <span class="process-math">\(t\)</span>-Test</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-paired-data.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Paired Data</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-paired-data.html#subsec-paired-observations" class="internal"><span class="codenumber">7.2.1</span> <span class="title">Paired Observations and Samples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-paired-data.html#subsec-inference-paired-data" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Inference for Paired Data</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-difference-two-means.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Difference of Two Means</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-difference-two-means.html#subsec-comparing-two-indep-means" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Comparing Two Independent Means</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-difference-two-means.html#subsec-two-sample-t-procedures" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Two-Sample <span class="process-math">\(t\)</span>-Procedures</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-difference-two-means.html#subsec-pooled-standard-deviation" class="internal"><span class="codenumber">7.3.3</span> <span class="title">Pooled Standard Deviation (Optional)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-power-calculations.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Power Calculations for a Difference of Means</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-power-calculations.html#subsec-statistical-power" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Understanding Statistical Power</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-power-calculations.html#subsec-sample-size-determination" class="internal"><span class="codenumber">7.4.2</span> <span class="title">Sample Size Determination</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-anova.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Comparing Many Means with ANOVA</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-anova.html#subsec-anova-hypotheses" class="internal"><span class="codenumber">7.5.1</span> <span class="title">ANOVA Hypotheses and Conditions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-anova.html#subsec-f-statistic" class="internal"><span class="codenumber">7.5.2</span> <span class="title">The <span class="process-math">\(F\)</span>-Statistic</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-anova.html#subsec-anova-table" class="internal"><span class="codenumber">7.5.3</span> <span class="title">The ANOVA Table</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-anova.html#subsec-multiple-comparisons" class="internal"><span class="codenumber">7.5.4</span> <span class="title">Multiple Comparisons and What ANOVA Doesn’t Tell Us</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch06-review.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Chapter 6 Review Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-simple-linear-regression.html" class="internal"><span class="codenumber">8</span> <span class="title">Introduction to Linear Regression</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-fitting-line-residuals-correlation.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Fitting a line, residuals, and correlation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-fitting-line-residuals-correlation.html#subsec-fitting-line-to-data" class="internal"><span class="codenumber">8.1.1</span> <span class="title">Fitting a line to data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-fitting-line-residuals-correlation.html#subsec-residuals" class="internal"><span class="codenumber">8.1.2</span> <span class="title">Residuals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-fitting-line-residuals-correlation.html#subsec-correlation" class="internal"><span class="codenumber">8.1.3</span> <span class="title">Correlation</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-least-squares-regression.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Least squares regression</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-least-squares-regression.html#subsec-least-squares-criterion" class="internal"><span class="codenumber">8.2.1</span> <span class="title">The least squares criterion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-least-squares-regression.html#subsec-interpreting-regression-coefficients" class="internal"><span class="codenumber">8.2.2</span> <span class="title">Interpreting regression coefficients</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-least-squares-regression.html#subsec-r-squared" class="internal"><span class="codenumber">8.2.3</span> <span class="title">Coefficient of determination: <span class="process-math">\(R^2\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-least-squares-regression.html#subsec-regression-conditions" class="internal"><span class="codenumber">8.2.4</span> <span class="title">Conditions for least squares regression</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-outliers-in-regression.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Types of outliers in linear regression</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-inference-for-regression.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Inference for linear regression</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inference-for-regression.html#subsec-understanding-regression-model" class="internal"><span class="codenumber">8.4.1</span> <span class="title">Understanding the regression model</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inference-for-regression.html#subsec-se-of-slope" class="internal"><span class="codenumber">8.4.2</span> <span class="title">Standard error of the slope</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inference-for-regression.html#subsec-hypothesis-test-for-slope" class="internal"><span class="codenumber">8.4.3</span> <span class="title">Hypothesis test for the slope</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inference-for-regression.html#subsec-ci-for-slope" class="internal"><span class="codenumber">8.4.4</span> <span class="title">Confidence interval for the slope</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-inference-for-regression.html#subsec-prediction-intervals" class="internal"><span class="codenumber">8.4.5</span> <span class="title">Prediction intervals</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-ch08-review.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Chapter 8 Review</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-ch08-review.html#sec-ch08-review-3" class="internal"><span class="codenumber">8.5</span> <span class="title">Practice Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-multiple-logistic-regression.html" class="internal"><span class="codenumber">9</span> <span class="title">Multiple and Logistic Regression</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-multiple-regression-intro.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Introduction to Multiple Regression</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-multiple-regression-intro.html#subsec-indicator-categorical-predictors" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Indicator and Categorical Variables as Predictors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-multiple-regression-intro.html#subsec-multiple-regression-equation" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Multiple Regression Equation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-multiple-regression-intro.html#subsec-interpretation-coefficients" class="internal"><span class="codenumber">9.1.3</span> <span class="title">Interpreting Coefficients</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-model-selection.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Model Selection</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-model-selection.html#subsec-r-squared-adjusted" class="internal"><span class="codenumber">9.2.1</span> <span class="title">R-squared and Adjusted R-squared</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-model-selection.html#subsec-variable-selection" class="internal"><span class="codenumber">9.2.2</span> <span class="title">Variable Selection Strategies</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-model-assumptions.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Checking Model Assumptions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-model-assumptions.html#subsec-residual-diagnostics" class="internal"><span class="codenumber">9.3.1</span> <span class="title">Residual Diagnostics</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-regression-case-study.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Case Study: Mario Kart</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-regression-case-study.html#subsec-case-study-data" class="internal"><span class="codenumber">9.4.1</span> <span class="title">The Data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-regression-case-study.html#subsec-case-study-analysis" class="internal"><span class="codenumber">9.4.2</span> <span class="title">Model Development</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-logistic-regression.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Introduction to Logistic Regression</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-logistic-regression.html#subsec-logistic-function" class="internal"><span class="codenumber">9.5.1</span> <span class="title">The Logistic Function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-logistic-regression.html#subsec-odds-log-odds" class="internal"><span class="codenumber">9.5.2</span> <span class="title">Odds and Log-Odds</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-logistic-regression.html#subsec-coefficient-interpretation-logistic" class="internal"><span class="codenumber">9.5.3</span> <span class="title">Interpreting Logistic Regression Coefficients</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-logistic-regression.html#subsec-logistic-inference" class="internal"><span class="codenumber">9.5.4</span> <span class="title">Inference in Logistic Regression</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-ch09-review.html" class="internal"><span class="codenumber">9.6</span> <span class="title">Chapter Review</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ch09-review.html#subsec-ch09-summary" class="internal"><span class="codenumber">9.6.1</span> <span class="title">Summary</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ch09-review.html#subsec-ch09-terms" class="internal"><span class="codenumber">9.6.2</span> <span class="title">Terms</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="appendix-solutions.html" class="internal"><span class="codenumber">A</span> <span class="title">Exercise Solutions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="solutions-ch01.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Introduction to Data</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="solutions-ch02.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Summarizing Data</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="solutions-ch03.html" class="internal"><span class="codenumber">A.3</span> <span class="title">Probability</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="solutions-ch04.html" class="internal"><span class="codenumber">A.4</span> <span class="title">Distributions of Random Variables</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="solutions-ch05.html" class="internal"><span class="codenumber">A.5</span> <span class="title">Foundations for Inference</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="solutions-ch06.html" class="internal"><span class="codenumber">A.6</span> <span class="title">Inference for Categorical Data</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="solutions-ch07.html" class="internal"><span class="codenumber">A.7</span> <span class="title">Inference for Numerical Data</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="solutions-ch08.html" class="internal"><span class="codenumber">A.8</span> <span class="title">Introduction to Linear Regression</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="solutions-ch09.html" class="internal"><span class="codenumber">A.9</span> <span class="title">Multiple and Logistic Regression</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="appendix-data.html" class="internal"><span class="codenumber">B</span> <span class="title">Data Sets within the Text</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="data-ch01.html" class="internal"><span class="codenumber">B.1</span> <span class="title">Introduction to Data</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="data-ch02.html" class="internal"><span class="codenumber">B.2</span> <span class="title">Summarizing Data</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="data-ch03.html" class="internal"><span class="codenumber">B.3</span> <span class="title">Probability</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="data-ch04.html" class="internal"><span class="codenumber">B.4</span> <span class="title">Distributions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="data-ch05.html" class="internal"><span class="codenumber">B.5</span> <span class="title">Foundations for Inference</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="data-ch06.html" class="internal"><span class="codenumber">B.6</span> <span class="title">Inference for Proportions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="data-ch07.html" class="internal"><span class="codenumber">B.7</span> <span class="title">Inference for Means</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="data-ch08.html" class="internal"><span class="codenumber">B.8</span> <span class="title">Simple Linear Regression</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="data-ch09.html" class="internal"><span class="codenumber">B.9</span> <span class="title">Multiple and Logistic Regression</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="appendix-tables.html" class="internal"><span class="codenumber">C</span> <span class="title">Distribution Tables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="normal-probability-table.html" class="internal"><span class="codenumber">C.1</span> <span class="title">Normal Probability Table</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="t-probability-table.html" class="internal"><span class="codenumber">C.2</span> <span class="title"><span class="process-math">\(t\)</span>-Probability Table</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chi-square-probability-table.html" class="internal"><span class="codenumber">C.3</span> <span class="title">Chi-Square Probability Table</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-6.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="oneWayChiSquare"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Testing for goodness of fit using chi-square</span>
+</h2>
+<section class="introduction" id="oneWayChiSquare-2"><div class="para" id="oneWayChiSquare-2-1">In this section, we develop a method for assessing a null model when the data are binned. This technique is commonly used in two circumstances:<div class="autopermalink" data-description="Paragraph"><a href="#oneWayChiSquare-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="disc" id="oneWayChiSquare-2-2">
+<li id="oneWayChiSquare-2-2-1">
+<div class="para" id="p-derived-oneWayChiSquare-2-2-1">Given a sample of cases that can be classified into several groups, determine if the sample is representative of the general population.</div>
+<div class="autopermalink" data-description="Item"><a href="#oneWayChiSquare-2-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="oneWayChiSquare-2-2-2">
+<div class="para" id="p-derived-oneWayChiSquare-2-2-2">Evaluate whether data resemble a particular distribution, such as a normal distribution or a geometric distribution.</div>
+<div class="autopermalink" data-description="Item"><a href="#oneWayChiSquare-2-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para" id="oneWayChiSquare-2-3">Each of these scenarios can be addressed using the same statistical test: a chi-square test.<div class="autopermalink" data-description="Paragraph"><a href="#oneWayChiSquare-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="oneWayChiSquare-2-4">In the first case, we consider data from a random sample of 275 jurors in a small county. Jurors identified their racial group, as shown in <a href="oneWayChiSquare.html#juryRepresentationAndCityRepresentationForRace" class="xref" data-knowl="./knowl/xref/juryRepresentationAndCityRepresentationForRace.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 6.3.1: Representation by race in a city’s juries and population.">Table 6.3.1</a>, and we would like to determine if these jurors are racially representative of the population. If the jury is representative of the population, then the proportions in the sample should roughly reflect the population of eligible jurors, i.e. registered voters.<div class="autopermalink" data-description="Paragraph"><a href="#oneWayChiSquare-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="table table-like" id="juryRepresentationAndCityRepresentationForRace"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Representation by race in a city’s juries and population.<div class="autopermalink" data-description="Table 6.3.1: Representation by race in a city’s juries and population."><a href="#juryRepresentationAndCityRepresentationForRace" title="Copy heading and permalink for Table 6.3.1: Representation by race in a city’s juries and population." aria-label="Copy heading and permalink for Table 6.3.1: Representation by race in a city’s juries and population.">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b1 r0 l0 t0 lines">Race</td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines">White</td>
+<td class="l m b1 r0 l0 t0 lines">Black</td>
+<td class="l m b1 r0 l0 t0 lines">Hispanic</td>
+<td class="l m b1 r0 l0 t0 lines">Other</td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines">Total</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Representation in juries</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">205</td>
+<td class="l m b0 r0 l0 t0 lines">26</td>
+<td class="l m b0 r0 l0 t0 lines">25</td>
+<td class="l m b0 r0 l0 t0 lines">19</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">275</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines">Registered voters</td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines">0.72</td>
+<td class="l m b1 r0 l0 t0 lines">0.07</td>
+<td class="l m b1 r0 l0 t0 lines">0.12</td>
+<td class="l m b1 r0 l0 t0 lines">0.09</td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines">1.00</td>
+</tr>
+</table></div></figure><div class="para" id="oneWayChiSquare-2-6">While the proportions in the juries do not precisely represent the population proportions, it is unclear whether these data provide convincing evidence that the sample is not representative. If the jurors really were randomly sampled from the registered voters, we might expect small differences due to chance. However, unusually large differences may provide convincing evidence that the juries were not representative.<div class="autopermalink" data-description="Paragraph"><a href="#oneWayChiSquare-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="oneWayChiSquare-2-7">A second application, assessing the fit of a distribution, is presented at the end of this section. Daily stock returns from the S&amp;P500 for 25 years are used to assess whether stock activity each day is independent of the stock’s behavior on previous days.<div class="autopermalink" data-description="Paragraph"><a href="#oneWayChiSquare-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="oneWayChiSquare-2-8">In these problems, we would like to examine all bins simultaneously, not simply compare one or two bins at a time, which will require us to develop a new test statistic.<div class="autopermalink" data-description="Paragraph"><a href="#oneWayChiSquare-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsection" id="subsec-test-statistic-one-way"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Creating a test statistic for one-way tables</span>
+</h3>
+<details id="ex-expected-juror-white-black" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-expected-juror-white-black-1-1">Of the people in the city, 275 served on a jury. If the individuals are randomly selected to serve on a jury, about how many of the 275 people would we expect to be White? How many would we expect to be Black?<div class="autopermalink" data-description="Paragraph"><a href="#ex-expected-juror-white-black-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-expected-juror-white-black-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-expected-juror-white-black-2-1">About 72% of the population is White, so we would expect about 72% of the jurors to be White: <span class="process-math">\(0.72\times 275 = 198\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-expected-juror-white-black-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-expected-juror-white-black-2-2">Similarly, we would expect about 7% of the jurors to be Black, which would correspond to about <span class="process-math">\(0.07\times 275 = 19.25\)</span> Black jurors.<div class="autopermalink" data-description="Paragraph"><a href="#ex-expected-juror-white-black-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 6.3.2.1"><a href="#ex-expected-juror-white-black-2" title="Copy heading and permalink for Solution 6.3.2.1" aria-label="Copy heading and permalink for Solution 6.3.2.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 6.3.2"><a href="#ex-expected-juror-white-black" title="Copy heading and permalink for Example 6.3.2" aria-label="Copy heading and permalink for Example 6.3.2">🔗</a></div></article></details><details id="ex-expected-juror-hispanic-other" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="ex-expected-juror-hispanic-other-1-1">Twelve percent of the population is Hispanic and 9% represent other races. How many of the 275 jurors would we expect to be Hispanic or from another race? Answers can be found in <a href="oneWayChiSquare.html#expectedJuryRepresentationIfNoBias" class="xref" data-knowl="./knowl/xref/expectedJuryRepresentationIfNoBias.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 6.3.4: Actual and expected make-up of the jurors.">Table 6.3.4</a>.<div class="autopermalink" data-description="Paragraph"><a href="#ex-expected-juror-hispanic-other-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-expected-juror-hispanic-other-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-expected-juror-hispanic-other-2-1">Hispanic: <span class="process-math">\(0.12 \times 275 = 33\text{.}\)</span> Other: <span class="process-math">\(0.09 \times 275 = 24.75\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-expected-juror-hispanic-other-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 6.3.3.1"><a href="#ex-expected-juror-hispanic-other-2" title="Copy heading and permalink for Solution 6.3.3.1" aria-label="Copy heading and permalink for Solution 6.3.3.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Checkpoint 6.3.3"><a href="#ex-expected-juror-hispanic-other" title="Copy heading and permalink for Checkpoint 6.3.3" aria-label="Copy heading and permalink for Checkpoint 6.3.3">🔗</a></div></article></details><figure class="table table-like" id="expectedJuryRepresentationIfNoBias"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Actual and expected make-up of the jurors.<div class="autopermalink" data-description="Table 6.3.4: Actual and expected make-up of the jurors."><a href="#expectedJuryRepresentationIfNoBias" title="Copy heading and permalink for Table 6.3.4: Actual and expected make-up of the jurors." aria-label="Copy heading and permalink for Table 6.3.4: Actual and expected make-up of the jurors.">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b1 r0 l0 t0 lines">Race</td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines">White</td>
+<td class="l m b1 r0 l0 t0 lines">Black</td>
+<td class="l m b1 r0 l0 t0 lines">Hispanic</td>
+<td class="l m b1 r0 l0 t0 lines">Other</td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines">Total</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Observed data</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">205</td>
+<td class="l m b0 r0 l0 t0 lines">26</td>
+<td class="l m b0 r0 l0 t0 lines">25</td>
+<td class="l m b0 r0 l0 t0 lines">19</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">275</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines">Expected counts</td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines">198</td>
+<td class="l m b1 r0 l0 t0 lines">19.25</td>
+<td class="l m b1 r0 l0 t0 lines">33</td>
+<td class="l m b1 r0 l0 t0 lines">24.75</td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines">275</td>
+</tr>
+</table></div></figure><div class="para" id="subsec-test-statistic-one-way-5">The sample proportion represented from each race among the 275 jurors was not a precise match for any ethnic group. While some sampling variation is expected, we would expect the sample proportions to be fairly similar to the population proportions if there is no bias on juries. We need to test whether the differences are strong enough to provide convincing evidence that the jurors are not a random sample. These ideas can be organized into hypotheses:<div class="autopermalink" data-description="Paragraph"><a href="#subsec-test-statistic-one-way-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="disc" id="subsec-test-statistic-one-way-6">
+<li id="subsec-test-statistic-one-way-6-1">
+<div class="para" id="p-derived-subsec-test-statistic-one-way-6-1">
+<span class="process-math">\(H_0\text{:}\)</span> The jurors are a random sample, i.e. there is no racial bias in who serves on a jury, and the observed counts reflect natural sampling fluctuation.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-test-statistic-one-way-6-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-test-statistic-one-way-6-2">
+<div class="para" id="p-derived-subsec-test-statistic-one-way-6-2">
+<span class="process-math">\(H_A\text{:}\)</span> The jurors are not randomly sampled, i.e. there is racial bias in juror selection.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-test-statistic-one-way-6-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para" id="subsec-test-statistic-one-way-7">To evaluate these hypotheses, we quantify how different the observed counts are from the expected counts. Strong evidence for the alternative hypothesis would come in the form of unusually large deviations in the groups from what would be expected based on sampling variation alone.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-test-statistic-one-way-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 6.3.1: Creating a test statistic for one-way tables"><a href="#subsec-test-statistic-one-way" title="Copy heading and permalink for Subsection 6.3.1: Creating a test statistic for one-way tables" aria-label="Copy heading and permalink for Subsection 6.3.1: Creating a test statistic for one-way tables">🔗</a></div></section><section class="subsection" id="chiSquareTestStatistic"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The chi-square test statistic</span>
+</h3>
+<div class="para" id="chiSquareTestStatistic-2">In previous hypothesis tests, we constructed a test statistic of the following form:<div class="autopermalink" data-description="Paragraph"><a href="#chiSquareTestStatistic-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/pValueForAChiSquareTest.html" id="chiSquareTestStatistic-3">
+\begin{equation*}
+\frac{\text{point estimate} - \text{null value}}{\text{SE of point estimate}}
+\end{equation*}
+</div>
+<div class="para" id="chiSquareTestStatistic-4">This construction was based on (1) identifying the difference between a point estimate and an expected value if the null hypothesis was true, and (2) standardizing that difference using the standard error of the point estimate. These two ideas will help in the construction of an appropriate test statistic for count data.<div class="autopermalink" data-description="Paragraph"><a href="#chiSquareTestStatistic-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chiSquareTestStatistic-5">Our strategy will be to first compute the difference between the observed counts and the counts we would expect if the null hypothesis was true, then we will standardize the difference:<div class="autopermalink" data-description="Paragraph"><a href="#chiSquareTestStatistic-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/pValueForAChiSquareTest.html" id="chiSquareTestStatistic-6">
+\begin{equation*}
+Z_{1} = \frac{\text{observed White count} - \text{null White count}}{\text{SE of observed White count}}
+\end{equation*}
+</div>
+<div class="para" id="chiSquareTestStatistic-7">The standard error for the point estimate of the count in binned data is the square root of the count under the null.<details class="ptx-footnote" aria-live="polite" id="chiSquareTestStatistic-7-1"><summary class="ptx-footnote__number" title="Footnote 6.3.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="chiSquareTestStatistic-7-1">Using some of the rules learned in earlier chapters, we might think that the standard error would be <span class="process-math">\(np(1-p)\text{,}\)</span> where <span class="process-math">\(n\)</span> is the sample size and <span class="process-math">\(p\)</span> is the proportion in the population. This would be correct if we were looking only at one count. However, we are computing many standardized differences and adding them together. It can be shown—though not here—that the square root of the count is a better way to standardize the count differences.</div></details> Therefore:<div class="autopermalink" data-description="Paragraph"><a href="#chiSquareTestStatistic-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/pValueForAChiSquareTest.html" id="chiSquareTestStatistic-8">
+\begin{equation*}
+Z_1 = \frac{205 - 198}{\sqrt{198}} = 0.50
+\end{equation*}
+</div>
+<div class="para" id="chiSquareTestStatistic-9">The fraction is very similar to previous test statistics: first compute a difference, then standardize it. These computations should also be completed for the Black, Hispanic, and other groups:<div class="autopermalink" data-description="Paragraph"><a href="#chiSquareTestStatistic-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/pValueForAChiSquareTest.html" id="chiSquareTestStatistic-10">
+\begin{align*}
+\text{Black} \qquad Z_2 \amp = \frac{26-19.25}{\sqrt{19.25}}=1.54\\
+\text{Hispanic} \qquad Z_3 \amp = \frac{25-33}{\sqrt{33}}=-1.39\\
+\text{Other} \qquad Z_4 \amp = \frac{19-24.75}{\sqrt{24.75}}=-1.16
+\end{align*}
+</div>
+<div class="para" id="chiSquareTestStatistic-11">We would like to use a single test statistic to determine if these four standardized differences are irregularly far from zero. That is, <span class="process-math">\(Z_1\text{,}\)</span> <span class="process-math">\(Z_2\text{,}\)</span> <span class="process-math">\(Z_3\text{,}\)</span> and <span class="process-math">\(Z_4\)</span> must be combined somehow to help determine if they—as a group—tend to be unusually far from zero. A first thought might be to take the absolute value of these four standardized differences and add them up:<div class="autopermalink" data-description="Paragraph"><a href="#chiSquareTestStatistic-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/pValueForAChiSquareTest.html" id="chiSquareTestStatistic-12">
+\begin{equation*}
+|Z_1| + |Z_2| + |Z_3| + |Z_4| = 4.58
+\end{equation*}
+</div>
+<div class="para" id="chiSquareTestStatistic-13">Indeed, this does give one number summarizing how far the actual counts are from what was expected. However, it is more common to add the squared values:<div class="autopermalink" data-description="Paragraph"><a href="#chiSquareTestStatistic-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/pValueForAChiSquareTest.html" id="chiSquareTestStatistic-14">
+\begin{equation*}
+Z_1^2 + Z_2^2 + Z_3^2 + Z_4^2 = 5.89
+\end{equation*}
+</div>
+<div class="para" id="chiSquareTestStatistic-15">Squaring each standardized difference before adding them together does two things:<div class="autopermalink" data-description="Paragraph"><a href="#chiSquareTestStatistic-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="disc" id="chiSquareTestStatistic-16">
+<li id="chiSquareTestStatistic-16-1">
+<div class="para" id="p-derived-chiSquareTestStatistic-16-1">Any standardized difference that is squared will now be positive.</div>
+<div class="autopermalink" data-description="Item"><a href="#chiSquareTestStatistic-16-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="chiSquareTestStatistic-16-2">
+<div class="para" id="p-derived-chiSquareTestStatistic-16-2">Differences that already look unusual—e.g. a standardized difference of 2.5—will become much larger after being squared.</div>
+<div class="autopermalink" data-description="Item"><a href="#chiSquareTestStatistic-16-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para" id="chiSquareTestStatistic-17">The test statistic <span class="process-math">\(X^2\text{,}\)</span> which is the sum of the <span class="process-math">\(Z^2\)</span> values, is generally used for these reasons. We can also write an equation for <span class="process-math">\(X^2\)</span> using the observed counts and null counts:<div class="autopermalink" data-description="Paragraph"><a href="#chiSquareTestStatistic-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/pValueForAChiSquareTest.html" id="chiSquareTestStatistic-18">
+\begin{equation*}
+X^2 = \frac{(\text{observed count}_1 - \text{null count}_1)^2}{\text{null count}_1} + \dots + \frac{(\text{observed count}_4 - \text{null count}_4)^2}{\text{null count}_4}
+\end{equation*}
+</div>
+<div class="para" id="chiSquareTestStatistic-19">The final number <span class="process-math">\(X^2\)</span> summarizes how strongly the observed counts tend to deviate from the null counts. In Section <a href="oneWayChiSquare.html#pValueForAChiSquareTest" class="internal" title="Subsection 6.3.4: Finding a p-value for a chi-square distribution">Subsection 6.3.4</a>, we will see that if the null hypothesis is true, then <span class="process-math">\(X^2\)</span> follows a new distribution called a <em class="emphasis">chi-square distribution</em>. Using this distribution, we will be able to obtain a p-value to evaluate the hypotheses.<div class="autopermalink" data-description="Paragraph"><a href="#chiSquareTestStatistic-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 6.3.2: The chi-square test statistic"><a href="#chiSquareTestStatistic" title="Copy heading and permalink for Subsection 6.3.2: The chi-square test statistic" aria-label="Copy heading and permalink for Subsection 6.3.2: The chi-square test statistic">🔗</a></div></section><section class="subsection" id="subsec-chi-square-dist-areas"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The chi-square distribution and finding areas</span>
+</h3>
+<div class="para" id="subsec-chi-square-dist-areas-2">The <dfn class="terminology">chi-square distribution</dfn> is sometimes used to characterize data sets and statistics that are always positive and typically right skewed. Recall a normal distribution had two parameters—mean and standard deviation—that could be used to describe its exact characteristics. The chi-square distribution has just one parameter called <dfn class="terminology">degrees of freedom (df)</dfn>, which influences the shape, center, and spread of the distribution.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-chi-square-dist-areas-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="exerChiSquareDistributionDescriptionWithMoreDOF" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="exerChiSquareDistributionDescriptionWithMoreDOF-1-1">
+<a href="oneWayChiSquare.html#chiSquareDistributionWithInceasingDF" class="xref" data-knowl="./knowl/xref/chiSquareDistributionWithInceasingDF.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.3.6">Figure 6.3.6</a> shows three chi-square distributions.<div class="autopermalink" data-description="Paragraph"><a href="#exerChiSquareDistributionDescriptionWithMoreDOF-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="exerChiSquareDistributionDescriptionWithMoreDOF-1-2">(a) How does the center of the distribution change when the degrees of freedom is larger?<div class="autopermalink" data-description="Paragraph"><a href="#exerChiSquareDistributionDescriptionWithMoreDOF-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="exerChiSquareDistributionDescriptionWithMoreDOF-1-3">(b) What about the variability (spread)?<div class="autopermalink" data-description="Paragraph"><a href="#exerChiSquareDistributionDescriptionWithMoreDOF-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="exerChiSquareDistributionDescriptionWithMoreDOF-1-4">(c) How does the shape change?<div class="autopermalink" data-description="Paragraph"><a href="#exerChiSquareDistributionDescriptionWithMoreDOF-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="exerChiSquareDistributionDescriptionWithMoreDOF-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="exerChiSquareDistributionDescriptionWithMoreDOF-2-1">(a) The center becomes larger. If took a careful look, we could see that the mean of each distribution is equal to the distribution’s degrees of freedom.<div class="autopermalink" data-description="Paragraph"><a href="#exerChiSquareDistributionDescriptionWithMoreDOF-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="exerChiSquareDistributionDescriptionWithMoreDOF-2-2">(b) The variability increases as the degrees of freedom increases.<div class="autopermalink" data-description="Paragraph"><a href="#exerChiSquareDistributionDescriptionWithMoreDOF-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="exerChiSquareDistributionDescriptionWithMoreDOF-2-3">(c) The distribution is very strongly skewed for <span class="process-math">\(df=2\text{,}\)</span> and then the distributions become more symmetric for the larger degrees of freedom <span class="process-math">\(df=4\)</span> and <span class="process-math">\(df=9\text{.}\)</span> We would see this trend continue if we examined distributions with even more larger degrees of freedom.<div class="autopermalink" data-description="Paragraph"><a href="#exerChiSquareDistributionDescriptionWithMoreDOF-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 6.3.5.1"><a href="#exerChiSquareDistributionDescriptionWithMoreDOF-2" title="Copy heading and permalink for Solution 6.3.5.1" aria-label="Copy heading and permalink for Solution 6.3.5.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Checkpoint 6.3.5"><a href="#exerChiSquareDistributionDescriptionWithMoreDOF" title="Copy heading and permalink for Checkpoint 6.3.5" aria-label="Copy heading and permalink for Checkpoint 6.3.5">🔗</a></div></article></details><figure class="figure figure-like" id="chiSquareDistributionWithInceasingDF"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;">
+<img src="external/ch_inference_for_props/figures/chiSquareDistributionWithInceasingDF/chiSquareDistributionWithInceasingDF.pdf" class="contained" alt="described in detail following the image" aria-describedby="chiSquareDistributionWithInceasingDF-2-description"><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="chiSquareDistributionWithInceasingDF-2-description">Three chi-square distributions are shown with degrees of freedom 2, 4, and 9 on the same plot. The horizontal axis ranges from 0 to 25—recall that the chi-square distributions never take values smaller than 0. The chi-square distribution with 2 degrees of freedom starts at a peak at zero and then quickly declines more than halfway by the value of 2 and trails off after a value of about 5. The chi-square distribution with 4 degrees of freedom starts at 0 and quickly rises to a peak at about 2, before gradually declining and then more steeply declining starting at 3, before starting to flatten at about 5 or 6. The distribution has fallen very close to the horizontal axis by a value of 10. The chi-square distribution with 9 degrees of freedom starts at zero before gradually rising up to a peak at about 7 before declining again and trailing off between at around 15.</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Three chi-square distributions with varying degrees of freedom.<div class="autopermalink" data-description="Figure 6.3.6"><a href="#chiSquareDistributionWithInceasingDF" title="Copy heading and permalink for Figure 6.3.6" aria-label="Copy heading and permalink for Figure 6.3.6">🔗</a></div></figcaption></figure><div class="para" id="subsec-chi-square-dist-areas-5">
+<a href="oneWayChiSquare.html#chiSquareDistributionWithInceasingDF" class="xref" data-knowl="./knowl/xref/chiSquareDistributionWithInceasingDF.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.3.6">Figure 6.3.6</a> and Guided Practice <a href="oneWayChiSquare.html#exerChiSquareDistributionDescriptionWithMoreDOF" class="xref" data-knowl="./knowl/xref/exerChiSquareDistributionDescriptionWithMoreDOF.html" data-reveal-label="Reveal" data-close-label="Close" title="Checkpoint 6.3.5">Checkpoint 6.3.5</a> demonstrate three general properties of chi-square distributions as the degrees of freedom increases: the distribution becomes more symmetric, the center moves to the right, and the variability inflates.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-chi-square-dist-areas-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-chi-square-dist-areas-6">Our principal interest in the chi-square distribution is the calculation of p-values, which (as we have seen before) is related to finding the relevant area in the tail of a distribution. The most common ways to do this are using computer software, using a graphing calculator, or using a table. For folks wanting to use the table option, we provide an outline of how to read the chi-square table in Appendix C, which is also where you may find the table. For the examples below, use your preferred approach to confirm you get the same answers.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-chi-square-dist-areas-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ex-chi-square-area-6-25-df3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-chi-square-area-6-25-df3-1-1">
+<a href="oneWayChiSquare.html#chiSquareAreaAbove6Point25WithDF3" class="xref" data-knowl="./knowl/xref/chiSquareAreaAbove6Point25WithDF3.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.3.8.(a)">Figure 6.3.8.(a)</a> shows a chi-square distribution with 3 degrees of freedom and an upper shaded tail starting at 6.25. Find the shaded area.<div class="autopermalink" data-description="Paragraph"><a href="#ex-chi-square-area-6-25-df3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-chi-square-area-6-25-df3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-chi-square-area-6-25-df3-2-1">Using statistical software or a graphing calculator, we can find that the upper tail area for a chi-square distribution with 3 degrees of freedom (<span class="process-math">\(df\)</span>) and a cutoff of 6.25 is 0.1001. That is, the shaded upper tail of <a href="oneWayChiSquare.html#chiSquareAreaAbove6Point25WithDF3" class="xref" data-knowl="./knowl/xref/chiSquareAreaAbove6Point25WithDF3.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.3.8.(a)">Figure 6.3.8.(a)</a> has area 0.1.<div class="autopermalink" data-description="Paragraph"><a href="#ex-chi-square-area-6-25-df3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 6.3.7.1"><a href="#ex-chi-square-area-6-25-df3-2" title="Copy heading and permalink for Solution 6.3.7.1" aria-label="Copy heading and permalink for Solution 6.3.7.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 6.3.7"><a href="#ex-chi-square-area-6-25-df3" title="Copy heading and permalink for Example 6.3.7" aria-label="Copy heading and permalink for Example 6.3.7">🔗</a></div></article></details><figure class="figure figure-like" id="arrayOfFigureAreasForChiSquareDistribution"><div class="sidebyside"><div class="sbsrow" style="margin-left:1%;margin-right:1%;grid-template-columns:48.9795918367347% 48.9795918367347%;column-gap:2%;">
+<div class="sbspanel sbspanel--top top" style=""><figure class="figure figure-like" id="chiSquareAreaAbove6Point25WithDF3"><img src="external/ch_inference_for_props/figures/arrayOfFigureAreasForChiSquareDistribution/chiSquareAreaAbove6Point25WithDF3.pdf" class="contained" alt="A chi-square distribution with 3 degrees of freedom is shown, with the area above 6.25 shaded. This region appears to be about 10% of the area under the curve."><figcaption><span class="codenumber">(a)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Chi-square distribution with 3 degrees of freedom, area above 6.25 shaded.<div class="autopermalink" data-description="Figure 6.3.8.(a)"><a href="#chiSquareAreaAbove6Point25WithDF3" title="Copy heading and permalink for Figure 6.3.8.(a)" aria-label="Copy heading and permalink for Figure 6.3.8.(a)">🔗</a></div></figcaption></figure></div>
+<div class="sbspanel sbspanel--top top" style=""><figure class="figure figure-like" id="chiSquareAreaAbove4Point3WithDF2"><img src="external/ch_inference_for_props/figures/arrayOfFigureAreasForChiSquareDistribution/chiSquareAreaAbove4Point3WithDF2.pdf" class="contained" alt="A chi-square distribution with 2 degrees of freedom is shown, with the area above 4.3 shaded. This region appears to be about 10% of the area under the curve."><figcaption><span class="codenumber">(b)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>2 degrees of freedom, area above 4.3 shaded.<div class="autopermalink" data-description="Figure 6.3.8.(b)"><a href="#chiSquareAreaAbove4Point3WithDF2" title="Copy heading and permalink for Figure 6.3.8.(b)" aria-label="Copy heading and permalink for Figure 6.3.8.(b)">🔗</a></div></figcaption></figure></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:1%;margin-right:1%;grid-template-columns:48.9795918367347% 48.9795918367347%;column-gap:2%;">
+<div class="sbspanel sbspanel--top top" style=""><figure class="figure figure-like" id="chiSquareAreaAbove5Point1WithDF5"><img src="external/ch_inference_for_props/figures/arrayOfFigureAreasForChiSquareDistribution/chiSquareAreaAbove5Point1WithDF5.pdf" class="contained" alt="A chi-square distribution with 5 degrees of freedom is shown, with the area above 5.1 shaded. This region appears to be very roughly 50% of the area under the curve."><figcaption><span class="codenumber">(a)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>5 degrees of freedom, area above 5.1 shaded.<div class="autopermalink" data-description="Figure 6.3.8.(a)"><a href="#chiSquareAreaAbove5Point1WithDF5" title="Copy heading and permalink for Figure 6.3.8.(a)" aria-label="Copy heading and permalink for Figure 6.3.8.(a)">🔗</a></div></figcaption></figure></div>
+<div class="sbspanel sbspanel--top top" style=""><figure class="figure figure-like" id="chiSquareAreaAbove11Point7WithDF7"><img src="external/ch_inference_for_props/figures/arrayOfFigureAreasForChiSquareDistribution/chiSquareAreaAbove11Point7WithDF7.pdf" class="contained" alt="A chi-square distribution with 7 degrees of freedom is shown, with the area above 11.7 shaded. This region appears to be about 15% of the area under the curve."><figcaption><span class="codenumber">(b)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>7 degrees of freedom, area above 11.7 shaded.<div class="autopermalink" data-description="Figure 6.3.8.(b)"><a href="#chiSquareAreaAbove11Point7WithDF7" title="Copy heading and permalink for Figure 6.3.8.(b)" aria-label="Copy heading and permalink for Figure 6.3.8.(b)">🔗</a></div></figcaption></figure></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:1%;margin-right:1%;grid-template-columns:48.9795918367347% 48.9795918367347%;column-gap:2%;">
+<div class="sbspanel sbspanel--top top" style=""><figure class="figure figure-like" id="chiSquareAreaAbove10WithDF4"><img src="external/ch_inference_for_props/figures/arrayOfFigureAreasForChiSquareDistribution/chiSquareAreaAbove10WithDF4.pdf" class="contained" alt="A chi-square distribution with 4 degrees of freedom is shown, with the area above 10 shaded. This region appears to be about 5% of the area under the curve."><figcaption><span class="codenumber">(a)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>4 degrees of freedom, area above 10 shaded.<div class="autopermalink" data-description="Figure 6.3.8.(a)"><a href="#chiSquareAreaAbove10WithDF4" title="Copy heading and permalink for Figure 6.3.8.(a)" aria-label="Copy heading and permalink for Figure 6.3.8.(a)">🔗</a></div></figcaption></figure></div>
+<div class="sbspanel sbspanel--top top" style=""><figure class="figure figure-like" id="chiSquareAreaAbove9Point21WithDF3"><img src="external/ch_inference_for_props/figures/arrayOfFigureAreasForChiSquareDistribution/chiSquareAreaAbove9Point21WithDF3.pdf" class="contained" alt="A chi-square distribution with 3 degrees of freedom is shown, with the area above 9.21 shaded. This region appears to be about 3% of the area under the curve."><figcaption><span class="codenumber">(b)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>3 degrees of freedom, area above 9.21 shaded.<div class="autopermalink" data-description="Figure 6.3.8.(b)"><a href="#chiSquareAreaAbove9Point21WithDF3" title="Copy heading and permalink for Figure 6.3.8.(b)" aria-label="Copy heading and permalink for Figure 6.3.8.(b)">🔗</a></div></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Six chi-square distributions with shaded upper tails.<div class="autopermalink" data-description="Figure 6.3.8"><a href="#arrayOfFigureAreasForChiSquareDistribution" title="Copy heading and permalink for Figure 6.3.8" aria-label="Copy heading and permalink for Figure 6.3.8">🔗</a></div></figcaption></figure><details id="ex-chi-square-area-4-3-df2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-chi-square-area-4-3-df2-1-1">
+<a href="oneWayChiSquare.html#chiSquareAreaAbove4Point3WithDF2" class="xref" data-knowl="./knowl/xref/chiSquareAreaAbove4Point3WithDF2.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.3.8.(b)">Figure 6.3.8.(b)</a> shows the upper tail of a chi-square distribution with 2 degrees of freedom. The bound for this upper tail is at 4.3. Find the tail area.<div class="autopermalink" data-description="Paragraph"><a href="#ex-chi-square-area-4-3-df2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-chi-square-area-4-3-df2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-chi-square-area-4-3-df2-2-1">Using software, we can find that the tail area shaded in <a href="oneWayChiSquare.html#chiSquareAreaAbove4Point3WithDF2" class="xref" data-knowl="./knowl/xref/chiSquareAreaAbove4Point3WithDF2.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.3.8.(b)">Figure 6.3.8.(b)</a> to be 0.1165. If using a table, we would only be able to find a range of values for the tail area: between 0.1 and 0.2.<div class="autopermalink" data-description="Paragraph"><a href="#ex-chi-square-area-4-3-df2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 6.3.9.1"><a href="#ex-chi-square-area-4-3-df2-2" title="Copy heading and permalink for Solution 6.3.9.1" aria-label="Copy heading and permalink for Solution 6.3.9.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 6.3.9"><a href="#ex-chi-square-area-4-3-df2" title="Copy heading and permalink for Example 6.3.9" aria-label="Copy heading and permalink for Example 6.3.9">🔗</a></div></article></details><details id="ex-chi-square-area-5-1-df5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-chi-square-area-5-1-df5-1-1">
+<a href="oneWayChiSquare.html#chiSquareAreaAbove5Point1WithDF5" class="xref" data-knowl="./knowl/xref/chiSquareAreaAbove5Point1WithDF5.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.3.8.(a)">Figure 6.3.8.(a)</a> shows an upper tail for a chi-square distribution with 5 degrees of freedom and a cutoff of 5.1. Find the tail area.<div class="autopermalink" data-description="Paragraph"><a href="#ex-chi-square-area-5-1-df5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-chi-square-area-5-1-df5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-chi-square-area-5-1-df5-2-1">Using software, we would obtain a tail area of 0.4038. If using the table in Appendix C, we would have identified that the tail area is larger than 0.3 but not be able to give the precise value.<div class="autopermalink" data-description="Paragraph"><a href="#ex-chi-square-area-5-1-df5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 6.3.10.1"><a href="#ex-chi-square-area-5-1-df5-2" title="Copy heading and permalink for Solution 6.3.10.1" aria-label="Copy heading and permalink for Solution 6.3.10.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 6.3.10"><a href="#ex-chi-square-area-5-1-df5" title="Copy heading and permalink for Example 6.3.10" aria-label="Copy heading and permalink for Example 6.3.10">🔗</a></div></article></details><details id="ex-chi-square-area-11-7-df7" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="ex-chi-square-area-11-7-df7-1-1">
+<a href="oneWayChiSquare.html#chiSquareAreaAbove11Point7WithDF7" class="xref" data-knowl="./knowl/xref/chiSquareAreaAbove11Point7WithDF7.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.3.8.(b)">Figure 6.3.8.(b)</a> shows a cutoff of 11.7 on a chi-square distribution with 7 degrees of freedom. Find the area of the upper tail.<div class="autopermalink" data-description="Paragraph"><a href="#ex-chi-square-area-11-7-df7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-chi-square-area-11-7-df7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-chi-square-area-11-7-df7-2-1">The area is 0.1109. If using a table, we would identify that it falls between 0.1 and 0.2.<div class="autopermalink" data-description="Paragraph"><a href="#ex-chi-square-area-11-7-df7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 6.3.11.1"><a href="#ex-chi-square-area-11-7-df7-2" title="Copy heading and permalink for Solution 6.3.11.1" aria-label="Copy heading and permalink for Solution 6.3.11.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Checkpoint 6.3.11"><a href="#ex-chi-square-area-11-7-df7" title="Copy heading and permalink for Checkpoint 6.3.11" aria-label="Copy heading and permalink for Checkpoint 6.3.11">🔗</a></div></article></details><details id="ex-chi-square-area-10-df4" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="ex-chi-square-area-10-df4-1-1">
+<a href="oneWayChiSquare.html#chiSquareAreaAbove10WithDF4" class="xref" data-knowl="./knowl/xref/chiSquareAreaAbove10WithDF4.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.3.8.(a)">Figure 6.3.8.(a)</a> shows a cutoff of 10 on a chi-square distribution with 4 degrees of freedom. Find the area of the upper tail.<div class="autopermalink" data-description="Paragraph"><a href="#ex-chi-square-area-10-df4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-chi-square-area-10-df4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-chi-square-area-10-df4-2-1">Precise value: 0.0404. If using the table: between 0.02 and 0.05.<div class="autopermalink" data-description="Paragraph"><a href="#ex-chi-square-area-10-df4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 6.3.12.1"><a href="#ex-chi-square-area-10-df4-2" title="Copy heading and permalink for Solution 6.3.12.1" aria-label="Copy heading and permalink for Solution 6.3.12.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Checkpoint 6.3.12"><a href="#ex-chi-square-area-10-df4" title="Copy heading and permalink for Checkpoint 6.3.12" aria-label="Copy heading and permalink for Checkpoint 6.3.12">🔗</a></div></article></details><details id="ex-chi-square-area-9-21-df3" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="ex-chi-square-area-9-21-df3-1-1">
+<a href="oneWayChiSquare.html#chiSquareAreaAbove9Point21WithDF3" class="xref" data-knowl="./knowl/xref/chiSquareAreaAbove9Point21WithDF3.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.3.8.(b)">Figure 6.3.8.(b)</a> shows a cutoff of 9.21 with a chi-square distribution with 3 df. Find the area of the upper tail.<div class="autopermalink" data-description="Paragraph"><a href="#ex-chi-square-area-9-21-df3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-chi-square-area-9-21-df3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-chi-square-area-9-21-df3-2-1">Precise value: 0.0266. If using the table: between 0.02 and 0.05.<div class="autopermalink" data-description="Paragraph"><a href="#ex-chi-square-area-9-21-df3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 6.3.13.1"><a href="#ex-chi-square-area-9-21-df3-2" title="Copy heading and permalink for Solution 6.3.13.1" aria-label="Copy heading and permalink for Solution 6.3.13.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Checkpoint 6.3.13"><a href="#ex-chi-square-area-9-21-df3" title="Copy heading and permalink for Checkpoint 6.3.13" aria-label="Copy heading and permalink for Checkpoint 6.3.13">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 6.3.3: The chi-square distribution and finding areas"><a href="#subsec-chi-square-dist-areas" title="Copy heading and permalink for Subsection 6.3.3: The chi-square distribution and finding areas" aria-label="Copy heading and permalink for Subsection 6.3.3: The chi-square distribution and finding areas">🔗</a></div></section><section class="subsection" id="pValueForAChiSquareTest"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Finding a p-value for a chi-square distribution</span>
+</h3>
+<div class="para" id="pValueForAChiSquareTest-2">In Section <a href="oneWayChiSquare.html#chiSquareTestStatistic" class="internal" title="Subsection 6.3.2: The chi-square test statistic">Subsection 6.3.2</a>, we identified a new test statistic (<span class="process-math">\(X^2\)</span>) within the context of assessing whether there was evidence of racial bias in how jurors were sampled. The null hypothesis represented the claim that jurors were randomly sampled and there was no racial bias. The alternative hypothesis was that there was racial bias in how the jurors were sampled.<div class="autopermalink" data-description="Paragraph"><a href="#pValueForAChiSquareTest-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="pValueForAChiSquareTest-3">We determined that a large <span class="process-math">\(X^2\)</span> value would suggest strong evidence favoring the alternative hypothesis: that there was racial bias. However, we could not quantify what the chance was of observing such a large test statistic (<span class="process-math">\(X^2=5.89\)</span>) if the null hypothesis actually was true. This is where the chi-square distribution becomes useful. If the null hypothesis was true and there was no racial bias, then <span class="process-math">\(X^2\)</span> would follow a chi-square distribution, with three degrees of freedom in this case. Under certain conditions, the statistic <span class="process-math">\(X^2\)</span> follows a chi-square distribution with <span class="process-math">\(k - 1\)</span> degrees of freedom, where <span class="process-math">\(k\)</span> is the number of bins.<div class="autopermalink" data-description="Paragraph"><a href="#pValueForAChiSquareTest-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ex-juror-df" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-juror-df-1-1">How many categories were there in the juror example? How many degrees of freedom should be associated with the chi-square distribution used for <span class="process-math">\(X^2\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-juror-df-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-juror-df-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-juror-df-2-1">In the jurors example, there were <span class="process-math">\(k=4\)</span> categories: White, Black, Hispanic, and other. According to the rule above, the test statistic <span class="process-math">\(X^2\)</span> should then follow a chi-square distribution with <span class="process-math">\(k-1 = 3\)</span> degrees of freedom if <span class="process-math">\(H_0\)</span> is true.<div class="autopermalink" data-description="Paragraph"><a href="#ex-juror-df-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 6.3.14.1"><a href="#ex-juror-df-2" title="Copy heading and permalink for Solution 6.3.14.1" aria-label="Copy heading and permalink for Solution 6.3.14.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 6.3.14"><a href="#ex-juror-df" title="Copy heading and permalink for Example 6.3.14" aria-label="Copy heading and permalink for Example 6.3.14">🔗</a></div></article></details><div class="para" id="pValueForAChiSquareTest-5">Just like we checked sample size conditions to use a normal distribution in earlier sections, we must also check a sample size condition to safely apply the chi-square distribution for <span class="process-math">\(X^2\text{.}\)</span> Each expected count must be at least 5. In the juror example, the expected counts were 198, 19.25, 33, and 24.75, all easily above 5, so we can apply the chi-square model to the test statistic, <span class="process-math">\(X^2=5.89\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#pValueForAChiSquareTest-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ex-juror-pvalue" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-juror-pvalue-1-1">If the null hypothesis is true, the test statistic <span class="process-math">\(X^2=5.89\)</span> would be closely associated with a chi-square distribution with three degrees of freedom. Using this distribution and test statistic, identify the p-value.<div class="autopermalink" data-description="Paragraph"><a href="#ex-juror-pvalue-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-juror-pvalue-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-juror-pvalue-2-1">The chi-square distribution and p-value are shown in <a href="oneWayChiSquare.html#jurorHTPValueShown" class="xref" data-knowl="./knowl/xref/jurorHTPValueShown.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.3.16">Figure 6.3.16</a>. Because larger chi-square values correspond to stronger evidence against the null hypothesis, we shade the upper tail to represent the p-value. Using statistical software (or the table in Appendix C), we can determine that the area is 0.1171. Generally we do not reject the null hypothesis with such a large p-value. In other words, the data do not provide convincing evidence of racial bias in the juror selection.<div class="autopermalink" data-description="Paragraph"><a href="#ex-juror-pvalue-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 6.3.15.1"><a href="#ex-juror-pvalue-2" title="Copy heading and permalink for Solution 6.3.15.1" aria-label="Copy heading and permalink for Solution 6.3.15.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 6.3.15"><a href="#ex-juror-pvalue" title="Copy heading and permalink for Example 6.3.15" aria-label="Copy heading and permalink for Example 6.3.15">🔗</a></div></article></details><figure class="figure figure-like" id="jurorHTPValueShown"><div class="image-box" style="width: 55%; margin-left: 22.5%; margin-right: 22.5%;"><img src="external/ch_inference_for_props/figures/jurorHTPValueShown/jurorHTPValueShown.pdf" class="contained" alt="A chi-square distribution with 3 degrees of freedom is shown, with the area above 5.89 shaded. This region appears to be about 10% of the area under the curve."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.16<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The p-value for the juror hypothesis test is shaded in the chi-square distribution with <span class="process-math">\(df=3\text{.}\)</span><div class="autopermalink" data-description="Figure 6.3.16"><a href="#jurorHTPValueShown" title="Copy heading and permalink for Figure 6.3.16" aria-label="Copy heading and permalink for Figure 6.3.16">🔗</a></div></figcaption></figure><article class="assemblage assemblage-like" id="assem-chi-square-one-way"><h4 class="heading"><span class="title">Chi-square test for one-way table.</span></h4>
+<div class="para" id="assem-chi-square-one-way-2">Suppose we are to evaluate whether there is convincing evidence that a set of observed counts <span class="process-math">\(O_1\text{,}\)</span> <span class="process-math">\(O_2\text{,}\)</span> ..., <span class="process-math">\(O_k\)</span> in <span class="process-math">\(k\)</span> categories are unusually different from what might be expected under a null hypothesis. Call the <em class="emphasis">expected counts</em> that are based on the null hypothesis <span class="process-math">\(E_1\text{,}\)</span> <span class="process-math">\(E_2\text{,}\)</span> ..., <span class="process-math">\(E_k\text{.}\)</span> If each expected count is at least 5 and the null hypothesis is true, then the test statistic below follows a chi-square distribution with <span class="process-math">\(k-1\)</span> degrees of freedom:<div class="autopermalink" data-description="Paragraph"><a href="#assem-chi-square-one-way-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="assem-chi-square-one-way-4">The p-value for this test statistic is found by looking at the upper tail of this chi-square distribution. We consider the upper tail because larger values of <span class="process-math">\(X^2\)</span> would provide greater evidence against the null hypothesis.<div class="autopermalink" data-description="Paragraph"><a href="#assem-chi-square-one-way-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Assemblage: Chi-square test for one-way table"><a href="#assem-chi-square-one-way" title="Copy heading and permalink for Assemblage: Chi-square test for one-way table" aria-label="Copy heading and permalink for Assemblage: Chi-square test for one-way table">🔗</a></div></article><article class="assemblage assemblage-like" id="assem-chi-square-conditions"><h4 class="heading"><span class="title">Conditions for the chi-square test.</span></h4>
+<div class="para" id="assem-chi-square-conditions-2">There are two conditions that must be checked before performing a chi-square test:<div class="autopermalink" data-description="Paragraph"><a href="#assem-chi-square-conditions-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="assem-chi-square-conditions-4">Failing to check conditions may affect the test’s error rates.<div class="autopermalink" data-description="Paragraph"><a href="#assem-chi-square-conditions-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Assemblage: Conditions for the chi-square test"><a href="#assem-chi-square-conditions" title="Copy heading and permalink for Assemblage: Conditions for the chi-square test" aria-label="Copy heading and permalink for Assemblage: Conditions for the chi-square test">🔗</a></div></article><div class="para" id="pValueForAChiSquareTest-10">When examining a table with just two bins, pick a single bin and use the one-proportion methods introduced in Section <a href="singleProportion.html" class="internal" title="Section 6.1: Inference for a single proportion">Section 6.1</a>.<div class="autopermalink" data-description="Paragraph"><a href="#pValueForAChiSquareTest-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 6.3.4: Finding a p-value for a chi-square distribution"><a href="#pValueForAChiSquareTest" title="Copy heading and permalink for Subsection 6.3.4: Finding a p-value for a chi-square distribution" aria-label="Copy heading and permalink for Subsection 6.3.4: Finding a p-value for a chi-square distribution">🔗</a></div></section><section class="subsection" id="subsec-goodness-of-fit-distribution"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Evaluating goodness of fit for a distribution</span>
+</h3>
+<div class="para" id="subsec-goodness-of-fit-distribution-2">Section 3.5 would be useful background reading for this example, but it is not a prerequisite.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-goodness-of-fit-distribution-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-goodness-of-fit-distribution-3">We can apply the chi-square testing framework to the second problem in this section: evaluating whether a certain statistical model fits a data set. Daily stock returns from the S&amp;P500 for 10 years can be used to assess whether stock activity each day is independent of the stock’s behavior on previous days. This sounds like a very complex question, and it is, but a chi-square test can be used to study the problem. We will label each day as Up or Down (D) depending on whether the market was up or down that day. For example, consider the following changes in price, their new labels of up and down, and then the number of days that must be observed before each Up day:<div class="autopermalink" data-description="Paragraph"><a href="#subsec-goodness-of-fit-distribution-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="table table-like" id="tab-sp500-example-sequence"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.17<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Example sequence of daily price changes and waiting times.<div class="autopermalink" data-description="Table 6.3.17: Example sequence of daily price changes and waiting times."><a href="#tab-sp500-example-sequence" title="Copy heading and permalink for Table 6.3.17: Example sequence of daily price changes and waiting times." aria-label="Copy heading and permalink for Table 6.3.17: Example sequence of daily price changes and waiting times.">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Change in price</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">2.52</td>
+<td class="l m b0 r0 l0 t0 lines">-1.46</td>
+<td class="l m b0 r0 l0 t0 lines">0.51</td>
+<td class="l m b0 r0 l0 t0 lines">-4.07</td>
+<td class="l m b0 r0 l0 t0 lines">3.36</td>
+<td class="l m b0 r0 l0 t0 lines">1.10</td>
+<td class="l m b0 r0 l0 t0 lines">-5.46</td>
+<td class="l m b0 r0 l0 t0 lines">-1.03</td>
+<td class="l m b0 r0 l0 t0 lines">-2.99</td>
+<td class="l m b0 r0 l0 t0 lines">1.71</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Outcome</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">Up</td>
+<td class="l m b0 r0 l0 t0 lines">D</td>
+<td class="l m b0 r0 l0 t0 lines">Up</td>
+<td class="l m b0 r0 l0 t0 lines">D</td>
+<td class="l m b0 r0 l0 t0 lines">Up</td>
+<td class="l m b0 r0 l0 t0 lines">Up</td>
+<td class="l m b0 r0 l0 t0 lines">D</td>
+<td class="l m b0 r0 l0 t0 lines">D</td>
+<td class="l m b0 r0 l0 t0 lines">D</td>
+<td class="l m b0 r0 l0 t0 lines">Up</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Days to Up</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">-</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">-</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">-</td>
+<td class="l m b0 r0 l0 t0 lines">-</td>
+<td class="l m b0 r0 l0 t0 lines">-</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+</tr>
+</table></div></figure><div class="para" id="subsec-goodness-of-fit-distribution-5">If the days really are independent, then the number of days until a positive trading day should follow a geometric distribution. The geometric distribution describes the probability of waiting for the <span class="process-math">\(k^{th}\)</span> trial to observe the first success. Here each up day (Up) represents a success, and down (D) days represent failures. In the data above, it took only one day until the market was up, so the first wait time was 1 day. It took two more days before we observed our next Up trading day, and two more for the third Up day. We would like to determine if these counts (1, 2, 2, 1, 4, and so on) follow the geometric distribution. <a href="oneWayChiSquare.html#sAndP500TimeToPosTrade" class="xref" data-knowl="./knowl/xref/sAndP500TimeToPosTrade.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 6.3.18: Observed distribution of the waiting time until a positive trading day for the S&amp;P500.">Table 6.3.18</a> shows the number of waiting days for a positive trading day during 10 years for the S&amp;P500.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-goodness-of-fit-distribution-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="table table-like" id="sAndP500TimeToPosTrade"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.18<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Observed distribution of the waiting time until a positive trading day for the S&amp;P500.<div class="autopermalink" data-description="Table 6.3.18: Observed distribution of the waiting time until a positive trading day for the S&amp;P500."><a href="#sAndP500TimeToPosTrade" title="Copy heading and permalink for Table 6.3.18: Observed distribution of the waiting time until a positive trading day for the S&amp;P500." aria-label="Copy heading and permalink for Table 6.3.18: Observed distribution of the waiting time until a positive trading day for the S&amp;P500.">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b1 r0 l0 t0 lines">Days</td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines">1</td>
+<td class="l m b1 r0 l0 t0 lines">2</td>
+<td class="l m b1 r0 l0 t0 lines">3</td>
+<td class="l m b1 r0 l0 t0 lines">4</td>
+<td class="l m b1 r0 l0 t0 lines">5</td>
+<td class="l m b1 r0 l0 t0 lines">6</td>
+<td class="l m b1 r0 l0 t0 lines">7+</td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines">Total</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines">Observed</td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines">717</td>
+<td class="l m b1 r0 l0 t0 lines">369</td>
+<td class="l m b1 r0 l0 t0 lines">155</td>
+<td class="l m b1 r0 l0 t0 lines">69</td>
+<td class="l m b1 r0 l0 t0 lines">28</td>
+<td class="l m b1 r0 l0 t0 lines">14</td>
+<td class="l m b1 r0 l0 t0 lines">10</td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines">1362</td>
+</tr>
+</table></div></figure><div class="para" id="subsec-goodness-of-fit-distribution-7">We consider how many days one must wait until observing an Up day on the S&amp;P500 stock index. If the stock activity was independent from one day to the next and the probability of a positive trading day was constant, then we would expect this waiting time to follow a <em class="emphasis">geometric distribution</em>. We can organize this into a hypothesis framework:<div class="autopermalink" data-description="Paragraph"><a href="#subsec-goodness-of-fit-distribution-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="disc" id="subsec-goodness-of-fit-distribution-8">
+<li id="subsec-goodness-of-fit-distribution-8-1">
+<div class="para" id="p-derived-subsec-goodness-of-fit-distribution-8-1">
+<span class="process-math">\(H_0\text{:}\)</span> The stock market being up or down on a given day is independent from all other days. We will consider the number of days that pass until an Up day is observed. Under this hypothesis, the number of days until an Up day should follow a geometric distribution.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-goodness-of-fit-distribution-8-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-goodness-of-fit-distribution-8-2">
+<div class="para" id="p-derived-subsec-goodness-of-fit-distribution-8-2">
+<span class="process-math">\(H_A\text{:}\)</span> The stock market being up or down on a given day is not independent from all other days. Since we know the number of days until an Up day would follow a geometric distribution under the null, we look for deviations from the geometric distribution, which would support the alternative hypothesis.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-goodness-of-fit-distribution-8-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para" id="subsec-goodness-of-fit-distribution-9">There are important implications in our result for stock traders: if information from past trading days is useful in telling what will happen today, that information may provide an advantage over other traders.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-goodness-of-fit-distribution-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-goodness-of-fit-distribution-10">We consider data for the S&amp;P500 and summarize the waiting times in <a href="oneWayChiSquare.html#sAndP500TimeToPosTrade2" class="xref" data-knowl="./knowl/xref/sAndP500TimeToPosTrade2.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 6.3.19: Distribution of the waiting time until a positive trading day. The expected counts based on the geometric model are shown in the last row. To find each expected count, we identify the probability of waiting D days based on the geometric model (P(D) = (1-0.545)^{D-1}(0.545)) and multiply by the total number of streaks, 1362. For example, waiting for three days occurs under the geometric model about 0.455^2\times 0.545 = 0.1128 = 11.28\% of the time, which corresponds to 0.1128 \times 1362 = 154 streaks.">Table 6.3.19</a> and <a href="oneWayChiSquare.html#geomFitEvaluationForSP500" class="xref" data-knowl="./knowl/xref/geomFitEvaluationForSP500.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.3.20">Figure 6.3.20</a>. The S&amp;P500 was positive on 54.5% of those days.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-goodness-of-fit-distribution-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="table table-like" id="sAndP500TimeToPosTrade2"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.19<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Distribution of the waiting time until a positive trading day. The expected counts based on the geometric model are shown in the last row. To find each expected count, we identify the probability of waiting <span class="process-math">\(D\)</span> days based on the geometric model (<span class="process-math">\(P(D) = (1-0.545)^{D-1}(0.545)\)</span>) and multiply by the total number of streaks, 1362. For example, waiting for three days occurs under the geometric model about <span class="process-math">\(0.455^2\times 0.545 = 0.1128 = 11.28\%\)</span> of the time, which corresponds to <span class="process-math">\(0.1128 \times 1362 = 154\)</span> streaks.<div class="autopermalink" data-description="Table 6.3.19: Distribution of the waiting time until a positive trading day. The expected counts based on the geometric model are shown in the last row. To find each expected count, we identify the probability of waiting D days based on the geometric model (P(D) = (1-0.545)^{D-1}(0.545)) and multiply by the total number of streaks, 1362. For example, waiting for three days occurs under the geometric model about 0.455^2\times 0.545 = 0.1128 = 11.28\% of the time, which corresponds to 0.1128 \times 1362 = 154 streaks."><a href="#sAndP500TimeToPosTrade2" title="Copy heading and permalink for Table 6.3.19: Distribution of the waiting time until a positive trading day. The expected counts based on the geometric model are shown in the last row. To find each expected count, we identify the probability of waiting D days based on the geometric model (P(D) = (1-0.545)^{D-1}(0.545)) and multiply by the total number of streaks, 1362. For example, waiting for three days occurs under the geometric model about 0.455^2\times 0.545 = 0.1128 = 11.28\% of the time, which corresponds to 0.1128 \times 1362 = 154 streaks." aria-label="Copy heading and permalink for Table 6.3.19: Distribution of the waiting time until a positive trading day. The expected counts based on the geometric model are shown in the last row. To find each expected count, we identify the probability of waiting D days based on the geometric model (P(D) = (1-0.545)^{D-1}(0.545)) and multiply by the total number of streaks, 1362. For example, waiting for three days occurs under the geometric model about 0.455^2\times 0.545 = 0.1128 = 11.28\% of the time, which corresponds to 0.1128 \times 1362 = 154 streaks.">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b1 r0 l0 t0 lines">Days</td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines">1</td>
+<td class="l m b1 r0 l0 t0 lines">2</td>
+<td class="l m b1 r0 l0 t0 lines">3</td>
+<td class="l m b1 r0 l0 t0 lines">4</td>
+<td class="l m b1 r0 l0 t0 lines">5</td>
+<td class="l m b1 r0 l0 t0 lines">6</td>
+<td class="l m b1 r0 l0 t0 lines">7+</td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines">Total</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Observed</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">717</td>
+<td class="l m b0 r0 l0 t0 lines">369</td>
+<td class="l m b0 r0 l0 t0 lines">155</td>
+<td class="l m b0 r0 l0 t0 lines">69</td>
+<td class="l m b0 r0 l0 t0 lines">28</td>
+<td class="l m b0 r0 l0 t0 lines">14</td>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1362</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines">Geometric Model</td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines">743</td>
+<td class="l m b1 r0 l0 t0 lines">338</td>
+<td class="l m b1 r0 l0 t0 lines">154</td>
+<td class="l m b1 r0 l0 t0 lines">70</td>
+<td class="l m b1 r0 l0 t0 lines">32</td>
+<td class="l m b1 r0 l0 t0 lines">14</td>
+<td class="l m b1 r0 l0 t0 lines">12</td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines">1362</td>
+</tr>
+</table></div></figure><figure class="figure figure-like" id="geomFitEvaluationForSP500"><div class="image-box" style="width: 85%; margin-left: 7.5%; margin-right: 7.5%;"><img src="external/ch_inference_for_props/figures/geomFitEvaluationForSP500/geomFitEvaluationForSP500.pdf" class="contained" alt='A side-by-side bar plot is shown for the variable "Wait Until Positive Day", where the two groups shown for the bars are "Observed counts" and "Expected counts". The horizontal axis shows values 1, 2, 3, 4, 5, 6, and "7+". The bar heights highest for "1" at roughly 715 for Observed and 740 for Expected. The bar heights for "2" are about half as high as at "1", with values of about 370 for Observed and 340 for Expected. The bar heights for "3" are about another half has high at about 150 for each for observed and expected. The values at 5, 6, and 7+ are all relatively small, at or below about 30.'></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.20<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Side-by-side bar plot of the observed and expected counts for each waiting time.<div class="autopermalink" data-description="Figure 6.3.20"><a href="#geomFitEvaluationForSP500" title="Copy heading and permalink for Figure 6.3.20" aria-label="Copy heading and permalink for Figure 6.3.20">🔗</a></div></figcaption></figure><div class="para" id="subsec-goodness-of-fit-distribution-13">Because applying the chi-square framework requires expected counts to be at least 5, we have <em class="emphasis">binned</em> together all the cases where the waiting time was at least 7 days to ensure each expected count is well above this minimum. The actual data, shown in the <em class="emphasis">Observed</em> row in <a href="oneWayChiSquare.html#sAndP500TimeToPosTrade2" class="xref" data-knowl="./knowl/xref/sAndP500TimeToPosTrade2.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 6.3.19: Distribution of the waiting time until a positive trading day. The expected counts based on the geometric model are shown in the last row. To find each expected count, we identify the probability of waiting D days based on the geometric model (P(D) = (1-0.545)^{D-1}(0.545)) and multiply by the total number of streaks, 1362. For example, waiting for three days occurs under the geometric model about 0.455^2\times 0.545 = 0.1128 = 11.28\% of the time, which corresponds to 0.1128 \times 1362 = 154 streaks.">Table 6.3.19</a>, can be compared to the expected counts from the <em class="emphasis">Geometric Model</em> row. The method for computing expected counts is discussed in <a href="oneWayChiSquare.html#sAndP500TimeToPosTrade2" class="xref" data-knowl="./knowl/xref/sAndP500TimeToPosTrade2.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 6.3.19: Distribution of the waiting time until a positive trading day. The expected counts based on the geometric model are shown in the last row. To find each expected count, we identify the probability of waiting D days based on the geometric model (P(D) = (1-0.545)^{D-1}(0.545)) and multiply by the total number of streaks, 1362. For example, waiting for three days occurs under the geometric model about 0.455^2\times 0.545 = 0.1128 = 11.28\% of the time, which corresponds to 0.1128 \times 1362 = 154 streaks.">Table 6.3.19</a>. In general, the expected counts are determined by (1) identifying the null proportion associated with each bin, then (2) multiplying each null proportion by the total count to obtain the expected counts. That is, this strategy identifies what proportion of the total count we would expect to be in each bin.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-goodness-of-fit-distribution-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ex-sp500-deviations" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.21</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-sp500-deviations-1-1">Do you notice any unusually large deviations in the graph? Can you tell if these deviations are due to chance just by looking?<div class="autopermalink" data-description="Paragraph"><a href="#ex-sp500-deviations-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-sp500-deviations-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-sp500-deviations-2-1">It is not obvious whether differences in the observed counts and the expected counts from the geometric distribution are significantly different. That is, it is not clear whether these deviations might be due to chance or whether they are so strong that the data provide convincing evidence against the null hypothesis. However, we can perform a chi-square test using the counts in <a href="oneWayChiSquare.html#sAndP500TimeToPosTrade2" class="xref" data-knowl="./knowl/xref/sAndP500TimeToPosTrade2.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 6.3.19: Distribution of the waiting time until a positive trading day. The expected counts based on the geometric model are shown in the last row. To find each expected count, we identify the probability of waiting D days based on the geometric model (P(D) = (1-0.545)^{D-1}(0.545)) and multiply by the total number of streaks, 1362. For example, waiting for three days occurs under the geometric model about 0.455^2\times 0.545 = 0.1128 = 11.28\% of the time, which corresponds to 0.1128 \times 1362 = 154 streaks.">Table 6.3.19</a>.<div class="autopermalink" data-description="Paragraph"><a href="#ex-sp500-deviations-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 6.3.21.1"><a href="#ex-sp500-deviations-2" title="Copy heading and permalink for Solution 6.3.21.1" aria-label="Copy heading and permalink for Solution 6.3.21.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 6.3.21"><a href="#ex-sp500-deviations" title="Copy heading and permalink for Example 6.3.21" aria-label="Copy heading and permalink for Example 6.3.21">🔗</a></div></article></details><details id="ex-sp500-chi-square-calc" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.22</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="ex-sp500-chi-square-calc-1-1">
+<a href="oneWayChiSquare.html#sAndP500TimeToPosTrade2" class="xref" data-knowl="./knowl/xref/sAndP500TimeToPosTrade2.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 6.3.19: Distribution of the waiting time until a positive trading day. The expected counts based on the geometric model are shown in the last row. To find each expected count, we identify the probability of waiting D days based on the geometric model (P(D) = (1-0.545)^{D-1}(0.545)) and multiply by the total number of streaks, 1362. For example, waiting for three days occurs under the geometric model about 0.455^2\times 0.545 = 0.1128 = 11.28\% of the time, which corresponds to 0.1128 \times 1362 = 154 streaks.">Table 6.3.19</a> provides a set of count data for waiting times (<span class="process-math">\(O_1=717\text{,}\)</span> <span class="process-math">\(O_2=369\text{,}\)</span> ...) and expected counts under the geometric distribution (<span class="process-math">\(E_1=743\text{,}\)</span> <span class="process-math">\(E_2=338\text{,}\)</span> ...). Compute the chi-square test statistic, <span class="process-math">\(X^2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-sp500-chi-square-calc-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-sp500-chi-square-calc-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-sp500-chi-square-calc-2-1">
+<span class="process-math">\(X^2 = \frac{(717-743)^2}{743} + \frac{(369-338)^2}{338} + \cdots + \frac{(10-12)^2}{12} = 4.61\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-sp500-chi-square-calc-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 6.3.22.1"><a href="#ex-sp500-chi-square-calc-2" title="Copy heading and permalink for Solution 6.3.22.1" aria-label="Copy heading and permalink for Solution 6.3.22.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Checkpoint 6.3.22"><a href="#ex-sp500-chi-square-calc" title="Copy heading and permalink for Checkpoint 6.3.22" aria-label="Copy heading and permalink for Checkpoint 6.3.22">🔗</a></div></article></details><details id="ex-sp500-df" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.23</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="ex-sp500-df-1-1">Because the expected counts are all at least 5, we can safely apply the chi-square distribution to <span class="process-math">\(X^2\text{.}\)</span> However, how many degrees of freedom should we use?<div class="autopermalink" data-description="Paragraph"><a href="#ex-sp500-df-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-sp500-df-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-sp500-df-2-1">There are <span class="process-math">\(k = 7\)</span> groups, so we use <span class="process-math">\(df = k - 1 = 6\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-sp500-df-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 6.3.23.1"><a href="#ex-sp500-df-2" title="Copy heading and permalink for Solution 6.3.23.1" aria-label="Copy heading and permalink for Solution 6.3.23.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Checkpoint 6.3.23"><a href="#ex-sp500-df" title="Copy heading and permalink for Checkpoint 6.3.23" aria-label="Copy heading and permalink for Checkpoint 6.3.23">🔗</a></div></article></details><details id="DNRejectGeomModelForSP500" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.24</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="DNRejectGeomModelForSP500-1-1">If the observed counts follow the geometric model, then the chi-square test statistic <span class="process-math">\(X^2 = 4.61\)</span> would closely follow a chi-square distribution with <span class="process-math">\(df = 6\text{.}\)</span> Using this information, compute a p-value.<div class="autopermalink" data-description="Paragraph"><a href="#DNRejectGeomModelForSP500-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="DNRejectGeomModelForSP500-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="DNRejectGeomModelForSP500-2-1">
+<a href="oneWayChiSquare.html#geomFitPValueForSP500" class="xref" data-knowl="./knowl/xref/geomFitPValueForSP500.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.3.25">Figure 6.3.25</a> shows the chi-square distribution, cutoff, and the shaded p-value. Using software, we can find the p-value: 0.5951. Ultimately, we do not have sufficient evidence to reject the notion that the wait times follow a geometric distribution for the last 10 years of data for the S&amp;P500, i.e. we cannot reject the notion that trading days are independent.<div class="autopermalink" data-description="Paragraph"><a href="#DNRejectGeomModelForSP500-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 6.3.24.1"><a href="#DNRejectGeomModelForSP500-2" title="Copy heading and permalink for Solution 6.3.24.1" aria-label="Copy heading and permalink for Solution 6.3.24.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 6.3.24"><a href="#DNRejectGeomModelForSP500" title="Copy heading and permalink for Example 6.3.24" aria-label="Copy heading and permalink for Example 6.3.24">🔗</a></div></article></details><figure class="figure figure-like" id="geomFitPValueForSP500"><div class="image-box" style="width: 74%; margin-left: 13%; margin-right: 13%;"><img src="external/ch_inference_for_props/figures/geomFitPValueForSP500/geomFitPValueForSP500.pdf" class="contained" alt="A chi-square distribution with 6 degrees of freedom is shown, with the area above 4.61 shaded. This region appears to be about 60% of the area under the curve."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.25<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Chi-square distribution with 6 degrees of freedom. The p-value for the stock analysis is shaded.<div class="autopermalink" data-description="Figure 6.3.25"><a href="#geomFitPValueForSP500" title="Copy heading and permalink for Figure 6.3.25" aria-label="Copy heading and permalink for Figure 6.3.25">🔗</a></div></figcaption></figure><details id="ex-sp500-interpretation" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.26</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-sp500-interpretation-1-1">In Example <a href="oneWayChiSquare.html#DNRejectGeomModelForSP500" class="xref" data-knowl="./knowl/xref/DNRejectGeomModelForSP500.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 6.3.24">Example 6.3.24</a>, we did not reject the null hypothesis that the trading days are independent during the last 10 years of data. Why is this so important?<div class="autopermalink" data-description="Paragraph"><a href="#ex-sp500-interpretation-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-sp500-interpretation-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-sp500-interpretation-2-1">It may be tempting to think the market is "due" for an Up day if there have been several consecutive days where it has been down. However, we haven’t found strong evidence that there’s any such property where the market is "due" for a correction. At the very least, the analysis suggests any dependence between days is very weak.<div class="autopermalink" data-description="Paragraph"><a href="#ex-sp500-interpretation-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 6.3.26.1"><a href="#ex-sp500-interpretation-2" title="Copy heading and permalink for Solution 6.3.26.1" aria-label="Copy heading and permalink for Solution 6.3.26.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 6.3.26"><a href="#ex-sp500-interpretation" title="Copy heading and permalink for Example 6.3.26" aria-label="Copy heading and permalink for Example 6.3.26">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 6.3.5: Evaluating goodness of fit for a distribution"><a href="#subsec-goodness-of-fit-distribution" title="Copy heading and permalink for Subsection 6.3.5: Evaluating goodness of fit for a distribution" aria-label="Copy heading and permalink for Subsection 6.3.5: Evaluating goodness of fit for a distribution">🔗</a></div></section><div class="autopermalink" data-description="Section 6.3: Testing for goodness of fit using chi-square"><a href="#oneWayChiSquare" title="Copy heading and permalink for Section 6.3: Testing for goodness of fit using chi-square" aria-label="Copy heading and permalink for Section 6.3: Testing for goodness of fit using chi-square">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="differenceOfTwoProportions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-chi-square-independence.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

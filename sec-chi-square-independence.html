@@ -148,7 +148,7 @@ var ggbApp = new GGBApplet({"appName": "graphing",
     "autoHeight": true,
     "disableAutoScale": false},
 true);
-</script><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-chi-square-gof.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-inference-for-props.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-ch07-review.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</script><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="oneWayChiSquare.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-inference-for-props.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-ch07-review.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -388,27 +388,33 @@ true);
 <div class="toc-title-box"><a href="ch-inference-for-props.html" class="internal"><span class="codenumber">6</span> <span class="title">Inference for Categorical Data</span></a></div>
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-single-proportion.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Inference for a Single Proportion</span></a></div>
+<div class="toc-title-box"><a href="singleProportion.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Inference for a single proportion</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-single-proportion.html#subsec-sample-prop-normal" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Identifying When the Sample Proportion is Nearly Normal</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-single-proportion.html#subsec-ci-for-proportion" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Confidence Intervals for a Proportion</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-single-proportion.html#subsec-ht-single-proportion" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Hypothesis Testing for a Proportion</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-single-proportion.html#subsec-choosing-sample-size" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Choosing a Sample Size When Estimating a Proportion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="singleProportion.html#subsec-sample-prop-normal" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Identifying when the sample proportion is nearly normal</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="singleProportion.html#confIntForPropSection" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Confidence intervals for a proportion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="singleProportion.html#htForPropSection" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Hypothesis testing for a proportion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="singleProportion.html#subsec-conditions-not-met" class="internal"><span class="codenumber">6.1.4</span> <span class="title">When one or more conditions aren’t met</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="singleProportion.html#subsec-choosing-sample-size" class="internal"><span class="codenumber">6.1.5</span> <span class="title">Choosing a sample size when estimating a proportion</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-difference-two-proportions.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Difference of Two Proportions</span></a></div>
+<div class="toc-title-box"><a href="differenceOfTwoProportions.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Difference of two proportions</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-difference-two-proportions.html#subsec-sampling-dist-diff-props" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Sampling Distribution of a Difference of Proportions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-difference-two-proportions.html#subsec-ci-diff-proportions" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Confidence Interval for <span class="process-math">\(p_1 - p_2\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-difference-two-proportions.html#subsec-ht-diff-proportions" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Hypothesis Test for <span class="process-math">\(H_0: p_1 = p_2\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="differenceOfTwoProportions.html#subsec-sampling-dist-diff-two-props" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Sampling distribution of the difference of two proportions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="differenceOfTwoProportions.html#confIntForPropDiffSection" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Confidence intervals for <span class="process-math">\(p_1 - p_2\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="differenceOfTwoProportions.html#htForPropDiffSection" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Hypothesis tests for the difference of two proportions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="differenceOfTwoProportions.html#subsec-more-2prop-ht" class="internal"><span class="codenumber">6.2.4</span> <span class="title">More on 2-proportion hypothesis tests (special topic)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="differenceOfTwoProportions.html#subsec-se-formula-special" class="internal"><span class="codenumber">6.2.5</span> <span class="title">Examining the standard error formula (special topic)</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-chi-square-gof.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Testing for Goodness of Fit Using Chi-Square</span></a></div>
+<div class="toc-title-box"><a href="oneWayChiSquare.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Testing for goodness of fit using chi-square</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-chi-square-gof.html#subsec-gof-test-intro" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Goodness of Fit Test</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-chi-square-gof.html#subsec-chi-square-distribution" class="internal"><span class="codenumber">6.3.2</span> <span class="title">The Chi-Square Distribution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="oneWayChiSquare.html#subsec-test-statistic-one-way" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Creating a test statistic for one-way tables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="oneWayChiSquare.html#chiSquareTestStatistic" class="internal"><span class="codenumber">6.3.2</span> <span class="title">The chi-square test statistic</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="oneWayChiSquare.html#subsec-chi-square-dist-areas" class="internal"><span class="codenumber">6.3.3</span> <span class="title">The chi-square distribution and finding areas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="oneWayChiSquare.html#pValueForAChiSquareTest" class="internal"><span class="codenumber">6.3.4</span> <span class="title">Finding a p-value for a chi-square distribution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="oneWayChiSquare.html#subsec-goodness-of-fit-distribution" class="internal"><span class="codenumber">6.3.5</span> <span class="title">Evaluating goodness of fit for a distribution</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section contains-active">
@@ -683,7 +689,7 @@ df = (\text{number of rows} - 1) \times (\text{number of columns} - 1)
 </ul>
 <div class="autopermalink" data-description="Subsection 6.4.3: Limitations of Chi-Square Tests"><a href="#subsec-chi-square-limitations" title="Copy heading and permalink for Subsection 6.4.3: Limitations of Chi-Square Tests" aria-label="Copy heading and permalink for Subsection 6.4.3: Limitations of Chi-Square Tests">🔗</a></div></section><div class="autopermalink" data-description="Section 6.4: Testing for Independence in Two-Way Tables"><a href="#sec-chi-square-independence" title="Copy heading and permalink for Section 6.4: Testing for Independence in Two-Way Tables" aria-label="Copy heading and permalink for Section 6.4: Testing for Independence in Two-Way Tables">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="sec-chi-square-gof.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-ch07-review.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="oneWayChiSquare.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-ch07-review.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
