@@ -1014,86 +1014,446 @@
   </section>
   
   <!-- Section 6.2: Paired data -->
-  <section xml:id="sec-paired-data">
-    <title>Paired Data</title>
+  <!-- Section 7.2: Paired data -->
+  <section xml:id="pairedData">
+    <title>Paired data</title>
     
     <introduction>
       <p>
-        Sometimes data naturally come in pairs. For example, we might measure blood pressure before
-        and after treatment for the same patients, or we might compare test scores for students
-        who took both a pretest and a posttest. When data are paired, we analyze the differences
-        within each pair rather than treating the two groups as independent.
+        In an earlier edition of this textbook, we found that Amazon prices were, on average, lower
+        than those of the UCLA Bookstore for UCLA courses in 2010. It's been several years, and many
+        stores have adapted to the online market, so we wondered, how is the UCLA Bookstore doing today?
       </p>
+      
+      <p>
+        We sampled 201 UCLA courses. Of those, 68 required books could be found on Amazon. A portion
+        of the data set from these courses is shown in Figure<nbsp/><xref ref="textbooksDF"/>, where
+        prices are in US dollars.
+      </p>
+      
+      <figure xml:id="textbooksDF">
+        <caption>Four cases of the textbooks data set.</caption>
+        <tabular>
+          <row bottom="medium">
+            <cell></cell>
+            <cell>subject</cell>
+            <cell>course number</cell>
+            <cell>bookstore</cell>
+            <cell>amazon</cell>
+            <cell>price difference</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>American Indian Studies</cell>
+            <cell>M10</cell>
+            <cell>47.97</cell>
+            <cell>47.45</cell>
+            <cell>0.52</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>Anthropology</cell>
+            <cell>2</cell>
+            <cell>14.26</cell>
+            <cell>13.55</cell>
+            <cell>0.71</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>Arts and Architecture</cell>
+            <cell>10</cell>
+            <cell>13.50</cell>
+            <cell>12.53</cell>
+            <cell>0.97</cell>
+          </row>
+          <row>
+            <cell><m>\vdots</m></cell>
+            <cell><m>\vdots</m></cell>
+            <cell><m>\vdots</m></cell>
+            <cell><m>\vdots</m></cell>
+            <cell><m>\vdots</m></cell>
+            <cell><m>\vdots</m></cell>
+          </row>
+          <row>
+            <cell>68</cell>
+            <cell>Jewish Studies</cell>
+            <cell>M10</cell>
+            <cell>35.96</cell>
+            <cell>32.40</cell>
+            <cell>3.56</cell>
+          </row>
+        </tabular>
+      </figure>
     </introduction>
     
-    <subsection xml:id="subsec-paired-observations">
-      <title>Paired Observations and Samples</title>
-      
-      <definition xml:id="def-paired-data">
-        <statement>
-          <p>
-            <term>Paired data</term> represent two sets of observations that are collected on the
-            same units or on units that are meaningfully connected. In a paired analysis, we are
-            interested in the <term>difference</term> for each pair of observations.
-          </p>
-        </statement>
-      </definition>
+    <subsection xml:id="paired-observations">
+      <title>Paired observations</title>
       
       <p>
-        Examples of paired data:
+        Each textbook has two corresponding prices in the data set: one for the UCLA Bookstore and
+        one for Amazon. When two sets of observations have this special correspondence, they are said
+        to be <term>paired</term>.
       </p>
       
-      <ul>
-        <li>Blood pressure measurements before and after medication for the same patients</li>
-        <li>Pre-test and post-test scores for the same students</li>
-        <li>Measurements on twins or siblings</li>
-        <li>Prices of textbooks at two different stores for the same titles</li>
-      </ul>
-      
-      <important>
+      <assemblage xml:id="paired-data-def">
+        <title>Paired data</title>
         <p>
-          The key to identifying paired data: Can we meaningfully connect one observation in the
-          first dataset to exactly one observation in the second dataset?
+          Two sets of observations are <em>paired</em> if each observation in one set has a special
+          correspondence or connection with exactly one observation in the other data set.
         </p>
-      </important>
+      </assemblage>
+      
+      <p>
+        To analyze paired data, it is often useful to look at the difference in outcomes of each pair
+        of observations. In the textbook data, we look at the differences in prices, which is
+        represented as the <c>price_difference</c> variable in the data set. Here the differences are
+        taken as
+      </p>
+      <me>
+        \text{UCLA Bookstore price} - \text{Amazon price}
+      </me>
+      <p>
+        It is important that we always subtract using a consistent order; here Amazon prices are always
+        subtracted from UCLA prices. The first difference shown in Figure<nbsp/><xref ref="textbooksDF"/>
+        is computed as <m>47.97 - 47.45 = 0.52</m>. Similarly, the second difference is computed as
+        <m>14.26 - 13.55 = 0.71</m>, and the third is <m>13.50 - 12.53 = 0.97</m>. A histogram of the
+        differences is shown in Figure<nbsp/><xref ref="diffInTextbookPricesF18"/>. Using differences
+        between paired observations is a common and useful way to analyze paired data.
+      </p>
+      
+      <figure xml:id="diffInTextbookPricesF18">
+        <caption>Histogram of the difference in price for each book sampled.</caption>
+        <p>
+          <!-- TODO: Add figure - A histogram is shown for "UCLA bookstore Price minus Amazon Price, 
+          in US dollars", where values range from -$20 to positive $80. The distribution has a prominent 
+          peak at or slightly above $0, with the wide majority of data lying between -$20 and positive $20. 
+          There are also 4 bins above $20 that have non-zero heights: bin $20 to $30 has a height of 2, 
+          bin $30 to $40 has a height of 2, bin $50 to $60 has a height of 1, and bin $70 to $80 has a 
+          height of 1. -->
+        </p>
+      </figure>
     </subsection>
     
-    <subsection xml:id="subsec-inference-paired-data">
-      <title>Inference for Paired Data</title>
+    <subsection xml:id="inference-for-paired-data">
+      <title>Inference for paired data</title>
       
       <p>
-        To analyze paired data, we:
+        To analyze a paired data set, we simply analyze the differences. We can use the same
+        <m>t</m>-distribution techniques we applied in Section<nbsp/><xref ref="oneSampleMeansWithTDistribution"/>.
       </p>
       
-      <ol>
-        <li>Calculate the difference for each pair: <m>d_i = x_{i,1} - x_{i,2}</m></li>
-        <li>Treat these differences as a single sample</li>
-        <li>Apply one-sample t-procedures to the differences</li>
-      </ol>
+      <figure xml:id="textbooksSummaryStats">
+        <caption>Summary statistics for the 68 price differences.</caption>
+        <tabular>
+          <row bottom="medium">
+            <cell><m>n_{\text{diff}}</m></cell>
+            <cell></cell>
+            <cell><m>\bar{x}_{\text{diff}}</m></cell>
+            <cell></cell>
+            <cell><m>s_{\text{diff}}</m></cell>
+          </row>
+          <row>
+            <cell>68</cell>
+            <cell></cell>
+            <cell>3.58</cell>
+            <cell></cell>
+            <cell>13.42</cell>
+          </row>
+        </tabular>
+      </figure>
       
-      <p>
-        Let <m>\bar{x}_d</m> represent the mean of the differences and <m>s_d</m> represent the
-        standard deviation of the differences. Then:
-      </p>
+      <example xml:id="htSetupTextbookPriceDiff">
+        <statement>
+          <p>
+            Set up a hypothesis test to determine whether, on average, there is a difference between
+            Amazon's price for a book and the UCLA bookstore's price. Also, check the conditions for
+            whether we can move forward with the test using the <m>t</m>-distribution.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We are considering two scenarios: there is no difference or there is some difference in
+            average prices.
+          </p>
+          <ul>
+            <li><m>H_0</m>: <m>\mu_{\text{diff}} = 0</m>. There is no difference in the average
+            textbook price.</li>
+            <li><m>H_A</m>: <m>\mu_{\text{diff}} \neq 0</m>. There is a difference in average prices.</li>
+          </ul>
+          <p>
+            Next, we check the independence and normality conditions. The observations are based on a
+            simple random sample, so independence is reasonable. While there are some outliers,
+            <m>n = 68</m> and none of the outliers are particularly extreme, so the normality of
+            <m>\bar{x}</m> is satisfied. With these conditions satisfied, we can move forward with the
+            <m>t</m>-distribution.
+          </p>
+        </solution>
+      </example>
       
-      <ul>
-        <li><alert>Confidence interval for <m>\mu_d</m>:</alert>
-            <m>\bar{x}_d \pm t^*_{n-1} \times \frac{s_d}{\sqrt{n}}</m></li>
-        <li><alert>Test statistic:</alert>
-            <m>t = \frac{\bar{x}_d - 0}{s_d/\sqrt{n}}</m> (when testing <m>H_0: \mu_d = 0</m>)</li>
-      </ul>
+      <example xml:id="SEAndTScoreTextbookPriceDiff">
+        <statement>
+          <p>
+            Complete the hypothesis test started in Example<nbsp/><xref ref="htSetupTextbookPriceDiff"/>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            To compute the test statistic, we compute the standard error associated with
+            <m>\bar{x}_{\text{diff}}</m> using the standard deviation of the differences
+            (<m>s_{\text{diff}} = 13.42</m>) and the number of differences
+            (<m>n_{\text{diff}} = 68</m>):
+          </p>
+          <me>
+            SE_{\bar{x}_{\text{diff}}} = \frac{s_{\text{diff}}}{\sqrt{n_{\text{diff}}}} 
+            = \frac{13.42}{\sqrt{68}} = 1.63
+          </me>
+          <p>
+            The test statistic is the T-score of <m>\bar{x}_{\text{diff}}</m> under the null condition
+            that the actual mean difference is 0:
+          </p>
+          <me>
+            T = \frac{\bar{x}_{\text{diff}} - 0}{SE_{\bar{x}_{\text{diff}}}} 
+            = \frac{3.58 - 0}{1.63} = 2.20
+          </me>
+          <p>
+            To visualize the p-value, the sampling distribution of <m>\bar{x}_{\text{diff}}</m> is
+            drawn as though <m>H_0</m> is true, and the p-value is represented by the two shaded tails:
+          </p>
+          <p>
+            <!-- TODO: Add figure - A bell-shaped distribution is shown, with a center of mu-sub-0, 
+            which has a value of 0. The area under the distribution above x-bar-sub-diff equals 3.58 
+            is shaded, as is the corresponding tail below -3.58. -->
+          </p>
+          <p>
+            The degrees of freedom is <m>df = 68 - 1 = 67</m>. Using statistical software, we find the
+            one-tail area of 0.0156. Doubling this area gives the p-value: 0.0312.
+          </p>
+          <p>
+            Because the p-value is less than 0.05, we reject the null hypothesis. Amazon prices are,
+            on average, lower than the UCLA Bookstore prices for UCLA courses.
+          </p>
+        </solution>
+      </example>
       
-      <p>
-        The conditions for paired t-procedures are the same as for one-sample t-procedures, applied
-        to the differences:
-      </p>
+      <exercise>
+        <statement>
+          <p>
+            Create a 95% confidence interval for the average price difference between books at the UCLA
+            bookstore and books on Amazon.<fn>Conditions have already been verified and the standard
+            error computed in Example<nbsp/><xref ref="htSetupTextbookPriceDiff"/>. To find the interval,
+            identify <m>t^{\star}_{67}</m> using statistical software or the <m>t</m>-table
+            (<m>t^{\star}_{67} = 2.00</m>), and plug it, the point estimate, and the standard error into
+            the confidence interval formula: <m>\text{point estimate} \pm t^{\star} \times SE \to 3.58 \pm 2.00 \times 1.63 \to (0.32, 6.84)</m>. We are 95% confident that Amazon is, on average,
+            between $0.32 and $6.84 less expensive than the UCLA Bookstore for UCLA course books.</fn>
+          </p>
+        </statement>
+      </exercise>
       
-      <ol>
-        <li><alert>Independence:</alert> The pairs must be independent of each other.</li>
-        <li><alert>Normality:</alert> The differences should come from a nearly normal distribution,
-            or the sample size should be large enough.</li>
-      </ol>
+      <exercise>
+        <statement>
+          <p>
+            We have strong evidence that Amazon is, on average, less expensive. How should this
+            conclusion affect UCLA student buying habits? Should UCLA students always buy their books on
+            Amazon?<fn>The average price difference is only mildly useful for this question. Examine the
+            distribution shown in Figure<nbsp/><xref ref="diffInTextbookPricesF18"/>. There are certainly
+            a handful of cases where Amazon prices are far below the UCLA Bookstore's, which suggests it
+            is worth checking Amazon (and probably other online sites) before purchasing. However, in many
+            cases the Amazon price is above what the UCLA Bookstore charges, and most of the time the
+            price isn't that different. Ultimately, if getting a book immediately from the bookstore is
+            notably more convenient, e.g. to get started on reading or homework, it's likely a good idea
+            to go with the UCLA Bookstore unless the price difference on a specific book happens to be
+            quite large. For reference, this is a very different result from what we (the authors) had
+            seen in a similar data set from 2010. At that time, Amazon prices were almost uniformly lower
+            than those of the UCLA Bookstore's and by a large margin, making the case to use Amazon over
+            the UCLA Bookstore quite compelling at that time. Now we frequently check multiple websites
+            to find the best price.</fn>
+          </p>
+        </statement>
+      </exercise>
     </subsection>
+    
+    <exercises>
+      <title>Section Exercises</title>
+      
+      <exercise xml:id="air_quality_shortened">
+        <title>Air quality</title>
+        <statement>
+          <p>
+            Air quality measurements were collected in a random sample of 25 country capitals in 2013,
+            and then again in the same cities in 2014. We would like to use these data to compare average
+            air quality between the two years. Should we use a paired or non-paired test? Explain your
+            reasoning.
+          </p>
+        </statement>
+      </exercise>
+      
+      <exercise xml:id="tf_paired">
+        <title>True / False: paired</title>
+        <statement>
+          <p>
+            Determine if the following statements are true or false. If false, explain.
+          </p>
+          <ol>
+            <li>In a paired analysis we first take the difference of each pair of observations, and then
+            we do inference on these differences.</li>
+            <li>Two data sets of different sizes cannot be analyzed as paired data.</li>
+            <li>Consider two sets of data that are paired with each other. Each observation in one data
+            set has a natural correspondence with exactly one observation from the other data set.</li>
+            <li>Consider two sets of data that are paired with each other. Each observation in one data
+            set is subtracted from the average of the other data set's observations.</li>
+          </ol>
+        </statement>
+      </exercise>
+      
+      <exercise xml:id="paired_or_not_1">
+        <title>Paired or not? Part I</title>
+        <statement>
+          <p>
+            In each of the following scenarios, determine if the data are paired.
+          </p>
+          <ol>
+            <li>Compare pre- (beginning of semester) and post-test (end of semester) scores of students.</li>
+            <li>Assess gender-related salary gap by comparing salaries of randomly sampled men and women.</li>
+            <li>Compare artery thicknesses at the beginning of a study and after 2 years of taking Vitamin
+            E for the same group of patients.</li>
+            <li>Assess effectiveness of a diet regimen by comparing the before and after weights of subjects.</li>
+          </ol>
+        </statement>
+      </exercise>
+      
+      <exercise xml:id="paired_or_not_2">
+        <title>Paired or not? Part II</title>
+        <statement>
+          <p>
+            In each of the following scenarios, determine if the data are paired.
+          </p>
+          <ol>
+            <li>We would like to know if Intel's stock and Southwest Airlines' stock have similar rates
+            of return. To find out, we take a random sample of 50 days, and record Intel's and Southwest's
+            stock on those same days.</li>
+            <li>We randomly sample 50 items from Target stores and note the price for each. Then we visit
+            Walmart and collect the price for each of those same 50 items.</li>
+            <li>A school board would like to determine whether there is a difference in average SAT scores
+            for students at one high school versus another high school in the district. To check, they take
+            a simple random sample of 100 students from each high school.</li>
+          </ol>
+        </statement>
+      </exercise>
+      
+      <exercise xml:id="global_warming_v2_1">
+        <title>Global warming, Part I</title>
+        <statement>
+          <p>
+            Let's consider a limited set of climate data, examining temperature differences in 1948 vs
+            2018. We sampled 197 locations from the National Oceanic and Atmospheric Administration's
+            (NOAA) historical data, where the data was available for both years of interest. We want to
+            know: were there more days with temperatures exceeding 90°F in 2018 or in 1948? The difference
+            in number of days exceeding 90°F (number of days in 2018 - number of days in 1948) was
+            calculated for each of the 197 locations. The average of these differences was 2.9 days with a
+            standard deviation of 17.2 days. We are interested in determining whether these data provide
+            strong evidence that there were more days in 2018 that exceeded 90°F from NOAA's weather
+            stations.
+          </p>
+          <p>
+            <!-- TODO: Add histogram figure - A histogram is shown for "Differences in Number of Days", 
+            which has bins between -70 and 60, where the bin width is 10. There is a prominent peak around 
+            zero, where much of the data lies between -40 and positive 40. The non-zero bins beyond this 
+            range are -70 to -60 has a bin height of 1, the 40 to 50 bin has a bin height of 2, and the 50 
+            to 60 bin has a bin height of 1. -->
+          </p>
+          <ol>
+            <li>Is there a relationship between the observations collected in 1948 and 2018? Or are the
+            observations in the two groups independent? Explain.</li>
+            <li>Write hypotheses for this research in symbols and in words.</li>
+            <li>Check the conditions required to complete this test. A histogram of the differences is
+            given to the right.</li>
+            <li>Calculate the test statistic and find the p-value.</li>
+            <li>Use <m>\alpha = 0.05</m> to evaluate the test, and interpret your conclusion in context.</li>
+            <li>What type of error might we have made? Explain in context what the error means.</li>
+            <li>Based on the results of this hypothesis test, would you expect a confidence interval for
+            the average difference between the number of days exceeding 90°F from 1948 and 2018 to include
+            0? Explain your reasoning.</li>
+          </ol>
+        </statement>
+      </exercise>
+      
+      <exercise xml:id="hs_beyond_1">
+        <title>High School and Beyond, Part I</title>
+        <statement>
+          <p>
+            The National Center of Education Statistics conducted a survey of high school seniors,
+            collecting test data on reading, writing, and several other subjects. Here we examine a simple
+            random sample of 200 students from this survey. Side-by-side box plots of reading and writing
+            scores as well as a histogram of the differences in scores are shown below.
+          </p>
+          <p>
+            <!-- TODO: Add figures - Side-by-side box plot with dot plots also overlaid for each box plot. 
+            There are two categories shown, "read" and "write", for values ranging from about 27 to 77. The 
+            box portion of each distribution is nearly identical, ranging from about 45 to 60. The median of 
+            "read" is about 49 while the median of "write" is about 53. The whiskers for "read" extend down 
+            to about 27 and up to 77, while the whiskers for "write" extend down to about 32 and up to about 
+            67. No points are shown beyond the whiskers for either box plot. -->
+          </p>
+          <p>
+            <!-- TODO: Add histogram - A histogram is shown for "Difference in scores (read minus write)", 
+            which is centered at approximately zero and is roughly bell-shaped with values ranging from -25 
+            to positive 25. -->
+          </p>
+          <ol>
+            <li>Is there a clear difference in the average reading and writing scores?</li>
+            <li>Are the reading and writing scores of each student independent of each other?</li>
+            <li>Create hypotheses appropriate for the following research question: is there an evident
+            difference in the average scores of students in the reading and writing exam?</li>
+            <li>Check the conditions required to complete this test.</li>
+            <li>The average observed difference in scores is <m>\bar{x}_{\text{read-write}} = -0.545</m>,
+            and the standard deviation of the differences is 8.887 points. Do these data provide convincing
+            evidence of a difference between the average scores on the two exams?</li>
+            <li>What type of error might we have made? Explain what the error means in the context of the
+            application.</li>
+            <li>Based on the results of this hypothesis test, would you expect a confidence interval for
+            the average difference between the reading and writing scores to include 0? Explain your
+            reasoning.</li>
+          </ol>
+        </statement>
+      </exercise>
+      
+      <exercise xml:id="global_warming_v2_2">
+        <title>Global warming, Part II</title>
+        <statement>
+          <p>
+            We considered the change in the number of days exceeding 90°F from 1948 and 2018 at 197
+            randomly sampled locations from the NOAA database in Exercise<nbsp/><xref ref="global_warming_v2_1"/>.
+            The mean and standard deviation of the reported differences are 2.9 days and 17.2 days.
+          </p>
+          <ol>
+            <li>Calculate a 90% confidence interval for the average difference between number of days
+            exceeding 90°F between 1948 and 2018. We've already checked the conditions for you.</li>
+            <li>Interpret the interval in context.</li>
+            <li>Does the confidence interval provide convincing evidence that there were more days exceeding
+            90°F in 2018 than in 1948 at NOAA stations? Explain.</li>
+          </ol>
+        </statement>
+      </exercise>
+      
+      <exercise xml:id="hs_beyond_2">
+        <title>High school and beyond, Part II</title>
+        <statement>
+          <p>
+            We considered the differences between the reading and writing scores of a random sample of 200
+            students who took the High School and Beyond Survey in Exercise<nbsp/><xref ref="hs_beyond_1"/>.
+            The mean and standard deviation of the differences are <m>\bar{x}_{\text{read-write}} = -0.545</m>
+            and 8.887 points.
+          </p>
+          <ol>
+            <li>Calculate a 95% confidence interval for the average difference between the reading and
+            writing scores of all students.</li>
+            <li>Interpret this interval in context.</li>
+            <li>Does the confidence interval provide convincing evidence that there is a real difference
+            in the average scores? Explain.</li>
+          </ol>
+        </statement>
+      </exercise>
+    </exercises>
   </section>
   
   <!-- Section 6.3: Difference of two means -->
