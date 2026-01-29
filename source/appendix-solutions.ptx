@@ -190,7 +190,7 @@
           <li>Dist 1 has a higher mean since <m>-20 > -40</m>, and Dist 2 has a
           higher standard deviation since -40 is farther away from the rest of the data than -20.</li>
           <li>Dist 2 has a higher mean since all values in this distribution are higher
-          than those in Dist 1, but both distribution have the same standard deviation
+          than those in Dist 1, but both distributions have the same standard deviation
           since they are equally variable around their respective means.</li>
           <li>Both distributions have the same mean since they're both centered at 300, but
           Dist 2 has a higher standard deviation since the observations are farther from
