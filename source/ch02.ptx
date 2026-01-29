@@ -1443,6 +1443,13 @@
         in different vertical locations than others, which was the same technique used for checking an association in
         the standardized stacked bar plot.
       </p>
+
+      <p>
+        In the mosaic plots shown, we chose to first split by the homeowner status of the borrower. However, we could
+        have instead first split by the application type. Like with the bar plots, it's common to use the explanatory
+        variable to represent the first split in a mosaic plot, and then for the response to break up each level of the
+        explanatory variable, if these labels are reasonable to attach to the variables under consideration.
+      </p>
     </subsection>
 
     <!-- Subsection 2.2.5: The only pie chart you will see in this book -->
@@ -1618,6 +1625,21 @@
             group. Both distributions show slight to moderate right skew and are unimodal. There is a secondary small
             bump visible in the hollow histograms, though this is an artifact of the small sample sizes chosen for
             these examples.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise xml:id="guided-practice-plot-components">
+        <title>Useful plot components</title>
+        <statement>
+          <p>
+            What components of each plot do you find most useful?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Answers will vary. The side-by-side box plots are especially useful for comparing centers and spreads,
+            while the hollow histograms are more useful for seeing distribution shape, skew, and potential anomalies.
           </p>
         </solution>
       </exercise>
