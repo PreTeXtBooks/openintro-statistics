@@ -715,7 +715,7 @@
         <title>Baby weights, Part II</title>
         <statement>
           <p>
-            <xref ref="exer-baby-weights-smoke"/> introduces a data set on birth weight of babies. Another variable we consider is <c>parity</c>, which is 1 if the child is the first born, and 0 otherwise. The summary table below shows the results of a linear regression model for predicting the average birth weight of babies, measured in ounces, from <c>parity</c>.
+            <xref ref="exer-baby-weights-smoke"/> introduces a data set on birth weight of babies. Another variable we consider is <c>parity</c>, which is 1 if the child is the first-born, and 0 otherwise. The summary table below shows the results of a linear regression model for predicting the average birth weight of babies, measured in ounces, from <c>parity</c>.
           </p>
           <tabular>
             <row bottom="medium">
@@ -743,7 +743,7 @@
           <p>
             <ol marker="a.">
               <li><p>Write the equation of the regression model.</p></li>
-              <li><p>Interpret the slope in this context, and calculate the predicted birth weight of first borns and others.</p></li>
+              <li><p>Interpret the slope in this context, and calculate the predicted birth weight of first-borns and others.</p></li>
               <li><p>Is there a statistically significant relationship between the average birth weight and parity?</p></li>
             </ol>
           </p>
@@ -1588,7 +1588,7 @@
       </assemblage>
       
       <p>
-        Regardless of whether you use <m>R_{adj}^2</m> or the p-value approach, or if you use the backward elimination of forward selection strategy, our job is not done after variable selection. We must still verify the model conditions are reasonable.
+        Regardless of whether you use <m>R_{adj}^2</m> or the p-value approach, or if you use the backward elimination or forward selection strategy, our job is not done after variable selection. We must still verify the model conditions are reasonable.
       </p>
     </subsection>
     
@@ -1598,7 +1598,7 @@
         <title>Baby weights, Part IV</title>
         <statement>
           <p>
-            <xref ref="exer-baby-weights-mlr"/> considers a model that predicts a newborn's weight using several predictors (gestation length, parity, age of mother, height of mother, weight of mother, smoking status of mother). The table below shows the adjusted R-squared for the full model as well as adjusted R-squared values for all models we evaluate in the first step of the backwards elimination process.
+            <xref ref="exer-baby-weights-mlr"/> considers a model that predicts a newborn's weight using several predictors (gestation length, parity, age of mother, height of mother, weight of mother, smoking status of mother). The table below shows the adjusted R-squared for the full model as well as adjusted R-squared values for all models we evaluate in the first step of the backward elimination process.
           </p>
           <tabular halign="center">
             <row bottom="medium">
@@ -1652,7 +1652,7 @@
         <title>Absenteeism, Part II</title>
         <statement>
           <p>
-            <xref ref="exer-absenteeism"/> considers a model that predicts the number of days absent using three predictors: ethnic background (<c>eth</c>), gender (<c>sex</c>), and learner status (<c>lrn</c>). The table below shows the adjusted R-squared for the model as well as adjusted R-squared values for all models we evaluate in the first step of the backwards elimination process.
+            <xref ref="exer-absenteeism"/> considers a model that predicts the number of days absent using three predictors: ethnic background (<c>eth</c>), gender (<c>sex</c>), and learner status (<c>lrn</c>). The table below shows the adjusted R-squared for the model as well as adjusted R-squared values for all models we evaluate in the first step of the backward elimination process.
           </p>
           <tabular halign="center">
             <row bottom="medium">
