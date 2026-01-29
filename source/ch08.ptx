@@ -491,6 +491,161 @@
           </sidebyside>
         </statement>
       </exercise>
+
+      <exercise xml:id="ex-speed-height">
+        <title>Speed and height</title>
+        <statement>
+          <p>
+            1,302 UCLA students were asked to fill out a survey where they were asked about their height, fastest speed they have ever driven, and gender. The scatterplot on the left displays the relationship between height and fastest speed, and the scatterplot on the right displays the breakdown by gender in this relationship.
+          </p>
+          <sidebyside widths="40% 40%">
+            <image source="ch_regr_simple_linear/figures/eoce/speed_height_gender/speed_height">
+              <description>A scatterplot is shown. The horizontal axis represents "Height (in inches)" with values ranging from about 50 to 80. The vertical axis represents "Fastest Speed (in mph)" and has values ranging from 0 to 150. First, it is worth noting that there several points along the bottom of the plot with a fastest speed of 0 mph. The remainder of the description will concentrate on the other points. A small portion of the points are shown with heights below 60 inches, and these have fastest speeds mostly ranging from about 70 to 110 mph. For points shown with heights between 60 and 70, fastest speeds mostly ranged from about 30 to 120 mph. For points shown with heights of 70 or more, fastest speeds mostly ranged from about 50 to 140 mph. There were no points corresponding to heights greater than 75 that had fastest speeds slower than about 75 mph, which left a sort of gap in the lower right portion of the scatterplot.</description>
+            </image>
+            <image source="ch_regr_simple_linear/figures/eoce/speed_height_gender/speed_height_gender">
+              <description>A scatterplot is shown, where points are colored to differentiate between males and females. The horizontal axis represents "Height (in inches)" with values ranging from about 50 to 80. The vertical axis represents "Fastest Speed (in mph)" and has values ranging from 0 to 150. Female heights are largely 70 inches or smaller, while Male heights are largely 65 inches and taller. When focusing exclusively on Females, no upward trend is evident, with about 95% of observations having Fastest Speed between about 30 mph and 120 mph. When focusing exclusively on Males, no upward trend is evident there either, with about 95% of observations having Fastest Speed between about 50 mph and 140 mph. In contrast, if we ignore the male/female differentiation, there is a slight upward trend in the points.</description>
+            </image>
+          </sidebyside>
+          <p>
+            <ol>
+              <li>Describe the relationship between height and fastest speed.</li>
+              <li>Why do you think these variables are positively associated?</li>
+              <li>What role does gender play in the relationship between height and fastest driving speed?</li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-guess-correlation">
+        <title>Guess the correlation</title>
+        <statement>
+          <p>
+            Eduardo and Rosie are both collecting data on number of rainy days in a year and the total rainfall for the year. Eduardo records rainfall in inches and Rosie in centimeters. How will their correlation coefficients compare?
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-coast-starlight-corr">
+        <title>The Coast Starlight, Part I</title>
+        <statement>
+          <p>
+            The Coast Starlight Amtrak train runs from Seattle to Los Angeles. The scatterplot below displays the distance between each stop (in miles) and the amount of time it takes to travel from one stop to another (in minutes).
+          </p>
+          <sidebyside widths="55% 40%">
+            <stack>
+              <p>
+                <ol>
+                  <li>Describe the relationship between distance and travel time.</li>
+                  <li>How would the relationship change if travel time was instead measured in hours, and distance was instead measured in kilometers?</li>
+                  <li>The correlation between travel time (in miles) and distance (in minutes) is <m>r = 0.636</m>. Suppose we had instead measured travel time in hours and measured distance in kilometers (km). What would be the correlation in these different units?</li>
+                </ol>
+              </p>
+            </stack>
+            <image source="ch_regr_simple_linear/figures/eoce/coast_starlight_corr_units/coast_starlight">
+              <description>A scatterplot is shown with about 15 points. The horizontal axis represents "Distance (miles)" with values ranging from just over 0 to about 350. The vertical axis represents "Travel Time (in minutes)" and has values ranging from about 20 to 380. The point with the smallest distance -- about 10 miles -- shows a travel time of about 40 minutes. Next, there is a cluster of 6 points with distances between 40 and 60 miles and travel times ranging from about 20 to 60 minutes. The remainder of the points are scattered pretty broadly but may show a slightly upward trend. A few points that highlight the widely varying nature of the data are located at the following approximate locations: (190 miles, 60 minutes), (240 miles, 250 minutes), (250 miles, 380 minutes), and (350 miles, 200 minutes).</description>
+            </image>
+          </sidebyside>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-crawling-babies-corr">
+        <title>Crawling babies, Part I</title>
+        <statement>
+          <p>
+            A study conducted at the University of Denver investigated whether babies take longer to learn to crawl in cold months, when they are often bundled in clothes that restrict their movement, than in warmer months. Infants born during the study year were split into twelve groups, one for each birth month. We consider the average crawling age of babies in each group against the average temperature when the babies are six months old (that's when babies often begin trying to crawl). Temperature is measured in degrees Fahrenheit (<m>^\circ</m>F) and age is measured in weeks.
+          </p>
+          <sidebyside widths="55% 40%">
+            <stack>
+              <p>
+                <ol>
+                  <li>Describe the relationship between temperature and crawling age.</li>
+                  <li>How would the relationship change if temperature was measured in degrees Celsius (<m>^\circ</m>C) and age was measured in months?</li>
+                  <li>The correlation between temperature in <m>^\circ</m>F and age in weeks was <m>r = -0.70</m>. If we converted the temperature to <m>^\circ</m>C and age to months, what would the correlation be?</li>
+                </ol>
+              </p>
+            </stack>
+            <image source="ch_regr_simple_linear/figures/eoce/crawling_babies_corr_units/crawling_babies">
+              <description>A scatterplot is shown with a dozen points. The horizontal axis is "Temperature (F)" with values ranging from 30 to 75. The vertical axis is "Average Crawling Age (weeks)" with values ranging from 28.5 to 34. For those points with temperatures from 30 to 40, average crawling ages range from 31.5 to 34. For the single point with temperatures between 40 to 50, average crawling age was about 33.5. For the two points with temperature between 50 and 60, average crawling age was 28.5 and 32.5. For the last 4 points with temperature above 60, average crawling ages were 32, 30, 30, and 30.5.</description>
+            </image>
+          </sidebyside>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-body-measurements-shoulder">
+        <title>Body measurements, Part I</title>
+        <statement>
+          <p>
+            Researchers studying anthropometry collected body girth measurements and skeletal diameter measurements, as well as age, weight, height and gender for 507 physically active individuals. The scatterplot below shows the relationship between height and shoulder girth (over deltoid muscles), both measured in centimeters.
+          </p>
+          <sidebyside widths="55% 40%">
+            <stack>
+              <p>
+                <ol>
+                  <li>Describe the relationship between shoulder girth and height.</li>
+                  <li>How would the relationship change if shoulder girth was measured in inches while the units of height remained in centimeters?</li>
+                </ol>
+              </p>
+            </stack>
+            <image source="ch_regr_simple_linear/figures/eoce/body_measurements_shoulder_height_corr_units/body_measurements_height_shoulder_girth">
+              <description>A scatter plot with several hundred points is shown. The horizontal axis represents "Shoulder Girth (cm)" with values ranging from about 85 to 135. The vertical axis represents "Height (cm)" with values ranging from about 145 to 200. For points where Shoulder Girth is smaller than 100, 95% of points have heights between 152 and 170. For points where Shoulder Girth is between 100 and 110, 95% of points have heights between 155 and 180. For points where Shoulder Girth is between 110 and 120, 95% of points have heights between 162 and 190. For points where Shoulder Girth larger than 120, 95% of points have heights between 170 and 190.</description>
+            </image>
+          </sidebyside>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-body-measurements-hip">
+        <title>Body measurements, Part II</title>
+        <statement>
+          <p>
+            The scatterplot below shows the relationship between weight measured in kilograms and hip girth measured in centimeters from the data described in <xref ref="ex-body-measurements-shoulder"/>.
+          </p>
+          <sidebyside widths="55% 40%">
+            <stack>
+              <p>
+                <ol>
+                  <li>Describe the relationship between hip girth and weight.</li>
+                  <li>How would the relationship change if weight was measured in pounds while the units for hip girth remained in centimeters?</li>
+                </ol>
+              </p>
+            </stack>
+            <image source="ch_regr_simple_linear/figures/eoce/body_measurements_hip_weight_corr_units/body_measurements_weight_hip_girth">
+              <description>A scatter plot with several hundred points is shown. The horizontal axis represents "Hip Girth (cm)" with values ranging from about 80 to 115, with about 4 observations with larger hip girth up to about 130 cm. The vertical axis represents "Weight (kg)" with values ranging from about 40 to 105, with a few observations with larger weights up to 120. For points where Hip Girth is smaller than 90, 95% of points have weight between roughly 45 and 60. For points where Hip Girth is between 90 and 100, 95% of points have heights between roughly 50 and 80. For points where Hip Girth is between 100 and 110, 95% of points have heights between roughly 65 and 90. For points where Hip Girth is between 110 and 115, points have heights between roughly 70 and 105. There are four additional points located at about (115, 120), (115, 90), (118, 90), and (128, 105).</description>
+            </image>
+          </sidebyside>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-correlation-husband-wife-age">
+        <title>Correlation, Part I</title>
+        <statement>
+          <p>
+            What would be the correlation between the ages of husbands and wives if men always married woman who were
+          </p>
+          <p>
+            <ol>
+              <li>3 years younger than themselves?</li>
+              <li>2 years older than themselves?</li>
+              <li>half as old as themselves?</li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="ex-correlation-salary">
+        <title>Correlation, Part II</title>
+        <statement>
+          <p>
+            What would be the correlation between the annual salaries of males and females at a company if for a certain type of position men always made
+          </p>
+          <p>
+            <ol>
+              <li>$5,000 more than women?</li>
+              <li>25% more than women?</li>
+              <li>15% less than women?</li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
     </exercises>
   </section>
 
