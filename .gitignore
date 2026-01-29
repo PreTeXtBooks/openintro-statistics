@@ -1,0 +1,32 @@
+# Build artifacts - HTML files in root only (not subdirectories)
+/*.html
+
+# Build output directories
+output/
+knowl/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Log files
+*.log
+build_log.txt
+
+# Temporary files
+.mapping.json
+lunr-pretext-search-index.js
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# R files
+.Rhistory
+.RData
+.Rproj.user
