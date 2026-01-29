@@ -1457,124 +1457,732 @@
   </section>
   
   <!-- Section 6.3: Difference of two means -->
-  <section xml:id="sec-difference-two-means">
-    <title>Difference of Two Means</title>
+  <section xml:id="differenceOfTwoMeans">
+    <title>Difference of two means</title>
     
     <introduction>
       <p>
-        We now consider a different scenario: comparing means from two independent groups. For
-        example, we might compare average exam scores between students who attended review sessions
-        and those who didn't, or compare average recovery times between patients receiving two
-        different treatments.
+        In this section we consider a difference in two population means, <m>\mu_1 - \mu_2</m>, under
+        the condition that the data are not paired. Just as with a single sample, we identify conditions
+        to ensure we can use the <m>t</m>-distribution with a point estimate of the difference,
+        <m>\bar{x}_1 - \bar{x}_2</m>, and a new standard error formula. Other than these two differences,
+        the details are almost identical to the one-mean procedures.
+      </p>
+      
+      <p>
+        We apply these methods in three contexts: determining whether stem cells can improve heart
+        function, exploring the relationship between pregnant womens' smoking habits and birth weights
+        of newborns, and exploring whether there is statistically significant evidence that one variation
+        of an exam is harder than another variation. This section is motivated by questions like
+        <q>Is there convincing evidence that newborns from mothers who smoke have a different average
+        birth weight than newborns from mothers who don't smoke?</q>
       </p>
     </introduction>
     
-    <subsection xml:id="subsec-comparing-two-indep-means">
-      <title>Comparing Two Independent Means</title>
+    <subsection xml:id="confidenceIntervalDiffMeans">
+      <title>Confidence interval for a difference of means</title>
       
       <p>
-        When comparing two independent groups, we examine the difference in sample means:
-        <m>\bar{x}_1 - \bar{x}_2</m>. This quantity estimates the difference in population means:
-        <m>\mu_1 - \mu_2</m>.
+        Does treatment using embryonic stem cells (ESCs) help improve heart function following a heart
+        attack? Figure<nbsp/><xref ref="statsSheepEscStudy"/> contains summary statistics for an
+        experiment to test ESCs in sheep that had a heart attack. Each of these sheep was randomly
+        assigned to the ESC or control group, and the change in their hearts' pumping capacity was
+        measured in the study. Figure<nbsp/><xref ref="stemCellTherapyForHearts"/> provides histograms
+        of the two data sets. A positive value corresponds to increased pumping capacity, which generally
+        suggests a stronger recovery. Our goal will be to identify a 95% confidence interval for the
+        effect of ESCs on the change in heart pumping capacity relative to the control group.
       </p>
       
-      <definition xml:id="def-two-sample-conditions">
+      <figure xml:id="statsSheepEscStudy">
+        <caption>Summary statistics of the embryonic stem cell study.</caption>
+        <tabular>
+          <row bottom="medium">
+            <cell></cell>
+            <cell><m>n</m></cell>
+            <cell><m>\bar{x}</m></cell>
+            <cell><m>s</m></cell>
+          </row>
+          <row>
+            <cell>ESCs</cell>
+            <cell>9</cell>
+            <cell>3.50</cell>
+            <cell>5.17</cell>
+          </row>
+          <row>
+            <cell>control</cell>
+            <cell>9</cell>
+            <cell><m>-4.33</m></cell>
+            <cell>2.76</cell>
+          </row>
+        </tabular>
+      </figure>
+      
+      <p>
+        The point estimate of the difference in the heart pumping variable is straightforward to find:
+        it is the difference in the sample means.
+      </p>
+      <md>
+        <mrow>\bar{x}_{esc} - \bar{x}_{control} \amp= 3.50 - (-4.33)</mrow>
+        <mrow>\amp= 7.83</mrow>
+      </md>
+      <p>
+        For the question of whether we can model this difference using a <m>t</m>-distribution, we'll
+        need to check new conditions. Like the 2-proportion cases, we will require a more robust version
+        of independence so we are confident the two groups are also independent. Secondly, we also check
+        for normality in each group separately, which in practice is a check for outliers.
+      </p>
+      
+      <assemblage xml:id="ConditionsForTwoSampleTDist">
+        <title>Using the <m>t</m>-distribution for a difference in means</title>
+        <p>
+          The <m>t</m>-distribution can be used for inference when working with the standardized
+          difference of two means if
+        </p>
+        <ul>
+          <li>
+            <p>
+              <em>Independence, extended.</em> The data are independent within and between the two groups,
+              e.g. the data come from independent random samples or from a randomized experiment.
+            </p>
+          </li>
+          <li>
+            <p>
+              <em>Normality.</em> We check the outliers rules of thumb for each group separately.
+            </p>
+          </li>
+        </ul>
+        <p>
+          The standard error may be computed as
+        </p>
+        <me>
+          SE = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}
+        </me>
+        <p>
+          The official formula for the degrees of freedom is quite complex and is generally computed
+          using software, so instead you may use the smaller of <m>n_1 - 1</m> and <m>n_2 - 1</m> for
+          the degrees of freedom if software isn't readily available.
+        </p>
+      </assemblage>
+      
+      <example>
         <statement>
           <p>
-            For inference on the difference of two means, the following conditions should be met:
+            Can the <m>t</m>-distribution be used to make inference using the point estimate,
+            <m>\bar{x}_{esc} - \bar{x}_{control} = 7.83</m>?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            First, we check for independence. Because the sheep were randomized into the groups,
+            independence within and between groups is satisfied.
+          </p>
+          
+          <p>
+            Figure<nbsp/><xref ref="stemCellTherapyForHearts"/> does not reveal any clear outliers in
+            either group. (The ESC group does look a bit more variability, but this is not the same as
+            having clear outliers.)
+          </p>
+          
+          <p>
+            With both conditions met, we can use the <m>t</m>-distribution to model the difference of
+            sample means.
+          </p>
+        </solution>
+      </example>
+      
+      <figure xml:id="stemCellTherapyForHearts">
+        <caption>Histograms for both the embryonic stem cell and control group.</caption>
+        <p>
+          <!-- TODO: Add figure - Two histograms are shown, one for "Embryonic stem cell transplant" and
+          one for "Control (no treatment)". The data for the first histogram for the treatment group are
+          roughly centered at about 3%, with values ranging from about -5% to positive 15%. The data for
+          the second histogram, which represents the control group, is approximately centered at -3%, with
+          values ranging from -10% to about positive 2%. -->
+        </p>
+      </figure>
+      
+      <p>
+        As with the one-sample case, we always compute the standard error using sample standard
+        deviations rather than population standard deviations:
+      </p>
+      <md>
+        <mrow>SE \amp= \sqrt{\frac{s_{esc}^2}{n_{esc}} + \frac{s_{control}^2}{n_{control}}}</mrow>
+        <mrow>\amp= \sqrt{\frac{5.17^2}{9} + \frac{2.76^2}{9}}</mrow>
+        <mrow>\amp= 1.95</mrow>
+      </md>
+      <p>
+        Generally, we use statistical software to find the appropriate degrees of freedom, or if software
+        isn't available, we can use the smaller of <m>n_1 - 1</m> and <m>n_2 - 1</m> for the degrees of
+        freedom, e.g. if using a <m>t</m>-table to find tail areas. For transparency in the Examples and
+        Guided Practice, we'll use the latter approach for finding <m>df</m>; in the case of the ESC
+        example, this means we'll use <m>df = 8</m>.
+      </p>
+      
+      <example>
+        <statement>
+          <p>
+            Calculate a 95% confidence interval for the effect of ESCs on the change in heart pumping
+            capacity of sheep after they've suffered a heart attack.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We will use the sample difference and the standard error that we computed earlier calculations:
+          </p>
+          <md>
+            <mrow>\bar{x}_{esc} - \bar{x}_{control} = 7.83 \qquad SE = \sqrt{\frac{5.17^2}{9} + \frac{2.76^2}{9}} = 1.95</mrow>
+          </md>
+          <p>
+            Using <m>df = 8</m>, we can identify the critical value of <m>t^{\star}_{8} = 2.31</m> for a
+            95% confidence interval. Finally, we can enter the values into the confidence interval formula:
+          </p>
+          <md>
+            <mrow>\text{point estimate} \pm t^{\star} \times SE \amp\rightarrow 7.83 \pm 2.31\times 1.95</mrow>
+            <mrow>\amp\rightarrow (3.32, 12.34)</mrow>
+          </md>
+          <p>
+            We are 95% confident that embryonic stem cells improve the heart's pumping function in sheep
+            that have suffered a heart attack by 3.32% to 12.34%.
+          </p>
+        </solution>
+      </example>
+      
+      <p>
+        As with past statistical inference applications, there is a well-trodden procedure.
+      </p>
+      <dl>
+        <li>
+          <title>Prepare.</title>
+          <p>
+            Retrieve critical contextual information, and if appropriate, set up hypotheses.
+          </p>
+        </li>
+        <li>
+          <title>Check.</title>
+          <p>
+            Ensure the required conditions are reasonably satisfied.
+          </p>
+        </li>
+        <li>
+          <title>Calculate.</title>
+          <p>
+            Find the standard error, and then construct a confidence interval, or if conducting a
+            hypothesis test, find a test statistic and p-value.
+          </p>
+        </li>
+        <li>
+          <title>Conclude.</title>
+          <p>
+            Interpret the results in the context of the application.
+          </p>
+        </li>
+      </dl>
+      <p>
+        The details change a little from one setting to the next, but this general approach remain the
+        same.
+      </p>
+    </subsection>
+    
+    <subsection xml:id="hypothesisTestsDiffMeans">
+      <title>Hypothesis tests for the difference of two means</title>
+      
+      <p>
+        A data set called <c>ncbirths</c> represents a random sample of 150 cases of mothers and their
+        newborns in North Carolina over a year. Four cases from this data set are represented in
+        Figure<nbsp/><xref ref="babySmokeDF"/>. We are particularly interested in two variables:
+        <c>weight</c> and <c>smoke</c>. The <c>weight</c> variable represents the weights of the
+        newborns and the <c>smoke</c> variable describes which mothers smoked during pregnancy. We
+        would like to know, is there convincing evidence that newborns from mothers who smoke have a
+        different average birth weight than newborns from mothers who don't smoke? We will use the
+        North Carolina sample to try to answer this question. The smoking group includes 50 cases and
+        the nonsmoking group contains 100 cases.
+      </p>
+      
+      <figure xml:id="babySmokeDF">
+        <caption>Four cases from the <c>ncbirths</c> data set. The value <q>NA</q>, shown for the first
+        two entries of the first variable, indicates that piece of data is missing.</caption>
+        <tabular>
+          <row bottom="medium">
+            <cell></cell>
+            <cell>fage</cell>
+            <cell>mage</cell>
+            <cell>weeks</cell>
+            <cell>weight</cell>
+            <cell>sex</cell>
+            <cell>smoke</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>NA</cell>
+            <cell>13</cell>
+            <cell>37</cell>
+            <cell>5.00</cell>
+            <cell>female</cell>
+            <cell>nonsmoker</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>NA</cell>
+            <cell>14</cell>
+            <cell>36</cell>
+            <cell>5.88</cell>
+            <cell>female</cell>
+            <cell>nonsmoker</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>19</cell>
+            <cell>15</cell>
+            <cell>41</cell>
+            <cell>8.13</cell>
+            <cell>male</cell>
+            <cell>smoker</cell>
+          </row>
+          <row>
+            <cell><m>\vdots</m></cell>
+            <cell><m>\vdots</m></cell>
+            <cell><m>\vdots</m></cell>
+            <cell><m>\vdots</m></cell>
+            <cell><m>\vdots</m></cell>
+            <cell><m>\vdots</m></cell>
+            <cell><m>\vdots</m></cell>
+          </row>
+          <row>
+            <cell>150</cell>
+            <cell>45</cell>
+            <cell>50</cell>
+            <cell>36</cell>
+            <cell>9.25</cell>
+            <cell>female</cell>
+            <cell>nonsmoker</cell>
+          </row>
+        </tabular>
+      </figure>
+      
+      <example xml:id="babySmokeHTForWeight">
+        <statement>
+          <p>
+            Set up appropriate hypotheses to evaluate whether there is a relationship between a mother
+            smoking and average birth weight.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The null hypothesis represents the case of no difference between the groups.
+          </p>
+          <ul>
+            <li>
+              <p>
+                <m>H_0</m>: There is no difference in average birth weight for newborns from mothers who
+                did and did not smoke. In statistical notation: <m>\mu_{n} - \mu_{s} = 0</m>, where
+                <m>\mu_{n}</m> represents non-smoking mothers and <m>\mu_s</m> represents mothers who
+                smoked.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>H_A</m>: There is some difference in average newborn weights from mothers who did and
+                did not smoke (<m>\mu_{n} - \mu_{s} \neq 0</m>).
+              </p>
+            </li>
+          </ul>
+        </solution>
+      </example>
+      
+      <p>
+        We check the two conditions necessary to model the difference in sample means using the
+        <m>t</m>-distribution.
+      </p>
+      <ul>
+        <li>
+          <p>
+            Because the data come from a simple random sample, the observations are independent, both
+            within and between samples.
+          </p>
+        </li>
+        <li>
+          <p>
+            With both data sets over 30 observations, we inspect the data in
+            Figure<nbsp/><xref ref="babySmokePlotOfTwoGroupsToExamineSkew"/> for any particularly
+            extreme outliers and find none.
+          </p>
+        </li>
+      </ul>
+      <p>
+        Since both conditions are satisfied, the difference in sample means may be modeled using a
+        <m>t</m>-distribution.
+      </p>
+      
+      <figure xml:id="babySmokePlotOfTwoGroupsToExamineSkew">
+        <caption>The left panel represents birth weights for infants whose mothers smoked. The right
+        panel represents the birth weights for infants whose mothers who did not smoke.</caption>
+        <p>
+          <!-- TODO: Add figure - Two histograms are shown for "Newborn Weights, in pounds", one for
+          "Mothers Who Smoked" and one for "Mothers Who Did Not Smoke". The histogram for "Mothers Who
+          Smoked" is centered at about 7 and is left-skewed, with values ranging from about 1 pound to
+          10 pounds. The histogram for "Mothers Who Did Not Smoke" is centered at about 7.5 and is
+          left-skewed, with values ranging from about 1 pound to 11 pounds. -->
+        </p>
+      </figure>
+      
+      <exercise xml:id="babySmokeCalcForWeight">
+        <statement>
+          <p>
+            The summary statistics in Figure<nbsp/><xref ref="SumStatsBirthWeightNewbornsSmoke"/> may be
+            useful for this Guided Practice.
           </p>
           <ol>
-            <li><alert>Independence:</alert> Within each group, observations must be independent.
-                The two groups must also be independent of each other.</li>
-            <li><alert>Normality:</alert> The data in each group should come from a nearly normal
-                distribution, or each sample size should be sufficiently large.</li>
+            <li>
+              <p>
+                What is the point estimate of the population difference, <m>\mu_{n} - \mu_{s}</m>?
+              </p>
+            </li>
+            <li>
+              <p>
+                Compute the standard error of the point estimate from part (a).
+              </p>
+            </li>
           </ol>
         </statement>
-      </definition>
+        <solution>
+          <p>
+            (a) The difference in sample means is an appropriate point estimate:
+            <m>\bar{x}_{n} - \bar{x}_{s} = 0.40</m>.
+          </p>
+          <p>
+            (b) The standard error of the estimate can be calculated using the standard error formula:
+          </p>
+          <md>
+            <mrow>SE \amp= \sqrt{\frac{\sigma_n^2}{n_n} + \frac{\sigma_s^2}{n_s}} \approx \sqrt{\frac{s_n^2}{n_n} + \frac{s_s^2}{n_s}}</mrow>
+            <mrow>\amp= \sqrt{\frac{1.60^2}{100} + \frac{1.43^2}{50}}</mrow>
+            <mrow>\amp= 0.26</mrow>
+          </md>
+        </solution>
+      </exercise>
+      
+      <figure xml:id="SumStatsBirthWeightNewbornsSmoke">
+        <caption>Summary statistics for the <c>ncbirths</c> data set.</caption>
+        <tabular>
+          <row bottom="medium">
+            <cell></cell>
+            <cell>smoker</cell>
+            <cell>nonsmoker</cell>
+          </row>
+          <row>
+            <cell>mean</cell>
+            <cell>6.78</cell>
+            <cell>7.18</cell>
+          </row>
+          <row>
+            <cell>st. dev.</cell>
+            <cell>1.43</cell>
+            <cell>1.60</cell>
+          </row>
+          <row>
+            <cell>samp. size</cell>
+            <cell>50</cell>
+            <cell>100</cell>
+          </row>
+        </tabular>
+      </figure>
+      
+      <example xml:id="babySmokeHTForWeightComputePValueAndEvalHT">
+        <statement>
+          <p>
+            Complete the hypothesis test started in Example<nbsp/><xref ref="babySmokeHTForWeight"/> and
+            Guided Practice<nbsp/><xref ref="babySmokeCalcForWeight"/>. Use a significance level of
+            <m>\alpha=0.05</m>. For reference, <m>\bar{x}_{n} - \bar{x}_{s} = 0.40</m>, <m>SE = 0.26</m>,
+            and the sample sizes were <m>n_n = 100</m> and <m>n_s = 50</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We can find the test statistic for this test using the values from Guided
+            Practice<nbsp/><xref ref="babySmokeCalcForWeight"/>:
+          </p>
+          <me>
+            T = \frac{0.40 - 0}{0.26} = 1.54
+          </me>
+          <p>
+            The p-value is represented by the two shaded tails in the following plot:
+          </p>
+          <figure xml:id="distOfDiffOfSampleMeansForBWOfBabySmokeData">
+            <caption>Distribution of the difference of sample means for the baby smoke data.</caption>
+            <p>
+              <!-- TODO: Add figure - A bell-shaped curve that resembles a normal distribution is shown
+              centered at "mu-sub-n minus mu-sub-s equals 0". The upper tail is shaded above a value
+              marked as "observed difference", and the corresponding lower tail is also shaded. These
+              tails together appear to represent about 10% to 15% of the area under the distribution. -->
+            </p>
+          </figure>
+          <p>
+            We find the single tail area using software (or the <m>t</m>-table in the appendix). We'll
+            use the smaller of <m>n_n - 1 = 99</m> and <m>n_s - 1 = 49</m> as the degrees of freedom:
+            <m>df = 49</m>. The one tail area is 0.065; doubling this value gives the two-tail area and
+            p-value, 0.135.
+          </p>
+          
+          <p>
+            The p-value is larger than the significance value, 0.05, so we do not reject the null
+            hypothesis. There is insufficient evidence to say there is a difference in average birth
+            weight of newborns from North Carolina mothers who did smoke during pregnancy and newborns
+            from North Carolina mothers who did not smoke during pregnancy.
+          </p>
+        </solution>
+      </example>
+      
+      <exercise>
+        <statement>
+          <p>
+            We've seen much research suggesting smoking is harmful during pregnancy, so how could we fail
+            to reject the null hypothesis in Example<nbsp/><xref ref="babySmokeHTForWeightComputePValueAndEvalHT"/>?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            It is possible that there is a difference but we did not detect it. If there is a difference,
+            we made a Type 2 Error.
+          </p>
+        </solution>
+      </exercise>
+      
+      <exercise xml:id="babySmokeHTIDingHowToDetectDifferences">
+        <statement>
+          <p>
+            If we made a Type 2 Error and there is a difference, what could we have done differently in
+            data collection to be more likely to detect the difference?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We could have collected more data. If the sample sizes are larger, we tend to have a better
+            shot at finding a difference if one exists. In fact, this is exactly what we would find if we
+            examined a larger data set!
+          </p>
+        </solution>
+      </exercise>
+      
+      <p>
+        Public service announcement: while we have used this relatively small data set as an example,
+        larger data sets show that women who smoke tend to have smaller newborns. In fact, some in the
+        tobacco industry actually had the audacity to tout that as a <em>benefit</em> of smoking:
+      </p>
+      <blockquote>
+        <p>
+          <em>It's true. The babies born from women who smoke are smaller, but they're just as healthy as
+          the babies born from women who do not smoke. And some women would prefer having smaller
+          babies.</em>
+        </p>
+        <p>
+          - Joseph Cullman, Philip Morris' Chairman of the Board on CBS' <em>Face the Nation</em>,
+          Jan 3, 1971
+        </p>
+      </blockquote>
+      <p>
+        Fact check: the babies from women who smoke are not actually as healthy as the babies from women
+        who do not smoke.<fn>You can watch an episode of John Oliver on <em>Last Week Tonight</em> to
+        explore the present day offenses of the tobacco industry. Please be aware that there is some
+        adult language: <url href="https://youtu.be/6UsHHOCH4q8">youtu.be/6UsHHOCH4q8</url>.</fn>
+      </p>
     </subsection>
     
-    <subsection xml:id="subsec-two-sample-t-procedures">
-      <title>Two-Sample <m>t</m>-Procedures</title>
+    <subsection xml:id="caseStudyTwoExamVersions">
+      <title>Case study: two versions of a course exam</title>
       
       <p>
-        The standard error for the difference of two independent sample means is:
+        An instructor decided to run two slight variations of the same exam. Prior to passing out the
+        exams, she shuffled the exams together to ensure each student received a random version. Summary
+        statistics for how students performed on these two exams are shown in
+        Figure<nbsp/><xref ref="summaryStatsForTwoVersionsOfExams"/>. Anticipating complaints from
+        students who took Version B, she would like to evaluate whether the difference observed in the
+        groups is so large that it provides convincing evidence that Version B was more difficult (on
+        average) than Version A.
       </p>
       
+      <figure xml:id="summaryStatsForTwoVersionsOfExams">
+        <caption>Summary statistics of scores for each exam version.</caption>
+        <tabular>
+          <row bottom="medium">
+            <cell>Version</cell>
+            <cell><m>n</m></cell>
+            <cell><m>\bar{x}</m></cell>
+            <cell><m>s</m></cell>
+            <cell>min</cell>
+            <cell>max</cell>
+          </row>
+          <row>
+            <cell>A</cell>
+            <cell>30</cell>
+            <cell>79.4</cell>
+            <cell>14</cell>
+            <cell>45</cell>
+            <cell>100</cell>
+          </row>
+          <row>
+            <cell>B</cell>
+            <cell>27</cell>
+            <cell>74.1</cell>
+            <cell>20</cell>
+            <cell>32</cell>
+            <cell>100</cell>
+          </row>
+        </tabular>
+      </figure>
+      
+      <exercise xml:id="htSetupForEvaluatingTwoExamVersions">
+        <statement>
+          <p>
+            Construct hypotheses to evaluate whether the observed difference in sample means,
+            <m>\bar{x}_A - \bar{x}_B=5.3</m>, is due to chance. We will later evaluate these hypotheses
+            using <m>\alpha = 0.01</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>H_0</m>: the exams are equally difficult, on average. <m>\mu_A - \mu_B = 0</m>. <m>H_A</m>:
+            one exam was more difficult than the other, on average. <m>\mu_A - \mu_B \neq 0</m>.
+          </p>
+        </solution>
+      </exercise>
+      
+      <exercise xml:id="conditionsForTDistForEvaluatingTwoExamVersions">
+        <statement>
+          <p>
+            To evaluate the hypotheses in Guided Practice<nbsp/><xref ref="htSetupForEvaluatingTwoExamVersions"/>
+            using the <m>t</m>-distribution, we must first verify conditions.
+          </p>
+          <ol>
+            <li>
+              <p>
+                Does it seem reasonable that the scores are independent?
+              </p>
+            </li>
+            <li>
+              <p>
+                Any concerns about outliers?
+              </p>
+            </li>
+          </ol>
+        </statement>
+        <solution>
+          <p>
+            (a) Since the exams were shuffled, the <q>treatment</q> in this case was randomly assigned, so
+            independence within and between groups is satisfied.
+          </p>
+          <p>
+            (b) The summary statistics suggest the data are roughly symmetric about the mean, and the
+            min/max values don't suggest any outliers of concern.
+          </p>
+        </solution>
+      </exercise>
+      
+      <p>
+        After verifying the conditions for each sample and confirming the samples are independent of each
+        other, we are ready to conduct the test using the <m>t</m>-distribution. In this case, we are
+        estimating the true difference in average test scores using the sample data, so the point
+        estimate is <m>\bar{x}_A - \bar{x}_B = 5.3</m>. The standard error of the estimate can be
+        calculated as
+      </p>
       <md>
-        SE = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}
+        <mrow>SE \amp= \sqrt{\frac{s_A^2}{n_A} + \frac{s_B^2}{n_B}}</mrow>
+        <mrow>\amp= \sqrt{\frac{14^2}{30} + \frac{20^2}{27}}</mrow>
+        <mrow>\amp= 4.62</mrow>
       </md>
-      
       <p>
-        The degrees of freedom calculation for the two-sample t-test is complex. Most software
-        uses the Welch-Satterthwaite approximation. A conservative approach is to use
-        <m>df = \min(n_1 - 1, n_2 - 1)</m>.
+        Finally, we construct the test statistic:
       </p>
-      
-      <p>
-        <alert>Confidence interval for <m>\mu_1 - \mu_2</m>:</alert>
-      </p>
-      
       <md>
-        (\bar{x}_1 - \bar{x}_2) \pm t^*_{df} \times \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}
+        <mrow>T \amp= \frac{\text{point estimate} - \text{null value}}{SE}</mrow>
+        <mrow>\amp= \frac{(79.4-74.1) - 0}{4.62}</mrow>
+        <mrow>\amp= 1.15</mrow>
       </md>
-      
       <p>
-        <alert>Test statistic for <m>H_0: \mu_1 = \mu_2</m>:</alert>
+        If we have a computer handy, we can identify the degrees of freedom as 45.97. Otherwise we use
+        the smaller of <m>n_1-1</m> and <m>n_2-1</m>: <m>df=26</m>.
       </p>
       
-      <md>
-        t = \frac{(\bar{x}_1 - \bar{x}_2) - 0}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
-      </md>
+      <figure xml:id="pValueOfTwoTailAreaOfExamVersionsWhereDFIs26">
+        <caption>The <m>t</m>-distribution with 26 degrees of freedom and the p-value from exam example
+        represented as the shaded areas.</caption>
+        <p>
+          <!-- TODO: Add figure - A t-distribution with 26 degrees of freedom is shown along with the
+          p-value from the exam example represented as shaded area. The t-distribution shown is centered
+          at zero, and the upper tail area above T equals 1.15 is shaded along with the area below about
+          -1.15. These shaded tail areas appear to represent roughly 25% of the distribution. -->
+        </p>
+      </figure>
       
-      <procedure xml:id="proc-two-sample-t">
-        <title>Two-Sample <m>t</m>-Procedures</title>
-        <step>
-          <title>Prepare</title>
+      <example>
+        <statement>
           <p>
-            Identify summary statistics for both groups and determine the parameter of interest.
+            Identify the p-value depicted in Figure<nbsp/><xref ref="pValueOfTwoTailAreaOfExamVersionsWhereDFIs26"/>
+            using <m>df = 26</m>, and provide a conclusion in the context of the case study.
           </p>
-        </step>
-        <step>
-          <title>Check</title>
+        </statement>
+        <solution>
           <p>
-            Verify independence within and between groups, and check the normality condition for
-            each group.
+            Using software, we can find the one-tail area (0.13) and then double this value to get the
+            two-tail area, which is the p-value: 0.26. (Alternatively, we could use the <m>t</m>-table in
+            the appendix.)
           </p>
-        </step>
-        <step>
-          <title>Calculate</title>
+          
           <p>
-            Compute the standard error and degrees of freedom. Calculate the confidence interval
-            or test statistic as appropriate.
+            In Guided Practice<nbsp/><xref ref="htSetupForEvaluatingTwoExamVersions"/>, we specified that
+            we would use <m>\alpha = 0.01</m>. Since the p-value is larger than <m>\alpha</m>, we do not
+            reject the null hypothesis. That is, the data do not convincingly show that one exam version
+            is more difficult than the other, and the teacher should not be convinced that she should add
+            points to the Version B exam scores.
           </p>
-        </step>
-        <step>
-          <title>Conclude</title>
-          <p>
-            Interpret the results in context.
-          </p>
-        </step>
-      </procedure>
+        </solution>
+      </example>
     </subsection>
     
-    <subsection xml:id="subsec-pooled-standard-deviation">
-      <title>Pooled Standard Deviation (Optional)</title>
+    <subsection xml:id="pooledStandardDeviations">
+      <title>Pooled standard deviation estimate (special topic)</title>
       
       <p>
-        When we have strong reason to believe that the two populations have equal variances, we
-        can use a <term>pooled standard deviation</term> to get a more precise estimate. The pooled
-        standard deviation is:
+        Occasionally, two populations will have standard deviations that are so similar that they can be
+        treated as identical. For example, historical data or a well-understood biological mechanism may
+        justify this strong assumption. In such cases, we can make the <m>t</m>-distribution approach
+        slightly more precise by using a pooled standard deviation.
       </p>
-      
-      <md>
-        s_{pooled} = \sqrt{\frac{(n_1-1)s_1^2 + (n_2-1)s_2^2}{n_1 + n_2 - 2}}
-      </md>
       
       <p>
-        The standard error becomes <m>SE = s_{pooled}\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}</m> and
-        the degrees of freedom is <m>df = n_1 + n_2 - 2</m>. However, this approach should only be
-        used when the equal variance assumption is reasonable.
+        The <term>pooled standard deviation</term> of two groups is a way to use data from both samples
+        to better estimate the standard deviation and standard error. If <m>s_1</m> and <m>s_2</m> are
+        the standard deviations of groups 1 and 2 and there are very good reasons to believe that the
+        population standard deviations are equal, then we can obtain an improved estimate of the group
+        variances by pooling their data:
       </p>
+      <me>
+        s_{pooled}^2 = \frac{s_1^2\times (n_1-1) + s_2^2\times (n_2-1)}{n_1 + n_2 - 2}
+      </me>
+      <p>
+        where <m>n_1</m> and <m>n_2</m> are the sample sizes, as before. To use this new statistic, we
+        substitute <m>s_{pooled}^2</m> in place of <m>s_1^2</m> and <m>s_2^2</m> in the standard error
+        formula, and we use an updated formula for the degrees of freedom:
+      </p>
+      <me>
+        df = n_1 + n_2 - 2
+      </me>
+      
+      <p>
+        The benefits of pooling the standard deviation are realized through obtaining a better estimate
+        of the standard deviation for each group and using a larger degrees of freedom parameter for the
+        <m>t</m>-distribution. Both of these changes may permit a more accurate model of the sampling
+        distribution of <m>\bar{x}_1 - \bar{x}_2</m>, if the standard deviations of the two groups are
+        indeed equal.
+      </p>
+      
+      <assemblage>
+        <title>Pool standard deviations only after careful consideration</title>
+        <p>
+          A pooled standard deviation is only appropriate when background research indicates the
+          population standard deviations are nearly equal. When the sample size is large and the
+          condition may be adequately checked with data, the benefits of pooling the standard deviations
+          greatly diminishes.
+        </p>
+      </assemblage>
     </subsection>
   </section>
   
