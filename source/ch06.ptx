@@ -175,7 +175,7 @@
           </p>
           <figure xml:id="fig-paydayCC-norm-pvalue">
             <caption>A normal distribution is shown with a center of 0.5 and a standard deviation of 0.017. Two tails are shaded: The region above 0.51 and a region in the corresponding lower tail. Visually, it looks like a little over half of the area under the normal curve is shaded.</caption>
-            <image source="ch_inference_for_props/paydayCC_norm_pvalue" width="50%"/>
+            <image source="ch_inference_for_props/paydayCC_norm_pvalue.pdf" width="50%"/>
           </figure>
           <p>
             Based on the normal model, the test statistic can be computed as the Z-score of the point estimate:
