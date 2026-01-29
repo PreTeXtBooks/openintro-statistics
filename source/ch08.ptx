@@ -264,7 +264,7 @@
       <figure xml:id="fig-corForNonLinearPlots">
         <caption>Sample scatterplots and their correlations. In each case, there is a strong relationship between the variables. However, because the relationship is nonlinear, the correlation is relatively weak.</caption>
         <image source="ch_regr_simple_linear/figures/corForNonLinearPlots" width="85%">
-          <description>Three scatterplots are shown. In each case, there is a strong relationship between the variables. However, because the relationship is nonlinear, the correlation is relatively weak. The first plot shows data that trends upwards on the left before peaking and then trending downward on the right -- the correlation of the data in this plot is R equals -0.23. The second plot shows data with a sharp downward trend on the left before reaching a trough and rising then sharply upward before reaching a peak and then trending sharply downwards again -- the correlation of the data in this plot is R equals 0.31. The third plots shows data that without a trend on the far left, followed by a steep drop, a trough, and then a steep rise to a peak, and then another drop and then finally a slight increase at the end -- the correlation of the data in this plot is R equals 0.50.</description>
+          <description>Three scatterplots are shown. In each case, there is a strong relationship between the variables. However, because the relationship is nonlinear, the correlation is relatively weak. The first plot shows data that trends upwards on the left before peaking and then trending downward on the right -- the correlation of the data in this plot is R equals -0.23. The second plot shows data with a sharp downward trend on the left before reaching a trough and rising then sharply upward before reaching a peak and then trending sharply downwards again -- the correlation of the data in this plot is R equals 0.31. The third plot shows data that without a trend on the far left, followed by a steep drop, a trough, and then a steep rise to a peak, and then another drop and then finally a slight increase at the end -- the correlation of the data in this plot is R equals 0.50.</description>
         </image>
       </figure>
 
@@ -331,7 +331,7 @@
               <description>A scatterplot is shown. The observations start in the upper left corner of the plot, trend sharply downwards before tapering off and stabilizing at about the middle of the plot, before steadily and then faster rising again to the upper right corner of the plot. The trend is approximately symmetric from left-to-right.</description>
             </image>
             <image source="ch_regr_simple_linear/figures/eoce/identify_relationships_1/identify_relationships_lin_pos_strong">
-              <description>A scatterplot is shown. They start on the lower left corner, only spanning about 20% of the vertical region of the plot, and have a steady upwards trend to the upper right corner of the plot. The vertical variability of the points around the trend is relatively stable across the plot.</description>
+              <description>A scatterplot is shown. The points start on the lower left corner, only spanning about 20% of the vertical region of the plot, and have a steady upwards trend to the upper right corner of the plot. The vertical variability of the points around the trend is relatively stable across the plot.</description>
             </image>
             <image source="ch_regr_simple_linear/figures/eoce/identify_relationships_1/identify_relationships_lin_pos_weak">
               <description>A scatterplot is shown. On the left side of the plot, the points appear randomly scattered across the full range of the plot, and this property holds across the entire plot. No trend is evident.</description>
@@ -342,7 +342,7 @@
               <description>A scatterplot is shown. On the left side of the plot, the observations are concentrated in the bottom half of the plot but rise steadily. The trend peaks near the center of the plot, where nearly all the points in the (horizontal) center region of the scatterplot are concentrated in the upper half of the scatterplot. On the right side of the plot, the points show a trend downwards, with points concentrated in the lower quarter of the scatterplot for the rightmost handful of points.</description>
             </image>
             <image source="ch_regr_simple_linear/figures/eoce/identify_relationships_1/identify_relationships_lin_neg_strong">
-              <description>A scatterplot is shown. They start on the upper left corner, only spanning about 20% of the vertical region of the plot, and have a steady downwards trend to the bottom right corner of the plot. The vertical variability of the points around the trend is relatively stable across the plot.</description>
+              <description>A scatterplot is shown. The points start on the upper left corner, only spanning about 20% of the vertical region of the plot, and have a steady downwards trend to the bottom right corner of the plot. The vertical variability of the points around the trend is relatively stable across the plot.</description>
             </image>
             <image source="ch_regr_simple_linear/figures/eoce/identify_relationships_1/identify_relationships_none">
               <description>A scatterplot is shown. On the left side of the plot, the points appear randomly scattered across the full range of the plot, and this property holds across the entire plot. No trend is evident or at least obvious.</description>
@@ -449,7 +449,7 @@
               <description>A scatterplot is shown. The observations start in the upper left corner of the plot, trend sharply downwards before tapering off and stabilizing at about the middle of the plot, before steadily and then faster rising again to the upper right corner of the plot. The trend is approximately symmetric from left-to-right.</description>
             </image>
             <image source="ch_regr_simple_linear/figures/eoce/match_corr_1/match_corr_2_strong_pos">
-              <description>A scatterplot is shown. They start on the lower left corner, only spanning about 20% of the vertical region of the plot, and have a steady upwards trend to the upper right corner of the plot. The vertical variability of the points around the trend is relatively stable across the plot.</description>
+              <description>A scatterplot is shown. The points start on the lower left corner, only spanning about 20% of the vertical region of the plot, and have a steady upwards trend to the upper right corner of the plot. The vertical variability of the points around the trend is relatively stable across the plot.</description>
             </image>
             <image source="ch_regr_simple_linear/figures/eoce/match_corr_1/match_corr_3_weak_pos">
               <description>A scatterplot is shown. The points appear randomly scattered across the left, middle, and right portion of the plot. There is a very slight upward trend.</description>
