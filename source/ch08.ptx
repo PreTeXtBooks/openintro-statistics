@@ -1419,7 +1419,7 @@
     <exercises>
       <title>Section Exercises</title>
 
-      <exercise xml:id="outliers_1">
+      <exercise xml:id="ex-outliers-1">
         <title>Outliers, Part I</title>
         <statement>
           <p>
@@ -1439,7 +1439,7 @@
         </statement>
       </exercise>
 
-      <exercise xml:id="outliers_2">
+      <exercise xml:id="ex-outliers-2">
         <title>Outliers, Part II</title>
         <statement>
           <p>
@@ -1459,7 +1459,7 @@
         </statement>
       </exercise>
 
-      <exercise xml:id="urban_homeowners_outlier">
+      <exercise xml:id="ex-urban-homeowners-outlier">
         <title>Urban homeowners, Part I</title>
         <statement>
           <p>
@@ -1489,11 +1489,11 @@
         </statement>
       </exercise>
 
-      <exercise xml:id="crawling_babies_outlier">
+      <exercise xml:id="ex-crawling-babies-outlier">
         <title>Crawling babies, Part II</title>
         <statement>
           <p>
-            Exercise <xref ref="crawling_babies_corr_units"/> introduces data on the average monthly temperature during the month babies first try to crawl (about 6 months after birth) and the average first crawling age for babies born in a given month. A scatterplot of these two variables reveals a potential outlying month when the average temperature is about 53°F and average crawling age is about 28.5 weeks. Does this point have high leverage? Is it an influential point?
+            Exercise <xref ref="ex-crawling-babies-corr"/> introduces data on the average monthly temperature during the month babies first try to crawl (about 6 months after birth) and the average first crawling age for babies born in a given month. A scatterplot of these two variables reveals a potential outlying month when the average temperature is about 53°F and average crawling age is about 28.5 weeks. Does this point have high leverage? Is it an influential point?
           </p>
         </statement>
       </exercise>
