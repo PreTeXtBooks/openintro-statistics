@@ -4,12 +4,12 @@
   
   <introduction>
     <p>
-      Chapter 5 introduced a framework for statistical inference based on confidence intervals
-      and hypotheses using the normal distribution for sample proportions. In this chapter, we
-      encounter several new point estimates and a couple new distributions. In each case, the
-      inference ideas remain the same: determine which point estimate or test statistic is useful,
-      identify an appropriate distribution for the point estimate or test statistic, and apply
-      the ideas of inference.
+      Chapter<nbsp/><xref ref="ch-foundations-for-inference"/> introduced a framework for 
+      statistical inference based on confidence intervals and hypotheses using the normal 
+      distribution for sample proportions. In this chapter, we encounter several new point 
+      estimates and a couple new distributions. In each case, the inference ideas remain the 
+      same: determine which point estimate or test statistic is useful, identify an appropriate 
+      distribution for the point estimate or test statistic, and apply the ideas of inference.
     </p>
   </introduction>
   
