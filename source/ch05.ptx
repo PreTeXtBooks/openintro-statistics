@@ -2783,27 +2783,6 @@ sum(sampled_entries == "support") / 1000
     
     <exercises>
       <title>Section 5.3 Exercises</title>
-      
-      <exercise xml:id="ex-nuclear-arms">
-        <statement>
-          <p>
-            A Gallup poll of 1,028 adults found that 56% favored a nuclear arms reduction
-            treaty. Does this provide strong evidence that a majority of American adults
-            favor such a treaty? Conduct a hypothesis test using <m>\alpha = 0.05</m>.
-          </p>
-        </statement>
-      </exercise>
-      
-      <exercise xml:id="ex-type-errors-vaccine">
-        <statement>
-          <p>
-            Consider a hypothesis test for whether a new vaccine is effective at reducing
-            infection rates compared to a placebo. Describe what a Type 1 Error and a
-            Type 2 Error would mean in this context, and discuss which might be more
-            serious.
-          </p>
-        </statement>
-      </exercise>
 
       <exercise xml:id="ex-identify-hypotheses-1">
         <statement>
