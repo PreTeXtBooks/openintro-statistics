@@ -27,6 +27,9 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
           
+      - name: Apply PreTeXt cache workaround
+        run: bash scripts/fix-pretext-cache.sh
+          
       - name: Build HTML output
         run: |
           pretext build web

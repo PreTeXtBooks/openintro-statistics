@@ -4,14 +4,12 @@
 # Build output directories
 output/
 knowl/
-
-# Python cache
-__pycache__/
-*.pyc
-*.pyo
+generated/
+external/
 
 # Log files
 *.log
+logs/
 build_log.txt
 
 # Temporary files
