@@ -1050,12 +1050,34 @@
 
       <p>
         <term>Scatterplots</term> are one type of graph used to study the relationship between 
-        two numerical variables. A scatterplot comparing the variables <c>homeownership</c> and 
-        <c>multi_unit</c> (the percent of units in multi-unit structures such as apartments and 
-        condos) shows that counties with a higher rate of multi-units tend to have lower 
-        homeownership rates. We might brainstorm as to why this relationship exists and 
-        investigate each idea to determine which are the most reasonable explanations.
+        two numerical variables. <xref ref="fig-multiunit-homeownership"/> compares the variables 
+        <c>homeownership</c> and <c>multi_unit</c>, which is the percent of units in multi-unit 
+        structures (e.g. apartments, condos). Each point on the plot represents a single county. 
+        For instance, the highlighted dot corresponds to County 413 in the <c>county</c> data set: 
+        Chattahoochee County, Georgia, which has 39.4% of units in multi-unit structures and a 
+        homeownership rate of 31.3%. The scatterplot suggests a relationship between the two 
+        variables: counties with a higher rate of multi-units tend to have lower homeownership 
+        rates. We might brainstorm as to why this relationship exists and investigate each idea 
+        to determine which are the most reasonable explanations.
       </p>
+
+      <figure xml:id="fig-multiunit-homeownership">
+        <caption>
+          A scatterplot of homeownership versus the percent of units that are in multi-unit 
+          structures for US counties. The highlighted dot represents Chattahoochee County, Georgia, 
+          which has a multi-unit rate of 39.4% and a homeownership rate of 31.3%.
+        </caption>
+        <image source="ch_intro_to_data/figures/multiunitsVsOwnership/multiunitsVsOwnership.pdf" width="85%">
+          <description>
+            Scatterplot of thousands of counties with the percent of multiunit structures in each 
+            county shown on the horizontal axis and homeownership rate shown on the vertical axis. 
+            The data range from 0% to almost 100% for both variables. In general, the points are 
+            much more concentrated in the upper left corner of the graph and then trend downward 
+            for observations further to the right while also becoming more sparse. One point is 
+            annotated at the location (39.4%, 31.3%).
+          </description>
+        </image>
+      </figure>
 
       <p>
         The multi-unit and homeownership rates are said to be associated because the plot shows a 
@@ -1063,6 +1085,171 @@
         called <term>associated</term> variables. Associated variables can also be called 
         <term>dependent</term> variables and vice-versa.
       </p>
+
+      <exercise xml:id="guided-practice-loan50-questions">
+        <title>Creating research questions</title>
+        <statement>
+          <p>
+            Examine the variables in the <c>loan50</c> data set. Create two questions about 
+            possible relationships between variables in <c>loan50</c> that are of interest to you.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Two example questions: (1) What is the relationship between loan amount and total 
+            income? (2) If someone's income is above the average, will their interest rate tend 
+            to be above or below the average?
+          </p>
+        </solution>
+      </exercise>
+
+      <example xml:id="example-pop-change-income">
+        <title>Examining relationship between population change and income</title>
+        <statement>
+          <p>
+            This example examines the relationship between a county's population change from 2010 
+            to 2017 and median household income, which is visualized as a scatterplot in 
+            <xref ref="fig-pop-change-income"/>. Are these variables associated?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The larger the median household income for a county, the higher the population growth 
+            observed for the county. While this trend isn't true for every county, the trend in 
+            the plot is evident. Since there is some relationship between the variables, they are 
+            associated.
+          </p>
+        </solution>
+      </example>
+
+      <figure xml:id="fig-pop-change-income">
+        <caption>
+          A scatterplot showing <c>pop_change</c> against <c>median_hh_income</c>. Owsley County 
+          of Kentucky, is highlighted, which lost 3.63% of its population from 2010 to 2017 and 
+          had median household income of $22,736.
+        </caption>
+        <image source="ch_intro_to_data/figures/pop_change_v_med_income/pop_change_v_med_income.pdf" width="90%">
+          <description>
+            Scatterplot of thousands of counties with the median household income along the 
+            horizontal axis (data ranging from $0 to $120,000) and population change over 7 years 
+            (data ranging from about -15% to 25%). There is a cloud of points centered around 
+            ($45,000, -1%), and the points show a slight trend upwards while also becoming more 
+            sparse and volatile for observations corresponding to higher median incomes. One point 
+            is annotated at the location ($22,736, -3.63%).
+          </description>
+        </image>
+      </figure>
+
+      <p>
+        Because there is a downward trend in <xref ref="fig-multiunit-homeownership"/> <mdash/> 
+        counties with more units in multi-unit structures are associated with lower homeownership 
+        <mdash/> these variables are said to be <term>negatively associated</term>. A 
+        <term>positive association</term> is shown in the relationship between the 
+        <c>median_hh_income</c> and <c>pop_change</c> in <xref ref="fig-pop-change-income"/>, 
+        where counties with higher median household income tend to have higher rates of population 
+        growth.
+      </p>
+
+      <p>
+        If two variables are not associated, then they are said to be <term>independent</term>. 
+        That is, two variables are independent if there is no evident relationship between the two.
+      </p>
+
+      <insight>
+        <title>Associated or independent, not both</title>
+        <p>
+          A pair of variables are either related in some way (associated) or not (independent). 
+          No pair of variables is both associated and independent.
+        </p>
+      </insight>
+
+    </subsection>
+
+    <subsection xml:id="subsec-explanatory-response-variables">
+      <title>Explanatory and response variables</title>
+
+      <p>
+        When we ask questions about the relationship between two variables, we sometimes also want 
+        to determine if the change in one variable causes a change in the other. Consider the 
+        following rephrasing of an earlier question about the <c>county</c> data set:
+      </p>
+
+      <blockquote>
+        <p>
+          <em>If there is an increase in the median household income in a county, does this drive 
+          an increase in its population?</em>
+        </p>
+      </blockquote>
+
+      <p>
+        In this question, we are asking whether one variable affects another. If this is our 
+        underlying belief, then <em>median household income</em> is the <term>explanatory 
+        variable</term> and the <em>population change</em> is the <term>response variable</term> 
+        in the hypothesized relationship.<fn>Sometimes the explanatory variable is called the 
+        <term>independent variable</term> and the response variable is called the 
+        <term>dependent variable</term>. However, this becomes confusing since a <em>pair</em> 
+        of variables might be independent or dependent, so we avoid this language.</fn>
+      </p>
+
+      <insight>
+        <title>Explanatory and response variables</title>
+        <p>
+          When we suspect one variable might causally affect another, we label the first variable 
+          the <em>explanatory variable</em> and the second the <em>response variable</em>.
+        </p>
+        <p>
+          For many pairs of variables, there is no hypothesized relationship, and these labels 
+          would not be applied to either variable in such cases.
+        </p>
+      </insight>
+
+      <p>
+        Bear in mind that the act of labeling the variables in this way does nothing to ensure 
+        that a causal relationship exists. A formal evaluation to check whether one variable 
+        causes a change in another requires an experiment.
+      </p>
+
+    </subsection>
+
+    <subsection xml:id="subsec-observational-studies-experiments">
+      <title>Introducing observational studies and experiments</title>
+
+      <p>
+        There are two primary types of data collection: observational studies and experiments.
+      </p>
+
+      <p>
+        Researchers perform an <term>observational study</term> when they collect data in a way 
+        that does not directly interfere with how the data arise. For instance, researchers may 
+        collect information via surveys, review medical records, or follow a cohort of many similar 
+        individuals to study why certain diseases might develop. In each of these situations, 
+        researchers merely observe the data that arise. In general, observational studies can 
+        provide evidence of a naturally occurring association between variables, but they cannot 
+        by themselves show a causal connection.
+      </p>
+
+      <p>
+        When researchers want to investigate the possibility of a causal connection, they conduct 
+        an <term>experiment</term>. Usually there will be both an explanatory and a response 
+        variable. For instance, we may suspect administering a drug will reduce mortality in 
+        heart attack patients over the following year. To check if there really is a causal 
+        connection between the explanatory variable and the response, researchers will collect 
+        a sample of individuals and split them into groups. The individuals in each group are 
+        <em>assigned</em> a treatment. When individuals are randomly assigned to a group, the 
+        experiment is called a <term>randomized experiment</term>. For example, each heart attack 
+        patient in the drug trial could be randomly assigned, perhaps by flipping a coin, into one 
+        of two groups: the first group receives a <term>placebo</term> (fake treatment) and the 
+        second group receives the drug. See the case study in <xref ref="sec-stents-strokes"/> 
+        for another example of an experiment, though that study did not employ a placebo.
+      </p>
+
+      <insight>
+        <title>Association does not imply causation</title>
+        <p>
+          In general, association does not imply causation, and causation can only be inferred 
+          from a randomized experiment.
+        </p>
+      </insight>
 
     </subsection>
 
