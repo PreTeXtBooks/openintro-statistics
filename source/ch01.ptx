@@ -639,17 +639,14 @@
         </solution>
       </exercise>
 
-      <p>
-        <idx>county data</idx>
-        We consider data for 3,142 counties in the United States. The data includes each county's 
-        name, the state where it resides, its population in 2017, how its population changed from 
-        2010 to 2017, poverty rate, and six additional characteristics.
-      </p>
-
       <exercise xml:id="guided-practice-county-data-matrix">
         <title>Organizing county data</title>
         <statement>
           <p>
+            <idx>county data</idx>
+            We consider data for 3,142 counties in the United States. The data includes each county's 
+            name, the state where it resides, its population in 2017, how its population changed from 
+            2010 to 2017, poverty rate, and six additional characteristics.
             How might the county data described above be organized in a data matrix?
           </p>
         </statement>
@@ -662,6 +659,254 @@
           </p>
         </solution>
       </exercise>
+
+      <p>
+        The data described in Guided Practice about the county data represents the 
+        <c>county</c> data set, which is shown as a data matrix in <xref ref="table-county-data"/> 
+        and with variable descriptions in <xref ref="table-county-variables"/>.
+      </p>
+
+      <table xml:id="table-county-data">
+        <title>Eleven rows from the <c>county</c> data set</title>
+        <tabular>
+          <row header="yes" bottom="medium">
+            <cell></cell>
+            <cell>name</cell>
+            <cell>state</cell>
+            <cell>pop</cell>
+            <cell>pop_change</cell>
+            <cell>poverty</cell>
+            <cell>homeownership</cell>
+            <cell>multi_unit</cell>
+            <cell>unemp_rate</cell>
+            <cell>metro</cell>
+            <cell>median_edu</cell>
+            <cell>median_hh_income</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>Autauga</cell>
+            <cell>Alabama</cell>
+            <cell>55504</cell>
+            <cell>1.48</cell>
+            <cell>13.7</cell>
+            <cell>77.5</cell>
+            <cell>7.2</cell>
+            <cell>3.86</cell>
+            <cell>yes</cell>
+            <cell>some_college</cell>
+            <cell>55317</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>Baldwin</cell>
+            <cell>Alabama</cell>
+            <cell>212628</cell>
+            <cell>9.19</cell>
+            <cell>11.8</cell>
+            <cell>76.7</cell>
+            <cell>22.6</cell>
+            <cell>3.99</cell>
+            <cell>yes</cell>
+            <cell>some_college</cell>
+            <cell>52562</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>Barbour</cell>
+            <cell>Alabama</cell>
+            <cell>25270</cell>
+            <cell>-6.22</cell>
+            <cell>27.2</cell>
+            <cell>68.0</cell>
+            <cell>11.1</cell>
+            <cell>5.90</cell>
+            <cell>no</cell>
+            <cell>hs_diploma</cell>
+            <cell>33368</cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell>Bibb</cell>
+            <cell>Alabama</cell>
+            <cell>22668</cell>
+            <cell>0.73</cell>
+            <cell>15.2</cell>
+            <cell>82.9</cell>
+            <cell>6.6</cell>
+            <cell>4.39</cell>
+            <cell>yes</cell>
+            <cell>hs_diploma</cell>
+            <cell>43404</cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell>Blount</cell>
+            <cell>Alabama</cell>
+            <cell>58013</cell>
+            <cell>0.68</cell>
+            <cell>15.6</cell>
+            <cell>82.0</cell>
+            <cell>3.7</cell>
+            <cell>4.02</cell>
+            <cell>yes</cell>
+            <cell>hs_diploma</cell>
+            <cell>47412</cell>
+          </row>
+          <row>
+            <cell>6</cell>
+            <cell>Bullock</cell>
+            <cell>Alabama</cell>
+            <cell>10309</cell>
+            <cell>-2.28</cell>
+            <cell>28.5</cell>
+            <cell>76.9</cell>
+            <cell>9.9</cell>
+            <cell>4.93</cell>
+            <cell>no</cell>
+            <cell>hs_diploma</cell>
+            <cell>29655</cell>
+          </row>
+          <row>
+            <cell>7</cell>
+            <cell>Butler</cell>
+            <cell>Alabama</cell>
+            <cell>19825</cell>
+            <cell>-2.69</cell>
+            <cell>24.4</cell>
+            <cell>69.0</cell>
+            <cell>13.7</cell>
+            <cell>5.49</cell>
+            <cell>no</cell>
+            <cell>hs_diploma</cell>
+            <cell>36326</cell>
+          </row>
+          <row>
+            <cell>8</cell>
+            <cell>Calhoun</cell>
+            <cell>Alabama</cell>
+            <cell>114728</cell>
+            <cell>-1.51</cell>
+            <cell>18.6</cell>
+            <cell>70.7</cell>
+            <cell>14.3</cell>
+            <cell>4.93</cell>
+            <cell>yes</cell>
+            <cell>some_college</cell>
+            <cell>43686</cell>
+          </row>
+          <row>
+            <cell>9</cell>
+            <cell>Chambers</cell>
+            <cell>Alabama</cell>
+            <cell>33713</cell>
+            <cell>-1.20</cell>
+            <cell>18.8</cell>
+            <cell>71.4</cell>
+            <cell>8.7</cell>
+            <cell>4.08</cell>
+            <cell>no</cell>
+            <cell>hs_diploma</cell>
+            <cell>37342</cell>
+          </row>
+          <row>
+            <cell>10</cell>
+            <cell>Cherokee</cell>
+            <cell>Alabama</cell>
+            <cell>25857</cell>
+            <cell>-0.60</cell>
+            <cell>16.1</cell>
+            <cell>77.5</cell>
+            <cell>4.3</cell>
+            <cell>4.05</cell>
+            <cell>no</cell>
+            <cell>hs_diploma</cell>
+            <cell>40041</cell>
+          </row>
+          <row>
+            <cell><m>\vdots</m></cell>
+            <cell><m>\vdots</m></cell>
+            <cell><m>\vdots</m></cell>
+            <cell><m>\vdots</m></cell>
+            <cell><m>\vdots</m></cell>
+            <cell><m>\vdots</m></cell>
+            <cell><m>\vdots</m></cell>
+            <cell><m>\vdots</m></cell>
+            <cell><m>\vdots</m></cell>
+            <cell><m>\vdots</m></cell>
+            <cell><m>\vdots</m></cell>
+            <cell><m>\vdots</m></cell>
+          </row>
+          <row>
+            <cell>3142</cell>
+            <cell>Weston</cell>
+            <cell>Wyoming</cell>
+            <cell>6927</cell>
+            <cell>-2.93</cell>
+            <cell>14.4</cell>
+            <cell>77.9</cell>
+            <cell>6.5</cell>
+            <cell>3.98</cell>
+            <cell>no</cell>
+            <cell>some_college</cell>
+            <cell>59605</cell>
+          </row>
+        </tabular>
+      </table>
+
+      <table xml:id="table-county-variables">
+        <title>Variables and their descriptions for the <c>county</c> data set</title>
+        <tabular>
+          <row header="yes" bottom="medium">
+            <cell>variable</cell>
+            <cell>description</cell>
+          </row>
+          <row>
+            <cell><c>name</c></cell>
+            <cell>County name.</cell>
+          </row>
+          <row>
+            <cell><c>state</c></cell>
+            <cell>State where the county resides, or the District of Columbia.</cell>
+          </row>
+          <row>
+            <cell><c>pop</c></cell>
+            <cell>Population in 2017.</cell>
+          </row>
+          <row>
+            <cell><c>pop_change</c></cell>
+            <cell>Percent change in the population from 2010 to 2017. For example, the value 1.48 in the first row means the population for this county increased by 1.48% from 2010 to 2017.</cell>
+          </row>
+          <row>
+            <cell><c>poverty</c></cell>
+            <cell>Percent of the population in poverty.</cell>
+          </row>
+          <row>
+            <cell><c>homeownership</c></cell>
+            <cell>Percent of the population that lives in their own home or lives with the owner, e.g. children living with parents who own the home.</cell>
+          </row>
+          <row>
+            <cell><c>multi_unit</c></cell>
+            <cell>Percent of living units that are in multi-unit structures, e.g. apartments.</cell>
+          </row>
+          <row>
+            <cell><c>unemp_rate</c></cell>
+            <cell>Unemployment rate as a percent.</cell>
+          </row>
+          <row>
+            <cell><c>metro</c></cell>
+            <cell>Whether the county contains a metropolitan area.</cell>
+          </row>
+          <row>
+            <cell><c>median_edu</c></cell>
+            <cell>Median education level, which can take a value among below_hs, hs_diploma, some_college, and bachelors.</cell>
+          </row>
+          <row>
+            <cell><c>median_hh_income</c></cell>
+            <cell>Median household income for the county, where a household's income equals the total income of its occupants who are 15 years or older.</cell>
+          </row>
+        </tabular>
+      </table>
 
     </subsection>
 
@@ -805,12 +1050,34 @@
 
       <p>
         <term>Scatterplots</term> are one type of graph used to study the relationship between 
-        two numerical variables. A scatterplot comparing the variables <c>homeownership</c> and 
-        <c>multi_unit</c> (the percent of units in multi-unit structures such as apartments and 
-        condos) shows that counties with a higher rate of multi-units tend to have lower 
-        homeownership rates. We might brainstorm as to why this relationship exists and 
-        investigate each idea to determine which are the most reasonable explanations.
+        two numerical variables. <xref ref="fig-multiunit-homeownership"/> compares the variables 
+        <c>homeownership</c> and <c>multi_unit</c>, which is the percent of units in multi-unit 
+        structures (e.g. apartments, condos). Each point on the plot represents a single county. 
+        For instance, the highlighted dot corresponds to County 413 in the <c>county</c> data set: 
+        Chattahoochee County, Georgia, which has 39.4% of units in multi-unit structures and a 
+        homeownership rate of 31.3%. The scatterplot suggests a relationship between the two 
+        variables: counties with a higher rate of multi-units tend to have lower homeownership 
+        rates. We might brainstorm as to why this relationship exists and investigate each idea 
+        to determine which are the most reasonable explanations.
       </p>
+
+      <figure xml:id="fig-multiunit-homeownership">
+        <caption>
+          A scatterplot of homeownership versus the percent of units that are in multi-unit 
+          structures for US counties. The highlighted dot represents Chattahoochee County, Georgia, 
+          which has a multi-unit rate of 39.4% and a homeownership rate of 31.3%.
+        </caption>
+        <image source="ch_intro_to_data/figures/multiunitsVsOwnership/multiunitsVsOwnership.pdf" width="85%">
+          <description>
+            Scatterplot of thousands of counties with the percent of multiunit structures in each 
+            county shown on the horizontal axis and homeownership rate shown on the vertical axis. 
+            The data range from 0% to almost 100% for both variables. In general, the points are 
+            much more concentrated in the upper left corner of the graph and then trend downward 
+            for observations further to the right while also becoming more sparse. One point is 
+            annotated at the location (39.4%, 31.3%).
+          </description>
+        </image>
+      </figure>
 
       <p>
         The multi-unit and homeownership rates are said to be associated because the plot shows a 
@@ -818,6 +1085,171 @@
         called <term>associated</term> variables. Associated variables can also be called 
         <term>dependent</term> variables and vice-versa.
       </p>
+
+      <exercise xml:id="guided-practice-loan50-questions">
+        <title>Creating research questions</title>
+        <statement>
+          <p>
+            Examine the variables in the <c>loan50</c> data set. Create two questions about 
+            possible relationships between variables in <c>loan50</c> that are of interest to you.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Two example questions: (1) What is the relationship between loan amount and total 
+            income? (2) If someone's income is above the average, will their interest rate tend 
+            to be above or below the average?
+          </p>
+        </solution>
+      </exercise>
+
+      <example xml:id="example-pop-change-income">
+        <title>Examining relationship between population change and income</title>
+        <statement>
+          <p>
+            This example examines the relationship between a county's population change from 2010 
+            to 2017 and median household income, which is visualized as a scatterplot in 
+            <xref ref="fig-pop-change-income"/>. Are these variables associated?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The larger the median household income for a county, the higher the population growth 
+            observed for the county. While this trend isn't true for every county, the trend in 
+            the plot is evident. Since there is some relationship between the variables, they are 
+            associated.
+          </p>
+        </solution>
+      </example>
+
+      <figure xml:id="fig-pop-change-income">
+        <caption>
+          A scatterplot showing <c>pop_change</c> against <c>median_hh_income</c>. Owsley County 
+          of Kentucky is highlighted, which lost 3.63% of its population from 2010 to 2017 and 
+          had median household income of $22,736.
+        </caption>
+        <image source="ch_intro_to_data/figures/pop_change_v_med_income/pop_change_v_med_income.pdf" width="90%">
+          <description>
+            Scatterplot of thousands of counties with the median household income along the 
+            horizontal axis (data ranging from $0 to $120,000) and population change over 7 years 
+            (data ranging from about -15% to 25%). There is a cloud of points centered around 
+            ($45,000, -1%), and the points show a slight trend upwards while also becoming more 
+            sparse and volatile for observations corresponding to higher median incomes. One point 
+            is annotated at the location ($22,736, -3.63%).
+          </description>
+        </image>
+      </figure>
+
+      <p>
+        Because there is a downward trend in <xref ref="fig-multiunit-homeownership"/> <mdash/> 
+        counties with more units in multi-unit structures are associated with lower homeownership 
+        <mdash/> these variables are said to be <term>negatively associated</term>. A 
+        <term>positive association</term> is shown in the relationship between the 
+        <c>median_hh_income</c> and <c>pop_change</c> in <xref ref="fig-pop-change-income"/>, 
+        where counties with higher median household income tend to have higher rates of population 
+        growth.
+      </p>
+
+      <p>
+        If two variables are not associated, then they are said to be <term>independent</term>. 
+        That is, two variables are independent if there is no evident relationship between the two.
+      </p>
+
+      <insight>
+        <title>Associated or independent, not both</title>
+        <p>
+          A pair of variables are either related in some way (associated) or not (independent). 
+          No pair of variables is both associated and independent.
+        </p>
+      </insight>
+
+    </subsection>
+
+    <subsection xml:id="subsec-explanatory-response-variables">
+      <title>Explanatory and response variables</title>
+
+      <p>
+        When we ask questions about the relationship between two variables, we sometimes also want 
+        to determine if the change in one variable causes a change in the other. Consider the 
+        following rephrasing of an earlier question about the <c>county</c> data set:
+      </p>
+
+      <blockquote>
+        <p>
+          <em>If there is an increase in the median household income in a county, does this drive 
+          an increase in its population?</em>
+        </p>
+      </blockquote>
+
+      <p>
+        In this question, we are asking whether one variable affects another. If this is our 
+        underlying belief, then <em>median household income</em> is the <term>explanatory 
+        variable</term> and the <em>population change</em> is the <term>response variable</term> 
+        in the hypothesized relationship.<fn>Sometimes the explanatory variable is called the 
+        <term>independent variable</term> and the response variable is called the 
+        <term>dependent variable</term>. However, this becomes confusing since a <em>pair</em> 
+        of variables might be independent or dependent, so we avoid this language.</fn>
+      </p>
+
+      <insight>
+        <title>Explanatory and response variables</title>
+        <p>
+          When we suspect one variable might causally affect another, we label the first variable 
+          the <em>explanatory variable</em> and the second the <em>response variable</em>.
+        </p>
+        <p>
+          For many pairs of variables, there is no hypothesized relationship, and these labels 
+          would not be applied to either variable in such cases.
+        </p>
+      </insight>
+
+      <p>
+        Bear in mind that the act of labeling the variables in this way does nothing to ensure 
+        that a causal relationship exists. A formal evaluation to check whether one variable 
+        causes a change in another requires an experiment.
+      </p>
+
+    </subsection>
+
+    <subsection xml:id="subsec-observational-studies-experiments">
+      <title>Introducing observational studies and experiments</title>
+
+      <p>
+        There are two primary types of data collection: observational studies and experiments.
+      </p>
+
+      <p>
+        Researchers perform an <term>observational study</term> when they collect data in a way 
+        that does not directly interfere with how the data arise. For instance, researchers may 
+        collect information via surveys, review medical records, or follow a cohort of many similar 
+        individuals to study why certain diseases might develop. In each of these situations, 
+        researchers merely observe the data that arise. In general, observational studies can 
+        provide evidence of a naturally occurring association between variables, but they cannot 
+        by themselves show a causal connection.
+      </p>
+
+      <p>
+        When researchers want to investigate the possibility of a causal connection, they conduct 
+        an <term>experiment</term>. Usually there will be both an explanatory and a response 
+        variable. For instance, we may suspect administering a drug will reduce mortality in 
+        heart attack patients over the following year. To check if there really is a causal 
+        connection between the explanatory variable and the response, researchers will collect 
+        a sample of individuals and split them into groups. The individuals in each group are 
+        <em>assigned</em> a treatment. When individuals are randomly assigned to a group, the 
+        experiment is called a <term>randomized experiment</term>. For example, each heart attack 
+        patient in the drug trial could be randomly assigned, perhaps by flipping a coin, into one 
+        of two groups: the first group receives a <term>placebo</term> (fake treatment) and the 
+        second group receives the drug. See the case study in <xref ref="sec-stents-strokes"/> 
+        for another example of an experiment, though that study did not employ a placebo.
+      </p>
+
+      <insight>
+        <title>Association does not imply causation</title>
+        <p>
+          In general, association does not imply causation, and causation can only be inferred 
+          from a randomized experiment.
+        </p>
+      </insight>
 
     </subsection>
 
@@ -876,174 +1308,6 @@
             <li><p>Identify the main research question of the study.</p></li>
             <li><p>Who are the subjects in this study, and how many are included?</p></li>
             <li><p>The study found that students who were identified as upper-class took more candy than others. How many variables were recorded for each subject in the study in order to conclude these findings? State the variables and their types.</p></li>
-          </ol>
-        </statement>
-      </exercise>
-
-      <exercise xml:id="ex-relax-after-work">
-        <title>Relaxing after work</title>
-        <statement>
-          <p>
-            The General Social Survey asked the question, “After an average work day, about how many hours do you have to relax or pursue activities that you enjoy?” to a random sample of 1,155 Americans. The average relaxing time was found to be 1.65 hours. Determine which of the following is an observation, a variable, a sample statistic, or a population parameter.
-          </p>
-          <ol marker="a.">
-            <li><p>An American in the sample.</p></li>
-            <li><p>Number of hours spent relaxing after an average work day.</p></li>
-            <li><p>1.65.</p></li>
-            <li><p>Average number of hours all Americans spend relaxing after an average work day.</p></li>
-          </ol>
-        </statement>
-      </exercise>
-
-      <exercise xml:id="ex-cats-on-youtube">
-        <title>Cats on YouTube</title>
-        <statement>
-          <p>
-            Suppose you want to estimate the percentage of videos on YouTube that are cat videos. It is impossible for you to watch all videos on YouTube so you use a random video picker to select 1000 videos for you. You find that 2% of these videos are cat videos. Determine which of the following is an observation, a variable, a sample statistic, or a population parameter.
-          </p>
-          <ol marker="a.">
-            <li><p>Percentage of all videos on YouTube that are cat videos.</p></li>
-            <li><p>2%.</p></li>
-            <li><p>A video in your sample.</p></li>
-            <li><p>Whether or not a video is a cat video.</p></li>
-          </ol>
-        </statement>
-      </exercise>
-
-      <exercise xml:id="ex-course-satisfaction">
-        <title>Course satisfaction across sections</title>
-        <statement>
-          <p>
-            A large college class has 160 students. All 160 students attend the lectures together, but the students are divided into 4 groups, each of 40 students, for lab sections administered by different teaching assistants. The professor wants to conduct a survey about how satisfied the students are with the course, and he believes that the lab section a student is in might affect the student's overall satisfaction with the course.
-          </p>
-          <ol marker="a.">
-            <li><p>What type of study is this?</p></li>
-            <li><p>Suggest a sampling strategy for carrying out this study.</p></li>
-          </ol>
-        </statement>
-      </exercise>
-
-      <exercise xml:id="ex-housing-proposal-dorms">
-        <title>Housing proposal across dorms</title>
-        <statement>
-          <p>
-            On a large college campus first-year students and sophomores live in dorms located on the eastern part of the campus and juniors and seniors live in dorms located on the western part of the campus. Suppose you want to collect student opinions on a new housing structure the college administration is proposing and you want to make sure your survey equally represents opinions from students from all years.
-          </p>
-          <ol marker="a.">
-            <li><p>What type of study is this?</p></li>
-            <li><p>Suggest a sampling strategy for carrying out this study.</p></li>
-          </ol>
-        </statement>
-      </exercise>
-
-      <exercise xml:id="ex-internet-life-expectancy">
-        <title>Internet use and life expectancy</title>
-        <statement>
-          <p>
-            A study evaluated the relationship between estimated life expectancy at birth (as of 2014) and percentage of internet users (as of 2009) in 208 countries. A scatterplot shows life expectancy versus percent internet users.
-          </p>
-          <ol marker="a.">
-            <li><p>Describe the relationship between life expectancy and percentage of internet users.</p></li>
-            <li><p>What type of study is this?</p></li>
-            <li><p>State a possible confounding variable that might explain this relationship and describe its potential effect.</p></li>
-          </ol>
-          <figure xml:id="fig-internet-life-expectancy">
-            <caption>Life expectancy versus internet use</caption>
-            <image source="ch_intro_to_data/figures/eoce/internet_life_expectancy/internet_life_expectancy.pdf" width="80%">
-              <description>Scatterplot of life expectancy at birth versus percent internet users for 208 countries.</description>
-            </image>
-          </figure>
-        </statement>
-      </exercise>
-
-      <exercise xml:id="ex-stressed-out-part1">
-        <title>Stressed out, Part I</title>
-        <statement>
-          <p>
-            A study surveyed a random sample of otherwise healthy high school students and found that they are more likely to get muscle cramps when they are stressed. The study also noted that students drink more coffee and sleep less when they are stressed.
-          </p>
-          <ol marker="a.">
-            <li><p>What type of study is this?</p></li>
-            <li><p>Can this study be used to conclude a causal relationship between increased stress and muscle cramps?</p></li>
-            <li><p>State possible confounding variables that might explain the observed relationship between increased stress and muscle cramps.</p></li>
-          </ol>
-        </statement>
-      </exercise>
-
-      <exercise xml:id="ex-evaluate-sampling-methods">
-        <title>Evaluate sampling methods</title>
-        <statement>
-          <p>
-            A university wants to determine what fraction of its undergraduate student body support a new $25 annual fee to improve the student union. For each proposed method below, indicate whether the method is reasonable or not.
-          </p>
-          <ol marker="a.">
-            <li><p>Survey a simple random sample of 500 students.</p></li>
-            <li><p>Stratify students by their field of study, then sample 10% of students from each stratum.</p></li>
-            <li><p>Cluster students by their ages (e.g. 18 years old in one cluster, 19 years old in one cluster, etc.), then randomly sample three clusters and survey all students in those clusters.</p></li>
-          </ol>
-        </statement>
-      </exercise>
-
-      <exercise xml:id="ex-random-digit-dialing">
-        <title>Random digit dialing</title>
-        <statement>
-          <p>
-            The Gallup Poll uses a procedure called random digit dialing, which creates phone numbers based on a list of all area codes in America in conjunction with the associated number of residential households in each area code. Give a possible reason the Gallup Poll chooses to use random digit dialing instead of picking phone numbers from the phone book.
-          </p>
-        </statement>
-      </exercise>
-
-      <exercise xml:id="ex-haters-gonna-hate">
-        <title>Haters are gonna hate, study confirms</title>
-        <statement>
-          <p>
-            A study asked a group of 200 randomly sampled men and women to evaluate how they felt about various subjects to measure their attitude towards mostly independent stimuli, then presented information about a fictitious microwave oven. People who reacted positively to the subjects also tended to react positively to the microwave oven, and those who reacted negatively tended to react negatively to it.
-          </p>
-          <ol marker="a.">
-            <li><p>What are the cases?</p></li>
-            <li><p>What are the response variables?</p></li>
-            <li><p>What are the explanatory variables?</p></li>
-            <li><p>Does the study employ random sampling?</p></li>
-            <li><p>Is this an observational study or an experiment? Explain.</p></li>
-            <li><p>Can we establish a causal link between the explanatory and response variables?</p></li>
-            <li><p>Can the results of the study be generalized to the population at large?</p></li>
-          </ol>
-        </statement>
-      </exercise>
-
-      <exercise xml:id="ex-family-size-bias">
-        <title>Family size</title>
-        <statement>
-          <p>
-            Suppose we want to estimate household size. If we select students at random at an elementary school and ask them what their family size is, will this be a good measure of household size? Or will our average be biased? If so, will it overestimate or underestimate the true value?
-          </p>
-        </statement>
-      </exercise>
-
-      <exercise xml:id="ex-sampling-strategies-social-media">
-        <title>Sampling strategies</title>
-        <statement>
-          <p>
-            A statistics student curious about the relationship between the amount of time students spend on social networking sites and their performance at school considers several sampling strategies. For each, name the sampling method proposed and any bias you might expect.
-          </p>
-          <ol marker="a.">
-            <li><p>Randomly sample 40 students from the population, give them the survey, ask them to return it the next day.</p></li>
-            <li><p>Give out the survey only to friends, making sure each one fills it out.</p></li>
-            <li><p>Post a link to an online survey on Facebook and ask friends to fill it out.</p></li>
-            <li><p>Randomly sample 5 classes and ask a random sample of students from those classes to fill out the survey.</p></li>
-          </ol>
-        </statement>
-      </exercise>
-
-      <exercise xml:id="ex-reading-the-paper">
-        <title>Reading the paper</title>
-        <statement>
-          <p>
-            Consider two news excerpts, one about smoking and dementia, and another about sleep disorders and bullying. For each, evaluate whether the conclusions are justified and what can actually be concluded from the studies described.
-          </p>
-          <ol marker="a.">
-            <li><p>Researchers analyzed data on over 23,000 people aged 50-60 and found smokers were more likely to develop dementia. Can we conclude smoking causes dementia later in life? Explain.</p></li>
-            <li><p>A study collected survey data on children’s sleep habits and bullying behavior and found those with sleep problems were twice as likely to have disruptive behavior or bullying issues. Does this show sleep disorders lead to bullying? If not, how best to describe the conclusion?</p></li>
           </ol>
         </statement>
       </exercise>
