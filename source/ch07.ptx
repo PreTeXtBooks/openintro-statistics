@@ -2983,7 +2983,7 @@
     </exercise>
   </exercises>
 </section>
-  <!-- Section 6.5: Comparing many means with ANOVA -->
+  <!-- Section 7.5: Comparing many means with ANOVA -->
   <section xml:id="sec-anova">
     <title>Comparing many means with ANOVA</title>
     
@@ -3086,7 +3086,7 @@
         <caption>Side-by-side dot plot for the outcomes for six groups.</caption>
         <!-- TODO: Add figure image reference -->
         <image source="ch_inference_for_means/figures/toyANOVA.png" width="70%">
-          <description>Side-by-side dot plots are shown for groups I, II, III, IV, V, and VI. The means for I and IV are the same, the means of II and V are the same, and the means of III and VI are also the same. However, the variability of the data shown in groups I, II, and III are larger than the variability of the groups IV, V, and VI.</description>
+          <description>Side-by-side dot plots are shown for groups I, II, III, IV, V, and VI. The means for I and IV are the same, the means of II and V are the same, and the means of III and VI are also the same. However, the variability of the data shown in groups I, II, and III is larger than the variability of the groups IV, V, and VI.</description>
         </image>
       </figure>
     </subsection>
@@ -3699,7 +3699,7 @@
         <solution>
           <p>
             The p-value of the test is 0.0330, less than the default significance level of 0.05. Therefore, 
-            we reject the null hypothesis and conclude that the difference in the average midterm scores are 
+            we reject the null hypothesis and conclude that the difference in the average midterm scores is 
             not due to chance.
           </p>
         </solution>
@@ -3747,7 +3747,7 @@
       </table>
       
       <p>
-        There is strong evidence that the different means in each of the three classes is not simply due to 
+        There is strong evidence that the different means in each of the three classes are not simply due to 
         chance. We might wonder, which of the classes are actually different? As discussed in earlier 
         chapters, a two-sample <m>t</m>-test could be used to test for differences in each possible pair of 
         groups. However, one pitfall was discussed in <xref ref="ex-data-snooping"/>: when we run so many 
@@ -3858,9 +3858,9 @@
     </subsection>
   </section>
   
-  <!-- Section 6.6: Chapter review -->
-  <section xml:id="sec-ch06-review">
-    <title>Chapter 6 Review Exercises</title>
+  <!-- Section 7.6: Chapter review -->
+  <section xml:id="sec-ch07-review">
+    <title>Chapter 7 Review Exercises</title>
     
     <p>
       This chapter introduced inference for numerical data using the t-distribution. Key concepts include:
