@@ -2868,4 +2868,316 @@
     </subsection>
   </section>
 
+  <!-- Section 3.6: Chapter review -->
+  <section xml:id="sec-ch03-review">
+    <title>Chapter 3 Review Exercises</title>
+    
+    <exercises>
+      <title>Chapter Review</title>
+      
+      <!-- Exercise 39 -->
+      <exercise xml:id="grade_dists">
+        <title>Grade distributions</title>
+        <statement>
+          <p>
+            Each row in the table below is a proposed grade distribution for a class. Identify each as 
+            a valid or invalid probability distribution, and explain your reasoning.
+          </p>
+          <tabular halign="center">
+            <row bottom="major">
+              <cell></cell>
+              <cell colspan="5">Grades</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell>A</cell>
+              <cell>B</cell>
+              <cell>C</cell>
+              <cell>D</cell>
+              <cell>F</cell>
+            </row>
+            <row>
+              <cell>(a)</cell>
+              <cell>0.3</cell>
+              <cell>0.3</cell>
+              <cell>0.3</cell>
+              <cell>0.2</cell>
+              <cell>0.1</cell>
+            </row>
+            <row>
+              <cell>(b)</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>1</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+            </row>
+            <row>
+              <cell>(c)</cell>
+              <cell>0.3</cell>
+              <cell>0.3</cell>
+              <cell>0.3</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+            </row>
+            <row>
+              <cell>(d)</cell>
+              <cell>0.3</cell>
+              <cell>0.5</cell>
+              <cell>0.2</cell>
+              <cell>0.1</cell>
+              <cell>-0.1</cell>
+            </row>
+            <row>
+              <cell>(e)</cell>
+              <cell>0.2</cell>
+              <cell>0.4</cell>
+              <cell>0.2</cell>
+              <cell>0.1</cell>
+              <cell>0.1</cell>
+            </row>
+            <row>
+              <cell>(f)</cell>
+              <cell>0</cell>
+              <cell>-0.1</cell>
+              <cell>1.1</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+            </row>
+          </tabular>
+        </statement>
+      </exercise>
+      
+      <!-- Exercise 40 -->
+      <exercise xml:id="health_coverage_freqs">
+        <title>Health coverage, frequencies</title>
+        <statement>
+          <p>
+            The Behavioral Risk Factor Surveillance System (BRFSS) is an annual telephone survey 
+            designed to identify risk factors in the adult population and report emerging health trends. 
+            The following table summarizes two variables for the respondents: health status and health 
+            coverage, which describes whether each respondent had health insurance.
+          </p>
+          <tabular halign="center">
+            <row bottom="major">
+              <cell></cell>
+              <cell></cell>
+              <cell colspan="5">Health Status</cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell>Excellent</cell>
+              <cell>Very good</cell>
+              <cell>Good</cell>
+              <cell>Fair</cell>
+              <cell>Poor</cell>
+              <cell>Total</cell>
+            </row>
+            <row>
+              <cell>Health</cell>
+              <cell>No</cell>
+              <cell>459</cell>
+              <cell>727</cell>
+              <cell>854</cell>
+              <cell>385</cell>
+              <cell>99</cell>
+              <cell>2,524</cell>
+            </row>
+            <row>
+              <cell>Coverage</cell>
+              <cell>Yes</cell>
+              <cell>4,198</cell>
+              <cell>6,245</cell>
+              <cell>4,821</cell>
+              <cell>1,634</cell>
+              <cell>578</cell>
+              <cell>17,476</cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell>Total</cell>
+              <cell>4,657</cell>
+              <cell>6,972</cell>
+              <cell>5,675</cell>
+              <cell>2,019</cell>
+              <cell>677</cell>
+              <cell>20,000</cell>
+            </row>
+          </tabular>
+          <p>
+            <ol>
+              <li>
+                <p>
+                  If we draw one individual at random, what is the probability that the respondent has 
+                  excellent health and doesn't have health coverage?
+                </p>
+              </li>
+              <li>
+                <p>
+                  If we draw one individual at random, what is the probability that the respondent has 
+                  excellent health or doesn't have health coverage?
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+      
+      <!-- Exercise 41 -->
+      <exercise xml:id="tree_hiv_swaziland">
+        <title>HIV in Swaziland</title>
+        <statement>
+          <p>
+            Eswatini (formerly Swaziland) has the highest HIV prevalence in the world: 25.9% of this 
+            country's population is infected with HIV. The ELISA test is one of the first and most 
+            accurate tests for HIV. For those who carry HIV, the ELISA test is 99.7% accurate. For 
+            those who do not carry HIV, the test is 92.6% accurate. If an individual from this country 
+            has tested positive, what is the probability that they carry HIV?
+          </p>
+        </statement>
+      </exercise>
+      
+      <!-- Exercise 42 -->
+      <exercise xml:id="tree_twins">
+        <title>Twins</title>
+        <statement>
+          <p>
+            About 30% of human twins are identical, and the rest are fraternal. Identical twins are 
+            necessarily the same sex -- half are males and the other half are females. One-quarter of 
+            fraternal twins are both male, one-quarter both female, and one-half are mixes: one male, 
+            one female. You have just become a parent of twins and are told they are both girls. Given 
+            this information, what is the probability that they are identical?
+          </p>
+        </statement>
+      </exercise>
+      
+      <!-- Exercise 43 -->
+      <exercise xml:id="cost_of_breakfast">
+        <title>Cost of breakfast</title>
+        <statement>
+          <p>
+            Sally gets a cup of coffee and a muffin every day for breakfast from one of the many coffee 
+            shops in her neighborhood. She picks a coffee shop each morning at random and independently 
+            of previous days. The average price of a cup of coffee is $1.40 with a standard deviation of 
+            30¢ ($0.30), the average price of a muffin is $2.50 with a standard deviation of 15¢, and 
+            the two prices are independent of each other.
+          </p>
+          <p>
+            <ol>
+              <li>
+                <p>
+                  What is the mean and standard deviation of the amount she spends on breakfast daily?
+                </p>
+              </li>
+              <li>
+                <p>
+                  What is the mean and standard deviation of the amount she spends on breakfast weekly 
+                  (7 days)?
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+      
+      <!-- Exercise 44 -->
+      <exercise xml:id="scoop_ice_cream">
+        <title>Scooping ice cream</title>
+        <statement>
+          <p>
+            Ice cream usually comes in 1.5 quart boxes (48 fluid ounces), and ice cream scoops hold 
+            about 2 ounces. However, there is some variability in the amount of ice cream in a box as 
+            well as the amount of ice cream scooped out. We represent the amount of ice cream in the 
+            box as <m>X</m> and the amount scooped out as <m>Y</m>. Suppose these random variables have 
+            the following means, standard deviations, and variances:
+          </p>
+          <tabular halign="center">
+            <row bottom="major">
+              <cell></cell>
+              <cell>mean</cell>
+              <cell>SD</cell>
+              <cell>variance</cell>
+            </row>
+            <row>
+              <cell><m>X</m></cell>
+              <cell>48</cell>
+              <cell>1</cell>
+              <cell>1</cell>
+            </row>
+            <row>
+              <cell><m>Y</m></cell>
+              <cell>2</cell>
+              <cell>0.25</cell>
+              <cell>0.0625</cell>
+            </row>
+          </tabular>
+          <p>
+            <ol>
+              <li>
+                <p>
+                  An entire box of ice cream, plus 3 scoops from a second box is served at a party. 
+                  How much ice cream do you expect to have been served at this party? What is the 
+                  standard deviation of the amount of ice cream served?
+                </p>
+              </li>
+              <li>
+                <p>
+                  How much ice cream would you expect to be left in the box after scooping out one 
+                  scoop of ice cream? That is, find the expected value of <m>X-Y</m>. What is the 
+                  standard deviation of the amount left in the box?
+                </p>
+              </li>
+              <li>
+                <p>
+                  Using the context of this exercise, explain why we add variances when we subtract 
+                  one random variable from another.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+      
+      <!-- Exercise 45 -->
+      <exercise xml:id="var_of_mean_1">
+        <title>Variance of a mean, Part I</title>
+        <statement>
+          <p>
+            Suppose we have independent observations <m>X_1</m> and <m>X_2</m> from a distribution 
+            with mean <m>\mu</m> and standard deviation <m>\sigma</m>. What is the variance of the 
+            mean of the two values: <m>\frac{X_1 + X_2}{2}</m>?
+          </p>
+        </statement>
+      </exercise>
+      
+      <!-- Exercise 46 -->
+      <exercise xml:id="var_of_mean_2">
+        <title>Variance of a mean, Part II</title>
+        <statement>
+          <p>
+            Suppose we have 3 independent observations <m>X_1</m>, <m>X_2</m>, <m>X_3</m> from a 
+            distribution with mean <m>\mu</m> and standard deviation <m>\sigma</m>. What is the 
+            variance of the mean of these 3 values: <m>\frac{X_1 + X_2 + X_3}{3}</m>?
+          </p>
+        </statement>
+      </exercise>
+      
+      <!-- Exercise 47 -->
+      <exercise xml:id="var_of_mean_3">
+        <title>Variance of a mean, Part III</title>
+        <statement>
+          <p>
+            Suppose we have <m>n</m> independent observations <m>X_1</m>, <m>X_2</m>, <ellipsis />, 
+            <m>X_n</m> from a distribution with mean <m>\mu</m> and standard deviation <m>\sigma</m>. 
+            What is the variance of the mean of these <m>n</m> values: 
+            <m>\frac{X_1 + X_2 + \cdots + X_n}{n}</m>?
+          </p>
+        </statement>
+      </exercise>
+      
+    </exercises>
+  </section>
+
 </chapter>
