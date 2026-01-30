@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
     
     steps:
       - name: Checkout repository
