@@ -3151,6 +3151,7 @@
     </subsection>
 
     <subsection xml:id="subsec-exercises-95">
+      <title>Exercises</title>
     <exercises xml:id="exercises-for-section-95">
       <exercise xml:id="exer-possum-classification-model-select">
         <title>Possum classification, Part I</title>
@@ -3527,10 +3528,9 @@
 
     <!-- Chapter review -->
   <section xml:id="sec-ch09-review">
+   <title>Chapter Review Exercises</title>
     <!-- Chapter 9 Review Exercises -->
-    <exercises xml:id="exercises-ch09-review">
-      <title>Chapter Review Exercises</title>
-      
+      <exercises xml:id="exercises-ch09-review">    
       <exercise xml:id="exer-mult-regr-facts">
         <title>Multiple regression fact checking</title>
         <statement>
