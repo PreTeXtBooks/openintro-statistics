@@ -893,67 +893,424 @@
     <exercises>
       <title>Exercises</title>
 
-      <exercise xml:id="ex-sec31-basic-probability">
-        <title>Basic probability calculation</title>
+      <exercise xml:id="tf_prob_definitions">
+        <title>True or false</title>
         <statement>
           <p>
-            A jar contains 5 red marbles, 3 blue marbles, and 2 green marbles. If you randomly select one 
-            marble from the jar, what is the probability that it is red? What is the probability that it is 
-            not red?
+            Determine if the statements below are true or false, and explain your reasoning.
+          </p>
+          <p>
+            <ol marker="a.">
+              <li>
+                <p>
+                  If a fair coin is tossed many times and the last eight tosses are all heads, then the chance that the next toss will be heads is somewhat less than 50%.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Drawing a face card (jack, queen, or king) and drawing a red card from a full deck of playing cards are mutually exclusive events.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Drawing a face card and drawing an ace from a full deck of playing cards are mutually exclusive events.
+                </p>
+              </li>
+            </ol>
           </p>
         </statement>
       </exercise>
 
-      <exercise xml:id="ex-sec31-complement-rule">
-        <title>Complement rule</title>
+      <exercise xml:id="roulette_wheel">
+        <title>Roulette wheel</title>
         <statement>
           <p>
-            If the probability of rain tomorrow is 0.35, what is the probability that it will not rain 
-            tomorrow? Explain how you used the complement rule to find your answer.
+            The game of roulette involves spinning a wheel with 38 slots: 18 red, 18 black, and 2 green. A ball is spun onto the wheel and will eventually land in a slot, where each slot has an equal chance of capturing the ball.
+          </p>
+          <p>
+            <ol marker="a.">
+              <li>
+                <p>
+                  You watch a roulette wheel spin 3 consecutive times and the ball lands on a red slot each time. What is the probability that the ball will land on a red slot on the next spin?
+                </p>
+              </li>
+              <li>
+                <p>
+                  You watch a roulette wheel spin 300 consecutive times and the ball lands on a red slot each time. What is the probability that the ball will land on a red slot on the next spin?
+                </p>
+              </li>
+              <li>
+                <p>
+                  Are you equally confident of your answers to parts (a) and (b)? Why or why not?
+                </p>
+              </li>
+            </ol>
           </p>
         </statement>
       </exercise>
 
-      <exercise xml:id="ex-sec31-disjoint-events">
-        <title>Disjoint events</title>
+      <exercise xml:id="four_games_one_winner">
+        <title>Four games, one winner</title>
         <statement>
           <p>
-            Consider rolling a standard six-sided die. Let event A be "rolling an even number" and event B 
-            be "rolling a number greater than 4". Are events A and B disjoint? Explain your reasoning and 
-            calculate <m>P(A \text{ or } B)</m>.
+            Below are four versions of the same game. Your archnemesis gets to pick the version of the game, and then you get to choose how many times to flip a coin: 10 times or 100 times. Identify how many coin flips you should choose for each version of the game. It costs $1 to play each game. Explain your reasoning.
+          </p>
+          <p>
+            <ol marker="a.">
+              <li>
+                <p>
+                  If the proportion of heads is larger than 0.60, you win $1.
+                </p>
+              </li>
+              <li>
+                <p>
+                  If the proportion of heads is larger than 0.40, you win $1.
+                </p>
+              </li>
+              <li>
+                <p>
+                  If the proportion of heads is between 0.40 and 0.60, you win $1.
+                </p>
+              </li>
+              <li>
+                <p>
+                  If the proportion of heads is smaller than 0.30, you win $1.
+                </p>
+              </li>
+            </ol>
           </p>
         </statement>
       </exercise>
 
-      <exercise xml:id="ex-sec31-addition-rule">
-        <title>General addition rule</title>
+      <exercise xml:id="backgammon">
+        <title>Backgammon</title>
         <statement>
           <p>
-            In a class of 30 students, 18 play soccer, 12 play basketball, and 8 play both sports. If a 
-            student is selected at random, what is the probability they play soccer or basketball? Use the 
-            general addition rule to solve this problem.
+            Backgammon is a board game for two players in which the playing pieces are moved according to the roll of two dice. Players win by removing all of their pieces from the board, so it is usually good to roll high numbers. You are playing backgammon with a friend and you roll two 6s in your first roll and two 6s in your second roll. Your friend rolls two 3s in his first roll and again in his second row. Your friend claims that you are cheating, because rolling double 6s twice in a row is very unlikely. Using probability, show that your rolls were just as likely as his.
           </p>
         </statement>
       </exercise>
 
-      <exercise xml:id="ex-sec31-independence">
-        <title>Testing for independence</title>
+      <exercise xml:id="coin_flips">
+        <title>Coin flips</title>
         <statement>
           <p>
-            You flip two fair coins. Let event A be "the first coin shows heads" and event B be "the second 
-            coin shows heads". Are these events independent? Show your work by checking if 
-            <m>P(A \text{ and } B) = P(A) \times P(B)</m>.
+            If you flip a fair coin 10 times, what is the probability of
+          </p>
+          <p>
+            <ol marker="a.">
+              <li>
+                <p>
+                  getting all tails?
+                </p>
+              </li>
+              <li>
+                <p>
+                  getting all heads?
+                </p>
+              </li>
+              <li>
+                <p>
+                  getting at least one tails?
+                </p>
+              </li>
+            </ol>
           </p>
         </statement>
       </exercise>
 
-      <exercise xml:id="ex-sec31-venn-diagram">
-        <title>Venn diagram and probability</title>
+      <exercise xml:id="dice_rolls">
+        <title>Dice rolls</title>
         <statement>
           <p>
-            Draw a Venn diagram to represent two events A and B where <m>P(A) = 0.6</m>, <m>P(B) = 0.5</m>, 
-            and <m>P(A \text{ and } B) = 0.3</m>. Use your diagram to find <m>P(A \text{ or } B)</m> and 
-            <m>P(\text{neither } A \text{ nor } B)</m>.
+            If you roll a pair of fair dice, what is the probability of
+          </p>
+          <p>
+            <ol marker="a.">
+              <li>
+                <p>
+                  getting a sum of 1?
+                </p>
+              </li>
+              <li>
+                <p>
+                  getting a sum of 5?
+                </p>
+              </li>
+              <li>
+                <p>
+                  getting a sum of 12?
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="swing_voters">
+        <title>Swing voters</title>
+        <statement>
+          <p>
+            A Pew Research survey asked 2,373 randomly sampled registered voters their political affiliation (Republican, Democrat, or Independent) and whether or not they identify as swing voters. 35% of respondents identified as Independent, 23% identified as swing voters, and 11% identified as both.
+          </p>
+          <p>
+            <ol marker="a.">
+              <li>
+                <p>
+                  Are being Independent and being a swing voter disjoint, i.e. mutually exclusive?
+                </p>
+              </li>
+              <li>
+                <p>
+                  Draw a Venn diagram summarizing the variables and their associated probabilities.
+                </p>
+              </li>
+              <li>
+                <p>
+                  What percent of voters are Independent but not swing voters?
+                </p>
+              </li>
+              <li>
+                <p>
+                  What percent of voters are Independent or swing voters?
+                </p>
+              </li>
+              <li>
+                <p>
+                  What percent of voters are neither Independent nor swing voters?
+                </p>
+              </li>
+              <li>
+                <p>
+                  Is the event that someone is a swing voter independent of the event that someone is a political Independent?
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="poverty_language">
+        <title>Poverty and language</title>
+        <statement>
+          <p>
+            The American Community Survey is an ongoing survey that provides data every year to give communities the current information they need to plan investments and services. The 2010 American Community Survey estimates that 14.6% of Americans live below the poverty line, 20.7% speak a language other than English (foreign language) at home, and 4.2% fall into both categories.
+          </p>
+          <p>
+            <ol marker="a.">
+              <li>
+                <p>
+                  Are living below the poverty line and speaking a foreign language at home disjoint?
+                </p>
+              </li>
+              <li>
+                <p>
+                  Draw a Venn diagram summarizing the variables and their associated probabilities.
+                </p>
+              </li>
+              <li>
+                <p>
+                  What percent of Americans live below the poverty line and only speak English at home?
+                </p>
+              </li>
+              <li>
+                <p>
+                  What percent of Americans live below the poverty line or speak a foreign language at home?
+                </p>
+              </li>
+              <li>
+                <p>
+                  What percent of Americans live above the poverty line and only speak English at home?
+                </p>
+              </li>
+              <li>
+                <p>
+                  Is the event that someone lives below the poverty line independent of the event that the person speaks a foreign language at home?
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="disjoint_indep">
+        <title>Disjoint vs. independent</title>
+        <statement>
+          <p>
+            In parts (a) and (b), identify whether the events are disjoint, independent, or neither (events cannot be both disjoint and independent).
+          </p>
+          <p>
+            <ol marker="a.">
+              <li>
+                <p>
+                  You and a randomly selected student from your class both earn A's in this course.
+                </p>
+              </li>
+              <li>
+                <p>
+                  You and your class study partner both earn A's in this course.
+                </p>
+              </li>
+              <li>
+                <p>
+                  If two events can occur at the same time, must they be dependent?
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="guessing_on_exam">
+        <title>Guessing on an exam</title>
+        <statement>
+          <p>
+            In a multiple choice exam, there are 5 questions and 4 choices for each question (a, b, c, d). Nancy has not studied for the exam at all and decides to randomly guess the answers. What is the probability that:
+          </p>
+          <p>
+            <ol marker="a.">
+              <li>
+                <p>
+                  the first question she gets right is the <m>5^{th}</m> question?
+                </p>
+              </li>
+              <li>
+                <p>
+                  she gets all of the questions right?
+                </p>
+              </li>
+              <li>
+                <p>
+                  she gets at least one question right?
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="edu_attain_couples">
+        <title>Educational attainment of couples</title>
+        <statement>
+          <p>
+            The table below shows the distribution of education level attained by US residents by gender based on data collected in the 2010 American Community Survey.
+          </p>
+          <table>
+            <title>Education level by gender</title>
+            <tabular>
+              <row header="yes">
+                <cell></cell>
+                <cell>Male</cell>
+                <cell>Female</cell>
+              </row>
+              <row>
+                <cell>Less than 9th grade</cell>
+                <cell>0.07</cell>
+                <cell>0.13</cell>
+              </row>
+              <row>
+                <cell>9th to 12th grade, no diploma</cell>
+                <cell>0.10</cell>
+                <cell>0.09</cell>
+              </row>
+              <row>
+                <cell>HS graduate (or equivalent)</cell>
+                <cell>0.30</cell>
+                <cell>0.20</cell>
+              </row>
+              <row>
+                <cell>Some college, no degree</cell>
+                <cell>0.22</cell>
+                <cell>0.24</cell>
+              </row>
+              <row>
+                <cell>Associate's degree</cell>
+                <cell>0.06</cell>
+                <cell>0.08</cell>
+              </row>
+              <row>
+                <cell>Bachelor's degree</cell>
+                <cell>0.16</cell>
+                <cell>0.17</cell>
+              </row>
+              <row>
+                <cell>Graduate or professional degree</cell>
+                <cell>0.09</cell>
+                <cell>0.09</cell>
+              </row>
+              <row>
+                <cell>Total</cell>
+                <cell>1.00</cell>
+                <cell>1.00</cell>
+              </row>
+            </tabular>
+          </table>
+          <p>
+            <ol marker="a.">
+              <li>
+                <p>
+                  What is the probability that a randomly chosen man has at least a Bachelor's degree?
+                </p>
+              </li>
+              <li>
+                <p>
+                  What is the probability that a randomly chosen woman has at least a Bachelor's degree?
+                </p>
+              </li>
+              <li>
+                <p>
+                  What is the probability that a man and a woman getting married both have at least a Bachelor's degree? Note any assumptions you must make to answer this question.
+                </p>
+              </li>
+              <li>
+                <p>
+                  If you made an assumption in part (c), do you think it was reasonable? If you didn't make an assumption, double check your earlier answer and then return to this part.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="school_absences">
+        <title>School absences</title>
+        <statement>
+          <p>
+            Data collected at elementary schools in DeKalb County, GA suggest that each year roughly 25% of students miss exactly one day of school, 15% miss 2 days, and 28% miss 3 or more days due to sickness.
+          </p>
+          <p>
+            <ol marker="a.">
+              <li>
+                <p>
+                  What is the probability that a student chosen at random doesn't miss any days of school due to sickness this year?
+                </p>
+              </li>
+              <li>
+                <p>
+                  What is the probability that a student chosen at random misses no more than one day?
+                </p>
+              </li>
+              <li>
+                <p>
+                  What is the probability that a student chosen at random misses at least one day?
+                </p>
+              </li>
+              <li>
+                <p>
+                  If a parent has two kids at a DeKalb County elementary school, what is the probability that neither kid will miss any school? Note any assumption you must make to answer this question.
+                </p>
+              </li>
+              <li>
+                <p>
+                  If a parent has two kids at a DeKalb County elementary school, what is the probability that both kids will miss some school, i.e. at least one day? Note any assumption you make.
+                </p>
+              </li>
+              <li>
+                <p>
+                  If you made an assumption in part (d) or (e), do you think it was reasonable? If you didn't make any assumptions, double check your earlier answers.
+                </p>
+              </li>
+            </ol>
           </p>
         </statement>
       </exercise>
@@ -1916,69 +2273,452 @@
     <exercises>
       <title>Exercises</title>
 
-      <exercise xml:id="ex-sec32-conditional-probability-basic">
-        <title>Basic conditional probability</title>
+      <exercise xml:id="joint_cond">
+        <title>Joint and conditional probabilities</title>
         <statement>
           <p>
-            A bag contains 4 red balls and 6 blue balls. You draw one ball, do not replace it, then draw 
-            another ball. What is the probability that the second ball is red, given that the first ball 
-            was blue?
+            P(A) = 0.3, P(B) = 0.7
+          </p>
+          <p>
+            <ol marker="a.">
+              <li>
+                <p>
+                  Can you compute P(A and B) if you only know P(A) and P(B)?
+                </p>
+              </li>
+              <li>
+                <p>
+                  Assuming that events A and B arise from independent random processes,
+                </p>
+                <p>
+                  <ol marker="i.">
+                    <li>
+                      <p>
+                        what is P(A and B)?
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        what is P(A or B)?
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        what is P(A|B)?
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </li>
+              <li>
+                <p>
+                  If we are given that P(A and B) = 0.1, are the random variables giving rise to events A and B independent?
+                </p>
+              </li>
+              <li>
+                <p>
+                  If we are given that P(A and B) = 0.1, what is P(A|B)?
+                </p>
+              </li>
+            </ol>
           </p>
         </statement>
       </exercise>
 
-      <exercise xml:id="ex-sec32-conditional-formula">
-        <title>Conditional probability formula</title>
+      <exercise xml:id="pbj">
+        <title>PB &amp; J</title>
         <statement>
           <p>
-            Given that <m>P(A) = 0.4</m>, <m>P(B) = 0.6</m>, and <m>P(A \text{ and } B) = 0.2</m>, calculate 
-            <m>P(A | B)</m> and <m>P(B | A)</m>. What do these values represent?
+            Suppose 80% of people like peanut butter, 89% like jelly, and 78% like both. Given that a randomly sampled person likes peanut butter, what's the probability that he also likes jelly?
           </p>
         </statement>
       </exercise>
 
-      <exercise xml:id="ex-sec32-tree-diagram">
-        <title>Tree diagram for conditional probability</title>
+      <exercise xml:id="global_warming">
+        <title>Global warming</title>
         <statement>
           <p>
-            In a medical test, <m>95\%</m> of people with a disease test positive, while <m>10\%</m> of 
-            people without the disease test positive (false positive). If <m>2\%</m> of the population has 
-            the disease, draw a tree diagram to represent this scenario. What is the probability that a 
-            randomly selected person tests positive?
+            A Pew Research poll asked 1,306 Americans "From what you've read and heard, is there solid evidence that the average temperature on earth has been getting warmer over the past few decades, or not?". The table below shows the distribution of responses by party and ideology, where the counts have been replaced with relative frequencies.
+          </p>
+          <table>
+            <title>Global warming poll results</title>
+            <tabular>
+              <row header="yes">
+                <cell></cell>
+                <cell>Earth is warming</cell>
+                <cell>Not warming</cell>
+                <cell>Don't Know/Refuse</cell>
+                <cell>Total</cell>
+              </row>
+              <row>
+                <cell>Conservative Republican</cell>
+                <cell>0.11</cell>
+                <cell>0.20</cell>
+                <cell>0.02</cell>
+                <cell>0.33</cell>
+              </row>
+              <row>
+                <cell>Mod/Lib Republican</cell>
+                <cell>0.06</cell>
+                <cell>0.06</cell>
+                <cell>0.01</cell>
+                <cell>0.13</cell>
+              </row>
+              <row>
+                <cell>Mod/Cons Democrat</cell>
+                <cell>0.25</cell>
+                <cell>0.07</cell>
+                <cell>0.02</cell>
+                <cell>0.34</cell>
+              </row>
+              <row>
+                <cell>Liberal Democrat</cell>
+                <cell>0.18</cell>
+                <cell>0.01</cell>
+                <cell>0.01</cell>
+                <cell>0.20</cell>
+              </row>
+              <row>
+                <cell>Total</cell>
+                <cell>0.60</cell>
+                <cell>0.34</cell>
+                <cell>0.06</cell>
+                <cell>1.00</cell>
+              </row>
+            </tabular>
+          </table>
+          <p>
+            <ol marker="a.">
+              <li>
+                <p>
+                  Are believing that the earth is warming and being a liberal Democrat mutually exclusive?
+                </p>
+              </li>
+              <li>
+                <p>
+                  What is the probability that a randomly chosen respondent believes the earth is warming or is a liberal Democrat?
+                </p>
+              </li>
+              <li>
+                <p>
+                  What is the probability that a randomly chosen respondent believes the earth is warming given that he is a liberal Democrat?
+                </p>
+              </li>
+              <li>
+                <p>
+                  What is the probability that a randomly chosen respondent believes the earth is warming given that he is a conservative Republican?
+                </p>
+              </li>
+              <li>
+                <p>
+                  Does it appear that whether or not a respondent believes the earth is warming is independent of their party and ideology? Explain your reasoning.
+                </p>
+              </li>
+              <li>
+                <p>
+                  What is the probability that a randomly chosen respondent is a moderate/liberal Republican given that he does not believe that the earth is warming?
+                </p>
+              </li>
+            </ol>
           </p>
         </statement>
       </exercise>
 
-      <exercise xml:id="ex-sec32-bayes-theorem">
-        <title>Bayes' Theorem application</title>
+      <exercise xml:id="health_coverage_rel_freqs">
+        <title>Health coverage, relative frequencies</title>
         <statement>
           <p>
-            Continuing from the previous exercise, if a person tests positive for the disease, what is the 
-            probability they actually have the disease? Use Bayes' Theorem to solve this problem.
+            The Behavioral Risk Factor Surveillance System (BRFSS) is an annual telephone survey designed to identify risk factors in the adult population and report emerging health trends. The following table displays the distribution of health status of respondents to this survey (excellent, very good, good, fair, poor) and whether or not they have health insurance.
+          </p>
+          <table>
+            <title>Health status by insurance coverage</title>
+            <tabular>
+              <row header="yes">
+                <cell></cell>
+                <cell>Excellent</cell>
+                <cell>Very good</cell>
+                <cell>Good</cell>
+                <cell>Fair</cell>
+                <cell>Poor</cell>
+                <cell>Total</cell>
+              </row>
+              <row>
+                <cell>No</cell>
+                <cell>0.0230</cell>
+                <cell>0.0364</cell>
+                <cell>0.0427</cell>
+                <cell>0.0192</cell>
+                <cell>0.0050</cell>
+                <cell>0.1262</cell>
+              </row>
+              <row>
+                <cell>Yes</cell>
+                <cell>0.2099</cell>
+                <cell>0.3123</cell>
+                <cell>0.2410</cell>
+                <cell>0.0817</cell>
+                <cell>0.0289</cell>
+                <cell>0.8738</cell>
+              </row>
+              <row>
+                <cell>Total</cell>
+                <cell>0.2329</cell>
+                <cell>0.3486</cell>
+                <cell>0.2838</cell>
+                <cell>0.1009</cell>
+                <cell>0.0338</cell>
+                <cell>1.0000</cell>
+              </row>
+            </tabular>
+          </table>
+          <p>
+            <ol marker="a.">
+              <li>
+                <p>
+                  Are being in excellent health and having health coverage mutually exclusive?
+                </p>
+              </li>
+              <li>
+                <p>
+                  What is the probability that a randomly chosen individual has excellent health?
+                </p>
+              </li>
+              <li>
+                <p>
+                  What is the probability that a randomly chosen individual has excellent health given that he has health coverage?
+                </p>
+              </li>
+              <li>
+                <p>
+                  What is the probability that a randomly chosen individual has excellent health given that he doesn't have health coverage?
+                </p>
+              </li>
+              <li>
+                <p>
+                  Do having excellent health and having health coverage appear to be independent?
+                </p>
+              </li>
+            </ol>
           </p>
         </statement>
       </exercise>
 
-      <exercise xml:id="ex-sec32-independence-conditional">
-        <title>Independence and conditional probability</title>
+      <exercise xml:id="burger_preferences">
+        <title>Burger preferences</title>
         <statement>
           <p>
-            If events A and B are independent with <m>P(A) = 0.3</m> and <m>P(B) = 0.5</m>, what is 
-            <m>P(A | B)</m>? How does this compare to <m>P(A)</m>? What does this tell you about independent 
-            events?
+            A 2010 SurveyUSA poll asked 500 Los Angeles residents, "What is the best hamburger place in Southern California? Five Guys Burgers? In-N-Out Burger? Fat Burger? Tommy's Hamburgers? Umami Burger? Or somewhere else?" The distribution of responses by gender is shown below.
+          </p>
+          <table>
+            <title>Burger preferences by gender</title>
+            <tabular>
+              <row header="yes">
+                <cell></cell>
+                <cell>Male</cell>
+                <cell>Female</cell>
+                <cell>Total</cell>
+              </row>
+              <row>
+                <cell>Five Guys Burgers</cell>
+                <cell>5</cell>
+                <cell>6</cell>
+                <cell>11</cell>
+              </row>
+              <row>
+                <cell>In-N-Out Burger</cell>
+                <cell>162</cell>
+                <cell>181</cell>
+                <cell>343</cell>
+              </row>
+              <row>
+                <cell>Fat Burger</cell>
+                <cell>10</cell>
+                <cell>12</cell>
+                <cell>22</cell>
+              </row>
+              <row>
+                <cell>Tommy's Hamburgers</cell>
+                <cell>27</cell>
+                <cell>27</cell>
+                <cell>54</cell>
+              </row>
+              <row>
+                <cell>Umami Burger</cell>
+                <cell>5</cell>
+                <cell>1</cell>
+                <cell>6</cell>
+              </row>
+              <row>
+                <cell>Other</cell>
+                <cell>26</cell>
+                <cell>20</cell>
+                <cell>46</cell>
+              </row>
+              <row>
+                <cell>Not Sure</cell>
+                <cell>13</cell>
+                <cell>5</cell>
+                <cell>18</cell>
+              </row>
+              <row>
+                <cell>Total</cell>
+                <cell>248</cell>
+                <cell>252</cell>
+                <cell>500</cell>
+              </row>
+            </tabular>
+          </table>
+          <p>
+            <ol marker="a.">
+              <li>
+                <p>
+                  Are being female and liking Five Guys Burgers mutually exclusive?
+                </p>
+              </li>
+              <li>
+                <p>
+                  What is the probability that a randomly chosen male likes In-N-Out the best?
+                </p>
+              </li>
+              <li>
+                <p>
+                  What is the probability that a randomly chosen female likes In-N-Out the best?
+                </p>
+              </li>
+              <li>
+                <p>
+                  What is the probability that a man and a woman who are dating both like In-N-Out the best? Note any assumption you make and evaluate whether you think that assumption is reasonable.
+                </p>
+              </li>
+              <li>
+                <p>
+                  What is the probability that a randomly chosen person likes Umami best or that person is female?
+                </p>
+              </li>
+            </ol>
           </p>
         </statement>
       </exercise>
 
-      <exercise xml:id="ex-sec32-two-way-table">
-        <title>Conditional probability from a table</title>
+      <exercise xml:id="assortative_mating">
+        <title>Assortative mating</title>
         <statement>
           <p>
-            A survey of 200 people asked about their exercise habits (yes/no) and whether they have heart 
-            disease (yes/no). The results showed: 60 people exercise and have no heart disease, 10 exercise 
-            and have heart disease, 40 don't exercise and have no heart disease, and 90 don't exercise and 
-            have heart disease. Given that a person exercises, what is the probability they do not have heart 
-            disease?
+            Assortative mating is a nonrandom mating pattern where individuals with similar genotypes and/or phenotypes mate with one another more frequently than what would be expected under a random mating pattern. Researchers studying this topic collected data on eye colors of 204 Scandinavian men and their female partners. The table below summarizes the results.
+          </p>
+          <table>
+            <title>Eye color of male and female partners</title>
+            <tabular>
+              <row header="yes">
+                <cell></cell>
+                <cell>Blue</cell>
+                <cell>Brown</cell>
+                <cell>Green</cell>
+                <cell>Total</cell>
+              </row>
+              <row>
+                <cell>Blue</cell>
+                <cell>78</cell>
+                <cell>23</cell>
+                <cell>13</cell>
+                <cell>114</cell>
+              </row>
+              <row>
+                <cell>Brown</cell>
+                <cell>19</cell>
+                <cell>23</cell>
+                <cell>12</cell>
+                <cell>54</cell>
+              </row>
+              <row>
+                <cell>Green</cell>
+                <cell>11</cell>
+                <cell>9</cell>
+                <cell>16</cell>
+                <cell>36</cell>
+              </row>
+              <row>
+                <cell>Total</cell>
+                <cell>108</cell>
+                <cell>55</cell>
+                <cell>41</cell>
+                <cell>204</cell>
+              </row>
+            </tabular>
+          </table>
+          <p>
+            <ol marker="a.">
+              <li>
+                <p>
+                  What is the probability that a randomly chosen male respondent or his partner has blue eyes?
+                </p>
+              </li>
+              <li>
+                <p>
+                  What is the probability that a randomly chosen male respondent with blue eyes has a partner with blue eyes?
+                </p>
+              </li>
+              <li>
+                <p>
+                  What is the probability that a randomly chosen male respondent with brown eyes has a partner with blue eyes? What about the probability of a randomly chosen male respondent with green eyes having a partner with blue eyes?
+                </p>
+              </li>
+              <li>
+                <p>
+                  Does it appear that the eye colors of male respondents and their partners are independent? Explain your reasoning.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="tree_drawing_box_plots">
+        <title>Drawing box plots</title>
+        <statement>
+          <p>
+            After an introductory statistics course, 80% of students can successfully construct box plots. Of those who can construct box plots, 86% passed, while only 65% of those students who could not construct box plots passed.
+          </p>
+          <p>
+            <ol marker="a.">
+              <li>
+                <p>
+                  Construct a tree diagram of this scenario.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Calculate the probability that a student is able to construct a box plot if it is known that he passed.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="tree_thrombosis">
+        <title>Predisposition for thrombosis</title>
+        <statement>
+          <p>
+            A genetic test is used to determine if people have a predisposition for thrombosis, which is the formation of a blood clot inside a blood vessel that obstructs the flow of blood through the circulatory system. It is believed that 3% of people actually have this predisposition. The genetic test is 99% accurate if a person actually has the predisposition, meaning that the probability of a positive test result when a person actually has the predisposition is 0.99. The test is 98% accurate if a person does not have the predisposition. What is the probability that a randomly selected person who tests positive for the predisposition by the test actually has the predisposition?
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="tree_lupus">
+        <title>It's never lupus</title>
+        <statement>
+          <p>
+            Lupus is a medical phenomenon where antibodies that are supposed to attack foreign cells to prevent infections instead see plasma proteins as foreign bodies, leading to a high risk of blood clotting. It is believed that 2% of the population suffer from this disease. The test is 98% accurate if a person actually has the disease. The test is 74% accurate if a person does not have the disease. There is a line from the Fox television show <em>House</em> that is often used after a patient tests positive for lupus: "It's never lupus." Do you think there is truth to this statement? Use appropriate probabilities to support your answer.
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="tree_exit_poll">
+        <title>Exit poll</title>
+        <statement>
+          <p>
+            Edison Research gathered exit poll results from several sources for the Wisconsin recall election of Scott Walker. They found that 53% of the respondents voted in favor of Scott Walker. Additionally, they estimated that of those who did vote in favor for Scott Walker, 37% had a college degree, while 44% of those who voted against Scott Walker had a college degree. Suppose we randomly sampled a person who participated in the exit poll and found that he had a college degree. What is the probability that he voted in favor of Scott Walker?
           </p>
         </statement>
       </exercise>
