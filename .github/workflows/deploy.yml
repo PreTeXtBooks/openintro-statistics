@@ -37,13 +37,22 @@ jobs:
         run: |
           pretext build web
           
-      - name: Copy latex assets to output
+      - name: Copy assets to output
         run: |
+          # Copy latex assets to output root
           if [ -d "latex" ]; then
             cp -r latex output/html/
             echo "Latex assets copied to output directory"
           else
             echo "Warning: latex directory not found, skipping copy"
+          fi
+          # Copy source/images assets to external directory
+          if [ -d "source/images" ]; then
+            mkdir -p output/html/external
+            cp -r source/images/* output/html/external/
+            echo "Source images copied to output/external directory"
+          else
+            echo "Warning: source/images directory not found, skipping copy"
           fi
           
       - name: Verify build output
