@@ -12,6 +12,13 @@
       conclusions from data, and in this first chapter, we focus on both the properties of 
       data and on the collection of data.
     </p>
+
+<figure xml:id="figure-name">
+    <image source="images/ch_inference_for_props/bladesTwoSampleHTPValueQC.pdf" width="50%"/>
+    <caption>Optional caption for the image</caption>
+</figure>
+<p> Test </p>
+
   </introduction>
 
   <!-- Section 1.1: Case study using stents to prevent strokes -->
