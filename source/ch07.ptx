@@ -538,25 +538,25 @@
         <title>Confidence interval for a single mean</title>
         <p>
           Once you've determined a one-mean confidence interval would be helpful for an application, there are four steps to constructing the interval:
+          <dl>
+            <li>
+              <title>Prepare.</title>
+              <p>Identify <m>\bar{x}</m>, <m>s</m>, <m>n</m>, and determine what confidence level you wish to use.</p>
+            </li>
+            <li>
+              <title>Check.</title>
+              <p>Verify the conditions to ensure <m>\bar{x}</m> is nearly normal.</p>
+            </li>
+            <li>
+              <title>Calculate.</title>
+              <p>If the conditions hold, compute <m>SE</m>, find <m>t_{df}^{\star}</m>, and construct the interval.</p>
+            </li>
+            <li>
+              <title>Conclude.</title>
+              <p>Interpret the confidence interval in the context of the problem.</p>
+            </li>
+          </dl>
         </p>
-        <dl>
-          <li>
-            <title>Prepare.</title>
-            <p>Identify <m>\bar{x}</m>, <m>s</m>, <m>n</m>, and determine what confidence level you wish to use.</p>
-          </li>
-          <li>
-            <title>Check.</title>
-            <p>Verify the conditions to ensure <m>\bar{x}</m> is nearly normal.</p>
-          </li>
-          <li>
-            <title>Calculate.</title>
-            <p>If the conditions hold, compute <m>SE</m>, find <m>t_{df}^{\star}</m>, and construct the interval.</p>
-          </li>
-          <li>
-            <title>Conclude.</title>
-            <p>Interpret the confidence interval in the context of the problem.</p>
-          </li>
-        </dl>
       </assemblage>
       
       <exercise xml:id="croakerWhiteFish90ci">
@@ -682,25 +682,25 @@
         <title>Hypothesis testing for a single mean</title>
         <p>
           Once you've determined a one-mean hypothesis test is the correct procedure, there are four steps to completing the test:
+          <dl>
+            <li>
+              <title>Prepare.</title>
+              <p>Identify the parameter of interest, list out hypotheses, identify the significance level, and identify <m>\bar{x}</m>, <m>s</m>, and <m>n</m>.</p>
+            </li>
+            <li>
+              <title>Check.</title>
+              <p>Verify conditions to ensure <m>\bar{x}</m> is nearly normal.</p>
+            </li>
+            <li>
+              <title>Calculate.</title>
+              <p>If the conditions hold, compute <m>SE</m>, compute the T-score, and identify the p-value.</p>
+            </li>
+            <li>
+              <title>Conclude.</title>
+              <p>Evaluate the hypothesis test by comparing the p-value to <m>\alpha</m>, and provide a conclusion in the context of the problem.</p>
+            </li>
+          </dl>
         </p>
-        <dl>
-          <li>
-            <title>Prepare.</title>
-            <p>Identify the parameter of interest, list out hypotheses, identify the significance level, and identify <m>\bar{x}</m>, <m>s</m>, and <m>n</m>.</p>
-          </li>
-          <li>
-            <title>Check.</title>
-            <p>Verify conditions to ensure <m>\bar{x}</m> is nearly normal.</p>
-          </li>
-          <li>
-            <title>Calculate.</title>
-            <p>If the conditions hold, compute <m>SE</m>, compute the T-score, and identify the p-value.</p>
-          </li>
-          <li>
-            <title>Conclude.</title>
-            <p>Evaluate the hypothesis test by comparing the p-value to <m>\alpha</m>, and provide a conclusion in the context of the problem.</p>
-          </li>
-        </dl>
       </assemblage>
     </subsection>
     
