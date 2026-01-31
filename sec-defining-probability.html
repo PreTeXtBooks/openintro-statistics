@@ -1301,37 +1301,377 @@ P(\heartsuit)\times P(\text{ace}) = \frac{1}{4}\times \frac{1}{13} = \frac{1}{52
 <div class="autopermalink" data-description="Example 3.1.37"><a href="#ex-heart-ace-independent" title="Copy heading and permalink for Example 3.1.37" aria-label="Copy heading and permalink for Example 3.1.37">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 3.1.7: Independence"><a href="#subsec-independence" title="Copy heading and permalink for Subsection 3.1.7: Independence" aria-label="Copy heading and permalink for Subsection 3.1.7: Independence">🔗</a></div></section><section class="exercises" id="sec-defining-probability-10"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.1.8</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
 </h3>
-<article class="exercise exercise-like" id="ex-sec31-basic-probability"><h4 class="heading">
-<span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Basic probability calculation.</span>
+<article class="exercise exercise-like" id="tf_prob_definitions"><h4 class="heading">
+<span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">True or false.</span>
 </h4>
-<div class="para" id="ex-sec31-basic-probability-2-1">A jar contains 5 red marbles, 3 blue marbles, and 2 green marbles. If you randomly select one marble from the jar, what is the probability that it is red? What is the probability that it is not red?<div class="autopermalink" data-description="Paragraph"><a href="#ex-sec31-basic-probability-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="tf_prob_definitions-2-1">Determine if the statements below are true or false, and explain your reasoning.<div class="autopermalink" data-description="Paragraph"><a href="#tf_prob_definitions-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="tf_prob_definitions-2-2">
+<ol class="lower-alpha ol-marker-1" id="tf_prob_definitions-2-2-1">
+<li id="tf_prob_definitions-2-2-1-1">
+<div class="para" id="tf_prob_definitions-2-2-1-1-1">If a fair coin is tossed many times and the last eight tosses are all heads, then the chance that the next toss will be heads is somewhat less than 50%.<div class="autopermalink" data-description="Paragraph"><a href="#tf_prob_definitions-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 3.1.8.1: Basic probability calculation"><a href="#ex-sec31-basic-probability" title="Copy heading and permalink for Exercise 3.1.8.1: Basic probability calculation" aria-label="Copy heading and permalink for Exercise 3.1.8.1: Basic probability calculation">🔗</a></div></article><article class="exercise exercise-like" id="ex-sec31-complement-rule"><h4 class="heading">
-<span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Complement rule.</span>
+<div class="autopermalink" data-description="Item 3.1.8.1.a"><a href="#tf_prob_definitions-2-2-1-1" title="Copy heading and permalink for Item 3.1.8.1.a" aria-label="Copy heading and permalink for Item 3.1.8.1.a">🔗</a></div>
+</li>
+<li id="tf_prob_definitions-2-2-1-2">
+<div class="para" id="tf_prob_definitions-2-2-1-2-1">Drawing a face card (jack, queen, or king) and drawing a red card from a full deck of playing cards are mutually exclusive events.<div class="autopermalink" data-description="Paragraph"><a href="#tf_prob_definitions-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.1.b"><a href="#tf_prob_definitions-2-2-1-2" title="Copy heading and permalink for Item 3.1.8.1.b" aria-label="Copy heading and permalink for Item 3.1.8.1.b">🔗</a></div>
+</li>
+<li id="tf_prob_definitions-2-2-1-3">
+<div class="para" id="tf_prob_definitions-2-2-1-3-1">Drawing a face card and drawing an ace from a full deck of playing cards are mutually exclusive events.<div class="autopermalink" data-description="Paragraph"><a href="#tf_prob_definitions-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.1.c"><a href="#tf_prob_definitions-2-2-1-3" title="Copy heading and permalink for Item 3.1.8.1.c" aria-label="Copy heading and permalink for Item 3.1.8.1.c">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#tf_prob_definitions-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 3.1.8.1: True or false"><a href="#tf_prob_definitions" title="Copy heading and permalink for Exercise 3.1.8.1: True or false" aria-label="Copy heading and permalink for Exercise 3.1.8.1: True or false">🔗</a></div></article><article class="exercise exercise-like" id="roulette_wheel"><h4 class="heading">
+<span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Roulette wheel.</span>
 </h4>
-<div class="para" id="ex-sec31-complement-rule-2-1">If the probability of rain tomorrow is 0.35, what is the probability that it will not rain tomorrow? Explain how you used the complement rule to find your answer.<div class="autopermalink" data-description="Paragraph"><a href="#ex-sec31-complement-rule-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="roulette_wheel-2-1">The game of roulette involves spinning a wheel with 38 slots: 18 red, 18 black, and 2 green. A ball is spun onto the wheel and will eventually land in a slot, where each slot has an equal chance of capturing the ball.<div class="autopermalink" data-description="Paragraph"><a href="#roulette_wheel-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="roulette_wheel-2-2">
+<ol class="lower-alpha ol-marker-1" id="roulette_wheel-2-2-1">
+<li id="roulette_wheel-2-2-1-1">
+<div class="para" id="roulette_wheel-2-2-1-1-1">You watch a roulette wheel spin 3 consecutive times and the ball lands on a red slot each time. What is the probability that the ball will land on a red slot on the next spin?<div class="autopermalink" data-description="Paragraph"><a href="#roulette_wheel-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 3.1.8.2: Complement rule"><a href="#ex-sec31-complement-rule" title="Copy heading and permalink for Exercise 3.1.8.2: Complement rule" aria-label="Copy heading and permalink for Exercise 3.1.8.2: Complement rule">🔗</a></div></article><article class="exercise exercise-like" id="ex-sec31-disjoint-events"><h4 class="heading">
-<span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Disjoint events.</span>
+<div class="autopermalink" data-description="Item 3.1.8.2.a"><a href="#roulette_wheel-2-2-1-1" title="Copy heading and permalink for Item 3.1.8.2.a" aria-label="Copy heading and permalink for Item 3.1.8.2.a">🔗</a></div>
+</li>
+<li id="roulette_wheel-2-2-1-2">
+<div class="para" id="roulette_wheel-2-2-1-2-1">You watch a roulette wheel spin 300 consecutive times and the ball lands on a red slot each time. What is the probability that the ball will land on a red slot on the next spin?<div class="autopermalink" data-description="Paragraph"><a href="#roulette_wheel-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.2.b"><a href="#roulette_wheel-2-2-1-2" title="Copy heading and permalink for Item 3.1.8.2.b" aria-label="Copy heading and permalink for Item 3.1.8.2.b">🔗</a></div>
+</li>
+<li id="roulette_wheel-2-2-1-3">
+<div class="para" id="roulette_wheel-2-2-1-3-1">Are you equally confident of your answers to parts (a) and (b)? Why or why not?<div class="autopermalink" data-description="Paragraph"><a href="#roulette_wheel-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.2.c"><a href="#roulette_wheel-2-2-1-3" title="Copy heading and permalink for Item 3.1.8.2.c" aria-label="Copy heading and permalink for Item 3.1.8.2.c">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#roulette_wheel-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 3.1.8.2: Roulette wheel"><a href="#roulette_wheel" title="Copy heading and permalink for Exercise 3.1.8.2: Roulette wheel" aria-label="Copy heading and permalink for Exercise 3.1.8.2: Roulette wheel">🔗</a></div></article><article class="exercise exercise-like" id="four_games_one_winner"><h4 class="heading">
+<span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Four games, one winner.</span>
 </h4>
-<div class="para" id="ex-sec31-disjoint-events-2-1">Consider rolling a standard six-sided die. Let event A be "rolling an even number" and event B be "rolling a number greater than 4". Are events A and B disjoint? Explain your reasoning and calculate <span class="process-math">\(P(A \text{ or } B)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-sec31-disjoint-events-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="four_games_one_winner-2-1">Below are four versions of the same game. Your archnemesis gets to pick the version of the game, and then you get to choose how many times to flip a coin: 10 times or 100 times. Identify how many coin flips you should choose for each version of the game. It costs $1 to play each game. Explain your reasoning.<div class="autopermalink" data-description="Paragraph"><a href="#four_games_one_winner-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="four_games_one_winner-2-2">
+<ol class="lower-alpha ol-marker-1" id="four_games_one_winner-2-2-1">
+<li id="four_games_one_winner-2-2-1-1">
+<div class="para" id="four_games_one_winner-2-2-1-1-1">If the proportion of heads is larger than 0.60, you win $1.<div class="autopermalink" data-description="Paragraph"><a href="#four_games_one_winner-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 3.1.8.3: Disjoint events"><a href="#ex-sec31-disjoint-events" title="Copy heading and permalink for Exercise 3.1.8.3: Disjoint events" aria-label="Copy heading and permalink for Exercise 3.1.8.3: Disjoint events">🔗</a></div></article><article class="exercise exercise-like" id="ex-sec31-addition-rule"><h4 class="heading">
-<span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">General addition rule.</span>
+<div class="autopermalink" data-description="Item 3.1.8.3.a"><a href="#four_games_one_winner-2-2-1-1" title="Copy heading and permalink for Item 3.1.8.3.a" aria-label="Copy heading and permalink for Item 3.1.8.3.a">🔗</a></div>
+</li>
+<li id="four_games_one_winner-2-2-1-2">
+<div class="para" id="four_games_one_winner-2-2-1-2-1">If the proportion of heads is larger than 0.40, you win $1.<div class="autopermalink" data-description="Paragraph"><a href="#four_games_one_winner-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.3.b"><a href="#four_games_one_winner-2-2-1-2" title="Copy heading and permalink for Item 3.1.8.3.b" aria-label="Copy heading and permalink for Item 3.1.8.3.b">🔗</a></div>
+</li>
+<li id="four_games_one_winner-2-2-1-3">
+<div class="para" id="four_games_one_winner-2-2-1-3-1">If the proportion of heads is between 0.40 and 0.60, you win $1.<div class="autopermalink" data-description="Paragraph"><a href="#four_games_one_winner-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.3.c"><a href="#four_games_one_winner-2-2-1-3" title="Copy heading and permalink for Item 3.1.8.3.c" aria-label="Copy heading and permalink for Item 3.1.8.3.c">🔗</a></div>
+</li>
+<li id="four_games_one_winner-2-2-1-4">
+<div class="para" id="four_games_one_winner-2-2-1-4-1">If the proportion of heads is smaller than 0.30, you win $1.<div class="autopermalink" data-description="Paragraph"><a href="#four_games_one_winner-2-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.3.d"><a href="#four_games_one_winner-2-2-1-4" title="Copy heading and permalink for Item 3.1.8.3.d" aria-label="Copy heading and permalink for Item 3.1.8.3.d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#four_games_one_winner-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 3.1.8.3: Four games, one winner"><a href="#four_games_one_winner" title="Copy heading and permalink for Exercise 3.1.8.3: Four games, one winner" aria-label="Copy heading and permalink for Exercise 3.1.8.3: Four games, one winner">🔗</a></div></article><article class="exercise exercise-like" id="backgammon"><h4 class="heading">
+<span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Backgammon.</span>
 </h4>
-<div class="para" id="ex-sec31-addition-rule-2-1">In a class of 30 students, 18 play soccer, 12 play basketball, and 8 play both sports. If a student is selected at random, what is the probability they play soccer or basketball? Use the general addition rule to solve this problem.<div class="autopermalink" data-description="Paragraph"><a href="#ex-sec31-addition-rule-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="backgammon-2-1">Backgammon is a board game for two players in which the playing pieces are moved according to the roll of two dice. Players win by removing all of their pieces from the board, so it is usually good to roll high numbers. You are playing backgammon with a friend and you roll two 6s in your first roll and two 6s in your second roll. Your friend rolls two 3s in his first roll and again in his second roll. Your friend claims that you are cheating, because rolling double 6s twice in a row is very unlikely. Using probability, show that your rolls were just as likely as his.<div class="autopermalink" data-description="Paragraph"><a href="#backgammon-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 3.1.8.4: General addition rule"><a href="#ex-sec31-addition-rule" title="Copy heading and permalink for Exercise 3.1.8.4: General addition rule" aria-label="Copy heading and permalink for Exercise 3.1.8.4: General addition rule">🔗</a></div></article><article class="exercise exercise-like" id="ex-sec31-independence"><h4 class="heading">
-<span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Testing for independence.</span>
+<div class="autopermalink" data-description="Exercise 3.1.8.4: Backgammon"><a href="#backgammon" title="Copy heading and permalink for Exercise 3.1.8.4: Backgammon" aria-label="Copy heading and permalink for Exercise 3.1.8.4: Backgammon">🔗</a></div></article><article class="exercise exercise-like" id="coin_flips"><h4 class="heading">
+<span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Coin flips.</span>
 </h4>
-<div class="para" id="ex-sec31-independence-2-1">You flip two fair coins. Let event A be "the first coin shows heads" and event B be "the second coin shows heads". Are these events independent? Show your work by checking if <span class="process-math">\(P(A \text{ and } B) = P(A) \times P(B)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-sec31-independence-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="coin_flips-2-1">If you flip a fair coin 10 times, what is the probability of<div class="autopermalink" data-description="Paragraph"><a href="#coin_flips-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="coin_flips-2-2">
+<ol class="lower-alpha ol-marker-1" id="coin_flips-2-2-1">
+<li id="coin_flips-2-2-1-1">
+<div class="para" id="coin_flips-2-2-1-1-1">getting all tails?<div class="autopermalink" data-description="Paragraph"><a href="#coin_flips-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 3.1.8.5: Testing for independence"><a href="#ex-sec31-independence" title="Copy heading and permalink for Exercise 3.1.8.5: Testing for independence" aria-label="Copy heading and permalink for Exercise 3.1.8.5: Testing for independence">🔗</a></div></article><article class="exercise exercise-like" id="ex-sec31-venn-diagram"><h4 class="heading">
-<span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Venn diagram and probability.</span>
+<div class="autopermalink" data-description="Item 3.1.8.5.a"><a href="#coin_flips-2-2-1-1" title="Copy heading and permalink for Item 3.1.8.5.a" aria-label="Copy heading and permalink for Item 3.1.8.5.a">🔗</a></div>
+</li>
+<li id="coin_flips-2-2-1-2">
+<div class="para" id="coin_flips-2-2-1-2-1">getting all heads?<div class="autopermalink" data-description="Paragraph"><a href="#coin_flips-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.5.b"><a href="#coin_flips-2-2-1-2" title="Copy heading and permalink for Item 3.1.8.5.b" aria-label="Copy heading and permalink for Item 3.1.8.5.b">🔗</a></div>
+</li>
+<li id="coin_flips-2-2-1-3">
+<div class="para" id="coin_flips-2-2-1-3-1">getting at least one tails?<div class="autopermalink" data-description="Paragraph"><a href="#coin_flips-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.5.c"><a href="#coin_flips-2-2-1-3" title="Copy heading and permalink for Item 3.1.8.5.c" aria-label="Copy heading and permalink for Item 3.1.8.5.c">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#coin_flips-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 3.1.8.5: Coin flips"><a href="#coin_flips" title="Copy heading and permalink for Exercise 3.1.8.5: Coin flips" aria-label="Copy heading and permalink for Exercise 3.1.8.5: Coin flips">🔗</a></div></article><article class="exercise exercise-like" id="dice_rolls"><h4 class="heading">
+<span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Dice rolls.</span>
 </h4>
-<div class="para" id="ex-sec31-venn-diagram-2-1">Draw a Venn diagram to represent two events A and B where <span class="process-math">\(P(A) = 0.6\text{,}\)</span> <span class="process-math">\(P(B) = 0.5\text{,}\)</span> and <span class="process-math">\(P(A \text{ and } B) = 0.3\text{.}\)</span> Use your diagram to find <span class="process-math">\(P(A \text{ or } B)\)</span> and <span class="process-math">\(P(\text{neither } A \text{ nor } B)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-sec31-venn-diagram-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="dice_rolls-2-1">If you roll a pair of fair dice, what is the probability of<div class="autopermalink" data-description="Paragraph"><a href="#dice_rolls-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="dice_rolls-2-2">
+<ol class="lower-alpha ol-marker-1" id="dice_rolls-2-2-1">
+<li id="dice_rolls-2-2-1-1">
+<div class="para" id="dice_rolls-2-2-1-1-1">getting a sum of 1?<div class="autopermalink" data-description="Paragraph"><a href="#dice_rolls-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 3.1.8.6: Venn diagram and probability"><a href="#ex-sec31-venn-diagram" title="Copy heading and permalink for Exercise 3.1.8.6: Venn diagram and probability" aria-label="Copy heading and permalink for Exercise 3.1.8.6: Venn diagram and probability">🔗</a></div></article><div class="autopermalink" data-description="Exercises 3.1.8: Exercises"><a href="#sec-defining-probability-10" title="Copy heading and permalink for Exercises 3.1.8: Exercises" aria-label="Copy heading and permalink for Exercises 3.1.8: Exercises">🔗</a></div></section><div class="autopermalink" data-description="Section 3.1: Defining probability"><a href="#sec-defining-probability" title="Copy heading and permalink for Section 3.1: Defining probability" aria-label="Copy heading and permalink for Section 3.1: Defining probability">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Item 3.1.8.6.a"><a href="#dice_rolls-2-2-1-1" title="Copy heading and permalink for Item 3.1.8.6.a" aria-label="Copy heading and permalink for Item 3.1.8.6.a">🔗</a></div>
+</li>
+<li id="dice_rolls-2-2-1-2">
+<div class="para" id="dice_rolls-2-2-1-2-1">getting a sum of 5?<div class="autopermalink" data-description="Paragraph"><a href="#dice_rolls-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.6.b"><a href="#dice_rolls-2-2-1-2" title="Copy heading and permalink for Item 3.1.8.6.b" aria-label="Copy heading and permalink for Item 3.1.8.6.b">🔗</a></div>
+</li>
+<li id="dice_rolls-2-2-1-3">
+<div class="para" id="dice_rolls-2-2-1-3-1">getting a sum of 12?<div class="autopermalink" data-description="Paragraph"><a href="#dice_rolls-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.6.c"><a href="#dice_rolls-2-2-1-3" title="Copy heading and permalink for Item 3.1.8.6.c" aria-label="Copy heading and permalink for Item 3.1.8.6.c">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#dice_rolls-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 3.1.8.6: Dice rolls"><a href="#dice_rolls" title="Copy heading and permalink for Exercise 3.1.8.6: Dice rolls" aria-label="Copy heading and permalink for Exercise 3.1.8.6: Dice rolls">🔗</a></div></article><article class="exercise exercise-like" id="swing_voters"><h4 class="heading">
+<span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Swing voters.</span>
+</h4>
+<div class="para" id="swing_voters-2-1">A Pew Research survey asked 2,373 randomly sampled registered voters their political affiliation (Republican, Democrat, or Independent) and whether or not they identify as swing voters. 35% of respondents identified as Independent, 23% identified as swing voters, and 11% identified as both.<div class="autopermalink" data-description="Paragraph"><a href="#swing_voters-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="swing_voters-2-2">
+<ol class="lower-alpha ol-marker-1" id="swing_voters-2-2-1">
+<li id="swing_voters-2-2-1-1">
+<div class="para" id="swing_voters-2-2-1-1-1">Are being Independent and being a swing voter disjoint, i.e. mutually exclusive?<div class="autopermalink" data-description="Paragraph"><a href="#swing_voters-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.7.a"><a href="#swing_voters-2-2-1-1" title="Copy heading and permalink for Item 3.1.8.7.a" aria-label="Copy heading and permalink for Item 3.1.8.7.a">🔗</a></div>
+</li>
+<li id="swing_voters-2-2-1-2">
+<div class="para" id="swing_voters-2-2-1-2-1">Draw a Venn diagram summarizing the variables and their associated probabilities.<div class="autopermalink" data-description="Paragraph"><a href="#swing_voters-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.7.b"><a href="#swing_voters-2-2-1-2" title="Copy heading and permalink for Item 3.1.8.7.b" aria-label="Copy heading and permalink for Item 3.1.8.7.b">🔗</a></div>
+</li>
+<li id="swing_voters-2-2-1-3">
+<div class="para" id="swing_voters-2-2-1-3-1">What percent of voters are Independent but not swing voters?<div class="autopermalink" data-description="Paragraph"><a href="#swing_voters-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.7.c"><a href="#swing_voters-2-2-1-3" title="Copy heading and permalink for Item 3.1.8.7.c" aria-label="Copy heading and permalink for Item 3.1.8.7.c">🔗</a></div>
+</li>
+<li id="swing_voters-2-2-1-4">
+<div class="para" id="swing_voters-2-2-1-4-1">What percent of voters are Independent or swing voters?<div class="autopermalink" data-description="Paragraph"><a href="#swing_voters-2-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.7.d"><a href="#swing_voters-2-2-1-4" title="Copy heading and permalink for Item 3.1.8.7.d" aria-label="Copy heading and permalink for Item 3.1.8.7.d">🔗</a></div>
+</li>
+<li id="swing_voters-2-2-1-5">
+<div class="para" id="swing_voters-2-2-1-5-1">What percent of voters are neither Independent nor swing voters?<div class="autopermalink" data-description="Paragraph"><a href="#swing_voters-2-2-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.7.e"><a href="#swing_voters-2-2-1-5" title="Copy heading and permalink for Item 3.1.8.7.e" aria-label="Copy heading and permalink for Item 3.1.8.7.e">🔗</a></div>
+</li>
+<li id="swing_voters-2-2-1-6">
+<div class="para" id="swing_voters-2-2-1-6-1">Is the event that someone is a swing voter independent of the event that someone is a political Independent?<div class="autopermalink" data-description="Paragraph"><a href="#swing_voters-2-2-1-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.7.f"><a href="#swing_voters-2-2-1-6" title="Copy heading and permalink for Item 3.1.8.7.f" aria-label="Copy heading and permalink for Item 3.1.8.7.f">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#swing_voters-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 3.1.8.7: Swing voters"><a href="#swing_voters" title="Copy heading and permalink for Exercise 3.1.8.7: Swing voters" aria-label="Copy heading and permalink for Exercise 3.1.8.7: Swing voters">🔗</a></div></article><article class="exercise exercise-like" id="poverty_language"><h4 class="heading">
+<span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Poverty and language.</span>
+</h4>
+<div class="para" id="poverty_language-2-1">The American Community Survey is an ongoing survey that provides data every year to give communities the current information they need to plan investments and services. The 2010 American Community Survey estimates that 14.6% of Americans live below the poverty line, 20.7% speak a language other than English (foreign language) at home, and 4.2% fall into both categories.<div class="autopermalink" data-description="Paragraph"><a href="#poverty_language-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="poverty_language-2-2">
+<ol class="lower-alpha ol-marker-1" id="poverty_language-2-2-1">
+<li id="poverty_language-2-2-1-1">
+<div class="para" id="poverty_language-2-2-1-1-1">Are living below the poverty line and speaking a foreign language at home disjoint?<div class="autopermalink" data-description="Paragraph"><a href="#poverty_language-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.8.a"><a href="#poverty_language-2-2-1-1" title="Copy heading and permalink for Item 3.1.8.8.a" aria-label="Copy heading and permalink for Item 3.1.8.8.a">🔗</a></div>
+</li>
+<li id="poverty_language-2-2-1-2">
+<div class="para" id="poverty_language-2-2-1-2-1">Draw a Venn diagram summarizing the variables and their associated probabilities.<div class="autopermalink" data-description="Paragraph"><a href="#poverty_language-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.8.b"><a href="#poverty_language-2-2-1-2" title="Copy heading and permalink for Item 3.1.8.8.b" aria-label="Copy heading and permalink for Item 3.1.8.8.b">🔗</a></div>
+</li>
+<li id="poverty_language-2-2-1-3">
+<div class="para" id="poverty_language-2-2-1-3-1">What percent of Americans live below the poverty line and only speak English at home?<div class="autopermalink" data-description="Paragraph"><a href="#poverty_language-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.8.c"><a href="#poverty_language-2-2-1-3" title="Copy heading and permalink for Item 3.1.8.8.c" aria-label="Copy heading and permalink for Item 3.1.8.8.c">🔗</a></div>
+</li>
+<li id="poverty_language-2-2-1-4">
+<div class="para" id="poverty_language-2-2-1-4-1">What percent of Americans live below the poverty line or speak a foreign language at home?<div class="autopermalink" data-description="Paragraph"><a href="#poverty_language-2-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.8.d"><a href="#poverty_language-2-2-1-4" title="Copy heading and permalink for Item 3.1.8.8.d" aria-label="Copy heading and permalink for Item 3.1.8.8.d">🔗</a></div>
+</li>
+<li id="poverty_language-2-2-1-5">
+<div class="para" id="poverty_language-2-2-1-5-1">What percent of Americans live above the poverty line and only speak English at home?<div class="autopermalink" data-description="Paragraph"><a href="#poverty_language-2-2-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.8.e"><a href="#poverty_language-2-2-1-5" title="Copy heading and permalink for Item 3.1.8.8.e" aria-label="Copy heading and permalink for Item 3.1.8.8.e">🔗</a></div>
+</li>
+<li id="poverty_language-2-2-1-6">
+<div class="para" id="poverty_language-2-2-1-6-1">Is the event that someone lives below the poverty line independent of the event that the person speaks a foreign language at home?<div class="autopermalink" data-description="Paragraph"><a href="#poverty_language-2-2-1-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.8.f"><a href="#poverty_language-2-2-1-6" title="Copy heading and permalink for Item 3.1.8.8.f" aria-label="Copy heading and permalink for Item 3.1.8.8.f">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#poverty_language-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 3.1.8.8: Poverty and language"><a href="#poverty_language" title="Copy heading and permalink for Exercise 3.1.8.8: Poverty and language" aria-label="Copy heading and permalink for Exercise 3.1.8.8: Poverty and language">🔗</a></div></article><article class="exercise exercise-like" id="disjoint_indep"><h4 class="heading">
+<span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Disjoint vs. independent.</span>
+</h4>
+<div class="para" id="disjoint_indep-2-1">In parts (a) and (b), identify whether the events are disjoint, independent, or neither (events cannot be both disjoint and independent).<div class="autopermalink" data-description="Paragraph"><a href="#disjoint_indep-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="disjoint_indep-2-2">
+<ol class="lower-alpha ol-marker-1" id="disjoint_indep-2-2-1">
+<li id="disjoint_indep-2-2-1-1">
+<div class="para" id="disjoint_indep-2-2-1-1-1">You and a randomly selected student from your class both earn A’s in this course.<div class="autopermalink" data-description="Paragraph"><a href="#disjoint_indep-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.9.a"><a href="#disjoint_indep-2-2-1-1" title="Copy heading and permalink for Item 3.1.8.9.a" aria-label="Copy heading and permalink for Item 3.1.8.9.a">🔗</a></div>
+</li>
+<li id="disjoint_indep-2-2-1-2">
+<div class="para" id="disjoint_indep-2-2-1-2-1">You and your class study partner both earn A’s in this course.<div class="autopermalink" data-description="Paragraph"><a href="#disjoint_indep-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.9.b"><a href="#disjoint_indep-2-2-1-2" title="Copy heading and permalink for Item 3.1.8.9.b" aria-label="Copy heading and permalink for Item 3.1.8.9.b">🔗</a></div>
+</li>
+<li id="disjoint_indep-2-2-1-3">
+<div class="para" id="disjoint_indep-2-2-1-3-1">If two events can occur at the same time, must they be dependent?<div class="autopermalink" data-description="Paragraph"><a href="#disjoint_indep-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.9.c"><a href="#disjoint_indep-2-2-1-3" title="Copy heading and permalink for Item 3.1.8.9.c" aria-label="Copy heading and permalink for Item 3.1.8.9.c">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#disjoint_indep-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 3.1.8.9: Disjoint vs. independent"><a href="#disjoint_indep" title="Copy heading and permalink for Exercise 3.1.8.9: Disjoint vs. independent" aria-label="Copy heading and permalink for Exercise 3.1.8.9: Disjoint vs. independent">🔗</a></div></article><article class="exercise exercise-like" id="guessing_on_exam"><h4 class="heading">
+<span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Guessing on an exam.</span>
+</h4>
+<div class="para" id="guessing_on_exam-2-1">In a multiple choice exam, there are 5 questions and 4 choices for each question (a, b, c, d). Nancy has not studied for the exam at all and decides to randomly guess the answers. What is the probability that:<div class="autopermalink" data-description="Paragraph"><a href="#guessing_on_exam-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="guessing_on_exam-2-2">
+<ol class="lower-alpha ol-marker-1" id="guessing_on_exam-2-2-1">
+<li id="guessing_on_exam-2-2-1-1">
+<div class="para" id="guessing_on_exam-2-2-1-1-1">the first question she gets right is the <span class="process-math">\(5^{th}\)</span> question?<div class="autopermalink" data-description="Paragraph"><a href="#guessing_on_exam-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.10.a"><a href="#guessing_on_exam-2-2-1-1" title="Copy heading and permalink for Item 3.1.8.10.a" aria-label="Copy heading and permalink for Item 3.1.8.10.a">🔗</a></div>
+</li>
+<li id="guessing_on_exam-2-2-1-2">
+<div class="para" id="guessing_on_exam-2-2-1-2-1">she gets all of the questions right?<div class="autopermalink" data-description="Paragraph"><a href="#guessing_on_exam-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.10.b"><a href="#guessing_on_exam-2-2-1-2" title="Copy heading and permalink for Item 3.1.8.10.b" aria-label="Copy heading and permalink for Item 3.1.8.10.b">🔗</a></div>
+</li>
+<li id="guessing_on_exam-2-2-1-3">
+<div class="para" id="guessing_on_exam-2-2-1-3-1">she gets at least one question right?<div class="autopermalink" data-description="Paragraph"><a href="#guessing_on_exam-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.10.c"><a href="#guessing_on_exam-2-2-1-3" title="Copy heading and permalink for Item 3.1.8.10.c" aria-label="Copy heading and permalink for Item 3.1.8.10.c">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#guessing_on_exam-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 3.1.8.10: Guessing on an exam"><a href="#guessing_on_exam" title="Copy heading and permalink for Exercise 3.1.8.10: Guessing on an exam" aria-label="Copy heading and permalink for Exercise 3.1.8.10: Guessing on an exam">🔗</a></div></article><article class="exercise exercise-like" id="edu_attain_couples"><h4 class="heading">
+<span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Educational attainment of couples.</span>
+</h4>
+<div class="para" id="edu_attain_couples-2-1">The table below shows the distribution of education level attained by US residents by gender based on data collected in the 2010 American Community Survey.<div class="autopermalink" data-description="Paragraph"><a href="#edu_attain_couples-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <figure class="table table-like" id="edu_attain_couples-2-2"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.1.38<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Education level by gender<div class="autopermalink" data-description="Table 3.1.38: Education level by gender"><a href="#edu_attain_couples-2-2" title="Copy heading and permalink for Table 3.1.38: Education level by gender" aria-label="Copy heading and permalink for Table 3.1.38: Education level by gender">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b0 r0 l0 t0 lines"></th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Male</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Female</th>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Less than 9th grade</td>
+<td class="l m b0 r0 l0 t0 lines">0.07</td>
+<td class="l m b0 r0 l0 t0 lines">0.13</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">9th to 12th grade, no diploma</td>
+<td class="l m b0 r0 l0 t0 lines">0.10</td>
+<td class="l m b0 r0 l0 t0 lines">0.09</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">HS graduate (or equivalent)</td>
+<td class="l m b0 r0 l0 t0 lines">0.30</td>
+<td class="l m b0 r0 l0 t0 lines">0.20</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Some college, no degree</td>
+<td class="l m b0 r0 l0 t0 lines">0.22</td>
+<td class="l m b0 r0 l0 t0 lines">0.24</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Associate’s degree</td>
+<td class="l m b0 r0 l0 t0 lines">0.06</td>
+<td class="l m b0 r0 l0 t0 lines">0.08</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Bachelor’s degree</td>
+<td class="l m b0 r0 l0 t0 lines">0.16</td>
+<td class="l m b0 r0 l0 t0 lines">0.17</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Graduate or professional degree</td>
+<td class="l m b0 r0 l0 t0 lines">0.09</td>
+<td class="l m b0 r0 l0 t0 lines">0.09</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Total</td>
+<td class="l m b0 r0 l0 t0 lines">1.00</td>
+<td class="l m b0 r0 l0 t0 lines">1.00</td>
+</tr>
+</table></div></figure> <div class="para logical" id="edu_attain_couples-2-3">
+<ol class="lower-alpha ol-marker-1" id="edu_attain_couples-2-3-1">
+<li id="edu_attain_couples-2-3-1-1">
+<div class="para" id="edu_attain_couples-2-3-1-1-1">What is the probability that a randomly chosen man has at least a Bachelor’s degree?<div class="autopermalink" data-description="Paragraph"><a href="#edu_attain_couples-2-3-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.11.a"><a href="#edu_attain_couples-2-3-1-1" title="Copy heading and permalink for Item 3.1.8.11.a" aria-label="Copy heading and permalink for Item 3.1.8.11.a">🔗</a></div>
+</li>
+<li id="edu_attain_couples-2-3-1-2">
+<div class="para" id="edu_attain_couples-2-3-1-2-1">What is the probability that a randomly chosen woman has at least a Bachelor’s degree?<div class="autopermalink" data-description="Paragraph"><a href="#edu_attain_couples-2-3-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.11.b"><a href="#edu_attain_couples-2-3-1-2" title="Copy heading and permalink for Item 3.1.8.11.b" aria-label="Copy heading and permalink for Item 3.1.8.11.b">🔗</a></div>
+</li>
+<li id="edu_attain_couples-2-3-1-3">
+<div class="para" id="edu_attain_couples-2-3-1-3-1">What is the probability that a man and a woman getting married both have at least a Bachelor’s degree? Note any assumptions you must make to answer this question.<div class="autopermalink" data-description="Paragraph"><a href="#edu_attain_couples-2-3-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.11.c"><a href="#edu_attain_couples-2-3-1-3" title="Copy heading and permalink for Item 3.1.8.11.c" aria-label="Copy heading and permalink for Item 3.1.8.11.c">🔗</a></div>
+</li>
+<li id="edu_attain_couples-2-3-1-4">
+<div class="para" id="edu_attain_couples-2-3-1-4-1">If you made an assumption in part (c), do you think it was reasonable? If you didn’t make an assumption, double check your earlier answer and then return to this part.<div class="autopermalink" data-description="Paragraph"><a href="#edu_attain_couples-2-3-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.11.d"><a href="#edu_attain_couples-2-3-1-4" title="Copy heading and permalink for Item 3.1.8.11.d" aria-label="Copy heading and permalink for Item 3.1.8.11.d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#edu_attain_couples-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 3.1.8.11: Educational attainment of couples"><a href="#edu_attain_couples" title="Copy heading and permalink for Exercise 3.1.8.11: Educational attainment of couples" aria-label="Copy heading and permalink for Exercise 3.1.8.11: Educational attainment of couples">🔗</a></div></article><article class="exercise exercise-like" id="school_absences"><h4 class="heading">
+<span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">School absences.</span>
+</h4>
+<div class="para" id="school_absences-2-1">Data collected at elementary schools in DeKalb County, GA suggest that each year roughly 25% of students miss exactly one day of school, 15% miss 2 days, and 28% miss 3 or more days due to sickness.<div class="autopermalink" data-description="Paragraph"><a href="#school_absences-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="school_absences-2-2">
+<ol class="lower-alpha ol-marker-1" id="school_absences-2-2-1">
+<li id="school_absences-2-2-1-1">
+<div class="para" id="school_absences-2-2-1-1-1">What is the probability that a student chosen at random doesn’t miss any days of school due to sickness this year?<div class="autopermalink" data-description="Paragraph"><a href="#school_absences-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.12.a"><a href="#school_absences-2-2-1-1" title="Copy heading and permalink for Item 3.1.8.12.a" aria-label="Copy heading and permalink for Item 3.1.8.12.a">🔗</a></div>
+</li>
+<li id="school_absences-2-2-1-2">
+<div class="para" id="school_absences-2-2-1-2-1">What is the probability that a student chosen at random misses no more than one day?<div class="autopermalink" data-description="Paragraph"><a href="#school_absences-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.12.b"><a href="#school_absences-2-2-1-2" title="Copy heading and permalink for Item 3.1.8.12.b" aria-label="Copy heading and permalink for Item 3.1.8.12.b">🔗</a></div>
+</li>
+<li id="school_absences-2-2-1-3">
+<div class="para" id="school_absences-2-2-1-3-1">What is the probability that a student chosen at random misses at least one day?<div class="autopermalink" data-description="Paragraph"><a href="#school_absences-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.12.c"><a href="#school_absences-2-2-1-3" title="Copy heading and permalink for Item 3.1.8.12.c" aria-label="Copy heading and permalink for Item 3.1.8.12.c">🔗</a></div>
+</li>
+<li id="school_absences-2-2-1-4">
+<div class="para" id="school_absences-2-2-1-4-1">If a parent has two kids at a DeKalb County elementary school, what is the probability that neither kid will miss any school? Note any assumption you must make to answer this question.<div class="autopermalink" data-description="Paragraph"><a href="#school_absences-2-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.12.d"><a href="#school_absences-2-2-1-4" title="Copy heading and permalink for Item 3.1.8.12.d" aria-label="Copy heading and permalink for Item 3.1.8.12.d">🔗</a></div>
+</li>
+<li id="school_absences-2-2-1-5">
+<div class="para" id="school_absences-2-2-1-5-1">If a parent has two kids at a DeKalb County elementary school, what is the probability that both kids will miss some school, i.e. at least one day? Note any assumption you make.<div class="autopermalink" data-description="Paragraph"><a href="#school_absences-2-2-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.12.e"><a href="#school_absences-2-2-1-5" title="Copy heading and permalink for Item 3.1.8.12.e" aria-label="Copy heading and permalink for Item 3.1.8.12.e">🔗</a></div>
+</li>
+<li id="school_absences-2-2-1-6">
+<div class="para" id="school_absences-2-2-1-6-1">If you made an assumption in part (d) or (e), do you think it was reasonable? If you didn’t make any assumptions, double check your earlier answers.<div class="autopermalink" data-description="Paragraph"><a href="#school_absences-2-2-1-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3.1.8.12.f"><a href="#school_absences-2-2-1-6" title="Copy heading and permalink for Item 3.1.8.12.f" aria-label="Copy heading and permalink for Item 3.1.8.12.f">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#school_absences-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 3.1.8.12: School absences"><a href="#school_absences" title="Copy heading and permalink for Exercise 3.1.8.12: School absences" aria-label="Copy heading and permalink for Exercise 3.1.8.12: School absences">🔗</a></div></article><div class="autopermalink" data-description="Exercises 3.1.8: Exercises"><a href="#sec-defining-probability-10" title="Copy heading and permalink for Exercises 3.1.8: Exercises" aria-label="Copy heading and permalink for Exercises 3.1.8: Exercises">🔗</a></div></section><div class="autopermalink" data-description="Section 3.1: Defining probability"><a href="#sec-defining-probability" title="Copy heading and permalink for Section 3.1: Defining probability" aria-label="Copy heading and permalink for Section 3.1: Defining probability">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="ch-probability.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-conditional-probability.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
