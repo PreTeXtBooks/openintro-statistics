@@ -357,10 +357,10 @@
       
       <figure xml:id="rissosDolphin">
         <caption>A Risso's dolphin. Photo by Mike Baird (www.bairdphotos.com). CC BY 2.0 license.</caption>
-        <p>
-          [Figure showing a Risso's dolphin surfacing in water. The area forward of its face is mostly
-          white, and then its body is gray and white streaked together.]
-        </p>
+        <image source="ch_inference_for_means/figures/rissosDolphin/rissosDolphin.jpg" width="70%">
+          <description>Figure showing a Risso's dolphin surfacing in water. The area forward of its face is mostly
+          white, and then its body is gray and white streaked together.</description>
+        </image>
       </figure>
       
       <p>
@@ -3033,7 +3033,7 @@
       <figure xml:id="fig-toy-anova">
         <caption>Side-by-side dot plot for the outcomes for six groups.</caption>
         <!-- TODO: Add figure image reference -->
-        <image source="ch_inference_for_means/figures/toyANOVA.png" width="70%">
+        <image source="ch_inference_for_means/figures/toyANOVA/toyANOVA.png" width="70%">
           <description>Side-by-side dot plots are shown for groups I, II, III, IV, V, and VI. The means for I and IV are the same, the means of II and V are the same, and the means of III and VI are also the same. However, the variability of the data shown in groups I, II, and III is larger than the variability of the groups IV, V, and VI.</description>
         </image>
       </figure>
@@ -3877,7 +3877,7 @@
           <sidebyside widths="60% 35%">
             <figure xml:id="fig-college-credits-hist">
               <caption>Distribution of credit hours</caption>
-              <image source="ch_inference_for_means/figures/eoce/college_credits/college_credits_hist" width="100%">
+              <image source="ch_inference_for_means/figures/eoce/college_credits/college_credits_hist.png" width="100%">
                 <description>A histogram is shown for "Number of credits". The distribution is centered at about 13 and is very roughly bell-shaped with data ranging from 8 to 18 with no apparent outliers.</description>
               </image>
             </figure>
@@ -4080,7 +4080,7 @@
           </p>
           <figure xml:id="fig-torque-rusty-bolt">
             <caption>Torque required to loosen rusty bolts</caption>
-            <image source="ch_inference_for_means/figures/eoce/torque_on_rusty_bolt/torque_on_rusty_bolt_dot_plot" width="80%">
+            <image source="ch_inference_for_means/figures/eoce/torque_on_rusty_bolt/torque_on_rusty_bolt_dot_plot.png" width="80%">
               <description>A side-by-side dot plot is shown for "Torque required to loosen a rusty bolt, in foot-pounds". There are only 2 to 4 observations per option, which are roughly as follows: Heat (82, 98), WD-40 (106, 118, 129, 131), Royal Purple (108, 114, 122, 132), PB Blaster (110, 124, 127, 128), Liquid Wrench (85, 88, 98, 114), AeroKroil (107, 125, 132, 134), Acetone/ATF (105, 107, 114, 129), and "none" (110, 123, 129, 142).</description>
             </image>
           </figure>
@@ -4233,7 +4233,7 @@
           </p>
           <figure xml:id="fig-exclusive-relationships">
             <caption>Number of exclusive relationships</caption>
-            <image source="ch_inference_for_means/figures/eoce/exclusive_relationships/exclusive_relationships_rel_hist" width="60%">
+            <image source="ch_inference_for_means/figures/eoce/exclusive_relationships/exclusive_relationships_rel_hist.png" width="60%">
               <description>A histogram is shown for "Number of exclusive relationships". The distribution has a peak between 1 and 2 of about 101, a substantial dip for the 2 to 3 bin at a value of about 2, and the 3 to 4 bin is about 50, 4 to 5 bin a value of about 25, and the data continues to taper off with a maximum value of "10" shown.</description>
             </image>
           </figure>
@@ -4260,7 +4260,7 @@
           </p>
           <figure xml:id="fig-age-first-marriage">
             <caption>Age at first marriage</caption>
-            <image source="ch_inference_for_means/figures/eoce/age_at_first_marriage_intro/age_at_first_marriage_intro_hist" width="60%">
+            <image source="ch_inference_for_means/figures/eoce/age_at_first_marriage_intro/age_at_first_marriage_intro_hist.png" width="60%">
               <description>A histogram is shown for "Age at first marriage". The distribution is right-skewed, centered at about 23, has a standard deviation of about 5. The data smoothly tapers off in each direction but do not extend below about 12 or above 45.</description>
             </image>
           </figure>
