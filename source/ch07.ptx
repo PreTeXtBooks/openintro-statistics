@@ -212,7 +212,7 @@
       
       <figure xml:id="tDistCompareToNormalDist">
         <caption>Comparison of a <m>t</m>-distribution and a normal distribution.</caption>
-        <image source="ch_inference_for_means/figures/tDistCompareToNormalDist/tDistCompareToNormalDist.png" width="70%">
+        <image source="ch_inference_for_means/tDistCompareToNormalDist/tDistCompareToNormalDist.png" width="70%">
           <description>Figure showing a standard normal distribution and a t-distribution overlaid. The t-distribution
           is more sharply peaked and has thicker tails than the normal distribution.</description>
         </image>
@@ -236,7 +236,7 @@
       <figure xml:id="tDistConvergeToNormalDist">
         <caption>The larger the degrees of freedom, the more closely the <m>t</m>-distribution resembles
         the standard normal distribution.</caption>
-        <image source="ch_inference_for_means/figures/tDistConvergeToNormalDist/tDistConvergeToNormalDist.png" width="70%">
+        <image source="ch_inference_for_means/tDistConvergeToNormalDist/tDistConvergeToNormalDist.png" width="70%">
           <description>Figure showing four t-distributions with df=1, 2, 4, and 8 along with a normal distribution.
           The larger the df, the more closely the t-distribution aligns with the normal distribution.</description>
         </image>
@@ -282,7 +282,7 @@
       <figure xml:id="tDistDF18LeftTail2Point10">
         <caption>The <m>t</m>-distribution with 18 degrees of freedom. The area below <m>-2.10</m> has
         been shaded.</caption>
-        <image source="ch_inference_for_means/figures/tDistDF18LeftTail2Point10/tDistDF18LeftTail2Point10.png" width="70%">
+        <image source="ch_inference_for_means/tDistDF18LeftTail2Point10/tDistDF18LeftTail2Point10.png" width="70%">
           <description>Figure showing a t-distribution with 18 df, with the region below -2.10 shaded, representing
           roughly 2% to 5% of the distribution.</description>
         </image>
@@ -309,7 +309,7 @@
         <caption>Left: The <m>t</m>-distribution with 20 degrees of freedom, with the area above 1.65
         shaded. Right: The <m>t</m>-distribution with 2 degrees of freedom, with the area further than
         3 units from 0 shaded.</caption>
-        <image source="ch_inference_for_means/figures/tDistDF20RightTail1Point65/tDistDF20RightTail1Point65.png" width="70%">
+        <image source="ch_inference_for_means/tDistDF20RightTail1Point65/tDistDF20RightTail1Point65.png" width="70%">
           <description>Figure showing two plots: left shows t-dist with 20 df and right tail shaded above 1.65; right
           shows t-dist with 2 df with both tails beyond ±3 shaded.</description>
         </image>
@@ -357,7 +357,7 @@
       
       <figure xml:id="rissosDolphin">
         <caption>A Risso's dolphin. Photo by Mike Baird (www.bairdphotos.com). CC BY 2.0 license.</caption>
-        <image source="ch_inference_for_means/figures/rissosDolphin/rissosDolphin.jpg" width="70%">
+        <image source="ch_inference_for_means/rissosDolphin/rissosDolphin.jpg" width="70%">
           <description>Figure showing a Risso's dolphin surfacing in water. The area forward of its face is mostly
           white, and then its body is gray and white streaked together.</description>
         </image>
@@ -610,7 +610,7 @@
       
       <figure xml:id="run10SampTimeHistogram">
         <caption>A histogram of time for the sample Cherry Blossom Race data.</caption>
-        <image source="ch_inference_for_means/figures/run10SampTimeHistogram/run10SampTimeHistogram.png" width="70%">
+        <image source="ch_inference_for_means/run10SampTimeHistogram/run10SampTimeHistogram.png" width="70%">
           <description>Figure showing a histogram of "time" for the sample. The data are nearly symmetric with a
           center at about 100 minutes and a standard deviation of roughly 15 to 20 minutes. All times lie
           between 50 and 140 minutes.</description>
@@ -708,7 +708,7 @@
             reasoning.
           </p>
           <figure>
-            <image source="ch_inference_for_means/figures/eoce/t_distribution/t_distribution.png" width="70%">
+            <image source="ch_inference_for_means/eoce/t_distribution/t_distribution.png" width="70%">
               <description>Three distributions are shown, all symmetric, bell-shaped, 
               and centered at zero. The first is shown as a solid line and has the broadest peak of the three 
               distributions, and the tails of this distribution also visually approach zero at about -3 and 
@@ -825,7 +825,7 @@
             The histogram below shows the sample distribution of heights in centimeters.
           </p>
           <figure>
-            <image source="ch_inference_for_means/figures/eoce/adult_heights/adult_heights_hist.png" width="70%">
+            <image source="ch_inference_for_means/eoce/adult_heights/adult_heights_hist.png" width="70%">
               <description>A histogram is shown for "Height" with values ranging from 140 to 200, 
               with a bin width of 5. The distribution is roughly symmetric with a center at about 170. The bin 
               heights, starting with the bin from 145 to 150, are about 3, 17, 55, 70, 100, 85, 95, 50, 30, 15, 
@@ -1075,7 +1075,7 @@
       
       <figure xml:id="diffInTextbookPricesF18">
         <caption>Histogram of the difference in price for each book sampled.</caption>
-        <image source="ch_inference_for_means/figures/textbooksF18/diffInTextbookPricesF18.png" width="70%">
+        <image source="ch_inference_for_means/textbooksF18/diffInTextbookPricesF18.png" width="70%">
           <description>A histogram is shown for "UCLA bookstore Price minus Amazon Price, 
           in US dollars", where values range from -$20 to positive $80. The distribution has a prominent 
           peak at or slightly above $0, with the wide majority of data lying between -$20 and positive $20. 
@@ -1172,7 +1172,7 @@
             drawn as though <m>H_0</m> is true, and the p-value is represented by the two shaded tails:
           </p>
           <figure>
-            <image source="ch_inference_for_means/figures/textbooksF18/textbooksF18HTTails.png" width="70%">
+            <image source="ch_inference_for_means/textbooksF18/textbooksF18HTTails.png" width="70%">
               <description>A bell-shaped distribution is shown, with a center of mu-sub-0, 
               which has a value of 0. The area under the distribution above x-bar-sub-diff equals 3.58 
               is shaded, as is the corresponding tail below -3.58.</description>
@@ -1309,7 +1309,7 @@
             stations.
           </p>
           <figure>
-            <image source="ch_inference_for_means/figures/eoce/global_warming_v2_1/global_warming_v2_1_diffs.png" width="70%">
+            <image source="ch_inference_for_means/eoce/global_warming_v2_1/global_warming_v2_1_diffs.png" width="70%">
               <description>A histogram is shown for "Differences in Number of Days", 
               which has bins between -70 and 60, where the bin width is 10. There is a prominent peak around 
               zero, where much of the data lies between -40 and positive 40. The non-zero bins beyond this 
@@ -1343,7 +1343,7 @@
             scores as well as a histogram of the differences in scores are shown below.
           </p>
           <figure>
-            <image source="ch_inference_for_means/figures/eoce/hs_beyond_1/hs_beyond_read_write_box.png" width="70%">
+            <image source="ch_inference_for_means/eoce/hs_beyond_1/hs_beyond_read_write_box.png" width="70%">
               <description>Side-by-side box plot with dot plots also overlaid for each box plot. 
               There are two categories shown, "read" and "write", for values ranging from about 27 to 77. The 
               box portion of each distribution is nearly identical, ranging from about 45 to 60. The median of 
@@ -1353,7 +1353,7 @@
             </image>
           </figure>
           <figure>
-            <image source="ch_inference_for_means/figures/eoce/hs_beyond_1/hs_beyond_diff_hist.png" width="70%">
+            <image source="ch_inference_for_means/eoce/hs_beyond_1/hs_beyond_diff_hist.png" width="70%">
               <description>A histogram is shown for "Difference in scores (read minus write)", 
               which is centered at approximately zero and is roughly bell-shaped with values ranging from -25 
               to positive 25.</description>
@@ -1552,7 +1552,7 @@
       
       <figure xml:id="stemCellTherapyForHearts">
         <caption>Histograms for both the embryonic stem cell and control group.</caption>
-        <image source="ch_inference_for_means/figures/stemCellTherapyForHearts/stemCellTherapyForHearts.png" width="70%">
+        <image source="ch_inference_for_means/stemCellTherapyForHearts/stemCellTherapyForHearts.png" width="70%">
           <description>Two histograms are shown, one for "Embryonic stem cell transplant" and
           one for "Control (no treatment)". The data for the first histogram for the treatment group are
           roughly centered at about 3%, with values ranging from about -5% to positive 15%. The data for
@@ -1776,7 +1776,7 @@
       <figure xml:id="babySmokePlotOfTwoGroupsToExamineSkew">
         <caption>The left panel represents birth weights for infants whose mothers smoked. The right
         panel represents the birth weights for infants whose mothers who did not smoke.</caption>
-        <image source="ch_inference_for_means/figures/babySmokePlotOfTwoGroupsToExamineSkew/babySmokePlotOfTwoGroupsToExamineSkew.png" width="70%">
+        <image source="ch_inference_for_means/babySmokePlotOfTwoGroupsToExamineSkew/babySmokePlotOfTwoGroupsToExamineSkew.png" width="70%">
           <description>Two histograms are shown for "Newborn Weights, in pounds", one for
           "Mothers Who Smoked" and one for "Mothers Who Did Not Smoke". The histogram for "Mothers Who
           Smoked" is centered at about 7 and is left-skewed, with values ranging from about 1 pound to
@@ -1868,7 +1868,7 @@
           </p>
           <figure xml:id="distOfDiffOfSampleMeansForBWOfBabySmokeData">
             <caption>Distribution of the difference of sample means for the baby smoke data.</caption>
-            <image source="ch_inference_for_means/figures/distOfDiffOfSampleMeansForBWOfBabySmokeData/distOfDiffOfSampleMeansForBWOfBabySmokeData.png" width="70%">
+            <image source="ch_inference_for_means/distOfDiffOfSampleMeansForBWOfBabySmokeData/distOfDiffOfSampleMeansForBWOfBabySmokeData.png" width="70%">
               <description>A bell-shaped curve that resembles a normal distribution is shown
               centered at "mu-sub-n minus mu-sub-s equals 0". The upper tail is shaded above a value
               marked as "observed difference", and the corresponding lower tail is also shaded. These
@@ -2064,7 +2064,7 @@
       <figure xml:id="pValueOfTwoTailAreaOfExamVersionsWhereDFIs26">
         <caption>The <m>t</m>-distribution with 26 degrees of freedom and the p-value from exam example
         represented as the shaded areas.</caption>
-        <image source="ch_inference_for_means/figures/pValueOfTwoTailAreaOfExamVersionsWhereDFIs26/pValueOfTwoTailAreaOfExamVersionsWhereDFIs26.png" width="70%">
+        <image source="ch_inference_for_means/pValueOfTwoTailAreaOfExamVersionsWhereDFIs26/pValueOfTwoTailAreaOfExamVersionsWhereDFIs26.png" width="70%">
           <description>A t-distribution with 26 degrees of freedom is shown along with the
           p-value from the exam example represented as shaded area. The t-distribution shown is centered
           at zero, and the upper tail area above T equals 1.15 is shaded along with the area below about
@@ -2156,7 +2156,7 @@
           </p>
           
           <figure>
-            <image source="ch_inference_for_means/figures/eoce/friday_13th_traffic/friday_13th_traffic_hist.png" width="70%">
+            <image source="ch_inference_for_means/eoce/friday_13th_traffic/friday_13th_traffic_hist.png" width="70%">
               <description>Three histograms are shown. The first histogram is for "Friday the 6th", which has values ranging from 110,000 to 140,000. The second histogram is for "Friday the 13th", which also has values ranging from 110,000 to 140,000. The third histogram is for "Difference", with values ranging from 0 to 5,000. While the first two distributions are relatively uniform across the range, the last distribution has most of its distribution ranging between 0 and 3,000, with one observation in the 4,000 to 5,000 bin.</description>
             </image>
           </figure>
@@ -2238,7 +2238,7 @@
           </tabular>
           
           <figure>
-            <image source="ch_inference_for_means/figures/eoce/diamonds_1/diamonds_box.png" width="70%">
+            <image source="ch_inference_for_means/eoce/diamonds_1/diamonds_box.png" width="70%">
               <description>Side-by-side box plot for "Point price, in dollars". The two categories shown are for "0.99 carats" and "1 carat" diamonds. The 0.99 carat diamonds have their box running from about $36 to $57, a median of about $49, and the whiskers spanning about $19 to $62. The 1 carat diamonds have their box running from about $48 to $72, a median of about $55, and the whiskers spanning about $34 to $72.</description>
             </image>
           </figure>
@@ -2254,7 +2254,7 @@
           </p>
           
           <figure>
-            <image source="ch_inference_for_means/figures/eoce/friday_13th_accident/friday_13th_accident_hist.png" width="70%">
+            <image source="ch_inference_for_means/eoce/friday_13th_accident/friday_13th_accident_hist.png" width="70%">
               <description>Three histograms are shown. The first histogram is for "Friday the 6th", which has values ranging across 3 to 12. The second histogram is for "Friday the 13th", which has values ranging from 4 to 14. The third histogram is for "Difference", with values ranging from -8 to positive 2.</description>
             </image>
           </figure>
@@ -2338,7 +2338,7 @@
           </p>
           
           <figure>
-            <image source="ch_inference_for_means/figures/eoce/chick_wts_linseed_horsebean/chick_wts_box.png" width="70%">
+            <image source="ch_inference_for_means/eoce/chick_wts_linseed_horsebean/chick_wts_box.png" width="70%">
               <description>A side-by-side box plot is shown for "Weight, in grams" for several feed types. The width of the data range for each feed type spans about 150 grams. However, they are centered at different locations: about 325 for "casein", about 150 for "horsebean", about 225 for "linseed", about 275 for "meatmeal", about 250 for "soybean", and about 325 for "sunflower".</description>
             </image>
           </figure>
@@ -2436,7 +2436,7 @@
           </tabular>
           
           <figure>
-            <image source="ch_inference_for_means/figures/eoce/fuel_eff_city/fuel_eff_city_box.png" width="70%">
+            <image source="ch_inference_for_means/eoce/fuel_eff_city/fuel_eff_city_box.png" width="70%">
               <description>A side-by-side box plot is shown for "City MPG" for "automatic" and "manual" cars. The "automatic" box plot has its box spanning approximately 14 to 19, has a median of about 16, and its whiskers extending down to about 7 and up to about 24. The "manual" box plot has its box spanning approximately 18 to 24, has a median of about 21, and its whiskers extending down to about 8 and up to about 31.</description>
             </image>
           </figure>
@@ -2490,7 +2490,7 @@
           </tabular>
           
           <figure>
-            <image source="ch_inference_for_means/figures/eoce/fuel_eff_hway/fuel_eff_hway_box.png" width="70%">
+            <image source="ch_inference_for_means/eoce/fuel_eff_hway/fuel_eff_hway_box.png" width="70%">
               <description>A side-by-side box plot is shown for "Highway MPG" for "automatic" and "manual" cars. The "automatic" box plot has its box spanning approximately 20 to 26, has a median of about 23, and its whiskers extending down to about 14 and up to about 34. The "manual" box plot has its box spanning approximately 26 to 32, has a median of about 29, and its whiskers extending down to about 17 and up to about 38.</description>
             </image>
           </figure>
@@ -2518,7 +2518,7 @@
           </p>
           
           <figure>
-            <image source="ch_inference_for_means/figures/eoce/prison_isolation_T/prison_isolation_hist.png" width="70%">
+            <image source="ch_inference_for_means/eoce/prison_isolation_T/prison_isolation_hist.png" width="70%">
               <description>Three box plots are shown for Treatments 1, 2, and 3. The box plot for "Treatment 1" is slightly right skewed with values ranging from about -10 to about positive 40, and this distribution has one borderline outlier between 30 and 40. The box plot for "Treatment 2" is about symmetric with values ranging from about -20 to about positive 20. The box plot for "Treatment 3" is left skewed with values ranging from about -30 to about positive 10.</description>
             </image>
           </figure>
@@ -3058,7 +3058,7 @@
       
       <figure xml:id="fig-toy-anova">
         <caption>Side-by-side dot plot for the outcomes for six groups.</caption>
-        <image source="ch_inference_for_means/figures/toyANOVA/toyANOVA.png" width="70%">
+        <image source="ch_inference_for_means/toyANOVA/toyANOVA.png" width="70%">
           <description>Side-by-side dot plots are shown for groups I, II, III, IV, V, and VI. The means for I and IV are the same, the means of II and V are the same, and the means of III and VI are also the same. However, the variability of the data shown in groups I, II, and III is larger than the variability of the groups IV, V, and VI.</description>
         </image>
       </figure>
@@ -3297,7 +3297,7 @@
       
       <figure xml:id="fig-mlb-anova-boxplot">
         <caption>Side-by-side box plot of the on-base percentage for 429 players across three groups. With over a hundred players in both the infield and outfield groups, the apparent outliers are not a concern.</caption>
-        <image source="ch_inference_for_means/figures/mlbANOVA/mlbANOVABoxPlot.png" width="65%">
+        <image source="ch_inference_for_means/mlbANOVA/mlbANOVABoxPlot.png" width="65%">
           <description>Side-by-side box plot of the on-base percentage for 429 players across three groups. The boxes for outfield (OF) and infield (IF) groups are about 0.30 to 0.34 with a median of about 0.32, while the catcher (C) box is 0.28 to 0.33 with a median of 0.30. The whiskers for outfield and infield extend down to about 0.25 and up to 0.42, while the catcher box plot whiskers extend down to 0.23 and up to 0.38. With over a hundred players in both the infield and outfield groups, a few individual points are shown but are not concerning.</description>
         </image>
       </figure>
@@ -3419,7 +3419,7 @@
       
       <figure xml:id="fig-f-dist-2-426">
         <caption>An <m>F</m> distribution with <m>df_1=2</m> and <m>df_2=426</m>.</caption>
-        <image source="ch_inference_for_means/figures/fDist2And423/fDist2And423Shaded.png" width="65%">
+        <image source="ch_inference_for_means/fDist2And423/fDist2And423Shaded.png" width="65%">
           <description>An F distribution with df-sub-1 equals 2 and df-sub-2 equals 426 is shown. This distribution starts at zero and runs up (and past) a value of 8. The distribution is strongly right skewed. The distribution peaks right at 0 and tapers off quickly, with about 5 percent to 10 percent of the distribution lying above a value of 2. The distribution is indistinguishable from the horizontal axis by about 5. The figure also annotates a small tail area at and above values of 5.</description>
         </image>
       </figure>
@@ -3550,7 +3550,7 @@
           
           <figure xml:id="fig-mlb-anova-histograms">
             <caption>Histograms of OBP for each field position.</caption>
-            <image source="ch_inference_for_means/figures/mlbANOVA/mlbANOVADiagNormalityGroups.png" width="80%">
+            <image source="ch_inference_for_means/mlbANOVA/mlbANOVADiagNormalityGroups.png" width="80%">
               <description>Three histograms are shown, one for Outfielders, one for Infielders, and one for Catchers. The Outfielders and Infielders are centered slightly above 0.3, while the Catchers distribution is centered at about 0.3. The variability in each group is about 0.03. Each of the distributions somewhat resemble normal distributions and do not have any major outliers.</description>
             </image>
           </figure>
@@ -3653,7 +3653,7 @@
       
       <figure xml:id="fig-midterm-boxplot">
         <caption>Side-by-side box plot for the first midterm scores in three different lectures of the same course.</caption>
-        <image source="ch_inference_for_means/figures/classData/classDataSBSBoxPlot.png" width="75%">
+        <image source="ch_inference_for_means/classData/classDataSBSBoxPlot.png" width="75%">
           <description>Side-by-side box plot for the first midterm scores in three different lectures of the same course. Lecture A has a box from about 65 to 85, a median of 73, and whiskers that extend down to 45 and up to 100. Lecture B has a box from about 62 to 82, a median of 72, and whiskers that extend down to 40 and up to 100. Lecture C has a box from about 73 to 88, a median of 82, and whiskers that extend down to 45 and up to 100.</description>
         </image>
       </figure>
@@ -3898,7 +3898,7 @@
           <sidebyside widths="60% 35%">
             <figure xml:id="fig-college-credits-hist">
               <caption>Distribution of credit hours</caption>
-              <image source="ch_inference_for_means/figures/eoce/college_credits/college_credits_hist.png" width="100%">
+              <image source="ch_inference_for_means/eoce/college_credits/college_credits_hist.png" width="100%">
                 <description>A histogram is shown for "Number of credits". The distribution is centered at about 13 and is very roughly bell-shaped with data ranging from 8 to 18 with no apparent outliers.</description>
               </image>
             </figure>
@@ -4101,7 +4101,7 @@
           </p>
           <figure xml:id="fig-torque-rusty-bolt">
             <caption>Torque required to loosen rusty bolts</caption>
-            <image source="ch_inference_for_means/figures/eoce/torque_on_rusty_bolt/torque_on_rusty_bolt_dot_plot.png" width="80%">
+            <image source="ch_inference_for_means/eoce/torque_on_rusty_bolt/torque_on_rusty_bolt_dot_plot.png" width="80%">
               <description>A side-by-side dot plot is shown for "Torque required to loosen a rusty bolt, in foot-pounds". There are only 2 to 4 observations per option, which are roughly as follows: Heat (82, 98), WD-40 (106, 118, 129, 131), Royal Purple (108, 114, 122, 132), PB Blaster (110, 124, 127, 128), Liquid Wrench (85, 88, 98, 114), AeroKroil (107, 125, 132, 134), Acetone/ATF (105, 107, 114, 129), and "none" (110, 123, 129, 142).</description>
             </image>
           </figure>
@@ -4254,7 +4254,7 @@
           </p>
           <figure xml:id="fig-exclusive-relationships">
             <caption>Number of exclusive relationships</caption>
-            <image source="ch_inference_for_means/figures/eoce/exclusive_relationships/exclusive_relationships_rel_hist.png" width="60%">
+            <image source="ch_inference_for_means/eoce/exclusive_relationships/exclusive_relationships_rel_hist.png" width="60%">
               <description>A histogram is shown for "Number of exclusive relationships". The distribution has a peak between 1 and 2 of about 101, a substantial dip for the 2 to 3 bin at a value of about 2, and the 3 to 4 bin is about 50, 4 to 5 bin a value of about 25, and the data continues to taper off with a maximum value of "10" shown.</description>
             </image>
           </figure>
@@ -4281,7 +4281,7 @@
           </p>
           <figure xml:id="fig-age-first-marriage">
             <caption>Age at first marriage</caption>
-            <image source="ch_inference_for_means/figures/eoce/age_at_first_marriage_intro/age_at_first_marriage_intro_hist.png" width="60%">
+            <image source="ch_inference_for_means/eoce/age_at_first_marriage_intro/age_at_first_marriage_intro_hist.png" width="60%">
               <description>A histogram is shown for "Age at first marriage". The distribution is right-skewed, centered at about 23, has a standard deviation of about 5. The data smoothly tapers off in each direction but do not extend below about 12 or above 45.</description>
             </image>
           </figure>
