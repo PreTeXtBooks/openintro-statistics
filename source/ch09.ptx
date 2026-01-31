@@ -1821,7 +1821,7 @@
             </p>
             <figure xml:id="fig-loans-diag-normal-histogram">
               <caption>A histogram of the residuals.</caption>
-              <image source="ch_regr_mult_and_log/figures/loansDiagnostics/loansDiagNormalHistogram" width="75%">
+              <image source="ch_regr_mult_and_log/figures/loansDiagnostics/loansDiagNormalHistogram.png" width="75%">
                 <description>A histogram is shown for residuals, where values range from about -10 to 20. The data is right skewed and centered near 0. The bin -10 to -5 represents about 2% of the values. The bin -5 to 0 represents about 40% of the values. The bin 0 to 5 represents about 45% of the values. The bin 5 to 10 represents about 10% of the values. The remaining bins above 10 have less than 3% of the data.</description>
               </image>
             </figure>
@@ -1833,7 +1833,7 @@
             </p>
             <figure xml:id="fig-loans-diag-evs-abs-f">
               <caption>Comparing the absolute value of the residuals against the fitted values (<m>\hat{y}_i</m>) is helpful in identifying deviations from the constant variance assumption.</caption>
-              <image source="ch_regr_mult_and_log/figures/loansDiagnostics/loansDiagEvsAbsF" width="70%">
+              <image source="ch_regr_mult_and_log/figures/loansDiagnostics/loansDiagEvsAbsF.png" width="70%">
                 <description>A scatterplot showing absolute residuals on the vertical axis against fitted values on the horizontal axis, with a smoothed trend line overlaid showing slightly increasing variability at higher fitted values.</description>
               </image>
             </figure>
@@ -1861,13 +1861,13 @@
             </p>
             <figure xml:id="fig-loans-diag-evs-variables">
               <caption>Diagnostic plots for residuals against each of the predictors. For the box plots, we're looking for notable differences in variability. For numerical predictors, we also check for trends or other structure in the data.</caption>
-              <image source="ch_regr_mult_and_log/figures/loansDiagnostics/loansDiagEvsVariables_1" width="100%">
+              <image source="ch_regr_mult_and_log/figures/loansDiagnostics/loansDiagEvsVariables_1.png" width="100%">
                 <description>First set of diagnostic plots showing residuals against income verification, debt-to-income, and credit utilization.</description>
               </image>
-              <image source="ch_regr_mult_and_log/figures/loansDiagnostics/loansDiagEvsVariables_2" width="100%">
+              <image source="ch_regr_mult_and_log/figures/loansDiagnostics/loansDiagEvsVariables_2.png" width="100%">
                 <description>Second set of diagnostic plots showing residuals against bankruptcy status and term.</description>
               </image>
-              <image source="ch_regr_mult_and_log/figures/loansDiagnostics/loansDiagEvsVariables_3" width="100%">
+              <image source="ch_regr_mult_and_log/figures/loansDiagnostics/loansDiagEvsVariables_3.png" width="100%">
                 <description>Third set of diagnostic plots showing residuals against credit checks.</description>
               </image>
             </figure>
@@ -1910,7 +1910,7 @@
       
       <figure xml:id="fig-loans-debt-to-income-hist">
         <caption>Histogram of <c>debt_to_income</c>, where extreme skew is evident.</caption>
-        <image source="ch_regr_mult_and_log/figures/loansDiagnostics/loansDebtToIncomeHist" width="62%">
+        <image source="ch_regr_mult_and_log/figures/loansDiagnostics/loansDebtToIncomeHist.png" width="62%">
           <description>A histogram showing debt-to-income ratio with extreme right skew, where most values are below 50 but a few extend to over 150.</description>
         </image>
       </figure>
@@ -1942,7 +1942,7 @@
       
       <figure xml:id="fig-loans-diag-evs-transform-debt-to-income">
         <caption>Residual plots for transformed versions of the debt-to-income variable.</caption>
-        <image source="ch_regr_mult_and_log/figures/loansDiagnostics/loansDiagEvsTransformDebtToIncome" width="90%">
+        <image source="ch_regr_mult_and_log/figures/loansDiagnostics/loansDiagEvsTransformDebtToIncome.png" width="90%">
           <description>Two residual plots are shown, each with a flexible trend line overlaid. The first residual plot is against the variable "Square root of Debt to Income", which shows relative stability of the trend line with some deviation downwards on the right where there are almost no values and so is less relevant. The second residual plot is against the variable "Debt to Income, truncated at 50", which shows general stability in the trend line throughout the plot.</description>
         </image>
       </figure>
@@ -1987,28 +1987,28 @@
           <p>
             <xref ref="exer-baby-weights-mlr"/> presents a regression model for predicting the average birth weight of babies based on length of gestation, parity, height, weight, and smoking status of the mother. Determine if the model assumptions are met using the plots below. If not, describe how to proceed with the analysis.
           </p>
-          <image source="ch_regr_mult_and_log/figures/eoce/baby_weights_conds/baby_weights_conds_normal_hist" width="40%">
+          <image source="ch_regr_mult_and_log/figures/eoce/baby_weights_conds/baby_weights_conds_normal_hist.png" width="40%">
             <description>A histogram of residuals is shown, which has a bell-shaped distribution, is centered at 0, and has a standard deviation of about 12.</description>
           </image>
-          <image source="ch_regr_mult_and_log/figures/eoce/baby_weights_conds/baby_weights_conds_abs_res_fitted" width="40%">
+          <image source="ch_regr_mult_and_log/figures/eoce/baby_weights_conds/baby_weights_conds_abs_res_fitted.png" width="40%">
             <description>A scatterplot of "residuals" (vertical axis) against "fitted values". The residuals do not show any pattern for different fitted values.</description>
           </image>
-          <image source="ch_regr_mult_and_log/figures/eoce/baby_weights_conds/baby_weights_conds_res_order" width="40%">
+          <image source="ch_regr_mult_and_log/figures/eoce/baby_weights_conds/baby_weights_conds_res_order.png" width="40%">
             <description>A scatterplot of "residuals" (vertical axis) against "order of collection". The residuals do not show any pattern across the order of collection variable.</description>
           </image>
-          <image source="ch_regr_mult_and_log/figures/eoce/baby_weights_conds/baby_weights_conds_res_gestation" width="40%">
+          <image source="ch_regr_mult_and_log/figures/eoce/baby_weights_conds/baby_weights_conds_res_gestation.png" width="40%">
             <description>A scatterplot of "residuals" (vertical axis) against "length of gestation". The residuals do not show any pattern for different lengths of gestation.</description>
           </image>
-          <image source="ch_regr_mult_and_log/figures/eoce/baby_weights_conds/baby_weights_conds_res_parity" width="40%">
+          <image source="ch_regr_mult_and_log/figures/eoce/baby_weights_conds/baby_weights_conds_res_parity.png" width="40%">
             <description>A scatterplot of "residuals" (vertical axis) against "parity", which only takes values 0 and 1. The residuals do not show any apparent patterns across the values 0 and 1 of parity.</description>
           </image>
-          <image source="ch_regr_mult_and_log/figures/eoce/baby_weights_conds/baby_weights_conds_res_height" width="40%">
+          <image source="ch_regr_mult_and_log/figures/eoce/baby_weights_conds/baby_weights_conds_res_height.png" width="40%">
             <description>A scatterplot of "residuals" (vertical axis) against "height of mother". The residuals do not show any pattern for different values of "height of mother".</description>
           </image>
-          <image source="ch_regr_mult_and_log/figures/eoce/baby_weights_conds/baby_weights_conds_res_weight" width="40%">
+          <image source="ch_regr_mult_and_log/figures/eoce/baby_weights_conds/baby_weights_conds_res_weight.png" width="40%">
             <description>A scatterplot of "residuals" (vertical axis) against "weight of mother". The residuals do not show any pattern for different values of "weight of mother".</description>
           </image>
-          <image source="ch_regr_mult_and_log/figures/eoce/baby_weights_conds/baby_weights_conds_res_smoke" width="40%">
+          <image source="ch_regr_mult_and_log/figures/eoce/baby_weights_conds/baby_weights_conds_res_smoke.png" width="40%">
             <description>A scatterplot of "residuals" (vertical axis) against "smoke", which only takes values 0 and 1. The residuals do not show any pattern for the 0 and 1 values of smoke.</description>
           </image>
         </statement>
@@ -2020,19 +2020,19 @@
           <p>
             A FiveThirtyEight.com article reports that <q>Horror movies get nowhere near as much draw at the box office as the big-time summer blockbusters or action/adventure movies ... but there's a huge incentive for studios to continue pushing them out. The return-on-investment potential for horror movies is absurd.</q> To investigate how the return-on-investment compares between genres and how this relationship has changed over time, an introductory statistics student fit a model predicting the ratio of gross revenue of movies from genre and release year for 1,070 movies released between 2000 and 2018. Using the plots given below, determine if this regression model is appropriate for these data.
           </p>
-          <image source="ch_regr_mult_and_log/figures/eoce/movie_returns_altogether/horror_movies_conds_hist_res" width="47%">
+          <image source="ch_regr_mult_and_log/figures/eoce/movie_returns_altogether/horror_movies_conds_hist_res.png" width="47%">
             <description>A histogram is shown for "Residuals", which take values from about -15 to 100. The shape of the distribution is extremely right-skewed but centered at 0. The bin -15 to -10 represents about 1% of the values. The bin -10 to -5 represents about 1% of the values. The bin -5 to 0 represents about 65% of the values. The bin 0 to 5 represents about 25% of the values. The bin 5 to 10 represents about 2% of the values. The bin 10 to 15 represents about 1% of the values. The remaining bins above 15 have far less than 1% of the data.</description>
           </image>
-          <image source="ch_regr_mult_and_log/figures/eoce/movie_returns_altogether/horror_movies_conds_res_genre_fitted" width="47%">
+          <image source="ch_regr_mult_and_log/figures/eoce/movie_returns_altogether/horror_movies_conds_res_genre_fitted.png" width="47%">
             <description>A scatterplot is shown. The horizontal axis is for "Fitted Values", which takes values between 2.5 and 12. The vertical axis is for "Residuals" and takes values from -15 to about 90, though only about a dozen values have residuals larger than 25. The points are also colored for different genres: Action, Adventure, Comedy, Drama, and Horror. The points for Action, Adventure, Comedy, and Drama are clustered on the left with Fitted Values between 2.5 and 3.5, and the residuals for these points are largely between -5 and 12. The Horror points have Fitted Values between about 11 and 12, with residuals for these points largely between -10 and 25.</description>
           </image>
-          <image source="ch_regr_mult_and_log/figures/eoce/movie_returns_altogether/horror_movies_conds_res_genre" width="47%">
+          <image source="ch_regr_mult_and_log/figures/eoce/movie_returns_altogether/horror_movies_conds_res_genre.png" width="47%">
             <description>A dot plot is shown for "residuals", where points are broken up into different genres: Action, Adventure, Comedy, Drama, and Horror. The residuals for Action, Adventure, Comedy, and Drama groups have residuals for these points largely between -5 and 12. The Horror genre residuals are largely between -10 and 25.</description>
           </image>
-          <image source="ch_regr_mult_and_log/figures/eoce/movie_returns_altogether/horror_movies_conds_res_order" width="47%">
+          <image source="ch_regr_mult_and_log/figures/eoce/movie_returns_altogether/horror_movies_conds_res_order.png" width="47%">
             <description>A scatterplot is shown for "residuals" (vertical axis) against "order of collection" (horizontal axis) from 1 to about 1100. The variability of residuals for the order of collection values from 0 to 600 largely range between -3 and positive 5. The variability of residuals for the order of collection values from 600 to 800 largely range between -5 and positive 10. The variability of residuals for the order of collection values above 800 largely range between -8 and positive 15.</description>
           </image>
-          <image source="ch_regr_mult_and_log/figures/eoce/movie_returns_altogether/horror_movies_conds_res_year" width="47%">
+          <image source="ch_regr_mult_and_log/figures/eoce/movie_returns_altogether/horror_movies_conds_res_year.png" width="47%">
             <description>A scatterplot is shown for "residuals" (vertical axis) against "release year" (horizontal axis) from 2010 to 2018. For each year in the range, the residuals largely range between roughly -10 and positive 12.</description>
           </image>
         </statement>
@@ -2437,7 +2437,7 @@
             </p>
             <figure xml:id="fig-mk-diag-res-hist">
               <caption>Histogram of the residuals. No clear outliers are evident.</caption>
-              <image source="ch_regr_mult_and_log/figures/marioKartDiagnostics/mkDiagResHist" width="60%">
+              <image source="ch_regr_mult_and_log/figures/marioKartDiagnostics/mkDiagResHist.png" width="60%">
                 <description>A histogram is shown for "Residuals". The distribution is centered at 0, is slightly right skewed, and has a standard deviation of about 4.</description>
               </image>
             </figure>
@@ -2449,7 +2449,7 @@
             </p>
             <figure xml:id="fig-mk-diagnostic-evs-abs-f">
               <caption>Absolute value of the residuals against the fitted values. No patterns are evident.</caption>
-              <image source="ch_regr_mult_and_log/figures/marioKartDiagnostics/mkDiagnosticEvsAbsF" width="60%">
+              <image source="ch_regr_mult_and_log/figures/marioKartDiagnostics/mkDiagnosticEvsAbsF.png" width="60%">
                 <description>Scatterplot of "Absolute Value of Residuals" (vertical axis) against "Fitted Values" (horizontal axis). The fitted values range from $35 to $65, and the absolute value of the residuals range from $0 to about $10, with no apparent pattern across the range of fitted values.</description>
               </image>
             </figure>
@@ -2461,7 +2461,7 @@
             </p>
             <figure xml:id="fig-mk-diagnostic-in-order">
               <caption>Residuals in the order that their corresponding observations were collected. There are no evident patterns.</caption>
-              <image source="ch_regr_mult_and_log/figures/marioKartDiagnostics/mkDiagnosticInOrder" width="55%">
+              <image source="ch_regr_mult_and_log/figures/marioKartDiagnostics/mkDiagnosticInOrder.png" width="55%">
                 <description>Scatterplot of "Residuals" (vertical axis) against "Order of Collection" (horizontal axis). The order of collection runs from 1 to about 140, and the residuals range from -$10 to about positive $10, with no apparent pattern across the range of fitted values.</description>
               </image>
             </figure>
@@ -2473,7 +2473,7 @@
             </p>
             <figure xml:id="fig-mk-diagnostic-evs-variables">
               <caption>For the condition and stock photo variables, we check for differences in the distribution shape or variability of the residuals. In the case of the stock photos variable, we see a little less variability in the unique photo group than the stock photo group. For numerical predictors, we also check for trends or other structure. We see some slight bowing in the residuals against the <c>wheels</c> variable in the bottom plot.</caption>
-              <image source="ch_regr_mult_and_log/figures/marioKartDiagnostics/mkDiagnosticEvsVariables" width="90%">
+              <image source="ch_regr_mult_and_log/figures/marioKartDiagnostics/mkDiagnosticEvsVariables.png" width="90%">
                 <description>Three plots are shown for "Residuals" against different predictor variables "Condition", "Photo Type", and "Number of Wheels". Condition plot: A side-by-side box plot is shown for the condition levels of "Used" and "New". The median of "Used" is at $0 while the median of "New" is at about -$2. The boxes in each box plot ranges from about -$3 to positive $3, and the whiskers of each box plot runs from about -$10 to positive $10. There are a couple of points slightly beyond the whiskers. Photo Type plot: A side-by-side box plot is shown for the photo type levels of "Unique Photo" and "Stock Photo". The median of "Unique Photos" is at $0 while the median of "Stock Photo" is at about -$1. The boxes in each box plot ranges from about -$3 to positive $3. The whiskers of "Unique Photo" box plot ranges from about -$8 to positive $7, and the whiskers of "Stock Photo" box plot ranges from about -$11 to positive $11. There are a couple of points slightly beyond the whiskers. Number of Wheels plot: A scatterplot is shown for "Residuals" (vertical axis) against "Number of Wheels" (horizontal axis) with values from 0 to 4. For 0 wheels, the residuals largely range from -$8 to positive $10. For 1 wheel, the residuals largely range from -$10 to positive $5. For 2 wheels, the residuals largely range from -$8 to positive $10. There are two points with 3 wheels that have residuals of $6 and $11, and one point with 4 wheels that has a residual of about $0.</description>
               </image>
             </figure>
@@ -2784,7 +2784,7 @@
       
       <figure xml:id="fig-logit-transformation">
         <caption>Values of <m>p_i</m> against values of <m>\text{logit}(p_i)</m>.</caption>
-        <image source="ch_regr_mult_and_log/logitTransformationFigureHoriz" width="70%">
+        <image source="ch_regr_mult_and_log/logitTransformationFigureHoriz.png" width="70%">
           <description>A plot showing the relationship between logit(p) on the horizontal axis (ranging from -6 to 6) and p on the vertical axis (ranging from 0 to 1). The curve has an S-shape (sigmoid), starting near 0 on the left, increasing slowly at first, then rapidly through the center where logit(p)=0 and p=0.5, then leveling off as it approaches 1 on the right. Key points are marked: (-5, 0.007), (-4, 0.018), (-3, 0.05), (-2, 0.12), (-1, 0.27), (0, 0.5), (1, 0.73), (2, 0.88), (3, 0.95), (4, 0.982), (5, 0.993), (6, 0.998).</description>
         </image>
       </figure>
@@ -3079,7 +3079,7 @@
       
       <figure xml:id="fig-logistic-model-predict">
         <caption>The predicted probability that each of the 4870 resumes results in a callback. Noise (small, random vertical shifts) have been added to each point so points with nearly identical values aren't plotted exactly on top of one another.</caption>
-        <image source="ch_regr_mult_and_log/logisticModel/logisticModelPredict" width="75%">
+        <image source="ch_regr_mult_and_log/logisticModel/logisticModelPredict.png" width="75%">
           <description>A side-by-side dot plot showing predicted probabilities for two outcome levels: "1 (Callback)" and "0 (No Callback)". For both levels, points are concentrated between 0 and 0.2 with a small fraction taking larger values (none above about 0.3 predicted probability). There is little evident difference between the two groups due to the large number of overlaying points.</description>
         </image>
       </figure>
@@ -3097,7 +3097,7 @@
       
       <figure xml:id="fig-logistic-model-bucket-diag">
         <caption>The dashed line is within the confidence bound of the 95% confidence intervals of each of the buckets, suggesting the logistic fit is reasonable.</caption>
-        <image source="ch_regr_mult_and_log/logisticModel/logisticModelBucketDiag" width="75%">
+        <image source="ch_regr_mult_and_log/logisticModel/logisticModelBucketDiag.png" width="75%">
           <description>A side-by-side dot plot of predicted probability for two outcome levels with additional annotations. The data are bucketed into 10 groups based on their predicted probabilities. Each bucket has a 95% confidence interval plotted at the average value of the predicted probability in the buckets. A y=x line is plotted, and each of the ten confidence intervals overlaps this line, suggesting good model fit.</description>
         </image>
       </figure>
