@@ -65,7 +65,6 @@
           and is available at <url href="https://www.openintro.org/book/os/" visual="openintro.org/book/os">OpenIntro.org</url>.
           The LaTeX source files for the original book can be found at the
           <url href="https://github.com/OpenIntroStat/openintro-statistics" visual="github.com/OpenIntroStat/openintro-statistics">OpenIntro Statistics GitHub repository</url>.
-          This PreTeXt conversion was created to enable enhanced online features and improved accessibility.
           If you encounter any issues with the PreTeXt rendering or conversion, please report them at the
           <url href="https://github.com/PreTeXtBooks/openintro-statistics" visual="github.com/PreTeXtBooks/openintro-statistics">PreTeXtBooks GitHub repository</url>.
         </p>
