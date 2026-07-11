@@ -10,7 +10,7 @@
 
     var prefix = document.createElement("span");
     prefix.className = "custom-site-footer-prefix";
-    prefix.textContent = "Adapted to PreTeXt by ";
+    prefix.textContent = "This is a PreTeXt adaptation of OpenIntro Statistics (Fourth Edition) by David Diez, Mine Çetinkaya-Rundel, and Christopher Barr. This adaptation is independent and is not affiliated with or endorsed by OpenIntro. This version has been adapted to PreTeXt by ";
 
     var link = document.createElement("a");
     link.className = "custom-site-footer-link";
