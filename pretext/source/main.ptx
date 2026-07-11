@@ -44,7 +44,7 @@
             This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 United States License.
             You may copy, distribute, display, and perform this copyrighted work,
             but only if you give credit to OpenIntro, and all derivative works based upon it must be published under the Creative Commons Attribution-ShareAlike 3.0 United States License.
-            Please attribute this work to OpenIntro.
+            Please cite PreTeXtBooks as the derivative source and OpenIntro as the original source, but do not imply any association or connection to OpenIntro.
           </shortlicense>
         </copyright>
       </colophon>
@@ -266,42 +266,53 @@ footnote solution for any Guided Practice.</fn>.
     </p>
   </paragraphs>
 
-  <paragraphs xml:id="preface-additional-resources">
-    <title>Additional Resources</title>
+<paragraphs xml:id="preface-additional-resources">
+  <title>Additional Resources</title>
 
-    <p>
-      Video overviews, slides, statistical software labs, data sets used in the 
-      textbook, and much more are readily available at 
-      <url href="https://openintro.org/os">openintro.org/os</url>.
-    </p>
+  <p>
+    This is a PreTeXt adaptation of <em>OpenIntro Statistics</em> (Fourth Edition) 
+    by David Diez, Mine Çetinkaya-Rundel, and Christopher Barr. This adaptation is 
+    independent and is not affiliated with or endorsed by OpenIntro.
+  </p>
 
-    <p>
-      We also have improved the ability to access data in this book through the 
-      addition of <xref ref="appendix-data"/>, which provides additional information 
-      for each of the data sets used in the main text and is new in the Fourth Edition. 
-      Online guides to each of these data sets are also provided at 
-      <url href="https://openintro.org/data">openintro.org/data</url> and through a 
-      companion R package.
-    </p>
+  <p>
+    The original authors have made a range of supporting materials available for the 
+    original textbook, including video overviews, slides, statistical software labs, 
+    and data sets. These may be found at 
+    <url href="https://openintro.org/os">openintro.org/os</url>, though note that 
+    these resources correspond to the original book and may not align precisely with 
+    this PreTeXt version.
+  </p>
 
-    <p>
-      We appreciate all feedback as well as reports of any typos through the website. 
-      A short-link to report a new typo or review known typos is 
-      <url href="https://openintro.org/os/typos">openintro.org/os/typos</url>.
-    </p>
+  <p>
+    Data sets used in the original text are described in <xref ref="appendix-data"/>. 
+    Online guides to these data sets are also available at 
+    <url href="https://openintro.org/data">openintro.org/data</url> and through a 
+    companion R package, though again these are maintained by OpenIntro independently 
+    of this adaptation.
+  </p>
 
-    <p>
-      For those focused on statistics at the high school level, consider 
-      <em>Advanced High School Statistics</em>, which is a version of OpenIntro 
-      Statistics that has been heavily customized by Leah Dorazio for high school 
-      courses and AP<registered/> Statistics.
-    </p>
-  </paragraphs>
+  <p>
+    If you find any errors or typos in this PreTeXt adaptation specifically, please 
+    report them by opening an issue on the 
+    <url href="https://github.com/PreTeXtBooks/introductory-statistics/introductory-statistics">GitHub repository</url>.
+  </p>
+
+  <p>
+    Readers interested in a high school level introduction to statistics may wish to 
+    explore <em>Advanced High School Statistics</em>, an adaptation of the original 
+    <em>OpenIntro Statistics</em> textbook customised by Leah Dorazio for high school 
+    courses and AP<registered/> Statistics. More information is available at 
+    <url href="https://openintro.org">openintro.org</url>.
+  </p>
+
+</paragraphs>
 
 </preface>
 
       <acknowledgement xml:id="acknowledgement">
         <title>Acknowledgements</title>
+    <p>Note that this is the original text of the book that was forked. This version of the book has no association with OpenIntro.</p>
     <p>
       This project would not be possible without the passion and dedication of many 
       more people beyond those on the author list. The authors would like to thank the 
