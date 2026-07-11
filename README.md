@@ -1,6 +1,12 @@
-# OpenIntro Statistics - PreTeXt Edition
+# Introductory Statistics
 
-This repository contains the PreTeXt source files for the OpenIntro Statistics textbook. PreTeXt is a markup language for scholarly documents that allows generation of multiple output formats (HTML, PDF, etc.) from a single source.
+This repository contains the PreTeXt source files for a PreTeXt adaptation of an open-source introductory statistics textbook. This adaptation was created independently and is not affiliated with or endorsed by OpenIntro.
+
+PreTeXt is a markup language for scholarly documents that allows generation of multiple output formats (HTML, PDF, etc.) from a single source.
+
+## Original Source
+
+This book is adapted from *OpenIntro Statistics* by David Diez, Mine Çetinkaya-Rundel, and Christopher Barr, available at [openintro.org](https://www.openintro.org/). The original work is licensed under CC BY-SA 4.0.
 
 ## Folder Structure
 
@@ -17,7 +23,6 @@ This repository contains the PreTeXt source files for the OpenIntro Statistics t
   - `main.tex`, `eoce.bib`, `fullminipage.sty` - LaTeX source files
 - `scripts/` - Python conversion scripts for LaTeX to PreTeXt conversion
 - `project.ptx` - PreTeXt project configuration file
-- `openintro-statistics.Rproj` - R project file
 
 ## Building the Book
 
@@ -26,28 +31,22 @@ This project uses PreTeXt to generate HTML and PDF output. The build system is c
 ### HTML Output
 
 To build the HTML version:
-
 ```bash
 pretext build web
 ```
-
 The HTML output is generated to the `output/html/` directory (which is gitignored).
 
 ### PDF Output
 
 To build the PDF version:
-
 ```bash
 pretext build pdf
 ```
-
 The PDF output is generated to the `output/pdf/` directory (which is gitignored).
 
 ## Published Site
 
-The HTML version of the book is published via GitHub Pages on the `gh-pages` branch:
-
-🔗 [View the published book](https://lilyclements.github.io/openintro-statistics/)
+The HTML version of the book is published via GitHub Pages on the `gh-pages` branch.
 
 Note: Build artifacts (HTML files, output directories, logs) are excluded from version control via `.gitignore`.
 
@@ -60,4 +59,6 @@ When working on this project:
 
 ## License
 
-This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
+This adaptation is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0). To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
+
+This work is an independent adaptation and is not affiliated with or endorsed by OpenIntro.
